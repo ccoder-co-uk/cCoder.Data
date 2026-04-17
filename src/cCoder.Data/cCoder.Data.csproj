@@ -21,14 +21,24 @@
     <Authors>cCoder</Authors>
     <PackageId>cCoder.Data</PackageId>
   </PropertyGroup>
+  <PropertyGroup>
+    <LocalSecurityDataProject>..\..\..\cCoder.Security\src\cCoder.Security.Data\cCoder.Security.Data.csproj</LocalSecurityDataProject>
+    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == '' and Exists('$(LocalSecurityDataProject)')">true</UseLocalSecurityData>
+    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == ''">false</UseLocalSecurityData>
+    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == 'true' and !Exists('$(LocalSecurityDataProject)')">false</UseLocalSecurityData>
+    <UseLocalSecurityData Condition="'$(UseLocalSecurity)' == 'true' and Exists('$(LocalSecurityDataProject)')">true</UseLocalSecurityData>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup Condition="'$(UseLocalSecurityData)' == 'true'">
+    <ProjectReference Include="$(LocalSecurityDataProject)" />
+  </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="cCoder.Eventing.EventLibrary" Version="2026.4.15.1800" />
-    <PackageReference Include="cCoder.Security.Objects" Version="2026.2.10.1440" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.4.17.1141" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />

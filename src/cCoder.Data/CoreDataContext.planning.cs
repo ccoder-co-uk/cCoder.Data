@@ -36,8 +36,11 @@ public partial class CoreDataContext
     private void ApplyPlanningFilters(ModelBuilder builder)
     {
         _ = builder.Entity<ScheduledTask>().HasQueryFilter(t =>
-            t.App.Roles.Any(r => r.Privs.Contains("scheduledtask_read")));
-        _ = builder.Entity<Calendar>().HasQueryFilter(c => c.App.Roles.Any(r => r.Privs.Contains("calendar_read")));
+            AdminOf.Contains(t.AppId)
+            || t.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("scheduledtask_read")));
+        _ = builder.Entity<Calendar>().HasQueryFilter(c =>
+            AdminOf.Contains(c.AppId)
+            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
         _ = builder.Entity<CalendarEvent>().HasQueryFilter(e => e.Calendar != null);
     }
 }

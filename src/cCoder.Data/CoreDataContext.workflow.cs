@@ -43,10 +43,14 @@ public partial class CoreDataContext
 
     private void ApplyWorkflowFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<FlowDefinition>().HasQueryFilter(c => c.App.Roles.Any(r => r.Privs.Contains("flowdefinition_read")));
+        _ = builder.Entity<FlowDefinition>().HasQueryFilter(c =>
+            AdminOf.Contains(c.AppId)
+            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("flowdefinition_read")));
         _ = builder.Entity<FlowInstanceData>().HasQueryFilter(c => c.FlowDefinition != null);
         _ = builder.Entity<WorkflowEvent>().HasQueryFilter(t => t.Flow != null);
-        _ = builder.Entity<Calendar>().HasQueryFilter(c => c.App.Roles.Any(r => r.Privs.Contains("calendar_read")));
+        _ = builder.Entity<Calendar>().HasQueryFilter(c =>
+            AdminOf.Contains(c.AppId)
+            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
         _ = builder.Entity<CalendarEvent>().HasQueryFilter(e => e.Calendar != null);
     }
 }

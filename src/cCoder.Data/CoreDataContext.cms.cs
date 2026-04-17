@@ -207,11 +207,16 @@ public partial class CoreDataContext
             u.Id == AuthInfo.SSOUserId
             || u.Roles.Any(ur => ur.Role != null && ur.Role.Privs.Contains("user_read")));
         _ = builder.Entity<PageRole>().HasQueryFilter(pr =>
-            pr.Role != null && pr.Role.Privs.Contains("pagerole_read"));
+            CurrentUserRoleIds.Contains(pr.RoleId)
+            && pr.Role != null
+            && pr.Role.Privs.Contains("pagerole_read"));
 
         _ = builder.Entity<Page>().HasQueryFilter(p =>
             AdminOf.Contains(p.AppId)
-            || p.Roles.Any(pr => pr.Role != null && pr.Role.Privs.Contains("page_read")));
+            || p.Roles.Any(pr =>
+                CurrentUserRoleIds.Contains(pr.RoleId)
+                && pr.Role != null
+                && pr.Role.Privs.Contains("page_read")));
         _ = builder.Entity<PageInfo>().HasQueryFilter(i => i.Page != null);
         _ = builder.Entity<Content>().HasQueryFilter(i => i.Page != null);
         _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId) || s.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("submission_read")));
