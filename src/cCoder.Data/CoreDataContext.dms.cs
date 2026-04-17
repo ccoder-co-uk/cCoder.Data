@@ -43,8 +43,17 @@ public partial class CoreDataContext
 
     private void ApplyDmsFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<FolderRole>().HasQueryFilter(fr => fr.Role != null && fr.Role.Privs.Contains("folder_read"));
-        _ = builder.Entity<Folder>().HasQueryFilter(f => f.DeletedOn == null && f.Roles.Any());
+        _ = builder.Entity<FolderRole>().HasQueryFilter(fr =>
+            CurrentUserRoleIds.Contains(fr.RoleId)
+            && fr.Role != null
+            && fr.Role.Privs.Contains("folder_read"));
+        _ = builder.Entity<Folder>().HasQueryFilter(f =>
+            f.DeletedOn == null
+            && (AdminOf.Contains(f.AppId)
+                || f.Roles.Any(fr =>
+                    CurrentUserRoleIds.Contains(fr.RoleId)
+                    && fr.Role != null
+                    && fr.Role.Privs.Contains("folder_read"))));
         _ = builder.Entity<File>().HasQueryFilter(f => f.DeletedOn == null && (AdminOf.Contains(f.Folder.AppId) || f.Folder != null));
         _ = builder.Entity<FileContent>().HasQueryFilter(i => i.File != null);
     }
