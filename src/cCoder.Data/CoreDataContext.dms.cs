@@ -54,7 +54,13 @@ public partial class CoreDataContext
                     CurrentUserRoleIds.Contains(fr.RoleId)
                     && fr.Role != null
                     && fr.Role.Privs.Contains("folder_read"))));
-        _ = builder.Entity<File>().HasQueryFilter(f => f.DeletedOn == null && (AdminOf.Contains(f.Folder.AppId) || f.Folder != null));
+        _ = builder.Entity<File>().HasQueryFilter(f =>
+            f.DeletedOn == null
+            && (AdminOf.Contains(f.Folder.AppId)
+                || f.Folder.Roles.Any(fr =>
+                    CurrentUserRoleIds.Contains(fr.RoleId)
+                    && fr.Role != null
+                    && fr.Role.Privs.Contains("file_read"))));
         _ = builder.Entity<FileContent>().HasQueryFilter(i => i.File != null);
     }
 }
