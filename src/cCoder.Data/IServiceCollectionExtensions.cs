@@ -1,7 +1,7 @@
 using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Exposures;
 using cCoder.Data.Services.Foundations;
-using EventLibrary.Models;
+using cCoder.Eventing.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -65,9 +65,13 @@ public static class IServiceCollectionExtensions
 
         try
         {
-            object authInfo =
-                serviceProvider.GetService(Type.GetType("cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Data"))
-                ?? serviceProvider.GetService(Type.GetType("cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Objects"));
+            Type authInfoType = Type.GetType(
+                "cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Data",
+                throwOnError: false);
+
+            object authInfo = authInfoType is null
+                ? null
+                : serviceProvider.GetService(authInfoType);
 
             ssoUserId = authInfo?.GetType().GetProperty("SSOUserId")?.GetValue(authInfo)?.ToString();
         }
