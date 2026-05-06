@@ -199,7 +199,7 @@ public partial class CoreDataContext
 
     private void ApplyCmsFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<Role>().HasQueryFilter(r => AdminOf.Contains(r.AppId) 
+        _ = builder.Entity<Role>().HasQueryFilter(r => AdminOf.Contains(r.AppId)
             || CurrentUserRoleIds.Contains(r.Id));
 
         _ = builder.Entity<UserRole>().HasQueryFilter(ur =>
@@ -222,7 +222,7 @@ public partial class CoreDataContext
 
         _ = builder.Entity<PageInfo>().HasQueryFilter(i => i.Page != null);
         _ = builder.Entity<Content>().HasQueryFilter(i => i.Page != null);
-        _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId) 
+        _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId)
             || s.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("submission_read")));
     }
 }
