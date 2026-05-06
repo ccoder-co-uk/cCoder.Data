@@ -199,13 +199,15 @@ public partial class CoreDataContext
 
     private void ApplyCmsFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<Role>().HasQueryFilter(r => AdminOf.Contains(r.AppId) || CurrentUserRoleIds.Contains(r.Id));
+        _ = builder.Entity<Role>().HasQueryFilter(r => AdminOf.Contains(r.AppId)
+            || CurrentUserRoleIds.Contains(r.Id));
+
         _ = builder.Entity<UserRole>().HasQueryFilter(ur =>
             ur.UserId == AuthInfo.SSOUserId
-            || ur.Role != null);
-        _ = builder.Entity<User>().HasQueryFilter(u =>
-            u.Id == AuthInfo.SSOUserId
-            || u.Roles.Any(ur => ur.Role != null && ur.Role.Privs.Contains("user_read")));
+            || AdminOf.Contains(ur.Role.AppId));
+
+        _ = builder.Entity<User>().HasQueryFilter(u => u.Roles.Any());
+
         _ = builder.Entity<PageRole>().HasQueryFilter(pr =>
             CurrentUserRoleIds.Contains(pr.RoleId)
             && pr.Role != null
@@ -217,12 +219,10 @@ public partial class CoreDataContext
                 CurrentUserRoleIds.Contains(pr.RoleId)
                 && pr.Role != null
                 && pr.Role.Privs.Contains("page_read")));
+
         _ = builder.Entity<PageInfo>().HasQueryFilter(i => i.Page != null);
         _ = builder.Entity<Content>().HasQueryFilter(i => i.Page != null);
-        _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId) || s.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("submission_read")));
+        _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId)
+            || s.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("submission_read")));
     }
 }
-
-
-
-
