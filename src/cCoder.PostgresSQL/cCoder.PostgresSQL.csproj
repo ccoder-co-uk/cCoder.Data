@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>1591</NoWarn>
+    <AssemblyName>cCoder.PostgresSQL</AssemblyName>
+    <RootNamespace>cCoder.PostgresSQL</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageTags>cCoder;Data;cCoder.PostgresSQL</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PrivateRepositoryUrl>https://github.com/ccoder-co-uk/cCoder.PostgresSQL.git</PrivateRepositoryUrl>
+    <ProjectUrl>https://github.com/ccoder-co-uk/cCoder.PostgresSQL</ProjectUrl>
+    <RepositoryUrl>https://github.com/ccoder-co-uk/cCoder.PostgresSQL.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>cCoder PostgreSQL provider for cCoder.Data</Description>
+    <Copyright>2026 Paul Ward</Copyright>
+    <Authors>cCoder</Authors>
+    <PackageId>cCoder.PostgresSQL</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cCoder.Data\cCoder.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.2" />
+  </ItemGroup>
+</Project>

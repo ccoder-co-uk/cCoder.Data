@@ -1,5 +1,6 @@
 using cCoder.Data;
 using FluentAssertions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -15,6 +16,7 @@ public class CoreContextFactoryTests
         var services = new ServiceCollection();
         services.AddSingleton(Mock.Of<ICoreAuthInfo>());
         services.AddSingleton(new Config());
+        services.AddSingleton(new DbContextOptionsBuilder<CoreDataContext>().Options);
         services.AddSingleton(Mock.Of<ILogger<CoreDataContext>>());
 
         IServiceProvider serviceProvider = services.BuildServiceProvider();

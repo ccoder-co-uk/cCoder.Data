@@ -31,6 +31,11 @@
     <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\**\*.cs" />
+    <EmbeddedResource Remove="Migrations\**\*" />
+    <None Include="Migrations\**\*" />
+  </ItemGroup>
   <ItemGroup Condition="'$(UseLocalSecurityData)' == 'true'">
     <ProjectReference Include="$(LocalSecurityDataProject)" />
   </ItemGroup>
@@ -40,7 +45,6 @@
     <PackageReference Include="cCoder.Security.Data" Version="2026.4.*" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

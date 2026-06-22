@@ -52,9 +52,11 @@ public partial class CoreDataContext : DbContext
         User.Roles?.Select(r => r.RoleId) ?? Array.Empty<Guid>();
 
     public CoreDataContext(
+        DbContextOptions<CoreDataContext> options,
         ICoreAuthInfo auth,
         Config config,
         ILogger<CoreDataContext> log)
+        : base(options)
     {
         AuthInfo = auth;
         Config = config;
@@ -63,7 +65,6 @@ public partial class CoreDataContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(Config.ConnectionStrings["Core"]);
         optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
 
         if (Config.LogSQL)
@@ -86,8 +87,6 @@ public partial class CoreDataContext : DbContext
 
     private static void ConfigureModel(ModelBuilder builder)
     {
-        builder.UseIdentityColumns();
-
         ConfigureCmsModel(builder);
         ConfigureDmsModel(builder);
         ConfigureLoggingModel(builder);

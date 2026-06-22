@@ -1,0 +1,6 @@
+@cCoder.SQLServer.TestApi_HostAddress = http://localhost:5090
+
+GET {{cCoder.SQLServer.TestApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

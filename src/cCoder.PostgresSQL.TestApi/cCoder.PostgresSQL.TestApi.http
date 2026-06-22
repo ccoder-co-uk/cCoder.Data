@@ -1,0 +1,6 @@
+@cCoder.PostgresSQL.TestApi_HostAddress = http://localhost:5157
+
+GET {{cCoder.PostgresSQL.TestApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

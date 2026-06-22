@@ -2,7 +2,6 @@ using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Exposures;
 using cCoder.Data.Services.Foundations;
 using cCoder.Eventing.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -40,10 +39,6 @@ public static class IServiceCollectionExtensions
         services.TryAddSingleton<IMetadataTypeCacheBroker, MetadataTypeCacheBroker>();
         services.TryAddSingleton<IMetadataTypeCacheService, MetadataTypeCacheService>();
         services.TryAddSingleton<IMetadataTypeCache, MetadataTypeCache>();
-
-        if (!services.Any(serviceDescriptor => serviceDescriptor.ServiceType == typeof(IDbContextFactory<CoreDataContext>)))
-            services.AddDbContextFactory<CoreDataContext>(lifetime: ServiceLifetime.Scoped);
-
     }
 
     public static void AddCoreAuthInfo(this IServiceCollection services)
