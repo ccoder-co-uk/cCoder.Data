@@ -30,6 +30,7 @@ jobs:
           MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
         options: >-
           --health-cmd="/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -Q 'SELECT 1'"
+          --health-start-period=5m
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
