@@ -19,7 +19,52 @@ defaults:
     shell: pwsh
 
 jobs:
+  validate-migrations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.x
+
+      - name: Install EF Core CLI
+        run: dotnet tool install -g dotnet-ef --version 10.0.5
+
+      - name: Restore
+        run: dotnet restore src/cCoder.Data.sln
+
+      - name: Validate SQL Server migrations
+        run: |
+          cd src/cCoder.SQLServer
+          dotnet ef migrations add ValidateSchema --context CoreDataContext --no-build -v 2>&1 | Tee-Object -Variable output
+          
+          # Check if migration was created (either new or no changes)
+          if ($output -match "Successfully created" -or $output -match "No changes detected") {
+            Write-Host "✓ SQL Server migration validation passed"
+          } else {
+            Write-Host "✗ SQL Server migration validation failed"
+            exit 1
+          }
+
+      - name: Validate PostgreSQL migrations
+        run: |
+          cd src/cCoder.PostgresSQL
+          dotnet ef migrations add ValidateSchema --context CoreDataContext --no-build -v 2>&1 | Tee-Object -Variable output
+          
+          # Check if migration was created (either new or no changes)
+          if ($output -match "Successfully created" -or $output -match "No changes detected") {
+            Write-Host "✓ PostgreSQL migration validation passed"
+          } else {
+            Write-Host "✗ PostgreSQL migration validation failed"
+            exit 1
+          }
+
   build-test-pack:
+    needs: validate-migrations
     runs-on: ubuntu-latest
 
     steps:
