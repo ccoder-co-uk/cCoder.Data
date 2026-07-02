@@ -44,9 +44,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
         _ = builder.Entity<Page>(entity =>
@@ -54,9 +54,9 @@ public partial class CoreDataContext
             entity.ToTable("Pages", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
         _ = builder.Entity<PageInfo>(entity =>
@@ -80,9 +80,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
         _ = builder.Entity<Resource>(entity =>
@@ -91,9 +91,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
             entity.Property(i => i.Key).IsRequired();
             entity.Property(i => i.Culture).IsRequired();
@@ -112,9 +112,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
         _ = builder.Entity<Submission>(entity =>
@@ -130,9 +130,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
         _ = builder.Entity<CommonObject>(entity =>
@@ -141,9 +141,9 @@ public partial class CoreDataContext
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
             entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.LastUpdated);
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn).HasDefaultValue(InitialAuditDefault);
+            entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
             entity.Property(i => i.Type).IsRequired();
             entity.Property(i => i.Json).IsRequired();
