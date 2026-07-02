@@ -8,9 +8,8 @@ public class QueuedEmail : Email
     public virtual ICollection<EmailSendFailure> FailedSends { get; set; }
 
     public string MailServerName { get; set; }
+
+    public Guid? MailSenderId { get; set; }
+
+    public virtual MailSender MailSender { get; set; }
 }
-
-
-
-
-

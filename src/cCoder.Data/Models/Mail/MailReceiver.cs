@@ -27,4 +27,6 @@ public class MailReceiver
     public bool IsEnabled { get; set; } = true;
 
     public virtual App App { get; set; }
+
+    public virtual ICollection<ReceivedEmail> ReceivedEmails { get; set; }
 }

@@ -56,6 +56,7 @@ public partial class CoreDataContext
             entity.Property(i => i.To).IsRequired();
             entity.Property(i => i.MailServerName).IsRequired();
             entity.HasOne(i => i.SentBy).WithMany().HasForeignKey(i => i.SentByUserId);
+            entity.HasOne(i => i.MailSender).WithMany(i => i.QueuedEmails).HasForeignKey(i => i.MailSenderId);
         });
         _ = builder.Entity<SentEmail>(entity =>
         {
@@ -66,7 +67,7 @@ public partial class CoreDataContext
             entity.Property(i => i.To).IsRequired();
             entity.Property(i => i.From).IsRequired();
             entity.HasOne(i => i.SentBy).WithMany().HasForeignKey(i => i.SentByUserId);
-            entity.HasOne(i => i.MailSender).WithMany().HasForeignKey(i => i.MailSenderId);
+            entity.HasOne(i => i.MailSender).WithMany(i => i.SentEmails).HasForeignKey(i => i.MailSenderId);
         });
         _ = builder.Entity<ReceivedEmail>(entity =>
         {
@@ -78,7 +79,7 @@ public partial class CoreDataContext
             entity.Property(i => i.From).IsRequired();
             entity.Property(i => i.MessageId).IsRequired(false);
             entity.HasOne(i => i.SentBy).WithMany().HasForeignKey(i => i.SentByUserId);
-            entity.HasOne(i => i.MailReceiver).WithMany().HasForeignKey(i => i.MailReceiverId);
+            entity.HasOne(i => i.MailReceiver).WithMany(i => i.ReceivedEmails).HasForeignKey(i => i.MailReceiverId);
         });
         _ = builder.Entity<EmailSendFailure>(entity =>
         {

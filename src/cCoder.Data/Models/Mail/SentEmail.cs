@@ -13,8 +13,3 @@ public class SentEmail : Email
 
     public virtual MailSender MailSender { get; set; }
 }
-
-
-
-
-
