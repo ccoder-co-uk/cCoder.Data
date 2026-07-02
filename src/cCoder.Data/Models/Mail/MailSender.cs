@@ -25,4 +25,8 @@ public class MailSender
     public bool EnableSSL { get; set; }
 
     public virtual App App { get; set; }
+
+    public virtual ICollection<QueuedEmail> QueuedEmails { get; set; }
+
+    public virtual ICollection<SentEmail> SentEmails { get; set; }
 }
