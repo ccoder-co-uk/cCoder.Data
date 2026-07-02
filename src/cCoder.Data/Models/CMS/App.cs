@@ -53,7 +53,10 @@ public class App
     public virtual ICollection<Layout> Layouts { get; set; }
     public virtual ICollection<FlowDefinition> Flows { get; set; }
     public virtual ICollection<MailServer> MailServers { get; set; }
+    public virtual ICollection<MailSender> MailSenders { get; set; }
+    public virtual ICollection<MailReceiver> MailReceivers { get; set; }
     public virtual ICollection<QueuedEmail> MailQueue { get; set; }
     public virtual ICollection<SentEmail> SentMail { get; set; }
+    public virtual ICollection<ReceivedEmail> ReceivedMail { get; set; }
 }
 

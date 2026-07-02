@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -9,15 +10,37 @@ public interface ICoreContextFactory
     CoreDataContext CreateCoreContext();
 }
 
-public class CoreContextFactory(IServiceProvider serviceProvider) : ICoreContextFactory
+public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFactory<CoreDataContext>
 {
-    public CoreDataContext CreateCoreContext() =>
-        new(
+    private IServiceProvider serviceProvider;
+
+    public CoreContextFactory()
+    {
+        string connection = Environment.GetEnvironmentVariable(
+            "ConnectionStrings__Core",
+            EnvironmentVariableTarget.Machine);
+
+        ServiceCollection services = [];
+        services.AddLogging();
+        services.AddCoreData(connection);
+
+        serviceProvider = services.BuildServiceProvider();
+    }
+
+    public CoreContextFactory(IServiceProvider serviceProvider) =>
+        this.serviceProvider = serviceProvider;
+
+    public CoreDataContext CreateCoreContext()
+    {
+        if (serviceProvider is null)
+            return CreateDbContext([]);
+
+        return new(
             serviceProvider.GetRequiredService<ICoreAuthInfo>(),
             serviceProvider.GetRequiredService<Config>(),
             serviceProvider.GetRequiredService<ILogger<CoreDataContext>>());
+    }
+
+    public CoreDataContext CreateDbContext(string[] args) =>
+         CreateCoreContext();
 }
-
-
-
-

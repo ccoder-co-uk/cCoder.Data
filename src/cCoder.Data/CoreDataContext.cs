@@ -9,8 +9,6 @@ namespace cCoder.Data;
 
 public partial class CoreDataContext : DbContext
 {
-    private static readonly DateTimeOffset InitialAuditDefault = new(2021, 2, 19, 0, 0, 0, TimeSpan.Zero);
-
     public ICoreAuthInfo AuthInfo { get; set; }
 
     public Guid EventId { get; private set; }
