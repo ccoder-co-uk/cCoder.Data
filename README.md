@@ -8,6 +8,28 @@
   The main library package published to NuGet.
 - `src/cCoder.Data.Tests`
   Unit tests for the data layer.
+- `src/Apps/Data.Web`
+  A local tooling app that demonstrates the package by exposing authenticated CRUD over the `CoreDataContext`.
+- `src/Apps/Data.Web.AcceptanceTests`
+  Acceptance tests for the Data tooling app.
+
+## Data Tooling App
+
+`Data.Web` is a local support tool, not a published production app. It provides a tabbed CRUD view over every entity set exposed by `CoreDataContext`.
+
+The app uses the standard cCoder security login flow because the shared data context applies user-aware query filters.
+
+Required configuration:
+
+- `ConnectionStrings:Core`
+- `ConnectionStrings:SSO`
+- `Settings:DecryptionKey`
+
+Run locally:
+
+```powershell
+dotnet run --project src/Apps/Data.Web/Data.Web.csproj
+```
 
 ## Build
 
