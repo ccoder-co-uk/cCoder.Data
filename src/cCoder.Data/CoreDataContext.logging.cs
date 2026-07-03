@@ -15,6 +15,7 @@ public partial class CoreDataContext
         {
             entity.ToTable("LogEntries", "Logging");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(i => i.AppId).IsRequired();
             entity.Property(i => i.Level).IsRequired();
             entity.Property(i => i.Message).IsRequired();
             entity.Property(i => i.AppName).IsRequired();
@@ -27,5 +28,11 @@ public partial class CoreDataContext
             entity.Property(i => i.Name).IsRequired();
             entity.Property(i => i.Value).IsRequired();
         });
+    }
+
+    private void ApplyLoggingFilters(ModelBuilder builder)
+    {
+        _ = builder.Entity<LogEntry>().HasQueryFilter(log => AdminOf.Contains(log.AppId));
+        _ = builder.Entity<LogDataItem>().HasQueryFilter(item => item.LogEntry != null);
     }
 }
