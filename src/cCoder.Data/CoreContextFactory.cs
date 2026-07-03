@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -16,9 +17,11 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
 
     public CoreContextFactory()
     {
-        string connection = Environment.GetEnvironmentVariable(
-            "ConnectionStrings__Core",
-            EnvironmentVariableTarget.Machine);
+        IConfiguration configuration = new ConfigurationBuilder()
+            .AddEnvironmentVariables()
+            .Build();
+
+        string connection = configuration.GetConnectionString("Core");
 
         ServiceCollection services = [];
         services.AddLogging();
