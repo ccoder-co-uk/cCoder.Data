@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data</title>
+  <link rel="stylesheet" href="/tools/styles.css">
+</head>
+<body class="data-shell">
+  <header class="data-header">
+    <div class="data-brand">
+      <img class="data-logo" src="/tools/company-logo.png" alt="cCoder">
+      <div>
+        <h1>Data</h1>
+        <span>Core data context table management</span>
+      </div>
+    </div>
+
+    <form id="loginForm" class="data-auth">
+      <strong id="authUser">Guest</strong>
+      <input id="usernameInput" autocomplete="username" placeholder="User">
+      <input id="passwordInput" autocomplete="current-password" placeholder="Password" type="password">
+      <button id="loginButton" type="submit">Login</button>
+      <button id="logoutButton" type="button">Logout</button>
+    </form>
+
+    <div class="data-header-actions">
+      <span id="statusText" class="data-status">Ready</span>
+      <a href="/swagger" target="_blank">Swagger</a>
+      <a href="/Health" target="_blank">Health</a>
+    </div>
+  </header>
+
+  <section class="data-login-gate">
+    <div>
+      <h2>Login required</h2>
+      <p>Sign in to browse and edit the Core data context.</p>
+    </div>
+  </section>
+
+  <main class="data-workbench">
+    <section class="data-panel">
+      <nav id="entityTabs" class="data-section-tabs" aria-label="Data entity sets"></nav>
+      <section class="data-main-panel active">
+        <div class="data-toolbar">
+          <div>
+            <h2 id="entityTitle">Entity Sets</h2>
+            <span id="entityDescription">Select an entity set to manage rows.</span>
+          </div>
+          <button id="createRowButton" type="button">Create Row</button>
+        </div>
+
+        <div id="dataGrid" class="data-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="editorDialog" class="data-dialog">
+    <form method="dialog">
+      <header>
+        <h3 id="editorTitle">Edit</h3>
+        <button id="closeDialogButton" type="button">Close</button>
+      </header>
+      <div id="editorFields" class="data-editor-fields"></div>
+      <footer>
+        <button id="saveDialogButton" type="button">Save</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="/tools/api.js"></script>
+  <script src="/tools/data.js"></script>
+</body>
+</html>
