@@ -105,6 +105,7 @@ public partial class CoreDataContext : DbContext
     {
         ApplyCmsFilters(builder);
         ApplyDmsFilters(builder);
+        ApplyLoggingFilters(builder);
         ApplyMailFilters(builder);
         ApplyPlanningFilters(builder);
         ApplyWorkflowFilters(builder);
