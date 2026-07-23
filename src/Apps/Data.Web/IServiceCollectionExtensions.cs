@@ -2,7 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using Data.Web.Brokers;
+using Data.Web.Dependencies;
 using Data.Web.Services.Foundations;
 using Data.Web.Services.Orchestrations;
 using Data.Web.Services.Processings;
@@ -18,7 +18,7 @@ internal static class IServiceCollectionExtensions
 
         services.AddSwaggerGen(setupAction:options =>
         {
-            options.SwaggerDoc("Data", new()
+            options.SwaggerDoc(name:"Data", info:new()
             {
                 Title = "Data Tooling API",
                 Version = "v1"

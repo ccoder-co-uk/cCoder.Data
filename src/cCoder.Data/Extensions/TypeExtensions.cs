@@ -17,7 +17,7 @@ public static class TypeExtensions
         return table != null
             && type.GetProperties().Length == 4
             && type.GetProperties()
-                .Where(p => p.PropertyType.IsValueType || p.PropertyType == typeof(string))
+                .Where(predicate:p => p.PropertyType.IsValueType || p.PropertyType == typeof(string))
                 .All(predicate:p => p.GetCustomAttribute<ForeignKeyAttribute>() != null);
     }
 
@@ -29,7 +29,7 @@ public static class TypeExtensions
                 ?? type.GetProperty(name:"Id")
                 ?? type.GetProperty(name:type.Name + "Id")
                 ?? type.GetProperty(name:type.Name + "ID")
-                ?? type.GetProperties().FirstOrDefault(predicate:p => p.GetCustomAttributes(typeof(KeyAttribute), false).Any());
+                ?? type.GetProperties().FirstOrDefault(predicate:p => p.GetCustomAttributes(attributeType:typeof(KeyAttribute), inherit:false).Any());
 
             if (idProperty != null)
                 return idProperty;

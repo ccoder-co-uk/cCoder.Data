@@ -10,35 +10,45 @@ namespace cCoder.Data.Services.Foundations;
 internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
     : IMetadataTypeCacheService
 {
-    public void Set(string scope, IEnumerable<string> typeSetPayloads)
-    {
-        ValidateScope(scope:scope);
-        ValidateTypeSetPayloads(typeSetPayloads:typeSetPayloads);
+    public void Set(string scope, IEnumerable<string> typeSetPayloads) =>
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: [scope, typeSetPayloads]);
+            ValidateScope(scope: scope);
+            ValidateTypeSetPayloads(typeSetPayloads: typeSetPayloads);
 
-        broker.Set(scope:scope, typeSetPayloads:typeSetPayloads.ToArray());
-    }
+            broker.Set(
+                scope: scope,
+                typeSetPayloads: typeSetPayloads.ToArray());
+        });
 
-    public string[] Get(string scope)
-    {
-        ValidateScope(scope:scope);
+    public string[] Get(string scope) =>
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: scope);
+            ValidateScope(scope: scope);
 
-        return broker.Get(scope:scope);
-    }
+            return broker.Get(scope: scope);
+        });
 
     public string[] GetAll() =>
-        broker.GetAll();
+        TryCatch(operation: () => broker.GetAll());
 
-    public bool Contains(string scope)
-    {
-        ValidateScope(scope:scope);
+    public bool Contains(string scope) =>
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: scope);
+            ValidateScope(scope: scope);
 
-        return broker.Contains(scope:scope);
-    }
+            return broker.Contains(scope: scope);
+        });
 
-    public void Clear(string scope)
-    {
-        ValidateScope(scope:scope);
+    public void Clear(string scope) =>
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: scope);
+            ValidateScope(scope: scope);
 
-        broker.Clear(scope:scope);
-    }
+            broker.Clear(scope: scope);
+        });
 }

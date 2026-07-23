@@ -10,7 +10,7 @@ using Data.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Data.Web.Brokers;
+namespace Data.Web.Dependencies;
 
 internal sealed class DataSetBroker(CoreDataContext context)
     : IDataSetBroker
@@ -30,7 +30,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
         cancellationToken.ThrowIfCancellationRequested();
 
         DataEntitySet[] entitySets = GetEntitySets()
-            .Select(item => ToEntitySet(item.Name, item.EntityType))
+            .Select(selector:item => ToEntitySet(item.Name, item.EntityType))
             .OrderBy(keySelector:entitySet => entitySet.DisplayName)
             .ToArray();
 
@@ -54,7 +54,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
 
         Dictionary<string, object>[] rows = query
             .Cast<object>()
-            .Select(selector:entity => ToDictionary(entityType, entity))
+            .Select(selector:entity => ToDictionary(entityType:entityType, entity:entity))
             .ToArray();
 
         return Task.FromResult(result:new DataRows
@@ -122,7 +122,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
             .Select(property => (
                 property.Name,
                 context.Model.FindEntityType(property.PropertyType.GetGenericArguments()[0])))
-            .Where(item => item.Item2 is not null)
+            .Where(predicate:item => item.Item2 is not null)
             .Select(selector:item => (item.Name, item.Item2!))
             .ToArray();
 
@@ -130,9 +130,9 @@ internal sealed class DataSetBroker(CoreDataContext context)
     {
         (string Name, IEntityType EntityType)? match = GetEntitySets()
             .FirstOrDefault(predicate:item => string.Equals(
-                item.Name,
-                entitySet,
-                StringComparison.OrdinalIgnoreCase));
+a:                item.Name,
+b:                entitySet,
+comparisonType:                StringComparison.OrdinalIgnoreCase));
 
         return match?.EntityType is null
             ? throw new InvalidOperationException($"Unknown entity set '{entitySet}'.")
@@ -142,7 +142,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
     private IQueryable CreateQueryable(Type clrType)
     {
         object dbSet = SetMethod
-            .MakeGenericMethod(clrType)
+            .MakeGenericMethod(typeArguments:clrType)
             .Invoke(obj:context, parameters:null)!;
 
         return (IQueryable)dbSet;
@@ -162,7 +162,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
                 && method.GetParameters()[1].ParameterType == typeof(int));
 
         return (IQueryable)method
-            .MakeGenericMethod(clrType)
+            .MakeGenericMethod(typeArguments:clrType)
             .Invoke(obj:null, parameters:[query, value])!;
     }
 
@@ -177,7 +177,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
             throw new InvalidOperationException($"{entityType.ClrType.Name} does not define a primary key.");
 
         object[] keyValues = keyProperties
-            .Select(selector:property => GetPropertyValue(values, property))
+            .Select(selector:property => GetPropertyValue(values:values, property:property))
             .ToArray();
 
         object entity = await context.FindAsync(
@@ -202,7 +202,7 @@ cancellationToken:            cancellationToken);
             Properties = entityType.GetProperties()
                 .Where(property => !property.IsShadowProperty())
                 .OrderByDescending(property => property.IsPrimaryKey())
-                .ThenBy(property => property.Name)
+                .ThenBy(keySelector:property => property.Name)
                 .Select(selector:ToProperty)
                 .ToArray()
         };
@@ -228,7 +228,7 @@ cancellationToken:            cancellationToken);
         bool forCreate) =>
         entityType
                 .GetProperties()
-                .Where(property => !property.IsShadowProperty())
+                .Where(predicate:property => !property.IsShadowProperty())
                 .Where(predicate:property => forCreate
                     ? !property.IsPrimaryKey() || property.ValueGenerated == ValueGenerated.Never
                     : !property.IsPrimaryKey() && property.GetAfterSaveBehavior() != PropertySaveBehavior.Throw);
@@ -238,10 +238,10 @@ cancellationToken:            cancellationToken);
             .GetProperties()
             .Where(property => !property.IsShadowProperty())
             .OrderByDescending(property => property.IsPrimaryKey())
-            .ThenBy(property => property.Name)
+            .ThenBy(keySelector:property => property.Name)
             .ToDictionary(
 keySelector:                property => property.Name,
-elementSelector:                property => ToJsonFriendlyValue(property.PropertyInfo?.GetValue(entity)));
+elementSelector:                property => ToJsonFriendlyValue(value:property.PropertyInfo?.GetValue(entity)));
 
     private static object ToJsonFriendlyValue(object value) =>
         value switch
@@ -348,7 +348,7 @@ elementSelector:                property => ToJsonFriendlyValue(property.Propert
     }
 
     private static string SplitName(string name) =>
-        string.Concat(values:name.Select((character, index) =>
+        string.Concat(values:name.Select(selector:(character, index) =>
             index > 0 && char.IsUpper(character)
                 ? " " + character
                 : character.ToString()));

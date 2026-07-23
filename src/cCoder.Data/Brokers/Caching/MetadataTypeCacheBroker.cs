@@ -16,10 +16,14 @@ internal sealed class MetadataTypeCacheBroker : IMetadataTypeCacheBroker
         cache[scope] = typeSetPayloads;
 
     public string[] Get(string scope) =>
-        cache.TryGetValue(key:scope, value:out string[] typeSetPayloads) ? typeSetPayloads : [];
+        cache.GetValueOrDefault(
+            key: scope,
+            defaultValue: []);
 
     public string[] GetAll() =>
-        cache.Values.SelectMany(selector:value => value).ToArray();
+        cache.Values
+            .SelectMany(selector: value => value)
+            .ToArray();
 
     public bool Contains(string scope) =>
         cache.ContainsKey(key:scope);

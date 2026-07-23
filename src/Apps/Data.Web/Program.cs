@@ -29,11 +29,11 @@ public class Program
 
         builder.Services.AddSecurityApi(configAction:(services, securityConfig) =>
         {
-            securityConfig.AddMSSQLModelProvider(services, ssoConnection);
+            securityConfig.AddMSSQLModelProvider(services:services, connectionString:ssoConnection);
 
             securityConfig.UseAESHMMACPasswordEncryption(
-                services,
-                builder.Configuration.GetSection("Settings")["DecryptionKey"]);
+services:                services,
+decryptionKey:                builder.Configuration.GetSection("Settings")["DecryptionKey"]);
         });
 
         cCoder.Data.IServiceCollectionExtensions.AddCoreData(
@@ -52,18 +52,18 @@ connectionString:            coreConnection);
         app.UseSwagger()
             .UseSwaggerUI(setupAction:options =>
             {
-                options.SwaggerEndpoint("/swagger/Data/swagger.json", "Data Tooling API");
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Security API");
+                options.SwaggerEndpoint(url:"/swagger/Data/swagger.json", name:"Data Tooling API");
+                options.SwaggerEndpoint(url:"/swagger/v1/swagger.json", name:"Security API");
             });
 
-        app.MapGet(pattern:"/Health", handler:() => Results.Text("OK"));
-        app.MapGet(pattern:"/", handler:() => Results.Redirect("/tools/index.html"));
+        app.MapGet(pattern:"/Health", handler:() => Results.Text(content:"OK"));
+        app.MapGet(pattern:"/", handler:() => Results.Redirect(url:"/tools/index.html"));
         app.UseRouting();
         app.MapControllers();
 
         app.UseExceptionHandler(configure:errorApplication =>
         {
-            errorApplication.Run(HandleUnhandledException);
+            errorApplication.Run(handler:HandleUnhandledException);
         });
 
         app.Run();
@@ -84,6 +84,6 @@ connectionString:            coreConnection);
         log.LogError("{Message}\n{StackTrace}", exception.Message, exception.StackTrace);
 
         await context.Response.WriteAsync(
-text:            "{ \"error\": \"" + exception.Message.Replace("\"", "'") + "\" }");
+text:            "{ \"error\": \"" + exception.Message.Replace(oldValue:"\"", newValue:"'") + "\" }");
     }
 }

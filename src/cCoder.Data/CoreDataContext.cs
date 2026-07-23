@@ -47,7 +47,7 @@ public partial class CoreDataContext : DbContext
     }
 
     private IEnumerable<int> AdminOf => User.Roles?
-        .Where(r => r.Role.Privileges.Any(p => p == "app_admin"))
+        .Where(predicate:r => r.Role.Privileges.Any(p => p == "app_admin"))
         .Select(selector:r => r.Role.AppId) ?? Array.Empty<int>();
 
     private IEnumerable<Guid> CurrentUserRoleIds =>
@@ -66,14 +66,14 @@ public partial class CoreDataContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(connectionString:Config.ConnectionStrings["Core"]);
-        optionsBuilder.ConfigureWarnings(warningsConfigurationBuilderAction:warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        optionsBuilder.ConfigureWarnings(warningsConfigurationBuilderAction:warnings => warnings.Ignore(eventIds:RelationalEventId.PendingModelChangesWarning));
 
         if (Config.LogSQL)
         {
             optionsBuilder.LogTo(action:message =>
             {
-                if (message.Contains("Executing") || message.Contains("transaction"))
-                    System.Diagnostics.Debug.WriteLine(message);
+                if (message.Contains(value:"Executing") || message.Contains(value:"transaction"))
+                    System.Diagnostics.Debug.WriteLine(message:message);
             });
         }
     }
@@ -98,7 +98,7 @@ public partial class CoreDataContext : DbContext
         ConfigureWorkflowModel(builder:builder);
 
         IEnumerable<global::Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey> cascadingRelationships = builder.Model.GetEntityTypes()
-            .SelectMany(t => t.GetForeignKeys())
+            .SelectMany(selector:t => t.GetForeignKeys())
             .Where(predicate:fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
 
         foreach (global::Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey relationship in cascadingRelationships)
@@ -152,7 +152,7 @@ public partial class CoreDataContext : DbContext
         Guid[] roleIds = UserRoles
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .Where(userRole => userRole.UserId == loadedUser.Id)
+            .Where(predicate:userRole => userRole.UserId == loadedUser.Id)
             .Select(selector:userRole => userRole.RoleId)
             .Distinct()
             .ToArray();
@@ -160,7 +160,7 @@ public partial class CoreDataContext : DbContext
         Role[] roles = Roles
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .Where(predicate:role => roleIds.Contains(role.Id))
+            .Where(predicate:role => roleIds.Contains(value:role.Id))
             .ToArray();
 
         loadedUser.Roles = roles.Select(selector:r => new UserRole

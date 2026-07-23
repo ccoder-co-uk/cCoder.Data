@@ -4,7 +4,7 @@
 
 using System.Security;
 using System.Text.Json;
-using Data.Web.Brokers;
+using Data.Web.Dependencies;
 using Data.Web.Models;
 
 namespace Data.Web.Services.Foundations;
@@ -29,8 +29,8 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
 
         return dataSetBroker.SelectRowsAsync(
 entitySet:            entitySet,
-skip:            Math.Max(skip, 0),
-take:            Math.Clamp(take, 1, 500),
+skip:            Math.Max(val1:skip, val2:0),
+take:            Math.Clamp(value:take, min:1, max:500),
 cancellationToken:            cancellationToken);
     }
 

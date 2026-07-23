@@ -10,10 +10,14 @@ public class PackageItem
 
     public Guid PackageId { get; set; }
 
-    // used to determine T for data
+    /// <summary>
+    /// Gets or sets the type used to interpret the data payload.
+    /// </summary>
     public string Type { get; set; }
 
-    // JSON of the object being imported
+    /// <summary>
+    /// Gets or sets the JSON representation of the imported object.
+    /// </summary>
     public string Data { get; set; }
 
     public virtual Package Package { get; set; }

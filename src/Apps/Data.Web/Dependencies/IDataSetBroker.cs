@@ -5,7 +5,7 @@
 using System.Text.Json;
 using Data.Web.Models;
 
-namespace Data.Web.Brokers;
+namespace Data.Web.Dependencies;
 
 public interface IDataSetBroker
 {

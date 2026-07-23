@@ -29,14 +29,14 @@ public class Submission
     public dynamic Data
     {
         get => JsonConvert.DeserializeObject<dynamic>(
-value:            DataJson,
-settings:            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+            value: DataJson,
+            settings: cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
         set => DataJson = value switch
         {
             null => "null",
             JsonElement jsonElement => jsonElement.GetRawText(),
             string json => json,
-            _ => JsonConvert.SerializeObject(value)
+            _ => JsonConvert.SerializeObject(value: value)
         };
     }
 

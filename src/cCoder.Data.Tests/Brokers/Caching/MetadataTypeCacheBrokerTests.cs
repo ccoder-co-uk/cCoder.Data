@@ -24,7 +24,7 @@ public class MetadataTypeCacheBrokerTests
         broker.Set(scope:"cms", typeSetPayloads:typeSetPayloads);
 
         broker.Contains(scope:"cms").Should().BeTrue();
-        broker.Get("cms").Should().BeEquivalentTo(expectation:typeSetPayloads, config:options => options.WithStrictOrdering());
+        broker.Get(scope:"cms").Should().BeEquivalentTo(expectation:typeSetPayloads, config:options => options.WithStrictOrdering());
         broker.GetAll().Should().BeEquivalentTo(expectation:typeSetPayloads, config:options => options.WithStrictOrdering());
 
         broker.Clear(scope:"cms");

@@ -1,0 +1,3111 @@
+{
+  "Classes": [
+    {
+      "Name": "cCoder.Core.Migrations.AddAppIdToLogEntries",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddAuditFields",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddBackgroundJobs",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddBaseEntityProperties",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddCommonObjectTable",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddCommonObjectTableCulture",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddCommonObjectTableKey",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddDefaultNameValue",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddDeletedOnToFilesTable",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddDeletedOnToFoldersTable",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddDescriptionToRole",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddDurationInTicks",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddExecuteAsWorkflowEvent",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddFileSize",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddFileSizeToContents",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddFlowInstances",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddFromAddressToMailServers",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddJoinEntityDBSets",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddKeysToScripts",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddMailServers",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddMorePrivsToUsersAndGuests",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddPermissionsComputeFunctions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddReceivedMail",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddRelatedSenderToQueuedEmails",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddRemovedAdminPriv",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddRequiredAttributes",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddScriptExecutionPriv",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddSystemUser",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddTenantIds",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.AddUserInfoToBPAndWFTypes",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.ChangeScheduleTypeName",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.CoreDataContextModelSnapshot",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.DestroyFlowInstances",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.DropProcessesAndBackgroundJobs",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.ExcludedEventsInScheduler",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.Initial",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.LinkSubmissionsToApps",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.MakeExecuteAsForeignKey",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.MakeInstanceEndTimesNullable",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.MovePrivsIntoRam",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.NewReportingFields",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RemoveOldAdminPrivs",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RemoveProcessFromEvents",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RemoveRequired",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RemoveScriptFromPages",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RenameComponentCategories",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.RetireGenericAuditing",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.ScheduledTasksReWork",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.SimplifyFormsAndSubmissions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.UpdateBPtoWFKey",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.UpdateMailObjects",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.UpdatePrivData",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.VariousMinorFixes",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Core.Migrations.VariousNewFields",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker",
+      "StandardElementType": "Broker",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Clear",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "Contains",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "Get",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "GetAll",
+          "Inputs": [],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "Set",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.String[]"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Config",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "ConnectionStrings",
+          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
+        },
+        {
+          "Name": "DebugInfo",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "LogSQL",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "Services",
+          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
+        },
+        {
+          "Name": "Settings",
+          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.CoreAuthInfo",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "SSOUserId",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.CoreContextFactory",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "CreateCoreContext",
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.CoreDataContext"
+        },
+        {
+          "Name": "CreateDbContext",
+          "Inputs": [
+            {
+              "Name": "args",
+              "Type": "System.String[]"
+            }
+          ],
+          "ReturnType": "cCoder.Data.CoreDataContext"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.CoreDataContext",
+      "StandardElementType": "Dependency",
+      "Properties": [
+        {
+          "Name": "AppCultures",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.AppCulture\u003E"
+        },
+        {
+          "Name": "Apps",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.App\u003E"
+        },
+        {
+          "Name": "AuthInfo",
+          "Type": "cCoder.Data.ICoreAuthInfo"
+        },
+        {
+          "Name": "Calendars",
+          "Type": "DbSet\u003CcCoder.Data.Models.Planning.Calendar\u003E"
+        },
+        {
+          "Name": "CommonObjects",
+          "Type": "DbSet\u003CcCoder.Data.Models.CommonObject\u003E"
+        },
+        {
+          "Name": "Components",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Component\u003E"
+        },
+        {
+          "Name": "Contents",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Content\u003E"
+        },
+        {
+          "Name": "Cultures",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Culture\u003E"
+        },
+        {
+          "Name": "EventId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Events",
+          "Type": "DbSet\u003CcCoder.Data.Models.Planning.CalendarEvent\u003E"
+        },
+        {
+          "Name": "FileContents",
+          "Type": "DbSet\u003CcCoder.Data.Models.DMS.FileContent\u003E"
+        },
+        {
+          "Name": "Files",
+          "Type": "DbSet\u003CcCoder.Data.Models.DMS.File\u003E"
+        },
+        {
+          "Name": "FlowDefinitions",
+          "Type": "DbSet\u003CcCoder.Data.Models.Workflow.FlowDefinition\u003E"
+        },
+        {
+          "Name": "FlowInstances",
+          "Type": "DbSet\u003CcCoder.Data.Models.Workflow.FlowInstanceData\u003E"
+        },
+        {
+          "Name": "FolderRoles",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.FolderRole\u003E"
+        },
+        {
+          "Name": "Folders",
+          "Type": "DbSet\u003CcCoder.Data.Models.DMS.Folder\u003E"
+        },
+        {
+          "Name": "Layouts",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Layout\u003E"
+        },
+        {
+          "Name": "LogData",
+          "Type": "DbSet\u003CcCoder.Data.Models.Logging.LogDataItem\u003E"
+        },
+        {
+          "Name": "Logs",
+          "Type": "DbSet\u003CcCoder.Data.Models.Logging.LogEntry\u003E"
+        },
+        {
+          "Name": "MailReceivers",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.MailReceiver\u003E"
+        },
+        {
+          "Name": "MailSenders",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.MailSender\u003E"
+        },
+        {
+          "Name": "MailServers",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.MailServer\u003E"
+        },
+        {
+          "Name": "PackageItems",
+          "Type": "DbSet\u003CcCoder.Data.Models.Packaging.PackageItem\u003E"
+        },
+        {
+          "Name": "Packages",
+          "Type": "DbSet\u003CcCoder.Data.Models.Packaging.Package\u003E"
+        },
+        {
+          "Name": "PageInfo",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.PageInfo\u003E"
+        },
+        {
+          "Name": "PageRoles",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.PageRole\u003E"
+        },
+        {
+          "Name": "Pages",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Page\u003E"
+        },
+        {
+          "Name": "Privileges",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.Privilege\u003E"
+        },
+        {
+          "Name": "QueuedMail",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.QueuedEmail\u003E"
+        },
+        {
+          "Name": "ReceivedMail",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.ReceivedEmail\u003E"
+        },
+        {
+          "Name": "Resources",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Resource\u003E"
+        },
+        {
+          "Name": "Roles",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.Role\u003E"
+        },
+        {
+          "Name": "ScheduledTasks",
+          "Type": "DbSet\u003CcCoder.Data.Models.Planning.ScheduledTask\u003E"
+        },
+        {
+          "Name": "Scripts",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Script\u003E"
+        },
+        {
+          "Name": "SendFailures",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.EmailSendFailure\u003E"
+        },
+        {
+          "Name": "SentMail",
+          "Type": "DbSet\u003CcCoder.Data.Models.Mail.SentEmail\u003E"
+        },
+        {
+          "Name": "Submissions",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Submission\u003E"
+        },
+        {
+          "Name": "Templates",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.Template\u003E"
+        },
+        {
+          "Name": "User",
+          "Type": "cCoder.Data.Models.Security.User"
+        },
+        {
+          "Name": "UserRoles",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.UserRole\u003E"
+        },
+        {
+          "Name": "Users",
+          "Type": "DbSet\u003CcCoder.Data.Models.Security.User\u003E"
+        },
+        {
+          "Name": "WorflowEvents",
+          "Type": "DbSet\u003CcCoder.Data.Models.Workflow.WorkflowEvent\u003E"
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "GetAllPrivileges",
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.Security.Privilege[]"
+        },
+        {
+          "Name": "Migrate",
+          "Inputs": [],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "SetAuth",
+          "Inputs": [
+            {
+              "Name": "auth",
+              "Type": "cCoder.Data.ICoreAuthInfo"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Cultures",
+      "StandardElementType": "Dependency",
+      "Properties": [
+        {
+          "Name": "Known",
+          "Type": "cCoder.Data.Models.CMS.Culture[]"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Exposures.MetadataTypeCache",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Clear",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "Contains",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "Get",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "GetAll",
+          "Inputs": [],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "Set",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Extensions.CompositePropertyInfo",
+      "StandardElementType": "Dependency",
+      "Properties": [
+        {
+          "Name": "Attributes",
+          "Type": "System.Reflection.PropertyAttributes"
+        },
+        {
+          "Name": "CanRead",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "CanWrite",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "DeclaringType",
+          "Type": "System.Type"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "PropertyType",
+          "Type": "System.Type"
+        },
+        {
+          "Name": "ReflectedType",
+          "Type": "System.Type"
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "GetAccessors",
+          "Inputs": [
+            {
+              "Name": "nonPublic",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Reflection.MethodInfo[]"
+        },
+        {
+          "Name": "GetCustomAttributes",
+          "Inputs": [
+            {
+              "Name": "inherit",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Object[]"
+        },
+        {
+          "Name": "GetCustomAttributes",
+          "Inputs": [
+            {
+              "Name": "attributeType",
+              "Type": "System.Type"
+            },
+            {
+              "Name": "inherit",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Object[]"
+        },
+        {
+          "Name": "GetGetMethod",
+          "Inputs": [
+            {
+              "Name": "nonPublic",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Reflection.MethodInfo"
+        },
+        {
+          "Name": "GetIndexParameters",
+          "Inputs": [],
+          "ReturnType": "System.Reflection.ParameterInfo[]"
+        },
+        {
+          "Name": "GetSetMethod",
+          "Inputs": [
+            {
+              "Name": "nonPublic",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Reflection.MethodInfo"
+        },
+        {
+          "Name": "GetValue",
+          "Inputs": [
+            {
+              "Name": "obj",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "invokeAttr",
+              "Type": "System.Reflection.BindingFlags"
+            },
+            {
+              "Name": "binder",
+              "Type": "System.Reflection.Binder"
+            },
+            {
+              "Name": "index",
+              "Type": "System.Object[]"
+            },
+            {
+              "Name": "culture",
+              "Type": "System.Globalization.CultureInfo"
+            }
+          ],
+          "ReturnType": "System.Object"
+        },
+        {
+          "Name": "IsDefined",
+          "Inputs": [
+            {
+              "Name": "attributeType",
+              "Type": "System.Type"
+            },
+            {
+              "Name": "inherit",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "SetValue",
+          "Inputs": [
+            {
+              "Name": "obj",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "invokeAttr",
+              "Type": "System.Reflection.BindingFlags"
+            },
+            {
+              "Name": "binder",
+              "Type": "System.Reflection.Binder"
+            },
+            {
+              "Name": "index",
+              "Type": "System.Object[]"
+            },
+            {
+              "Name": "culture",
+              "Type": "System.Globalization.CultureInfo"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Extensions.IEnumerableExtensions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "ForEach",
+          "Inputs": [
+            {
+              "Name": "source",
+              "Type": "System.Collections.Generic.IEnumerable\u003CT\u003E"
+            },
+            {
+              "Name": "action",
+              "Type": "System.Action\u003CT, System.Int32\u003E"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "ForEach",
+          "Inputs": [
+            {
+              "Name": "source",
+              "Type": "System.Collections.Generic.IEnumerable\u003CT\u003E"
+            },
+            {
+              "Name": "action",
+              "Type": "System.Action\u003CT\u003E"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Extensions.ObjectExtensions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetJSONSettings",
+          "Inputs": [],
+          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings"
+        },
+        {
+          "Name": "GetODataJsonSettings",
+          "Inputs": [],
+          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings"
+        },
+        {
+          "Name": "ToJson",
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String"
+        },
+        {
+          "Name": "ToJson",
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "depth",
+              "Type": "System.Int32"
+            }
+          ],
+          "ReturnType": "System.String"
+        },
+        {
+          "Name": "ToJson",
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "settings",
+              "Type": "Newtonsoft.Json.JsonSerializerSettings"
+            }
+          ],
+          "ReturnType": "System.String"
+        },
+        {
+          "Name": "ToJsonForOdata",
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Extensions.TypeExtensions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetIdProperty",
+          "Inputs": [
+            {
+              "Name": "type",
+              "Type": "System.Type"
+            }
+          ],
+          "ReturnType": "System.Reflection.PropertyInfo"
+        },
+        {
+          "Name": "IsJoinType",
+          "Inputs": [
+            {
+              "Name": "type",
+              "Type": "System.Type"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.IServiceCollectionExtensions",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "AddCoreAuthInfo",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "AddCoreData",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            },
+            {
+              "Name": "connectionString",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "AddCoreDataAccess",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            },
+            {
+              "Name": "connectionString",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Models.ApiInfo",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Kind",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "SwaggerDef",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Url",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.App",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Calendars",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Planning.Calendar\u003E"
+        },
+        {
+          "Name": "Components",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Component\u003E"
+        },
+        {
+          "Name": "Config",
+          "Type": "dynamic"
+        },
+        {
+          "Name": "ConfigJson",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Cultures",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.AppCulture\u003E"
+        },
+        {
+          "Name": "DefaultCultureId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DefaultTheme",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Domain",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Flows",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Workflow.FlowDefinition\u003E"
+        },
+        {
+          "Name": "Folders",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.DMS.Folder\u003E"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Layouts",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Layout\u003E"
+        },
+        {
+          "Name": "MailQueue",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.QueuedEmail\u003E"
+        },
+        {
+          "Name": "MailReceivers",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.MailReceiver\u003E"
+        },
+        {
+          "Name": "MailSenders",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.MailSender\u003E"
+        },
+        {
+          "Name": "MailServers",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.MailServer\u003E"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Pages",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Page\u003E"
+        },
+        {
+          "Name": "ReceivedMail",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.ReceivedEmail\u003E"
+        },
+        {
+          "Name": "Resources",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Resource\u003E"
+        },
+        {
+          "Name": "Roles",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.Role\u003E"
+        },
+        {
+          "Name": "Scripts",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Script\u003E"
+        },
+        {
+          "Name": "SentMail",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.SentEmail\u003E"
+        },
+        {
+          "Name": "Tasks",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Planning.ScheduledTask\u003E"
+        },
+        {
+          "Name": "Templates",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Template\u003E"
+        },
+        {
+          "Name": "TenantId",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.AppCulture",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Culture",
+          "Type": "cCoder.Data.Models.CMS.Culture"
+        },
+        {
+          "Name": "CultureId",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Component",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Content",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Key",
+          "Type": "System.String"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ResourceKey",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Script",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Content",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Culture",
+          "Type": "cCoder.Data.Models.CMS.Culture"
+        },
+        {
+          "Name": "CultureId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Html",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Page",
+          "Type": "cCoder.Data.Models.CMS.Page"
+        },
+        {
+          "Name": "PageId",
+          "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Culture",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Apps",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.AppCulture\u003E"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.String"
+        },
+        {
+          "Name": "MetaItems",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.MetaItem\u003E"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "PageContents",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Content\u003E"
+        },
+        {
+          "Name": "PageInfos",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.PageInfo\u003E"
+        },
+        {
+          "Name": "Users",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.User\u003E"
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "Equals",
+          "Inputs": [
+            {
+              "Name": "obj",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "GetHashCode",
+          "Inputs": [],
+          "ReturnType": "System.Int32"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Layout",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "HeaderHtml",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Html",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Script",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.MetaItem",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Content",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Context",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Culture",
+          "Type": "cCoder.Data.Models.CMS.Culture"
+        },
+        {
+          "Name": "CultureId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Operation",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Page",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Contents",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Content\u003E"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Layout",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Order",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "PageInfo",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.PageInfo\u003E"
+        },
+        {
+          "Name": "Pages",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.CMS.Page\u003E"
+        },
+        {
+          "Name": "Parent",
+          "Type": "cCoder.Data.Models.CMS.Page"
+        },
+        {
+          "Name": "ParentId",
+          "Type": "System.Int32?"
+        },
+        {
+          "Name": "Path",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ResourceKey",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Roles",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.PageRole\u003E"
+        },
+        {
+          "Name": "ShowOnMenus",
+          "Type": "System.Boolean"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.PageInfo",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Culture",
+          "Type": "cCoder.Data.Models.CMS.Culture"
+        },
+        {
+          "Name": "CultureId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Keywords",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Page",
+          "Type": "cCoder.Data.Models.CMS.Page"
+        },
+        {
+          "Name": "PageId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Title",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Resource",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Culture",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Key",
+          "Type": "System.String"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ShortDisplayName",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Script",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Content",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Key",
+          "Type": "System.String"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Submission",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Data",
+          "Type": "dynamic"
+        },
+        {
+          "Name": "DataJson",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "LastUpdatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "SourceComponent",
+          "Type": "System.String"
+        },
+        {
+          "Name": "State",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.Template",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "RawString",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ResourceKey",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CommonObject",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Culture",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Json",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Key",
+          "Type": "System.String"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Version",
+          "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.DMS.File",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Contents",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.DMS.FileContent\u003E"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "DeletedOn",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Folder",
+          "Type": "cCoder.Data.Models.DMS.Folder"
+        },
+        {
+          "Name": "FolderId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "MimeType",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Path",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Size",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.DMS.FileContent",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "File",
+          "Type": "cCoder.Data.Models.DMS.File"
+        },
+        {
+          "Name": "FileId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "RawData",
+          "Type": "System.Byte[]"
+        },
+        {
+          "Name": "Size",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Version",
+          "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.DMS.Folder",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "DeletedOn",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "Files",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.DMS.File\u003E"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Parent",
+          "Type": "cCoder.Data.Models.DMS.Folder"
+        },
+        {
+          "Name": "ParentId",
+          "Type": "System.Guid?"
+        },
+        {
+          "Name": "Path",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Roles",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.FolderRole\u003E"
+        },
+        {
+          "Name": "SubFolders",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.DMS.Folder\u003E"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Exceptions.ServiceException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Exceptions.ServiceValidationException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Logging.LogDataItem",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "LogEntry",
+          "Type": "cCoder.Data.Models.Logging.LogEntry"
+        },
+        {
+          "Name": "LogEntryId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Value",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Logging.LogEntry",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "AppName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Data",
+          "Type": "System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.Logging.LogDataItem\u003E"
+        },
+        {
+          "Name": "Date",
+          "Type": "System.DateTime"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Level",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Message",
+          "Type": "System.String"
+        },
+        {
+          "Name": "TypeName",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.Email",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "CC",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Content",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "IsBodyHtml",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "SentBy",
+          "Type": "cCoder.Data.Models.Security.User"
+        },
+        {
+          "Name": "SentByUserId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Subject",
+          "Type": "System.String"
+        },
+        {
+          "Name": "To",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.EmailSendFailure",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "AttemptedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Email",
+          "Type": "cCoder.Data.Models.Mail.QueuedEmail"
+        },
+        {
+          "Name": "EmailId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "FailureReason",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.MailReceiver",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "EnableSSL",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "Host",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "IsEnabled",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "LastReceivedOn",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Password",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Port",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "ProviderName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ReceivedEmails",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.ReceivedEmail\u003E"
+        },
+        {
+          "Name": "User",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.MailSender",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "EnableSSL",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "FromEmail",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Host",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Password",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Port",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "ProviderName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "QueuedEmails",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.QueuedEmail\u003E"
+        },
+        {
+          "Name": "SentEmails",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.SentEmail\u003E"
+        },
+        {
+          "Name": "User",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.MailServer",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "EnableSSL",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "FromEmail",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Host",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Password",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Port",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "User",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.QueuedEmail",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "FailedSends",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Mail.EmailSendFailure\u003E"
+        },
+        {
+          "Name": "MailSender",
+          "Type": "cCoder.Data.Models.Mail.MailSender"
+        },
+        {
+          "Name": "MailSenderId",
+          "Type": "System.Guid?"
+        },
+        {
+          "Name": "MailServerName",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.ReceivedEmail",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "From",
+          "Type": "System.String"
+        },
+        {
+          "Name": "MailReceiver",
+          "Type": "cCoder.Data.Models.Mail.MailReceiver"
+        },
+        {
+          "Name": "MailReceiverId",
+          "Type": "System.Guid?"
+        },
+        {
+          "Name": "MessageId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ReceivedOn",
+          "Type": "System.DateTimeOffset"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Mail.SentEmail",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "From",
+          "Type": "System.String"
+        },
+        {
+          "Name": "MailSender",
+          "Type": "cCoder.Data.Models.Mail.MailSender"
+        },
+        {
+          "Name": "MailSenderId",
+          "Type": "System.Guid?"
+        },
+        {
+          "Name": "SentOn",
+          "Type": "System.DateTimeOffset"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Packaging.Package",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Category",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Items",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Packaging.PackageItem\u003E"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "SourceApi",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Packaging.PackageItem",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Package",
+          "Type": "cCoder.Data.Models.Packaging.Package"
+        },
+        {
+          "Name": "PackageId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Planning.Calendar",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Events",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Planning.CalendarEvent\u003E"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Planning.CalendarEvent",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Calendar",
+          "Type": "cCoder.Data.Models.Planning.Calendar"
+        },
+        {
+          "Name": "CalendarId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DurationInTicks",
+          "Type": "System.Int64"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Start",
+          "Type": "System.DateTimeOffset"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Planning.ScheduledTask",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Created",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ExcludedEventsCalendar",
+          "Type": "cCoder.Data.Models.Planning.Calendar"
+        },
+        {
+          "Name": "ExcludedEventsCalendarId",
+          "Type": "System.Int32?"
+        },
+        {
+          "Name": "ExcludedEventsName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ExecuteAs",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ExecuteAsUser",
+          "Type": "cCoder.Data.Models.Security.User"
+        },
+        {
+          "Name": "ExecutionArgs",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Flow",
+          "Type": "cCoder.Data.Models.Workflow.FlowDefinition"
+        },
+        {
+          "Name": "FlowId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "LastExecuted",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "NextExecution",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "Schedule",
+          "Type": "System.TimeSpan"
+        },
+        {
+          "Name": "ScheduleInTicks",
+          "Type": "System.Int64"
+        },
+        {
+          "Name": "UpdatedBy",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.AuthorizationExtensions",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Allows",
+          "Inputs": [
+            {
+              "Name": "role",
+              "Type": "cCoder.Data.Models.Security.Role"
+            },
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "privilege",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "Can",
+          "Inputs": [
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "appId",
+              "Type": "System.Int32?"
+            },
+            {
+              "Name": "operation",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "IsAdminOfApp",
+          "Inputs": [
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "appId",
+              "Type": "System.Int32?"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "IsAppAdmin",
+          "Inputs": [
+            {
+              "Name": "app",
+              "Type": "cCoder.Data.Models.CMS.App"
+            },
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.FolderRole",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Folder",
+          "Type": "cCoder.Data.Models.DMS.Folder"
+        },
+        {
+          "Name": "FolderId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Role",
+          "Type": "cCoder.Data.Models.Security.Role"
+        },
+        {
+          "Name": "RoleId",
+          "Type": "System.Guid"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.PageRole",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Page",
+          "Type": "cCoder.Data.Models.CMS.Page"
+        },
+        {
+          "Name": "PageId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Role",
+          "Type": "cCoder.Data.Models.Security.Role"
+        },
+        {
+          "Name": "RoleId",
+          "Type": "System.Guid"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.Privilege",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Operation",
+          "Type": "System.String"
+        },
+        {
+          "Name": "PortalAdminsOnly",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.Role",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Folders",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.FolderRole\u003E"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Pages",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.PageRole\u003E"
+        },
+        {
+          "Name": "Privileges",
+          "Type": "System.Collections.Generic.ICollection\u003CSystem.String\u003E"
+        },
+        {
+          "Name": "Privs",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Users",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.UserRole\u003E"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.User",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "DefaultCulture",
+          "Type": "cCoder.Data.Models.CMS.Culture"
+        },
+        {
+          "Name": "DefaultCultureId",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Email",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.String"
+        },
+        {
+          "Name": "IsActive",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "Roles",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.UserRole\u003E"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.UserRole",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Role",
+          "Type": "cCoder.Data.Models.Security.Role"
+        },
+        {
+          "Name": "RoleId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "User",
+          "Type": "cCoder.Data.Models.Security.User"
+        },
+        {
+          "Name": "UserId",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Workflow.FlowDefinition",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "App",
+          "Type": "cCoder.Data.Models.CMS.App"
+        },
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "ConfigJson",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "DefinitionJson",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "InstanceReportingComponentName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Instances",
+          "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Workflow.FlowInstanceData\u003E"
+        },
+        {
+          "Name": "LastUpdated",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "LastUpdatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ReportingComponentName",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Workflow.FlowInstanceData",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Caller",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ContextJson",
+          "Type": "System.Byte[]"
+        },
+        {
+          "Name": "ContextString",
+          "Type": "System.String"
+        },
+        {
+          "Name": "End",
+          "Type": "System.DateTimeOffset?"
+        },
+        {
+          "Name": "FlowDefinition",
+          "Type": "cCoder.Data.Models.Workflow.FlowDefinition"
+        },
+        {
+          "Name": "FlowDefinitionId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ReportingComponentName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Start",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "State",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Workflow.WorkflowEvent",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "CreatedBy",
+          "Type": "System.String"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "EventContext",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ExecuteAs",
+          "Type": "System.String"
+        },
+        {
+          "Name": "ExecuteAsUser",
+          "Type": "cCoder.Data.Models.Security.User"
+        },
+        {
+          "Name": "Flow",
+          "Type": "cCoder.Data.Models.Workflow.FlowDefinition"
+        },
+        {
+          "Name": "FlowId",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
+      "StandardElementType": "FoundationService",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Clear",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "Contains",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "Get",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "GetAll",
+          "Inputs": [],
+          "ReturnType": "System.String[]"
+        },
+        {
+          "Name": "Set",
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Processings.ServiceCollectionProcessingService",
+      "StandardElementType": "ProcessingService",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "AddCoreAuthInfo",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "AddCoreData",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            },
+            {
+              "Name": "connectionString",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        },
+        {
+          "Name": "AddCoreDataAccess",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
+            },
+            {
+              "Name": "connectionString",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    }
+  ],
+  "Links": [
+    {
+      "FromType": "cCoder.Data.CoreDataContext",
+      "ToType": "cCoder.Data.Config"
+    },
+    {
+      "FromType": "cCoder.Data.CoreDataContext",
+      "ToType": "cCoder.Data.CoreAuthInfo"
+    },
+    {
+      "FromType": "cCoder.Data.Exposures.MetadataTypeCache",
+      "ToType": "cCoder.Data.Services.Foundations.MetadataTypeCacheService"
+    },
+    {
+      "FromType": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
+      "ToType": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker"
+    }
+  ],
+  "AnalysisItems": []
+}

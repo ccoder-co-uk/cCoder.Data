@@ -20,7 +20,7 @@ public class MetadataTypeCacheServiceTests
     {
         var service = CreateService();
 
-        Action act = () => service.Set(scope:scope, typeSetPayloads:[CreateTypeSetPayload("App")]);
+        Action act = () => service.Set(scope:scope, typeSetPayloads:[CreateTypeSetPayload(name:"App")]);
 
         act.Should().Throw<ValidationException>().WithMessage(expectedWildcardPattern:"Scope is required.");
     }
@@ -80,7 +80,7 @@ public class MetadataTypeCacheServiceTests
     public void ShouldContainScopeWhenScopeIsCached()
     {
         var service = CreateService();
-        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload("App")]);
+        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload(name:"App")]);
 
         bool actual = service.Contains(scope:"cms");
 
@@ -91,7 +91,7 @@ public class MetadataTypeCacheServiceTests
     public void ShouldClearScopeWhenScopeIsCached()
     {
         var service = CreateService();
-        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload("App")]);
+        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload(name:"App")]);
 
         service.Clear(scope:"cms");
 

@@ -11,7 +11,7 @@ public static class AuthorizationExtensions
     public static bool IsAppAdmin(this App app, User user) =>
         user?.Roles?.Any(predicate:role =>
             role.Role?.AppId == app?.Id
-            && role.Role.Allows(user, "app_admin")) ?? false;
+            && role.Role.Allows(user:user, privilege:"app_admin")) ?? false;
 
     public static bool Allows(this Role role, User user, string privilege)
     {
@@ -26,7 +26,7 @@ public static class AuthorizationExtensions
         appId.HasValue
         && (user?.Roles?.Any(predicate:role =>
             role.Role?.AppId == appId.Value
-            && role.Role.Allows(user, "app_admin")) ?? false);
+            && role.Role.Allows(user:user, privilege:"app_admin")) ?? false);
 
     public static bool Can(this User user, int? appId, string operation)
     {
@@ -36,6 +36,6 @@ public static class AuthorizationExtensions
             && ((appId.HasValue && user.IsAdminOfApp(appId:appId.Value))
                 || (user.Roles?.Any(predicate:role =>
                     (!appId.HasValue || role.Role?.AppId == appId.Value)
-                    && (role.Role?.Privileges?.Contains(normalizedOperation) ?? false)) ?? false));
+                    && (role.Role?.Privileges?.Contains(item:normalizedOperation) ?? false)) ?? false));
     }
 }

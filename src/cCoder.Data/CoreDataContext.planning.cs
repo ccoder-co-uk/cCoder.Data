@@ -18,36 +18,36 @@ public partial class CoreDataContext
     {
         _ = builder.Entity<Calendar>(buildAction:entity =>
         {
-            entity.ToTable("Calendars", "Planning");
-            entity.Property(i => i.Id).ValueGeneratedOnAdd();
+            entity.ToTable(name:"Calendars", schema:"Planning");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedOnAdd();
         });
 
         _ = builder.Entity<CalendarEvent>(buildAction:entity =>
         {
-            entity.ToTable("Events", "Planning");
-            entity.Property(i => i.Id).ValueGeneratedOnAdd();
-            entity.HasOne(i => i.Calendar).WithMany(i => i.Events).HasForeignKey(i => i.CalendarId);
+            entity.ToTable(name:"Events", schema:"Planning");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedOnAdd();
+            entity.HasOne(i => i.Calendar).WithMany(i => i.Events).HasForeignKey(foreignKeyExpression:i => i.CalendarId);
         });
 
         _ = builder.Entity<ScheduledTask>(buildAction:entity =>
         {
-            entity.ToTable("ScheduledTasks", "Planning");
-            entity.Property(i => i.Id).ValueGeneratedOnAdd();
-            entity.Property(i => i.Name).IsRequired();
-            entity.Ignore(i => i.Schedule);
-            entity.HasOne(i => i.ExecuteAsUser).WithMany().HasForeignKey(i => i.ExecuteAs);
+            entity.ToTable(name:"ScheduledTasks", schema:"Planning");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(propertyExpression:i => i.Name).IsRequired();
+            entity.Ignore(propertyExpression:i => i.Schedule);
+            entity.HasOne(i => i.ExecuteAsUser).WithMany().HasForeignKey(foreignKeyExpression:i => i.ExecuteAs);
         });
     }
 
     private void ApplyPlanningFilters(ModelBuilder builder)
     {
         _ = builder.Entity<ScheduledTask>().HasQueryFilter(filter:t =>
-            AdminOf.Contains(t.AppId)
-            || t.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("scheduledtask_read")));
+            AdminOf.Contains(value:t.AppId)
+            || t.App.Roles.Any(predicate:r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("scheduledtask_read")));
 
         _ = builder.Entity<Calendar>().HasQueryFilter(filter:c =>
-            AdminOf.Contains(c.AppId)
-            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
+            AdminOf.Contains(value:c.AppId)
+            || c.App.Roles.Any(predicate:r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
 
         _ = builder.Entity<CalendarEvent>().HasQueryFilter(filter:e => e.Calendar != null);
     }
