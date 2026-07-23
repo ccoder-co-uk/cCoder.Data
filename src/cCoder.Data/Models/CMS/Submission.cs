@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Text.Json;
 using Newtonsoft.Json;
 
@@ -25,8 +29,8 @@ public class Submission
     public dynamic Data
     {
         get => JsonConvert.DeserializeObject<dynamic>(
-            DataJson,
-            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+value:            DataJson,
+settings:            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
         set => DataJson = value switch
         {
             null => "null",
@@ -38,9 +42,3 @@ public class Submission
 
     public virtual App App { get; set; }
 }
-
-
-
-
-
-

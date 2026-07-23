@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -5,14 +9,16 @@ namespace cCoder.Core.Migrations;
 
 public partial class MakeInstanceEndTimesNullable : Migration
 {
-    protected override void Up(MigrationBuilder migrationBuilder) => migrationBuilder.AlterColumn<DateTimeOffset>(
+    protected override void Up(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.AlterColumn<DateTimeOffset>(
             name: "End",
             schema: "Workflow",
             table: "FlowInstances",
             nullable: true,
             oldClrType: typeof(DateTimeOffset));
 
-    protected override void Down(MigrationBuilder migrationBuilder) => migrationBuilder.AlterColumn<DateTimeOffset>(
+    protected override void Down(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.AlterColumn<DateTimeOffset>(
             name: "End",
             schema: "Workflow",
             table: "FlowInstances",
@@ -20,5 +26,3 @@ public partial class MakeInstanceEndTimesNullable : Migration
             oldClrType: typeof(DateTimeOffset),
             oldNullable: true);
 }
-
-

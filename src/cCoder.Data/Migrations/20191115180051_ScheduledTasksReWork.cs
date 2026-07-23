@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -324,14 +328,15 @@ public partial class ScheduledTasksReWork : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Key = table.Column<string>(nullable: false),
                 ScheduledTaskId = table.Column<int>(nullable: false),
                 Value = table.Column<string>(nullable: false)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_ScheduledTaskDataItems", x => x.Id);
+                table.PrimaryKey(name:"PK_ScheduledTaskDataItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_ScheduledTaskDataItems_ScheduledTasks_ScheduledTaskId",
                     column: x => x.ScheduledTaskId,
@@ -347,13 +352,14 @@ public partial class ScheduledTasksReWork : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 CalendarId = table.Column<int>(nullable: false),
                 EventName = table.Column<string>(nullable: true)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Schedules", x => x.Id);
+                table.PrimaryKey(name:"PK_Schedules", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Schedules_Calendars_CalendarId",
                     column: x => x.CalendarId,
@@ -410,6 +416,3 @@ public partial class ScheduledTasksReWork : Migration
             onDelete: ReferentialAction.Restrict);
     }
 }
-
-
-

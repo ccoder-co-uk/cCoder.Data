@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 
@@ -19,8 +23,3 @@ public class User
 
     public virtual ICollection<UserRole> Roles { get; set; }
 }
-
-
-
-
-

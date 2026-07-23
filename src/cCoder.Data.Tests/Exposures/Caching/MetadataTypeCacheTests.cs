@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Exposures;
 using cCoder.Data.Services.Foundations;
 using FluentAssertions;
@@ -22,11 +26,11 @@ public class MetadataTypeCacheTests
     {
         string[] typeSetPayloads = ["{\"Name\":\"App\"}"];
 
-        serviceMock.Setup(service => service.Set("cms", typeSetPayloads));
+        serviceMock.Setup(expression:service => service.Set("cms", typeSetPayloads));
 
-        cache.Set("cms", typeSetPayloads);
+        cache.Set(scope:"cms", typeSetPayloads:typeSetPayloads);
 
-        serviceMock.Verify(service => service.Set("cms", typeSetPayloads), Times.Once);
+        serviceMock.Verify(expression:service => service.Set("cms", typeSetPayloads), times:Times.Once);
         serviceMock.VerifyNoOtherCalls();
     }
 
@@ -35,12 +39,12 @@ public class MetadataTypeCacheTests
     {
         string[] expected = ["{\"Name\":\"App\"}"];
 
-        serviceMock.Setup(service => service.Get("cms")).Returns(expected);
+        serviceMock.Setup(service => service.Get("cms")).Returns(value:expected);
 
-        string[] actual = cache.Get("cms");
+        string[] actual = cache.Get(scope:"cms");
 
-        actual.Should().BeSameAs(expected);
-        serviceMock.Verify(service => service.Get("cms"), Times.Once);
+        actual.Should().BeSameAs(expected:expected);
+        serviceMock.Verify(expression:service => service.Get("cms"), times:Times.Once);
         serviceMock.VerifyNoOtherCalls();
     }
 
@@ -53,36 +57,35 @@ public class MetadataTypeCacheTests
             "{\"Name\":\"Page\"}",
         ];
 
-        serviceMock.Setup(service => service.GetAll()).Returns(expected);
+        serviceMock.Setup(service => service.GetAll()).Returns(value:expected);
 
         string[] actual = cache.GetAll();
 
-        actual.Should().BeSameAs(expected);
-        serviceMock.Verify(service => service.GetAll(), Times.Once);
+        actual.Should().BeSameAs(expected:expected);
+        serviceMock.Verify(expression:service => service.GetAll(), times:Times.Once);
         serviceMock.VerifyNoOtherCalls();
     }
 
     [Fact]
     public void ShouldDelegateContains()
     {
-        serviceMock.Setup(service => service.Contains("cms")).Returns(true);
+        serviceMock.Setup(service => service.Contains("cms")).Returns(value:true);
 
-        bool actual = cache.Contains("cms");
+        bool actual = cache.Contains(scope:"cms");
 
         actual.Should().BeTrue();
-        serviceMock.Verify(service => service.Contains("cms"), Times.Once);
+        serviceMock.Verify(expression:service => service.Contains("cms"), times:Times.Once);
         serviceMock.VerifyNoOtherCalls();
     }
 
     [Fact]
     public void ShouldDelegateClear()
     {
-        serviceMock.Setup(service => service.Clear("cms"));
+        serviceMock.Setup(expression:service => service.Clear("cms"));
 
-        cache.Clear("cms");
+        cache.Clear(scope:"cms");
 
-        serviceMock.Verify(service => service.Clear("cms"), Times.Once);
+        serviceMock.Verify(expression:service => service.Clear("cms"), times:Times.Once);
         serviceMock.VerifyNoOtherCalls();
     }
 }
-

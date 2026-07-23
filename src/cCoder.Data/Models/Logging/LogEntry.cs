@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Logging;
 
 public class LogEntry
@@ -33,8 +37,3 @@ public enum LoggingLevel
     Warning,
     Debug
 }
-
-
-
-
-

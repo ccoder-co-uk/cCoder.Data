@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -44,7 +48,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 EntityId = table.Column<string>(nullable: true),
                 EventId = table.Column<Guid>(nullable: false),
                 EntityType = table.Column<string>(nullable: false),
@@ -56,7 +60,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_AuditEntries", x => x.Id);
+                table.PrimaryKey(name:"PK_AuditEntries", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -65,7 +69,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 DefaultCultureId = table.Column<string>(nullable: false),
                 Name = table.Column<string>(nullable: false),
                 Domain = table.Column<string>(nullable: false),
@@ -74,7 +78,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Apps", x => x.Id);
+                table.PrimaryKey(name:"PK_Apps", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -87,7 +91,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Cultures", x => x.Id);
+                table.PrimaryKey(name:"PK_Cultures", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -96,7 +100,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Level = table.Column<int>(nullable: false),
                 Message = table.Column<string>(nullable: false),
                 AppName = table.Column<string>(nullable: false),
@@ -105,7 +109,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_LogEntries", x => x.Id);
+                table.PrimaryKey(name:"PK_LogEntries", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -114,7 +118,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Subject = table.Column<string>(nullable: false),
                 Content = table.Column<string>(nullable: false),
                 From = table.Column<string>(nullable: false),
@@ -123,7 +127,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_QueuedEmails", x => x.Id);
+                table.PrimaryKey(name:"PK_QueuedEmails", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -132,7 +136,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Subject = table.Column<string>(nullable: false),
                 Content = table.Column<string>(nullable: false),
                 From = table.Column<string>(nullable: false),
@@ -142,7 +146,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_SentEmails", x => x.Id);
+                table.PrimaryKey(name:"PK_SentEmails", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -158,7 +162,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Packages", x => x.Id);
+                table.PrimaryKey(name:"PK_Packages", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -174,7 +178,7 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Privileges", x => x.Id);
+                table.PrimaryKey(name:"PK_Privileges", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -183,7 +187,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AuditEntryId = table.Column<int>(nullable: false),
                 PropertyName = table.Column<string>(nullable: true),
                 PreviousValue = table.Column<string>(nullable: true),
@@ -191,7 +195,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_AuditDataItems", x => x.Id);
+                table.PrimaryKey(name:"PK_AuditDataItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_AuditDataItems_AuditEntries_AuditEntryId",
                     column: x => x.AuditEntryId,
@@ -207,7 +212,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: false),
                 ResourceKey = table.Column<string>(nullable: true),
@@ -217,7 +222,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Components", x => x.Id);
+                table.PrimaryKey(name:"PK_Components", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Components_Apps_AppId",
                     column: x => x.AppId,
@@ -243,7 +249,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Forms", x => x.Id);
+                table.PrimaryKey(name:"PK_Forms", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Forms_Apps_AppId",
                     column: x => x.AppId,
@@ -259,7 +266,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: true),
                 HeaderHtml = table.Column<string>(nullable: true),
@@ -268,7 +275,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Layouts", x => x.Id);
+                table.PrimaryKey(name:"PK_Layouts", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Layouts_Apps_AppId",
                     column: x => x.AppId,
@@ -284,7 +292,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 ParentId = table.Column<int>(nullable: true),
                 AppId = table.Column<int>(nullable: false),
                 Order = table.Column<int>(nullable: false),
@@ -295,7 +303,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Pages", x => x.Id);
+                table.PrimaryKey(name:"PK_Pages", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Pages_Apps_AppId",
                     column: x => x.AppId,
@@ -303,6 +312,7 @@ public partial class Initial : Migration
                     principalTable: "Apps",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_Pages_Pages_ParentId",
                     column: x => x.ParentId,
@@ -318,7 +328,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Key = table.Column<string>(nullable: false),
                 Culture = table.Column<string>(nullable: false),
@@ -329,7 +339,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Resources", x => x.Id);
+                table.PrimaryKey(name:"PK_Resources", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Resources_Apps_AppId",
                     column: x => x.AppId,
@@ -345,7 +356,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Name = table.Column<string>(nullable: false),
                 ResourceKey = table.Column<string>(nullable: true),
                 RawString = table.Column<string>(nullable: true),
@@ -353,7 +364,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Templates", x => x.Id);
+                table.PrimaryKey(name:"PK_Templates", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Templates_Apps_AppId",
                     column: x => x.AppId,
@@ -376,7 +388,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Folders", x => x.Id);
+                table.PrimaryKey(name:"PK_Folders", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Folders_Apps_AppId",
                     column: x => x.AppId,
@@ -384,6 +397,7 @@ public partial class Initial : Migration
                     principalTable: "Apps",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_Folders_Folders_ParentId",
                     column: x => x.ParentId,
@@ -399,13 +413,14 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: true)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Calendars", x => x.Id);
+                table.PrimaryKey(name:"PK_Calendars", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Calendars_Apps_AppId",
                     column: x => x.AppId,
@@ -427,7 +442,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Roles", x => x.Id);
+                table.PrimaryKey(name:"PK_Roles", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Roles_Apps_AppId",
                     column: x => x.AppId,
@@ -450,7 +466,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_BusinessProcesses", x => x.Id);
+                table.PrimaryKey(name:"PK_BusinessProcesses", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_BusinessProcesses_Apps_AppId",
                     column: x => x.AppId,
@@ -473,7 +490,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_WorkFlows", x => x.Id);
+                table.PrimaryKey(name:"PK_WorkFlows", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_WorkFlows_Apps_AppId",
                     column: x => x.AppId,
@@ -493,7 +511,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_AppCultures", x => new { x.AppId, x.CultureId });
+                table.PrimaryKey(name:"PK_AppCultures", columns:x => new { x.AppId, x.CultureId });
+
                 table.ForeignKey(
                     name: "FK_AppCultures_Apps_AppId",
                     column: x => x.AppId,
@@ -501,6 +520,7 @@ public partial class Initial : Migration
                     principalTable: "Apps",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_AppCultures_Cultures_CultureId",
                     column: x => x.CultureId,
@@ -516,7 +536,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 CultureId = table.Column<string>(nullable: true),
                 Context = table.Column<string>(nullable: true),
                 Type = table.Column<string>(nullable: true),
@@ -525,7 +545,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_MetaItems", x => x.Id);
+                table.PrimaryKey(name:"PK_MetaItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_MetaItems_Cultures_CultureId",
                     column: x => x.CultureId,
@@ -548,7 +569,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Users", x => x.Id);
+                table.PrimaryKey(name:"PK_Users", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Users_Cultures_DefaultCultureId",
                     column: x => x.DefaultCultureId,
@@ -564,14 +586,15 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 LogEntryId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: false),
                 Value = table.Column<string>(nullable: false)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_LogDataItems", x => x.Id);
+                table.PrimaryKey(name:"PK_LogDataItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_LogDataItems_LogEntries_LogEntryId",
                     column: x => x.LogEntryId,
@@ -587,14 +610,15 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 EmailId = table.Column<int>(nullable: false),
                 AttemptedOn = table.Column<DateTimeOffset>(nullable: false),
                 FailureReason = table.Column<string>(nullable: false)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_EmailSendFailures", x => x.Id);
+                table.PrimaryKey(name:"PK_EmailSendFailures", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_EmailSendFailures_QueuedEmails_EmailId",
                     column: x => x.EmailId,
@@ -616,7 +640,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_PackageItems", x => x.Id);
+                table.PrimaryKey(name:"PK_PackageItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_PackageItems_Packages_PackageId",
                     column: x => x.PackageId,
@@ -637,7 +662,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Submissions", x => x.Id);
+                table.PrimaryKey(name:"PK_Submissions", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Submissions_Forms_FormId",
                     column: x => x.FormId,
@@ -653,7 +679,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 PageId = table.Column<int>(nullable: false),
                 CultureId = table.Column<string>(nullable: false),
                 Name = table.Column<string>(nullable: false),
@@ -662,7 +688,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Contents", x => x.Id);
+                table.PrimaryKey(name:"PK_Contents", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Contents_Cultures_CultureId",
                     column: x => x.CultureId,
@@ -670,6 +697,7 @@ public partial class Initial : Migration
                     principalTable: "Cultures",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_Contents_Pages_PageId",
                     column: x => x.PageId,
@@ -685,7 +713,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 PageId = table.Column<int>(nullable: false),
                 CultureId = table.Column<string>(nullable: false),
                 Title = table.Column<string>(nullable: false),
@@ -694,7 +722,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_PageInfo", x => x.Id);
+                table.PrimaryKey(name:"PK_PageInfo", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_PageInfo_Cultures_CultureId",
                     column: x => x.CultureId,
@@ -702,6 +731,7 @@ public partial class Initial : Migration
                     principalTable: "Cultures",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_PageInfo_Pages_PageId",
                     column: x => x.PageId,
@@ -724,7 +754,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Files", x => x.Id);
+                table.PrimaryKey(name:"PK_Files", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Files_Folders_FolderId",
                     column: x => x.FolderId,
@@ -740,7 +771,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 CalendarId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: true),
                 Start = table.Column<DateTimeOffset>(nullable: false),
@@ -748,7 +779,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Events", x => x.Id);
+                table.PrimaryKey(name:"PK_Events", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Events_Calendars_CalendarId",
                     column: x => x.CalendarId,
@@ -764,13 +796,14 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 CalendarId = table.Column<int>(nullable: false),
                 EventName = table.Column<string>(nullable: true)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Schedules", x => x.Id);
+                table.PrimaryKey(name:"PK_Schedules", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Schedules_Calendars_CalendarId",
                     column: x => x.CalendarId,
@@ -790,7 +823,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_FolderRoles", x => new { x.FolderId, x.RoleId });
+                table.PrimaryKey(name:"PK_FolderRoles", columns:x => new { x.FolderId, x.RoleId });
+
                 table.ForeignKey(
                     name: "FK_FolderRoles_Folders_FolderId",
                     column: x => x.FolderId,
@@ -798,6 +832,7 @@ public partial class Initial : Migration
                     principalTable: "Folders",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_FolderRoles_Roles_RoleId",
                     column: x => x.RoleId,
@@ -817,7 +852,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_PageRoles", x => new { x.PageId, x.RoleId });
+                table.PrimaryKey(name:"PK_PageRoles", columns:x => new { x.PageId, x.RoleId });
+
                 table.ForeignKey(
                     name: "FK_PageRoles_Pages_PageId",
                     column: x => x.PageId,
@@ -825,6 +861,7 @@ public partial class Initial : Migration
                     principalTable: "Pages",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_PageRoles_Roles_RoleId",
                     column: x => x.RoleId,
@@ -844,7 +881,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_BusinessProcessWorkflows", x => new { x.FlowId, x.BusinessProcessId });
+                table.PrimaryKey(name:"PK_BusinessProcessWorkflows", columns:x => new { x.FlowId, x.BusinessProcessId });
+
                 table.ForeignKey(
                     name: "FK_BusinessProcessWorkflows_BusinessProcesses_BusinessProcessId",
                     column: x => x.BusinessProcessId,
@@ -852,6 +890,7 @@ public partial class Initial : Migration
                     principalTable: "BusinessProcesses",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_BusinessProcessWorkflows_WorkFlows_FlowId",
                     column: x => x.FlowId,
@@ -874,7 +913,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_FlowInstances", x => x.Id);
+                table.PrimaryKey(name:"PK_FlowInstances", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_FlowInstances_WorkFlows_FlowDefinitionId",
                     column: x => x.FlowDefinitionId,
@@ -897,7 +937,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_WorkflowEvents", x => x.Id);
+                table.PrimaryKey(name:"PK_WorkflowEvents", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_WorkflowEvents_WorkFlows_FlowId",
                     column: x => x.FlowId,
@@ -905,6 +946,7 @@ public partial class Initial : Migration
                     principalTable: "WorkFlows",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_WorkflowEvents_BusinessProcesses_ProcessId",
                     column: x => x.ProcessId,
@@ -924,7 +966,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_UserRoles", x => new { x.RoleId, x.UserId });
+                table.PrimaryKey(name:"PK_UserRoles", columns:x => new { x.RoleId, x.UserId });
+
                 table.ForeignKey(
                     name: "FK_UserRoles_Roles_RoleId",
                     column: x => x.RoleId,
@@ -932,6 +975,7 @@ public partial class Initial : Migration
                     principalTable: "Roles",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_UserRoles_Users_UserId",
                     column: x => x.UserId,
@@ -953,7 +997,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_FileContents", x => x.Id);
+                table.PrimaryKey(name:"PK_FileContents", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_FileContents_Files_FileId",
                     column: x => x.FileId,
@@ -969,7 +1014,7 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 ScheduleId = table.Column<int>(nullable: true),
                 Name = table.Column<string>(nullable: false),
@@ -979,7 +1024,8 @@ public partial class Initial : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_ScheduledTasks", x => x.Id);
+                table.PrimaryKey(name:"PK_ScheduledTasks", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_ScheduledTasks_Apps_AppId",
                     column: x => x.AppId,
@@ -987,6 +1033,7 @@ public partial class Initial : Migration
                     principalTable: "Apps",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_ScheduledTasks_Schedules_ScheduleId",
                     column: x => x.ScheduleId,
@@ -1002,14 +1049,15 @@ public partial class Initial : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 Key = table.Column<string>(nullable: false),
                 Value = table.Column<string>(nullable: false),
                 ScheduledTaskId = table.Column<int>(nullable: false)
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_ScheduledTaskDataItems", x => x.Id);
+                table.PrimaryKey(name:"PK_ScheduledTaskDataItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_ScheduledTaskDataItems_ScheduledTasks_ScheduledTaskId",
                     column: x => x.ScheduledTaskId,
@@ -1631,6 +1679,3 @@ public partial class Initial : Migration
             schema: "CMS");
     }
 }
-
-
-

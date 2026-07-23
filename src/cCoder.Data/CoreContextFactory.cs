@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,11 +25,11 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
             .AddEnvironmentVariables()
             .Build();
 
-        string connection = configuration.GetConnectionString("Core");
+        string connection = configuration.GetConnectionString(name:"Core");
 
         ServiceCollection services = [];
         services.AddLogging();
-        services.AddCoreData(connection);
+        services.AddCoreData(connectionString:connection);
 
         serviceProvider = services.BuildServiceProvider();
     }
@@ -36,7 +40,7 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
     public CoreDataContext CreateCoreContext()
     {
         if (serviceProvider is null)
-            return CreateDbContext([]);
+            return CreateDbContext(args:[]);
 
         return new(
             serviceProvider.GetRequiredService<ICoreAuthInfo>(),
@@ -45,5 +49,5 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
     }
 
     public CoreDataContext CreateDbContext(string[] args) =>
-         CreateCoreContext();
+        CreateCoreContext();
 }

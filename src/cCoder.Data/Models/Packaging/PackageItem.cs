@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Packaging;
 
 public class PackageItem
@@ -15,8 +19,3 @@ public class PackageItem
     public virtual Package Package { get; set; }
 
 }
-
-
-
-
-

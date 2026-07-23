@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -5,7 +9,8 @@ namespace cCoder.Core.Migrations;
 
 public partial class AddJoinEntityDBSets : Migration
 {
-    protected override void Up(MigrationBuilder migrationBuilder) => migrationBuilder.InsertData(
+    protected override void Up(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.InsertData(
             schema: "Security",
             table: "Privileges",
             columns: new[] { "Id", "Description", "Operation", "PortalAdminsOnly", "Type" },
@@ -156,6 +161,3 @@ public partial class AddJoinEntityDBSets : Migration
             keyValue: "userrole_update");
     }
 }
-
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
@@ -14,7 +18,7 @@ public partial class AddBackgroundJobs : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
+                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                 AppId = table.Column<int>(type: "int", nullable: false),
                 CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 State = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
@@ -25,7 +29,8 @@ public partial class AddBackgroundJobs : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_BackgroundJobs", x => x.Id);
+                table.PrimaryKey(name:"PK_BackgroundJobs", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_BackgroundJobs_Apps_AppId",
                     column: x => x.AppId,
@@ -85,6 +90,3 @@ public partial class AddBackgroundJobs : Migration
             keyValue: "backgroundjob_update");
     }
 }
-
-
-

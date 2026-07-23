@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Collections;
 using System.Reflection;
 using System.Text.Json;
@@ -13,7 +17,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
 {
     private static readonly MethodInfo SetMethod = typeof(DbContext)
         .GetMethods()
-        .Single(method =>
+        .Single(predicate:method =>
             method.Name == nameof(DbContext.Set)
             && method.IsGenericMethod
             && method.GetParameters().Length == 0);
@@ -27,10 +31,10 @@ internal sealed class DataSetBroker(CoreDataContext context)
 
         DataEntitySet[] entitySets = GetEntitySets()
             .Select(item => ToEntitySet(item.Name, item.EntityType))
-            .OrderBy(entitySet => entitySet.DisplayName)
+            .OrderBy(keySelector:entitySet => entitySet.DisplayName)
             .ToArray();
 
-        return Task.FromResult(entitySets);
+        return Task.FromResult(result:entitySets);
     }
 
     public Task<DataRows> SelectRowsAsync(
@@ -40,20 +44,20 @@ internal sealed class DataSetBroker(CoreDataContext context)
         CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
-        (string setName, IEntityType entityType) = GetEntitySet(entitySet);
-        IQueryable query = CreateQueryable(entityType.ClrType);
+        (string setName, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
+        IQueryable query = CreateQueryable(clrType:entityType.ClrType);
 
         if (skip > 0)
-            query = ApplyQueryableIntMethod(nameof(Queryable.Skip), entityType.ClrType, query, skip);
+            query = ApplyQueryableIntMethod(methodName:nameof(Queryable.Skip), clrType:entityType.ClrType, query:query, value:skip);
 
-        query = ApplyQueryableIntMethod(nameof(Queryable.Take), entityType.ClrType, query, take);
+        query = ApplyQueryableIntMethod(methodName:nameof(Queryable.Take), clrType:entityType.ClrType, query:query, value:take);
 
         Dictionary<string, object>[] rows = query
             .Cast<object>()
-            .Select(entity => ToDictionary(entityType, entity))
+            .Select(selector:entity => ToDictionary(entityType, entity))
             .ToArray();
 
-        return Task.FromResult(new DataRows
+        return Task.FromResult(result:new DataRows
         {
             EntitySet = setName,
             Skip = skip,
@@ -67,17 +71,18 @@ internal sealed class DataSetBroker(CoreDataContext context)
         Dictionary<string, JsonElement> values,
         CancellationToken cancellationToken)
     {
-        (_, IEntityType entityType) = GetEntitySet(entitySet);
-        object entity = Activator.CreateInstance(entityType.ClrType)
+        (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
+
+        object entity = Activator.CreateInstance(type:entityType.ClrType)
             ?? throw new InvalidOperationException($"Unable to create {entityType.ClrType.Name}.");
 
-        foreach (IProperty property in GetWritableProperties(entityType, forCreate: true))
-            TrySetProperty(entity, property, values);
+        foreach (IProperty property in GetWritableProperties(entityType:entityType, forCreate: true))
+            TrySetProperty(entity:entity, property:property, values:values);
 
-        context.Add(entity);
-        await context.SaveChangesAsync(cancellationToken);
+        context.Add(entity:entity);
+        await context.SaveChangesAsync(cancellationToken:cancellationToken);
 
-        return ToDictionary(entityType, entity);
+        return ToDictionary(entityType:entityType, entity:entity);
     }
 
     public async Task<Dictionary<string, object>> UpdateRowAsync(
@@ -85,15 +90,15 @@ internal sealed class DataSetBroker(CoreDataContext context)
         Dictionary<string, JsonElement> values,
         CancellationToken cancellationToken)
     {
-        (_, IEntityType entityType) = GetEntitySet(entitySet);
-        object entity = await FindEntityAsync(entityType, values, cancellationToken);
+        (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
+        object entity = await FindEntityAsync(entityType:entityType, values:values, cancellationToken:cancellationToken);
 
-        foreach (IProperty property in GetWritableProperties(entityType, forCreate: false))
-            TrySetProperty(entity, property, values);
+        foreach (IProperty property in GetWritableProperties(entityType:entityType, forCreate: false))
+            TrySetProperty(entity:entity, property:property, values:values);
 
-        await context.SaveChangesAsync(cancellationToken);
+        await context.SaveChangesAsync(cancellationToken:cancellationToken);
 
-        return ToDictionary(entityType, entity);
+        return ToDictionary(entityType:entityType, entity:entity);
     }
 
     public async Task DeleteRowAsync(
@@ -101,11 +106,11 @@ internal sealed class DataSetBroker(CoreDataContext context)
         Dictionary<string, JsonElement> values,
         CancellationToken cancellationToken)
     {
-        (_, IEntityType entityType) = GetEntitySet(entitySet);
-        object entity = await FindEntityAsync(entityType, values, cancellationToken);
+        (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
+        object entity = await FindEntityAsync(entityType:entityType, values:values, cancellationToken:cancellationToken);
 
-        context.Remove(entity);
-        await context.SaveChangesAsync(cancellationToken);
+        context.Remove(entity:entity);
+        await context.SaveChangesAsync(cancellationToken:cancellationToken);
     }
 
     private (string Name, IEntityType EntityType)[] GetEntitySets() =>
@@ -118,13 +123,13 @@ internal sealed class DataSetBroker(CoreDataContext context)
                 property.Name,
                 context.Model.FindEntityType(property.PropertyType.GetGenericArguments()[0])))
             .Where(item => item.Item2 is not null)
-            .Select(item => (item.Name, item.Item2!))
+            .Select(selector:item => (item.Name, item.Item2!))
             .ToArray();
 
     private (string Name, IEntityType EntityType) GetEntitySet(string entitySet)
     {
         (string Name, IEntityType EntityType)? match = GetEntitySets()
-            .FirstOrDefault(item => string.Equals(
+            .FirstOrDefault(predicate:item => string.Equals(
                 item.Name,
                 entitySet,
                 StringComparison.OrdinalIgnoreCase));
@@ -138,7 +143,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
     {
         object dbSet = SetMethod
             .MakeGenericMethod(clrType)
-            .Invoke(context, null)!;
+            .Invoke(obj:context, parameters:null)!;
 
         return (IQueryable)dbSet;
     }
@@ -151,14 +156,14 @@ internal sealed class DataSetBroker(CoreDataContext context)
     {
         MethodInfo method = typeof(Queryable)
             .GetMethods()
-            .Single(method =>
+            .Single(predicate:method =>
                 method.Name == methodName
                 && method.GetParameters().Length == 2
                 && method.GetParameters()[1].ParameterType == typeof(int));
 
         return (IQueryable)method
             .MakeGenericMethod(clrType)
-            .Invoke(null, [query, value])!;
+            .Invoke(obj:null, parameters:[query, value])!;
     }
 
     private async Task<object> FindEntityAsync(
@@ -172,13 +177,13 @@ internal sealed class DataSetBroker(CoreDataContext context)
             throw new InvalidOperationException($"{entityType.ClrType.Name} does not define a primary key.");
 
         object[] keyValues = keyProperties
-            .Select(property => GetPropertyValue(values, property))
+            .Select(selector:property => GetPropertyValue(values, property))
             .ToArray();
 
         object entity = await context.FindAsync(
-            entityType.ClrType,
-            keyValues,
-            cancellationToken);
+entityType:            entityType.ClrType,
+keyValues:            keyValues,
+cancellationToken:            cancellationToken);
 
         return entity
             ?? throw new InvalidOperationException($"{entityType.ClrType.Name} row was not found.");
@@ -188,30 +193,30 @@ internal sealed class DataSetBroker(CoreDataContext context)
         new()
         {
             Name = name,
-            DisplayName = SplitName(name),
+            DisplayName = SplitName(name:name),
             ClrType = entityType.ClrType.FullName ?? entityType.ClrType.Name,
             Table = entityType.GetTableName() ?? name,
             KeyProperties = entityType.FindPrimaryKey()?.Properties
-                .Select(property => property.Name)
+                .Select(selector:property => property.Name)
                 .ToArray() ?? [],
             Properties = entityType.GetProperties()
                 .Where(property => !property.IsShadowProperty())
                 .OrderByDescending(property => property.IsPrimaryKey())
                 .ThenBy(property => property.Name)
-                .Select(ToProperty)
+                .Select(selector:ToProperty)
                 .ToArray()
         };
 
     private static DataProperty ToProperty(IProperty property)
     {
-        Type type = Nullable.GetUnderlyingType(property.ClrType) ?? property.ClrType;
+        Type type = Nullable.GetUnderlyingType(nullableType:property.ClrType) ?? property.ClrType;
 
         return new()
         {
             Name = property.Name,
             Type = type.Name,
             IsKey = property.IsPrimaryKey(),
-            IsNullable = property.IsNullable || Nullable.GetUnderlyingType(property.ClrType) is not null,
+            IsNullable = property.IsNullable || Nullable.GetUnderlyingType(nullableType:property.ClrType) is not null,
             CanCreate = !property.IsPrimaryKey() || property.ValueGenerated == ValueGenerated.Never,
             CanUpdate = !property.IsPrimaryKey() && property.GetAfterSaveBehavior() != PropertySaveBehavior.Throw,
             IsLongText = type == typeof(string) && (property.GetMaxLength() is null || property.GetMaxLength() > 255)
@@ -221,10 +226,10 @@ internal sealed class DataSetBroker(CoreDataContext context)
     private static IEnumerable<IProperty> GetWritableProperties(
         IEntityType entityType,
         bool forCreate) =>
-            entityType
+        entityType
                 .GetProperties()
                 .Where(property => !property.IsShadowProperty())
-                .Where(property => forCreate
+                .Where(predicate:property => forCreate
                     ? !property.IsPrimaryKey() || property.ValueGenerated == ValueGenerated.Never
                     : !property.IsPrimaryKey() && property.GetAfterSaveBehavior() != PropertySaveBehavior.Throw);
 
@@ -235,16 +240,16 @@ internal sealed class DataSetBroker(CoreDataContext context)
             .OrderByDescending(property => property.IsPrimaryKey())
             .ThenBy(property => property.Name)
             .ToDictionary(
-                property => property.Name,
-                property => ToJsonFriendlyValue(property.PropertyInfo?.GetValue(entity)));
+keySelector:                property => property.Name,
+elementSelector:                property => ToJsonFriendlyValue(property.PropertyInfo?.GetValue(entity)));
 
     private static object ToJsonFriendlyValue(object value) =>
         value switch
         {
             null => null,
-            DateTime dateTime => dateTime.ToString("O"),
-            DateTimeOffset dateTimeOffset => dateTimeOffset.ToString("O"),
-            byte[] bytes => Convert.ToBase64String(bytes),
+            DateTime dateTime => dateTime.ToString(format:"O"),
+            DateTimeOffset dateTimeOffset => dateTimeOffset.ToString(format:"O"),
+            byte[] bytes => Convert.ToBase64String(inArray:bytes),
             IEnumerable enumerable when value is not string => enumerable.Cast<object>().ToArray(),
             _ => value
         };
@@ -254,21 +259,21 @@ internal sealed class DataSetBroker(CoreDataContext context)
         IProperty property,
         Dictionary<string, JsonElement> values)
     {
-        if (!TryGetJson(values, property.Name, out JsonElement element))
+        if (!TryGetJson(values:values, name:property.Name, value:out JsonElement element))
             return;
 
-        object value = ConvertJsonElement(element, property.ClrType);
-        property.PropertyInfo?.SetValue(entity, value);
+        object value = ConvertJsonElement(element:element, targetType:property.ClrType);
+        property.PropertyInfo?.SetValue(obj:entity, value:value);
     }
 
     private static object GetPropertyValue(
         Dictionary<string, JsonElement> values,
         IProperty property)
     {
-        if (!TryGetJson(values, property.Name, out JsonElement element))
+        if (!TryGetJson(values:values, name:property.Name, value:out JsonElement element))
             throw new InvalidOperationException($"Key property '{property.Name}' is required.");
 
-        return ConvertJsonElement(element, property.ClrType);
+        return ConvertJsonElement(element:element, targetType:property.ClrType);
     }
 
     private static bool TryGetJson(
@@ -278,7 +283,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
     {
         foreach (KeyValuePair<string, JsonElement> item in values)
         {
-            if (string.Equals(item.Key, name, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(a:item.Key, b:name, comparisonType:StringComparison.OrdinalIgnoreCase))
             {
                 value = item.Value;
                 return true;
@@ -291,7 +296,7 @@ internal sealed class DataSetBroker(CoreDataContext context)
 
     private static object ConvertJsonElement(JsonElement element, Type targetType)
     {
-        Type type = Nullable.GetUnderlyingType(targetType) ?? targetType;
+        Type type = Nullable.GetUnderlyingType(nullableType:targetType) ?? targetType;
 
         if (element.ValueKind == JsonValueKind.Null)
             return null;
@@ -303,8 +308,8 @@ internal sealed class DataSetBroker(CoreDataContext context)
 
         if (type == typeof(Guid))
             return element.ValueKind == JsonValueKind.String
-                ? Guid.Parse(element.GetString()!)
-                : Guid.Parse(element.GetRawText());
+                ? Guid.Parse(input:element.GetString()!)
+                : Guid.Parse(input:element.GetRawText());
 
         if (type == typeof(int))
             return element.GetInt32();
@@ -334,16 +339,16 @@ internal sealed class DataSetBroker(CoreDataContext context)
             return element.GetDateTimeOffset();
 
         if (type == typeof(byte[]))
-            return Convert.FromBase64String(element.GetString() ?? string.Empty);
+            return Convert.FromBase64String(s:element.GetString() ?? string.Empty);
 
         if (type.IsEnum)
-            return Enum.Parse(type, element.GetString() ?? element.GetRawText(), ignoreCase: true);
+            return Enum.Parse(enumType:type, value:element.GetString() ?? element.GetRawText(), ignoreCase: true);
 
-        return JsonSerializer.Deserialize(element.GetRawText(), type);
+        return JsonSerializer.Deserialize(json:element.GetRawText(), returnType:type);
     }
 
     private static string SplitName(string name) =>
-        string.Concat(name.Select((character, index) =>
+        string.Concat(values:name.Select((character, index) =>
             index > 0 && char.IsUpper(character)
                 ? " " + character
                 : character.ToString()));

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.Logging;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +15,7 @@ public partial class CoreDataContext
 
     private static void ConfigureLoggingModel(ModelBuilder builder)
     {
-        _ = builder.Entity<LogEntry>(entity =>
+        _ = builder.Entity<LogEntry>(buildAction:entity =>
         {
             entity.ToTable("LogEntries", "Logging");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -21,7 +25,8 @@ public partial class CoreDataContext
             entity.Property(i => i.AppName).IsRequired();
             entity.Property(i => i.TypeName).IsRequired();
         });
-        _ = builder.Entity<LogDataItem>(entity =>
+
+        _ = builder.Entity<LogDataItem>(buildAction:entity =>
         {
             entity.ToTable("LogDataItems", "Logging");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -32,7 +37,7 @@ public partial class CoreDataContext
 
     private void ApplyLoggingFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<LogEntry>().HasQueryFilter(log => AdminOf.Contains(log.AppId));
-        _ = builder.Entity<LogDataItem>().HasQueryFilter(item => item.LogEntry != null);
+        _ = builder.Entity<LogEntry>().HasQueryFilter(filter:log => AdminOf.Contains(log.AppId));
+        _ = builder.Entity<LogDataItem>().HasQueryFilter(filter:item => item.LogEntry != null);
     }
 }

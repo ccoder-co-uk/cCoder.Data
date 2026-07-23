@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -68,7 +72,7 @@ public partial class AddMailServers : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: false),
                 User = table.Column<string>(nullable: false),
@@ -79,7 +83,8 @@ public partial class AddMailServers : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_MailServers", x => x.Id);
+                table.PrimaryKey(name:"PK_MailServers", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_MailServers_Apps_AppId",
                     column: x => x.AppId,
@@ -254,6 +259,3 @@ public partial class AddMailServers : Migration
             value: "Allows users to call UpdateSubFolders on Folders.");
     }
 }
-
-
-

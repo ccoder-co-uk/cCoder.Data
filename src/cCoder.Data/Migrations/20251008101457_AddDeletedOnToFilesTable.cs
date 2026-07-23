@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
@@ -28,6 +32,3 @@ namespace cCoder.Core.Migrations
         }
     }
 }
-
-
-

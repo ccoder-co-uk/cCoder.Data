@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Content
@@ -13,8 +17,3 @@ public class Content
     public virtual Culture Culture { get; set; }
     public virtual Page Page { get; set; }
 }
-
-
-
-
-

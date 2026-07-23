@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Component
@@ -25,8 +29,3 @@ public class Component
     public string Key { get; set; }
     public virtual App App { get; set; }
 }
-
-
-
-
-

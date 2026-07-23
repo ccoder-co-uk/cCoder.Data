@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.DMS;
 using cCoder.Data.Models.Security;
 using Microsoft.EntityFrameworkCore;
@@ -15,12 +19,13 @@ public partial class CoreDataContext
 
     private static void ConfigureDmsModel(ModelBuilder builder)
     {
-        _ = builder.Entity<Folder>(entity =>
+        _ = builder.Entity<Folder>(buildAction:entity =>
         {
             entity.ToTable("Folders", "DMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
         });
-        _ = builder.Entity<File>(entity =>
+
+        _ = builder.Entity<File>(buildAction:entity =>
         {
             entity.ToTable("Files", "DMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -30,41 +35,42 @@ public partial class CoreDataContext
             entity.Property(i => i.Size).HasMaxLength(10);
             entity.HasOne(i => i.Folder).WithMany(i => i.Files).HasForeignKey(i => i.FolderId);
         });
-        _ = builder.Entity<FileContent>(entity =>
+
+        _ = builder.Entity<FileContent>(buildAction:entity =>
         {
             entity.ToTable("FileContents", "DMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.Size).HasMaxLength(10);
             entity.HasOne(i => i.File).WithMany(i => i.Contents).HasForeignKey(i => i.FileId);
         });
-        _ = builder.Entity<FolderRole>().ToTable("FolderRoles", "Security");
-        _ = builder.Entity<FolderRole>().HasKey(i => new { i.FolderId, i.RoleId });
+
+        _ = builder.Entity<FolderRole>().ToTable(name:"FolderRoles", schema:"Security");
+        _ = builder.Entity<FolderRole>().HasKey(keyExpression:i => new { i.FolderId, i.RoleId });
     }
 
     private void ApplyDmsFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<FolderRole>().HasQueryFilter(fr =>
+        _ = builder.Entity<FolderRole>().HasQueryFilter(filter:fr =>
             CurrentUserRoleIds.Contains(fr.RoleId)
             && fr.Role != null
             && fr.Role.Privs.Contains("folder_read"));
-        _ = builder.Entity<Folder>().HasQueryFilter(f =>
+
+        _ = builder.Entity<Folder>().HasQueryFilter(filter:f =>
             f.DeletedOn == null
             && (AdminOf.Contains(f.AppId)
                 || f.Roles.Any(fr =>
                     CurrentUserRoleIds.Contains(fr.RoleId)
                     && fr.Role != null
                     && fr.Role.Privs.Contains("folder_read"))));
-        _ = builder.Entity<File>().HasQueryFilter(f =>
+
+        _ = builder.Entity<File>().HasQueryFilter(filter:f =>
             f.DeletedOn == null
             && (AdminOf.Contains(f.Folder.AppId)
                 || f.Folder.Roles.Any(fr =>
                     CurrentUserRoleIds.Contains(fr.RoleId)
                     && fr.Role != null
                     && fr.Role.Privs.Contains("file_read"))));
-        _ = builder.Entity<FileContent>().HasQueryFilter(i => i.File != null);
+
+        _ = builder.Entity<FileContent>().HasQueryFilter(filter:i => i.File != null);
     }
 }
-
-
-
-

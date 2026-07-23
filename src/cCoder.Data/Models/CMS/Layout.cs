@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Layout
@@ -23,8 +27,3 @@ public class Layout
     public string Script { get; set; }
     public virtual App App { get; set; }
 }
-
-
-
-
-

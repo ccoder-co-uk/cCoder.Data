@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class PageInfo
@@ -17,8 +21,3 @@ public class PageInfo
     public virtual Page Page { get; set; }
     public virtual Culture Culture { get; set; }
 }
-
-
-
-
-

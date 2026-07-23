@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Security;
 
 public class Privilege
@@ -12,8 +16,3 @@ public class Privilege
 
     public bool PortalAdminsOnly { get; set; }
 }
-
-
-
-
-

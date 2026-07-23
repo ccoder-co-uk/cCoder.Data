@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Planning;
 
 public class CalendarEvent
@@ -11,8 +15,3 @@ public class CalendarEvent
     public int CalendarId { get; set; }
     public virtual Calendar Calendar { get; set; }
 }
-
-
-
-
-

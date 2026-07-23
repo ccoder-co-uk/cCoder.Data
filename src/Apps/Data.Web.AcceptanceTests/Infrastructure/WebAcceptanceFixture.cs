@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace Data.Web.AcceptanceTests.Infrastructure;
 
 public sealed class WebAcceptanceFixture : IDisposable
@@ -8,7 +12,7 @@ public sealed class WebAcceptanceFixture : IDisposable
 
     public WebAcceptanceFixture()
     {
-        Client = factory.CreateClient(new()
+        Client = factory.CreateClient(options:new()
         {
             AllowAutoRedirect = false
         });

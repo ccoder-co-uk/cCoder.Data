@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Packaging;
 
 public class Package
@@ -21,8 +25,3 @@ public class Package
         Name = name;
     }
 }
-
-
-
-
-

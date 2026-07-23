@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.Security;
 
 
@@ -19,12 +23,9 @@ public class Culture
 
     public static bool operator !=(Culture a, Culture b) => !(a == b);
 
-    public override bool Equals(object obj) => obj is Culture culture && culture == this;
+    public override bool Equals(object obj) =>
+        obj is Culture culture && culture == this;
 
-    public override int GetHashCode() => Id?.GetHashCode() ?? 0;
+    public override int GetHashCode() =>
+        Id?.GetHashCode() ?? 0;
 }
-
-
-
-
-

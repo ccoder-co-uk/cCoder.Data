@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 using cCoder.Data.Models.Security;
 
@@ -27,8 +31,3 @@ public class Folder
 
     public ICollection<FolderRole> Roles { get; set; }
 }
-
-
-
-
-

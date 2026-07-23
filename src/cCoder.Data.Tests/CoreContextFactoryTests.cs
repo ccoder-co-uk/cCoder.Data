@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,9 +17,9 @@ public class CoreContextFactoryTests
     public void ShouldCreateCoreDataContext()
     {
         var services = new ServiceCollection();
-        services.AddSingleton(Mock.Of<ICoreAuthInfo>());
-        services.AddSingleton(new Config());
-        services.AddSingleton(Mock.Of<ILogger<CoreDataContext>>());
+        services.AddSingleton(implementationInstance:Mock.Of<ICoreAuthInfo>());
+        services.AddSingleton(implementationInstance:new Config());
+        services.AddSingleton(implementationInstance:Mock.Of<ILogger<CoreDataContext>>());
 
         IServiceProvider serviceProvider = services.BuildServiceProvider();
         var factory = new CoreContextFactory(serviceProvider);

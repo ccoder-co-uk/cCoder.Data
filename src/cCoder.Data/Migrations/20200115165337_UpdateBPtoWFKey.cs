@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -61,7 +65,8 @@ public partial class UpdateBPtoWFKey : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_BusinessProcessWorkflows", x => new { x.FlowId, x.BusinessProcessId });
+                table.PrimaryKey(name:"PK_BusinessProcessWorkflows", columns:x => new { x.FlowId, x.BusinessProcessId });
+
                 table.ForeignKey(
                     name: "FK_BusinessProcessWorkflows_BusinessProcesses_BusinessProcessId",
                     column: x => x.BusinessProcessId,
@@ -69,6 +74,7 @@ public partial class UpdateBPtoWFKey : Migration
                     principalTable: "BusinessProcesses",
                     principalColumn: "Id",
                     onDelete: ReferentialAction.Restrict);
+
                 table.ForeignKey(
                     name: "FK_BusinessProcessWorkflows_WorkFlows_FlowId",
                     column: x => x.FlowId,
@@ -85,6 +91,3 @@ public partial class UpdateBPtoWFKey : Migration
             column: "BusinessProcessId");
     }
 }
-
-
-

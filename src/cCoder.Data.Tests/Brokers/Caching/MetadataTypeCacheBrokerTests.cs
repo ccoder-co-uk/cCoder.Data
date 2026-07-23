@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Brokers.Caching;
 using FluentAssertions;
 using Xunit;
@@ -10,22 +14,23 @@ public class MetadataTypeCacheBrokerTests
     public void ShouldSetGetGetAllContainAndClearByScope()
     {
         var broker = new MetadataTypeCacheBroker();
+
         string[] typeSetPayloads =
         [
             "{\"Name\":\"App\"}",
             "{\"Name\":\"Page\"}",
         ];
 
-        broker.Set("cms", typeSetPayloads);
+        broker.Set(scope:"cms", typeSetPayloads:typeSetPayloads);
 
-        broker.Contains("cms").Should().BeTrue();
-        broker.Get("cms").Should().BeEquivalentTo(typeSetPayloads, options => options.WithStrictOrdering());
-        broker.GetAll().Should().BeEquivalentTo(typeSetPayloads, options => options.WithStrictOrdering());
+        broker.Contains(scope:"cms").Should().BeTrue();
+        broker.Get("cms").Should().BeEquivalentTo(expectation:typeSetPayloads, config:options => options.WithStrictOrdering());
+        broker.GetAll().Should().BeEquivalentTo(expectation:typeSetPayloads, config:options => options.WithStrictOrdering());
 
-        broker.Clear("cms");
+        broker.Clear(scope:"cms");
 
-        broker.Contains("cms").Should().BeFalse();
-        broker.Get("cms").Should().BeEmpty();
+        broker.Contains(scope:"cms").Should().BeFalse();
+        broker.Get(scope:"cms").Should().BeEmpty();
         broker.GetAll().Should().BeEmpty();
     }
 
@@ -34,7 +39,6 @@ public class MetadataTypeCacheBrokerTests
     {
         var broker = new MetadataTypeCacheBroker();
 
-        broker.Get("missing").Should().BeEmpty();
+        broker.Get(scope:"missing").Should().BeEmpty();
     }
 }
-

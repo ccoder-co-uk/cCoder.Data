@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models;
 using cCoder.Data.Models.CMS;
 using cCoder.Data.Models.Packaging;
@@ -28,7 +32,7 @@ public partial class CoreDataContext
 
     private static void ConfigureCmsModel(ModelBuilder builder)
     {
-        _ = builder.Entity<App>(entity =>
+        _ = builder.Entity<App>(buildAction:entity =>
         {
             entity.ToTable("Apps", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -38,7 +42,8 @@ public partial class CoreDataContext
             entity.Property(i => i.DefaultTheme).IsRequired();
             entity.Ignore(i => i.Config);
         });
-        _ = builder.Entity<Layout>(entity =>
+
+        _ = builder.Entity<Layout>(buildAction:entity =>
         {
             entity.ToTable("Layouts", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -49,7 +54,8 @@ public partial class CoreDataContext
             entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
-        _ = builder.Entity<Page>(entity =>
+
+        _ = builder.Entity<Page>(buildAction:entity =>
         {
             entity.ToTable("Pages", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -59,14 +65,16 @@ public partial class CoreDataContext
             entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
-        _ = builder.Entity<PageInfo>(entity =>
+
+        _ = builder.Entity<PageInfo>(buildAction:entity =>
         {
             entity.ToTable("PageInfo", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
             entity.Property(i => i.CultureId).IsRequired();
             entity.Property(i => i.Title).IsRequired();
         });
-        _ = builder.Entity<Content>(entity =>
+
+        _ = builder.Entity<Content>(buildAction:entity =>
         {
             entity.ToTable("Contents", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -74,7 +82,8 @@ public partial class CoreDataContext
             entity.Property(i => i.Name).IsRequired();
             entity.HasOne(i => i.Page).WithMany(i => i.Contents).HasForeignKey(i => i.PageId);
         });
-        _ = builder.Entity<Component>(entity =>
+
+        _ = builder.Entity<Component>(buildAction:entity =>
         {
             entity.ToTable("Components", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -85,7 +94,8 @@ public partial class CoreDataContext
             entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
-        _ = builder.Entity<Resource>(entity =>
+
+        _ = builder.Entity<Resource>(buildAction:entity =>
         {
             entity.ToTable("Resources", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -100,13 +110,15 @@ public partial class CoreDataContext
             entity.Property(i => i.DisplayName).IsRequired();
             entity.Property(i => i.ShortDisplayName).IsRequired();
         });
-        _ = builder.Entity<Culture>(entity =>
+
+        _ = builder.Entity<Culture>(buildAction:entity =>
         {
             entity.ToTable("Cultures", "CMS");
             entity.Property(i => i.Id).ValueGeneratedNever().IsRequired();
             entity.Property(i => i.Name).IsRequired();
         });
-        _ = builder.Entity<Template>(entity =>
+
+        _ = builder.Entity<Template>(buildAction:entity =>
         {
             entity.ToTable("Templates", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -117,14 +129,16 @@ public partial class CoreDataContext
             entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
-        _ = builder.Entity<Submission>(entity =>
+
+        _ = builder.Entity<Submission>(buildAction:entity =>
         {
             entity.ToTable("Submissions", "CMS");
             entity.Property(i => i.Id).ValueGeneratedNever();
             entity.Property(i => i.DataJson).IsRequired();
             entity.Ignore(i => i.Data);
         });
-        _ = builder.Entity<Script>(entity =>
+
+        _ = builder.Entity<Script>(buildAction:entity =>
         {
             entity.ToTable("Scripts", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -135,7 +149,8 @@ public partial class CoreDataContext
             entity.Property(i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(100);
         });
-        _ = builder.Entity<CommonObject>(entity =>
+
+        _ = builder.Entity<CommonObject>(buildAction:entity =>
         {
             entity.ToTable("CommonObjects", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -148,7 +163,8 @@ public partial class CoreDataContext
             entity.Property(i => i.Type).IsRequired();
             entity.Property(i => i.Json).IsRequired();
         });
-        _ = builder.Entity<Package>(entity =>
+
+        _ = builder.Entity<Package>(buildAction:entity =>
         {
             entity.ToTable("Packages", "Packaging");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
@@ -157,20 +173,24 @@ public partial class CoreDataContext
             entity.Property(i => i.Category).IsRequired().HasMaxLength(100);
             entity.Property(i => i.SourceApi).IsRequired().HasMaxLength(200);
         });
-        _ = builder.Entity<PackageItem>(entity =>
+
+        _ = builder.Entity<PackageItem>(buildAction:entity =>
         {
             entity.ToTable("PackageItems", "Packaging");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
         });
-        _ = builder.Entity<AppCulture>().ToTable("AppCultures", "CMS");
-        _ = builder.Entity<PageRole>().ToTable("PageRoles", "Security");
-        _ = builder.Entity<Role>(entity =>
+
+        _ = builder.Entity<AppCulture>().ToTable(name:"AppCultures", schema:"CMS");
+        _ = builder.Entity<PageRole>().ToTable(name:"PageRoles", schema:"Security");
+
+        _ = builder.Entity<Role>(buildAction:entity =>
         {
             entity.ToTable("Roles", "Security");
             entity.Property(i => i.Name).IsRequired();
             entity.Ignore(r => r.Privileges);
         });
-        _ = builder.Entity<User>(entity =>
+
+        _ = builder.Entity<User>(buildAction:entity =>
         {
             entity.ToTable("Users", "Security");
             entity.Property(i => i.Id).ValueGeneratedNever();
@@ -178,13 +198,16 @@ public partial class CoreDataContext
             entity.Property(i => i.DisplayName).IsRequired();
             entity.Property(i => i.Email).IsRequired();
         });
-        _ = builder.Entity<UserRole>().ToTable("UserRoles", "Security");
-        _ = builder.Entity<MetaItem>(entity =>
+
+        _ = builder.Entity<UserRole>().ToTable(name:"UserRoles", schema:"Security");
+
+        _ = builder.Entity<MetaItem>(buildAction:entity =>
         {
             entity.ToTable("MetaItems", "CMS");
             entity.Property(i => i.Id).ValueGeneratedOnAdd();
         });
-        _ = builder.Entity<Privilege>(entity =>
+
+        _ = builder.Entity<Privilege>(buildAction:entity =>
         {
             entity.ToTable("Privileges", "Security");
             entity.Property(i => i.Id).ValueGeneratedNever().HasMaxLength(200);
@@ -192,37 +215,39 @@ public partial class CoreDataContext
             entity.Property(i => i.Operation).IsRequired().HasMaxLength(50);
             entity.Property(i => i.Description).IsRequired().HasMaxLength(500);
         });
-        _ = builder.Entity<AppCulture>().HasKey(i => new { i.AppId, i.CultureId });
-        _ = builder.Entity<UserRole>().HasKey(i => new { i.RoleId, i.UserId });
-        _ = builder.Entity<PageRole>().HasKey(i => new { i.PageId, i.RoleId });
+
+        _ = builder.Entity<AppCulture>().HasKey(keyExpression:i => new { i.AppId, i.CultureId });
+        _ = builder.Entity<UserRole>().HasKey(keyExpression:i => new { i.RoleId, i.UserId });
+        _ = builder.Entity<PageRole>().HasKey(keyExpression:i => new { i.PageId, i.RoleId });
     }
 
     private void ApplyCmsFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<Role>().HasQueryFilter(r => AdminOf.Contains(r.AppId)
+        _ = builder.Entity<Role>().HasQueryFilter(filter:r => AdminOf.Contains(r.AppId)
             || CurrentUserRoleIds.Contains(r.Id));
 
-        _ = builder.Entity<UserRole>().HasQueryFilter(ur =>
+        _ = builder.Entity<UserRole>().HasQueryFilter(filter:ur =>
             ur.UserId == AuthInfo.SSOUserId
             || AdminOf.Contains(ur.Role.AppId));
 
-        _ = builder.Entity<User>().HasQueryFilter(u => u.Roles.Any());
+        _ = builder.Entity<User>().HasQueryFilter(filter:u => u.Roles.Any());
 
-        _ = builder.Entity<PageRole>().HasQueryFilter(pr =>
+        _ = builder.Entity<PageRole>().HasQueryFilter(filter:pr =>
             CurrentUserRoleIds.Contains(pr.RoleId)
             && pr.Role != null
             && pr.Role.Privs.Contains("pagerole_read"));
 
-        _ = builder.Entity<Page>().HasQueryFilter(p =>
+        _ = builder.Entity<Page>().HasQueryFilter(filter:p =>
             AdminOf.Contains(p.AppId)
             || p.Roles.Any(pr =>
                 CurrentUserRoleIds.Contains(pr.RoleId)
                 && pr.Role != null
                 && pr.Role.Privs.Contains("page_read")));
 
-        _ = builder.Entity<PageInfo>().HasQueryFilter(i => i.Page != null);
-        _ = builder.Entity<Content>().HasQueryFilter(i => i.Page != null);
-        _ = builder.Entity<Submission>().HasQueryFilter(s => AdminOf.Contains(s.AppId)
+        _ = builder.Entity<PageInfo>().HasQueryFilter(filter:i => i.Page != null);
+        _ = builder.Entity<Content>().HasQueryFilter(filter:i => i.Page != null);
+
+        _ = builder.Entity<Submission>().HasQueryFilter(filter:s => AdminOf.Contains(s.AppId)
             || s.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("submission_read")));
     }
 }

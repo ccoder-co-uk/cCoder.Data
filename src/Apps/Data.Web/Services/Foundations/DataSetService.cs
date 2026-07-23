@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Security;
 using System.Text.Json;
 using Data.Web.Brokers;
@@ -12,7 +16,7 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
     {
         EnsureAuthenticated();
 
-        return dataSetBroker.SelectEntitySetsAsync(cancellationToken);
+        return dataSetBroker.SelectEntitySetsAsync(cancellationToken:cancellationToken);
     }
 
     public Task<DataRows> GetRowsAsync(
@@ -24,10 +28,10 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
         EnsureAuthenticated();
 
         return dataSetBroker.SelectRowsAsync(
-            entitySet,
-            Math.Max(skip, 0),
-            Math.Clamp(take, 1, 500),
-            cancellationToken);
+entitySet:            entitySet,
+skip:            Math.Max(skip, 0),
+take:            Math.Clamp(take, 1, 500),
+cancellationToken:            cancellationToken);
     }
 
     public Task<Dictionary<string, object>> CreateRowAsync(
@@ -37,7 +41,7 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
     {
         EnsureAuthenticated();
 
-        return dataSetBroker.InsertRowAsync(entitySet, values, cancellationToken);
+        return dataSetBroker.InsertRowAsync(entitySet:entitySet, values:values, cancellationToken:cancellationToken);
     }
 
     public Task<Dictionary<string, object>> UpdateRowAsync(
@@ -47,7 +51,7 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
     {
         EnsureAuthenticated();
 
-        return dataSetBroker.UpdateRowAsync(entitySet, values, cancellationToken);
+        return dataSetBroker.UpdateRowAsync(entitySet:entitySet, values:values, cancellationToken:cancellationToken);
     }
 
     public Task DeleteRowAsync(
@@ -57,14 +61,14 @@ internal sealed class DataSetService(IDataSetBroker dataSetBroker)
     {
         EnsureAuthenticated();
 
-        return dataSetBroker.DeleteRowAsync(entitySet, values, cancellationToken);
+        return dataSetBroker.DeleteRowAsync(entitySet:entitySet, values:values, cancellationToken:cancellationToken);
     }
 
     private void EnsureAuthenticated()
     {
         string ssoUserId = dataSetBroker.GetCurrentSsoUserId();
 
-        if (string.IsNullOrWhiteSpace(ssoUserId) || ssoUserId == "Guest")
+        if (string.IsNullOrWhiteSpace(value:ssoUserId) || ssoUserId == "Guest")
             throw new SecurityException("Authentication is required.");
     }
 }

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 using cCoder.Data.Models.Security;
 using cCoder.Data.Models.Workflow;
@@ -22,7 +26,7 @@ public class ScheduledTask
     public string ExecutionArgs { get; set; }
     public long ScheduleInTicks { get; set; }
 
-    public TimeSpan Schedule => TimeSpan.FromTicks(ScheduleInTicks);
+    public TimeSpan Schedule => TimeSpan.FromTicks(value:ScheduleInTicks);
 
     // users
     public string CreatedBy { get; set; }
@@ -43,9 +47,3 @@ public class ScheduledTask
     public virtual Calendar ExcludedEventsCalendar { get; set; }
 
 }
-
-
-
-
-
-

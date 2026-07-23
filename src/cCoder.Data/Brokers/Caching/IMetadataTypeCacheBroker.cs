@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Brokers.Caching;
 
 internal interface IMetadataTypeCacheBroker
@@ -8,5 +12,3 @@ internal interface IMetadataTypeCacheBroker
     bool Contains(string scope);
     void Clear(string scope);
 }
-
-

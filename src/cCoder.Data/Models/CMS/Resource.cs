@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Resource
@@ -28,8 +32,3 @@ public class Resource
 
     public virtual App App { get; set; }
 }
-
-
-
-
-

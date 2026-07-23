@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Brokers.Caching;
 
 
@@ -8,34 +12,33 @@ internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
 {
     public void Set(string scope, IEnumerable<string> typeSetPayloads)
     {
-        ValidateScope(scope);
-        ValidateTypeSetPayloads(typeSetPayloads);
+        ValidateScope(scope:scope);
+        ValidateTypeSetPayloads(typeSetPayloads:typeSetPayloads);
 
-        broker.Set(scope, typeSetPayloads.ToArray());
+        broker.Set(scope:scope, typeSetPayloads:typeSetPayloads.ToArray());
     }
 
     public string[] Get(string scope)
     {
-        ValidateScope(scope);
+        ValidateScope(scope:scope);
 
-        return broker.Get(scope);
+        return broker.Get(scope:scope);
     }
 
-    public string[] GetAll() => broker.GetAll();
+    public string[] GetAll() =>
+        broker.GetAll();
 
     public bool Contains(string scope)
     {
-        ValidateScope(scope);
+        ValidateScope(scope:scope);
 
-        return broker.Contains(scope);
+        return broker.Contains(scope:scope);
     }
 
     public void Clear(string scope)
     {
-        ValidateScope(scope);
+        ValidateScope(scope:scope);
 
-        broker.Clear(scope);
+        broker.Clear(scope:scope);
     }
 }
-
-

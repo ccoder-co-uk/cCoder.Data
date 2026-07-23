@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.ComponentModel.DataAnnotations;
 using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Services.Foundations;
@@ -16,9 +20,9 @@ public class MetadataTypeCacheServiceTests
     {
         var service = CreateService();
 
-        Action act = () => service.Set(scope, [CreateTypeSetPayload("App")]);
+        Action act = () => service.Set(scope:scope, typeSetPayloads:[CreateTypeSetPayload("App")]);
 
-        act.Should().Throw<ValidationException>().WithMessage("Scope is required.");
+        act.Should().Throw<ValidationException>().WithMessage(expectedWildcardPattern:"Scope is required.");
     }
 
     [Fact]
@@ -26,59 +30,59 @@ public class MetadataTypeCacheServiceTests
     {
         var service = CreateService();
 
-        Action act = () => service.Set("cms", null);
+        Action act = () => service.Set(scope:"cms", typeSetPayloads:null);
 
-        act.Should().Throw<ValidationException>().WithMessage("Type sets are required.");
+        act.Should().Throw<ValidationException>().WithMessage(expectedWildcardPattern:"Type sets are required.");
     }
 
     [Fact]
     public void ShouldThrowValidationExceptionOnSetWhenTypeSetsContainNull()
     {
         var service = CreateService();
-        IEnumerable<string> typeSetPayloads = [CreateTypeSetPayload("App"), null];
+        IEnumerable<string> typeSetPayloads = [CreateTypeSetPayload(name:"App"), null];
 
-        Action act = () => service.Set("cms", typeSetPayloads);
+        Action act = () => service.Set(scope:"cms", typeSetPayloads:typeSetPayloads);
 
         act.Should()
             .Throw<ValidationException>()
-            .WithMessage("Type sets contain invalid values.");
+            .WithMessage(expectedWildcardPattern:"Type sets contain invalid values.");
     }
 
     [Fact]
     public void ShouldSetAndGetByScopeWhenArgumentsAreValid()
     {
         var service = CreateService();
-        string[] expected = [CreateTypeSetPayload("App"), CreateTypeSetPayload("Page")];
+        string[] expected = [CreateTypeSetPayload(name:"App"), CreateTypeSetPayload(name:"Page")];
 
-        service.Set("cms", expected);
+        service.Set(scope:"cms", typeSetPayloads:expected);
 
-        string[] actual = service.Get("cms");
+        string[] actual = service.Get(scope:"cms");
 
-        actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+        actual.Should().BeEquivalentTo(expectation:expected, config:options => options.WithStrictOrdering());
     }
 
     [Fact]
     public void ShouldReturnAllCachedSets()
     {
         var service = CreateService();
-        string[] cmsSets = [CreateTypeSetPayload("App")];
-        string[] workflowSets = [CreateTypeSetPayload("Flow")];
+        string[] cmsSets = [CreateTypeSetPayload(name:"App")];
+        string[] workflowSets = [CreateTypeSetPayload(name:"Flow")];
 
-        service.Set("cms", cmsSets);
-        service.Set("workflow", workflowSets);
+        service.Set(scope:"cms", typeSetPayloads:cmsSets);
+        service.Set(scope:"workflow", typeSetPayloads:workflowSets);
 
         string[] actual = service.GetAll();
 
-        actual.Should().BeEquivalentTo([.. cmsSets, .. workflowSets], options => options.WithStrictOrdering());
+        actual.Should().BeEquivalentTo(expectation:[.. cmsSets, .. workflowSets], config:options => options.WithStrictOrdering());
     }
 
     [Fact]
     public void ShouldContainScopeWhenScopeIsCached()
     {
         var service = CreateService();
-        service.Set("cms", [CreateTypeSetPayload("App")]);
+        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload("App")]);
 
-        bool actual = service.Contains("cms");
+        bool actual = service.Contains(scope:"cms");
 
         actual.Should().BeTrue();
     }
@@ -87,16 +91,17 @@ public class MetadataTypeCacheServiceTests
     public void ShouldClearScopeWhenScopeIsCached()
     {
         var service = CreateService();
-        service.Set("cms", [CreateTypeSetPayload("App")]);
+        service.Set(scope:"cms", typeSetPayloads:[CreateTypeSetPayload("App")]);
 
-        service.Clear("cms");
+        service.Clear(scope:"cms");
 
-        service.Contains("cms").Should().BeFalse();
-        service.Get("cms").Should().BeEmpty();
+        service.Contains(scope:"cms").Should().BeFalse();
+        service.Get(scope:"cms").Should().BeEmpty();
     }
 
-    private static MetadataTypeCacheService CreateService() => new(new MetadataTypeCacheBroker());
+    private static MetadataTypeCacheService CreateService() =>
+        new(new MetadataTypeCacheBroker());
 
-    private static string CreateTypeSetPayload(string name) => $"{{\"Name\":\"{name}\"}}";
+    private static string CreateTypeSetPayload(string name) =>
+        $"{{\"Name\":\"{name}\"}}";
 }
-

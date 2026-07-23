@@ -1,4 +1,8 @@
-﻿using System;
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -39,7 +43,8 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MailReceivers", x => x.Id);
+                    table.PrimaryKey(name:"PK_MailReceivers", columns:x => x.Id);
+
                     table.ForeignKey(
                         name: "FK_MailReceivers_Apps_AppId",
                         column: x => x.AppId,
@@ -67,7 +72,8 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MailSenders", x => x.Id);
+                    table.PrimaryKey(name:"PK_MailSenders", columns:x => x.Id);
+
                     table.ForeignKey(
                         name: "FK_MailSenders_Apps_AppId",
                         column: x => x.AppId,
@@ -83,7 +89,7 @@ namespace cCoder.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                     ReceivedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     From = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MessageId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -98,7 +104,8 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceivedEmails", x => x.Id);
+                    table.PrimaryKey(name:"PK_ReceivedEmails", columns:x => x.Id);
+
                     table.ForeignKey(
                         name: "FK_ReceivedEmails_Apps_AppId",
                         column: x => x.AppId,
@@ -106,12 +113,14 @@ namespace cCoder.Core.Migrations
                         principalTable: "Apps",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+
                     table.ForeignKey(
                         name: "FK_ReceivedEmails_MailReceivers_MailReceiverId",
                         column: x => x.MailReceiverId,
                         principalSchema: "Mail",
                         principalTable: "MailReceivers",
                         principalColumn: "Id");
+
                     table.ForeignKey(
                         name: "FK_ReceivedEmails_Users_SentByUserId",
                         column: x => x.SentByUserId,

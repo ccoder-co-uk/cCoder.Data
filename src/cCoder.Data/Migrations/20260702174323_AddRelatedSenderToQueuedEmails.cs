@@ -1,4 +1,8 @@
-﻿using System;
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable

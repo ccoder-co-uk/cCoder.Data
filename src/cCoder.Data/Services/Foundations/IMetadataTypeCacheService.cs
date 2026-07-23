@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Services.Foundations;
 
 public interface IMetadataTypeCacheService
@@ -8,5 +12,3 @@ public interface IMetadataTypeCacheService
     bool Contains(string scope);
     void Clear(string scope);
 }
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Data.Web.Brokers;
 using Data.Web.Services.Foundations;
 using Data.Web.Services.Orchestrations;
@@ -11,7 +15,8 @@ internal static class IServiceCollectionExtensions
     {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen(options =>
+
+        services.AddSwaggerGen(setupAction:options =>
         {
             options.SwaggerDoc("Data", new()
             {

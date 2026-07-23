@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Exposures;
 using cCoder.Data.Services.Foundations;
@@ -16,7 +20,7 @@ public static class IServiceCollectionExtensions
         string connectionString
     )
     {
-        services.AddCoreDataAccess(connectionString);
+        services.AddCoreDataAccess(connectionString:connectionString);
         services.AddCoreAuthInfo();
     }
 
@@ -25,7 +29,7 @@ public static class IServiceCollectionExtensions
         string connectionString
     )
     {
-        services.TryAddSingleton(new Config
+        services.TryAddSingleton(instance:new Config
         {
             ConnectionStrings = new Dictionary<string, string>
             {
@@ -41,14 +45,14 @@ public static class IServiceCollectionExtensions
         services.TryAddSingleton<IMetadataTypeCacheService, MetadataTypeCacheService>();
         services.TryAddSingleton<IMetadataTypeCache, MetadataTypeCache>();
 
-        if (!services.Any(serviceDescriptor => serviceDescriptor.ServiceType == typeof(IDbContextFactory<CoreDataContext>)))
+        if (!services.Any(predicate:serviceDescriptor => serviceDescriptor.ServiceType == typeof(IDbContextFactory<CoreDataContext>)))
             services.AddDbContextFactory<CoreDataContext>(lifetime: ServiceLifetime.Scoped);
 
     }
 
     public static void AddCoreAuthInfo(this IServiceCollection services)
     {
-        services.Replace(ServiceDescriptor.Transient<ICoreAuthInfo>(ctx => new CoreAuthInfo
+        services.Replace(descriptor:ServiceDescriptor.Transient<ICoreAuthInfo>(ctx => new CoreAuthInfo
         {
             SSOUserId = ResolveSsoUserId(ctx),
         }));
@@ -58,7 +62,7 @@ public static class IServiceCollectionExtensions
     {
         string eventUserId = serviceProvider.GetService<IEventAuthInfo>()?.SSOUserId;
 
-        if (!string.IsNullOrWhiteSpace(eventUserId))
+        if (!string.IsNullOrWhiteSpace(value:eventUserId))
             return eventUserId;
 
         string ssoUserId;
@@ -66,21 +70,21 @@ public static class IServiceCollectionExtensions
         try
         {
             Type authInfoType = Type.GetType(
-                "cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Data",
+typeName:                "cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Data",
                 throwOnError: false);
 
             object authInfo = authInfoType is null
                 ? null
-                : serviceProvider.GetService(authInfoType);
+                : serviceProvider.GetService(serviceType:authInfoType);
 
-            ssoUserId = authInfo?.GetType().GetProperty("SSOUserId")?.GetValue(authInfo)?.ToString();
+            ssoUserId = authInfo?.GetType().GetProperty(name:"SSOUserId")?.GetValue(obj:authInfo)?.ToString();
         }
         catch
         {
             ssoUserId = "Guest";
         }
 
-        return string.IsNullOrWhiteSpace(ssoUserId)
+        return string.IsNullOrWhiteSpace(value:ssoUserId)
             ? "Guest"
             : ssoUserId;
     }
@@ -90,7 +94,3 @@ public class CoreAuthInfo : ICoreAuthInfo
 {
     public string SSOUserId { get; internal set; } = string.Empty;
 }
-
-
-
-

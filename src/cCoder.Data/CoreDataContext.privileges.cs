@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.Security;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +12,8 @@ public partial class CoreDataContext
 {
     public virtual DbSet<Privilege> Privileges { get; set; }
 
-    public Privilege[] GetAllPrivileges() => KnownPrivileges;
+    public Privilege[] GetAllPrivileges() =>
+        KnownPrivileges;
 
     private static readonly Privilege[] KnownPrivileges = new[]
     {
@@ -179,8 +184,3 @@ public partial class CoreDataContext
         new Privilege { Id = "workflowevent_update",        Type = "WorkflowEvent",     Operation = "Update",           Description = "Allows users to Update WorkflowEvents.",     PortalAdminsOnly = false }
     };
 }
-
-
-
-
-
