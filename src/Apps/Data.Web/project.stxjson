@@ -1,0 +1,468 @@
+{
+  "Classes": [
+    {
+      "Name": "Data.Web.Dependencies.DataSetBroker",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "DeleteRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task"
+        },
+        {
+          "Name": "GetCurrentSsoUserId",
+          "Inputs": [],
+          "ReturnType": "System.String"
+        },
+        {
+          "Name": "InsertRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        },
+        {
+          "Name": "SelectEntitySetsAsync",
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E"
+        },
+        {
+          "Name": "SelectRowsAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E"
+        },
+        {
+          "Name": "UpdateRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Exposures.Controllers.DataEntitySetsController",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetEntitySetsAsync",
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Exposures.Controllers.DataRowsController",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "DeleteRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+        },
+        {
+          "Name": "GetRowsAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+        },
+        {
+          "Name": "PostRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+        },
+        {
+          "Name": "PutRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.IServiceCollectionExtensions",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.DataEntitySet",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "ClrType",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "KeyProperties",
+          "Type": "System.String[]"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Properties",
+          "Type": "Data.Web.Models.DataProperty[]"
+        },
+        {
+          "Name": "Table",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.DataProperty",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "CanCreate",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "CanUpdate",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "IsKey",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "IsLongText",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "IsNullable",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Type",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.DataRows",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "EntitySet",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Rows",
+          "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E[]"
+        },
+        {
+          "Name": "Skip",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Take",
+          "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.Exceptions.ServiceDependencyException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.Exceptions.ServiceException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.Exceptions.ServiceValidationException",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Program",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Main",
+          "Inputs": [
+            {
+              "Name": "args",
+              "Type": "System.String[]"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Services.Foundations.DataEntitySetService",
+      "StandardElementType": "FoundationService",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetEntitySetsAsync",
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataEntitySet[]\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Services.Foundations.DataRowService",
+      "StandardElementType": "FoundationService",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "AddRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "newValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        },
+        {
+          "Name": "DeleteRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "deletedValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask"
+        },
+        {
+          "Name": "GetRowsAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataRows\u003E"
+        },
+        {
+          "Name": "UpdateRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "updatedValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Services.Processings.ServiceCollectionProcessingService",
+      "StandardElementType": "ProcessingService",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "AddDataWeb",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "IServiceCollection"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
+    }
+  ],
+  "Links": [
+    {
+      "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
+      "ToType": "Data.Web.Services.Foundations.DataEntitySetService"
+    },
+    {
+      "FromType": "Data.Web.Exposures.Controllers.DataRowsController",
+      "ToType": "Data.Web.Services.Foundations.DataRowService"
+    },
+    {
+      "FromType": "Data.Web.Services.Foundations.DataEntitySetService",
+      "ToType": "Data.Web.Dependencies.DataSetBroker"
+    },
+    {
+      "FromType": "Data.Web.Services.Foundations.DataRowService",
+      "ToType": "Data.Web.Dependencies.DataSetBroker"
+    }
+  ],
+  "AnalysisItems": []
+}

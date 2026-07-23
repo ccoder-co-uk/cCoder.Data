@@ -5,30 +5,28 @@
 using System.Text.Json;
 using Data.Web.Models;
 
-namespace Data.Web.Services.Processings;
+namespace Data.Web.Services.Foundations;
 
-public interface IDataSetProcessingService
+public interface IDataRowService
 {
-    Task<DataEntitySet[]> GetEntitySetsAsync(CancellationToken cancellationToken);
-
-    Task<DataRows> GetRowsAsync(
+    ValueTask<DataRows> GetRowsAsync(
         string entitySet,
         int skip,
         int take,
         CancellationToken cancellationToken);
 
-    Task<Dictionary<string, object>> CreateRowAsync(
+    ValueTask<Dictionary<string, object>> AddRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, JsonElement> newValues,
         CancellationToken cancellationToken);
 
-    Task<Dictionary<string, object>> UpdateRowAsync(
+    ValueTask<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, JsonElement> updatedValues,
         CancellationToken cancellationToken);
 
-    Task DeleteRowAsync(
+    ValueTask DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, JsonElement> deletedValues,
         CancellationToken cancellationToken);
 }

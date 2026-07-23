@@ -2,22 +2,17 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using cCoder.Data.Models.Exceptions;
-using System.ComponentModel.DataAnnotations;
+using Data.Web.Models.Exceptions;
 
-namespace cCoder.Data.Services.Foundations;
+namespace Data.Web.Services.Foundations;
 
-internal partial class MetadataTypeCacheService
+internal sealed partial class DataRowService
 {
-    private static void TryCatch(Action operation)
+    private static async ValueTask TryCatch(Func<ValueTask> operation)
     {
         try
         {
-            operation();
-        }
-        catch (ValidationException innerException)
-        {
-            throw new ServiceValidationException(innerException);
+            await operation();
         }
         catch (ArgumentException innerException)
         {
@@ -33,15 +28,12 @@ internal partial class MetadataTypeCacheService
         }
     }
 
-    private static TResult TryCatch<TResult>(Func<TResult> operation)
+    private static async ValueTask<TResult> TryCatch<TResult>(
+        Func<ValueTask<TResult>> operation)
     {
         try
         {
-            return operation();
-        }
-        catch (ValidationException innerException)
-        {
-            throw new ServiceValidationException(innerException);
+            return await operation();
         }
         catch (ArgumentException innerException)
         {

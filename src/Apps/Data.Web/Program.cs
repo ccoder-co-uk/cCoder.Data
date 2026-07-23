@@ -32,13 +32,13 @@ public class Program
             securityConfig.AddMSSQLModelProvider(services:services, connectionString:ssoConnection);
 
             securityConfig.UseAESHMMACPasswordEncryption(
-services:                services,
-decryptionKey:                builder.Configuration.GetSection("Settings")["DecryptionKey"]);
+                services: services,
+                decryptionKey: builder.Configuration.GetSection(key: "Settings")["DecryptionKey"]);
         });
 
         cCoder.Data.IServiceCollectionExtensions.AddCoreData(
-services:            builder.Services,
-connectionString:            coreConnection);
+            services: builder.Services,
+            connectionString: coreConnection);
 
         builder.Services.AddDataWeb();
 
@@ -79,11 +79,16 @@ connectionString:            coreConnection);
         context.Response.ContentType = "application/json";
 
         if (exception is null)
+        {
             return;
+        }
 
-        log.LogError("{Message}\n{StackTrace}", exception.Message, exception.StackTrace);
+        log.LogError(
+            exception: exception,
+            message: "{Message}\n{StackTrace}",
+            args: [exception.Message, exception.StackTrace]);
 
         await context.Response.WriteAsync(
-text:            "{ \"error\": \"" + exception.Message.Replace(oldValue:"\"", newValue:"'") + "\" }");
+            text: "{ \"error\": \"" + exception.Message.Replace(oldValue: "\"", newValue: "'") + "\" }");
     }
 }
