@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
@@ -61,6 +65,3 @@ public partial class MovePrivsIntoRam : Migration
             });
     }
 }
-
-
-

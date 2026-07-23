@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 
@@ -33,9 +37,3 @@ public class FlowDefinition
 
     public virtual ICollection<FlowInstanceData> Instances { get; set; }
 }
-
-
-
-
-
-

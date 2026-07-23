@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
@@ -76,7 +80,7 @@ public partial class RetireGenericAuditing : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
+                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                 Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 Detail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 EntityId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -88,7 +92,7 @@ public partial class RetireGenericAuditing : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_AuditEntries", x => x.Id);
+                table.PrimaryKey(name:"PK_AuditEntries", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -97,7 +101,7 @@ public partial class RetireGenericAuditing : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
+                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                 AuditEntryId = table.Column<int>(type: "int", nullable: false),
                 NewValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 PreviousValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -105,7 +109,8 @@ public partial class RetireGenericAuditing : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_AuditDataItems", x => x.Id);
+                table.PrimaryKey(name:"PK_AuditDataItems", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_AuditDataItems_AuditEntries_AuditEntryId",
                     column: x => x.AuditEntryId,
@@ -138,6 +143,3 @@ public partial class RetireGenericAuditing : Migration
             column: "AuditEntryId");
     }
 }
-
-
-

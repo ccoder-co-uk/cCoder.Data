@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.Planning;
 using cCoder.Data.Models.Workflow;
 using Microsoft.EntityFrameworkCore;
@@ -13,48 +17,49 @@ public partial class CoreDataContext
 
     private static void ConfigureWorkflowModel(ModelBuilder builder)
     {
-        _ = builder.Entity<FlowDefinition>(entity =>
+        _ = builder.Entity<FlowDefinition>(buildAction:entity =>
         {
-            entity.ToTable("WorkFlows", "Workflow");
-            entity.Property(i => i.Id).ValueGeneratedOnAdd();
-            entity.Property(i => i.Name).IsRequired().HasMaxLength(100);
-            entity.Property(i => i.Description).HasMaxLength(350);
-            entity.Property(i => i.LastUpdated);
-            entity.Property(i => i.LastUpdatedBy).HasMaxLength(100);
-            entity.Property(i => i.CreatedOn);
-            entity.Property(i => i.CreatedBy).HasMaxLength(100);
+            entity.ToTable(name:"WorkFlows", schema:"Workflow");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(i => i.Name).IsRequired().HasMaxLength(maxLength:100);
+            entity.Property(i => i.Description).HasMaxLength(maxLength:350);
+            entity.Property(propertyExpression:i => i.LastUpdated);
+            entity.Property(i => i.LastUpdatedBy).HasMaxLength(maxLength:100);
+            entity.Property(propertyExpression:i => i.CreatedOn);
+            entity.Property(i => i.CreatedBy).HasMaxLength(maxLength:100);
         });
-        _ = builder.Entity<FlowInstanceData>(entity =>
+
+        _ = builder.Entity<FlowInstanceData>(buildAction:entity =>
         {
-            entity.ToTable("FlowInstances", "Workflow");
-            entity.Property(i => i.Id).ValueGeneratedNever();
-            entity.Ignore(r => r.ContextString);
-            entity.HasOne(i => i.FlowDefinition).WithMany(i => i.Instances).HasForeignKey(i => i.FlowDefinitionId);
+            entity.ToTable(name:"FlowInstances", schema:"Workflow");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedNever();
+            entity.Ignore(propertyExpression:r => r.ContextString);
+            entity.HasOne(i => i.FlowDefinition).WithMany(i => i.Instances).HasForeignKey(foreignKeyExpression:i => i.FlowDefinitionId);
         });
-        _ = builder.Entity<WorkflowEvent>(entity =>
+
+        _ = builder.Entity<WorkflowEvent>(buildAction:entity =>
         {
-            entity.ToTable("WorkflowEvents", "Workflow");
-            entity.Property(i => i.Id).ValueGeneratedOnAdd();
-            entity.Property(i => i.ExecuteAs).IsRequired();
-            entity.HasOne(i => i.Flow).WithMany().HasForeignKey(i => i.FlowId);
-            entity.HasOne(i => i.ExecuteAsUser).WithMany().HasForeignKey(i => i.ExecuteAs);
+            entity.ToTable(name:"WorkflowEvents", schema:"Workflow");
+            entity.Property(propertyExpression:i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(propertyExpression:i => i.ExecuteAs).IsRequired();
+            entity.HasOne(i => i.Flow).WithMany().HasForeignKey(foreignKeyExpression:i => i.FlowId);
+            entity.HasOne(i => i.ExecuteAsUser).WithMany().HasForeignKey(foreignKeyExpression:i => i.ExecuteAs);
         });
     }
 
     private void ApplyWorkflowFilters(ModelBuilder builder)
     {
-        _ = builder.Entity<FlowDefinition>().HasQueryFilter(c =>
-            AdminOf.Contains(c.AppId)
-            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("flowdefinition_read")));
-        _ = builder.Entity<FlowInstanceData>().HasQueryFilter(c => c.FlowDefinition != null);
-        _ = builder.Entity<WorkflowEvent>().HasQueryFilter(t => t.Flow != null);
-        _ = builder.Entity<Calendar>().HasQueryFilter(c =>
-            AdminOf.Contains(c.AppId)
-            || c.App.Roles.Any(r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
-        _ = builder.Entity<CalendarEvent>().HasQueryFilter(e => e.Calendar != null);
+        _ = builder.Entity<FlowDefinition>().HasQueryFilter(filter:c =>
+            AdminOf.Contains(value:c.AppId)
+            || c.App.Roles.Any(predicate:r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("flowdefinition_read")));
+
+        _ = builder.Entity<FlowInstanceData>().HasQueryFilter(filter:c => c.FlowDefinition != null);
+        _ = builder.Entity<WorkflowEvent>().HasQueryFilter(filter:t => t.Flow != null);
+
+        _ = builder.Entity<Calendar>().HasQueryFilter(filter:c =>
+            AdminOf.Contains(value:c.AppId)
+            || c.App.Roles.Any(predicate:r => CurrentUserRoleIds.Contains(r.Id) && r.Privs.Contains("calendar_read")));
+
+        _ = builder.Entity<CalendarEvent>().HasQueryFilter(filter:e => e.Calendar != null);
     }
 }
-
-
-
-

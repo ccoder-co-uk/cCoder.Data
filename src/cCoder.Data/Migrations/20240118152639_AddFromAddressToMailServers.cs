@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
@@ -8,7 +12,8 @@ namespace cCoder.Core.Migrations;
 public partial class AddFromAddressToMailServers : Migration
 {
     /// <inheritdoc />
-    protected override void Up(MigrationBuilder migrationBuilder) => migrationBuilder.AddColumn<string>(
+    protected override void Up(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.AddColumn<string>(
             name: "FromEmail",
             schema: "Mail",
             table: "MailServers",
@@ -16,11 +21,9 @@ public partial class AddFromAddressToMailServers : Migration
             nullable: true);
 
     /// <inheritdoc />
-    protected override void Down(MigrationBuilder migrationBuilder) => migrationBuilder.DropColumn(
+    protected override void Down(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.DropColumn(
             name: "FromEmail",
             schema: "Mail",
             table: "MailServers");
 }
-
-
-

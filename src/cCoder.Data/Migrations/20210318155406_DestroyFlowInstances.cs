@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -55,7 +59,8 @@ public partial class DestroyFlowInstances : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_FlowInstances", x => x.Id);
+                table.PrimaryKey(name:"PK_FlowInstances", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_FlowInstances_WorkFlows_FlowDefinitionId",
                     column: x => x.FlowDefinitionId,
@@ -84,6 +89,3 @@ public partial class DestroyFlowInstances : Migration
             column: "FlowDefinitionId");
     }
 }
-
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Brokers.Caching;
 
 
@@ -6,36 +10,50 @@ namespace cCoder.Data.Services.Foundations;
 internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
     : IMetadataTypeCacheService
 {
-    public void Set(string scope, IEnumerable<string> typeSetPayloads)
-    {
-        ValidateScope(scope);
-        ValidateTypeSetPayloads(typeSetPayloads);
+    public void Set(string scope, IEnumerable<string> typeSetPayloads) =>
+        TryCatch(operation: () =>
+        {
+            ValidateMetadataTypeCacheOnSet(
+                scope: scope,
+                typeSetPayloads: typeSetPayloads);
 
-        broker.Set(scope, typeSetPayloads.ToArray());
-    }
+            broker.Set(
+                scope: scope,
+                typeSetPayloads: typeSetPayloads.ToArray());
+        });
 
-    public string[] Get(string scope)
-    {
-        ValidateScope(scope);
+    public string[] Get(string scope) =>
+        TryCatch(operation: () =>
+        {
+            ValidateScope(scope: scope);
+            Validate(inputs: scope);
 
-        return broker.Get(scope);
-    }
+            return broker.Get(scope: scope);
+        });
 
-    public string[] GetAll() => broker.GetAll();
+    public string[] GetAll() =>
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: []);
 
-    public bool Contains(string scope)
-    {
-        ValidateScope(scope);
+            return broker.GetAll();
+        });
 
-        return broker.Contains(scope);
-    }
+    public bool Contains(string scope) =>
+        TryCatch(operation: () =>
+        {
+            ValidateScope(scope: scope);
+            Validate(inputs: scope);
 
-    public void Clear(string scope)
-    {
-        ValidateScope(scope);
+            return broker.Contains(scope: scope);
+        });
 
-        broker.Clear(scope);
-    }
+    public void Clear(string scope) =>
+        TryCatch(operation: () =>
+        {
+            ValidateScope(scope: scope);
+            Validate(inputs: scope);
+
+            broker.Clear(scope: scope);
+        });
 }
-
-

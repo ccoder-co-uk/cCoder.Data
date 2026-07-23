@@ -1,40 +1,87 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Brokers.Caching;
 using FluentAssertions;
 using Xunit;
 
 namespace cCoder.Data.Tests.Brokers.Caching;
 
-public class MetadataTypeCacheBrokerTests
+public sealed partial class MetadataTypeCacheBrokerTests
 {
     [Fact]
     public void ShouldSetGetGetAllContainAndClearByScope()
     {
-        var broker = new MetadataTypeCacheBroker();
+        // Given
+        MetadataTypeCacheBroker broker = CreateMetadataTypeCacheBroker();
+
         string[] typeSetPayloads =
         [
             "{\"Name\":\"App\"}",
             "{\"Name\":\"Page\"}",
         ];
 
-        broker.Set("cms", typeSetPayloads);
+        // When
+        broker.Set(
+            scope: "cms",
+            typeSetPayloads: typeSetPayloads);
 
-        broker.Contains("cms").Should().BeTrue();
-        broker.Get("cms").Should().BeEquivalentTo(typeSetPayloads, options => options.WithStrictOrdering());
-        broker.GetAll().Should().BeEquivalentTo(typeSetPayloads, options => options.WithStrictOrdering());
+        // Then
+        broker
+            .Contains(scope: "cms")
+            .Should()
+            .BeTrue();
 
-        broker.Clear("cms");
+        broker
+            .Get(scope: "cms")
+            .Should()
+            .BeEquivalentTo(
+                expectation: typeSetPayloads,
+                config: options => options.WithStrictOrdering());
 
-        broker.Contains("cms").Should().BeFalse();
-        broker.Get("cms").Should().BeEmpty();
-        broker.GetAll().Should().BeEmpty();
+        broker
+            .GetAll()
+            .Should()
+            .BeEquivalentTo(
+                expectation: typeSetPayloads,
+                config: options => options.WithStrictOrdering());
+
+        // When
+        broker.Clear(scope: "cms");
+
+        // Then
+        broker
+            .Contains(scope: "cms")
+            .Should()
+            .BeFalse();
+
+        broker
+            .Get(scope: "cms")
+            .Should()
+            .BeEmpty();
+
+        broker
+            .GetAll()
+            .Should()
+            .BeEmpty();
     }
 
     [Fact]
     public void ShouldReturnEmptySetWhenScopeHasNotBeenCached()
     {
-        var broker = new MetadataTypeCacheBroker();
+        // Given
+        MetadataTypeCacheBroker broker = CreateMetadataTypeCacheBroker();
 
-        broker.Get("missing").Should().BeEmpty();
+        // When
+        string[] typeSetPayloads = broker.Get(scope: "missing");
+
+        // Then
+        typeSetPayloads
+            .Should()
+            .BeEmpty();
     }
-}
 
+    private static MetadataTypeCacheBroker CreateMetadataTypeCacheBroker() =>
+        new MetadataTypeCacheBroker();
+}

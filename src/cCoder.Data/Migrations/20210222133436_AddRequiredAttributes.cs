@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -7,7 +11,7 @@ public partial class AddRequiredAttributes : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(@"
+        migrationBuilder.Sql(sql:@"
                                     UPDATE WorkFlow.Workflows SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;
                                     UPDATE WorkFlow.BusinessProcesses SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;
                                     UPDATE CMS.Templates SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;
@@ -57,6 +61,7 @@ public partial class AddRequiredAttributes : Migration
             oldClrType: typeof(string),
             oldType: "nvarchar(max)",
             oldNullable: true);
+
         migrationBuilder.AlterColumn<string>(
             name: "CreatedBy",
             schema: "CMS",
@@ -66,6 +71,7 @@ public partial class AddRequiredAttributes : Migration
             oldClrType: typeof(string),
             oldType: "nvarchar(max)",
             oldNullable: true);
+
         migrationBuilder.AlterColumn<string>(
             name: "CreatedBy",
             schema: "CMS",
@@ -75,6 +81,7 @@ public partial class AddRequiredAttributes : Migration
             oldClrType: typeof(string),
             oldType: "nvarchar(max)",
             oldNullable: true);
+
         migrationBuilder.AlterColumn<string>(
             name: "CreatedBy",
             schema: "CMS",
@@ -308,6 +315,3 @@ public partial class AddRequiredAttributes : Migration
             oldMaxLength: 100);
     }
 }
-
-
-

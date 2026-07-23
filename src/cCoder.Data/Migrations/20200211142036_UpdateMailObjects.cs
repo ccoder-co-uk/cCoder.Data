@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -5,17 +9,17 @@ namespace cCoder.Core.Migrations;
 
 public partial class UpdateMailObjects : Migration
 {
-    protected override void Up(MigrationBuilder migrationBuilder) => migrationBuilder.RenameColumn(
+    protected override void Up(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.RenameColumn(
             name: "From",
             schema: "Mail",
             table: "QueuedEmails",
             newName: "MailServerName");
 
-    protected override void Down(MigrationBuilder migrationBuilder) => migrationBuilder.RenameColumn(
+    protected override void Down(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.RenameColumn(
             name: "MailServerName",
             schema: "Mail",
             table: "QueuedEmails",
             newName: "From");
 }
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 namespace cCoder.Data.Models.Mail;
@@ -24,7 +28,7 @@ public class MailReceiver
 
     public DateTimeOffset? LastReceivedOn { get; set; }
 
-    public bool IsEnabled { get; set; } = true;
+    public bool IsEnabled { get; set; }
 
     public virtual App App { get; set; }
 

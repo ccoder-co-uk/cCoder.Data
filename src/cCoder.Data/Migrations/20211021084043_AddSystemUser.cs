@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -16,6 +20,7 @@ public partial class AddSystemUser : Migration
             nullable: false,
             oldClrType: typeof(string),
             oldType: "nvarchar(max)");
+
         migrationBuilder.InsertData(
              schema: "Security",
              table: "Users",
@@ -27,7 +32,8 @@ public partial class AddSystemUser : Migration
         );
     }
 
-    protected override void Down(MigrationBuilder migrationBuilder) => migrationBuilder.AlterColumn<string>(
+    protected override void Down(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.AlterColumn<string>(
             name: "Name",
             schema: "CMS",
             table: "CommonObjects",
@@ -37,6 +43,3 @@ public partial class AddSystemUser : Migration
             oldType: "nvarchar(100)",
             oldMaxLength: 100);
 }
-
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class MetaItem
@@ -16,8 +20,3 @@ public class MetaItem
 
     public Culture Culture { get; set; }
 }
-
-
-
-
-

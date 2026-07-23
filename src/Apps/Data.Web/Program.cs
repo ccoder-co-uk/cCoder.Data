@@ -1,6 +1,8 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Security;
-using cCoder.Security;
-using cCoder.Security.Data.EF;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace Data.Web;
@@ -11,31 +13,9 @@ public class Program
 
     public static void Main(string[] args)
     {
-        WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+        WebApplicationBuilder builder = WebApplication.CreateBuilder(args:args);
 
-        string coreConnection = builder.Configuration.GetConnectionString("Core")
-            ?? throw new InvalidOperationException("ConnectionStrings:Core is required.");
-
-        string ssoConnection = builder.Configuration.GetConnectionString("SSO")
-            ?? throw new InvalidOperationException("ConnectionStrings:SSO is required.");
-
-        cCoder.Data.Config config = new();
-        builder.Configuration.Bind(config);
-        builder.Services.AddSingleton(config);
-
-        builder.Services.AddSecurityApi((services, securityConfig) =>
-        {
-            securityConfig.AddMSSQLModelProvider(services, ssoConnection);
-            securityConfig.UseAESHMMACPasswordEncryption(
-                services,
-                builder.Configuration.GetSection("Settings")["DecryptionKey"]);
-        });
-
-        cCoder.Data.IServiceCollectionExtensions.AddCoreData(
-            builder.Services,
-            coreConnection);
-
-        builder.Services.AddDataWeb();
+        builder.Services.AddDataWeb(configuration: builder.Configuration);
 
         WebApplication app = builder.Build();
         log = app.Services.GetRequiredService<ILogger<Program>>();
@@ -45,19 +25,20 @@ public class Program
         app.UseStaticFiles();
 
         app.UseSwagger()
-            .UseSwaggerUI(options =>
+            .UseSwaggerUI(setupAction:options =>
             {
-                options.SwaggerEndpoint("/swagger/Data/swagger.json", "Data Tooling API");
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Security API");
+                options.SwaggerEndpoint(url:"/swagger/Data/swagger.json", name:"Data Tooling API");
+                options.SwaggerEndpoint(url:"/swagger/v1/swagger.json", name:"Security API");
             });
 
-        app.MapGet("/Health", () => Results.Text("OK"));
-        app.MapGet("/", () => Results.Redirect("/tools/index.html"));
+        app.MapGet(pattern:"/Health", handler:() => Results.Text(content:"OK"));
+        app.MapGet(pattern:"/", handler:() => Results.Redirect(url:"/tools/index.html"));
         app.UseRouting();
         app.MapControllers();
-        app.UseExceptionHandler(errorApplication =>
+
+        app.UseExceptionHandler(configure:errorApplication =>
         {
-            errorApplication.Run(HandleUnhandledException);
+            errorApplication.Run(handler:HandleUnhandledException);
         });
 
         app.Run();
@@ -69,13 +50,20 @@ public class Program
 
         context.Response.StatusCode =
             exception?.GetType() == typeof(SecurityException) ? 401 : 500;
+
         context.Response.ContentType = "application/json";
 
         if (exception is null)
+        {
             return;
+        }
 
-        log.LogError("{Message}\n{StackTrace}", exception.Message, exception.StackTrace);
+        log.LogError(
+            exception: exception,
+            message: "{Message}\n{StackTrace}",
+            args: [exception.Message, exception.StackTrace]);
+
         await context.Response.WriteAsync(
-            "{ \"error\": \"" + exception.Message.Replace("\"", "'") + "\" }");
+            text: "{ \"error\": \"" + exception.Message.Replace(oldValue: "\"", newValue: "'") + "\" }");
     }
 }

@@ -1,10 +1,14 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace Data.Web.Models;
 
 public sealed class DataProperty
 {
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; set; }
 
-    public string Type { get; set; } = string.Empty;
+    public string Type { get; set; }
 
     public bool IsKey { get; set; }
 

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -37,6 +41,3 @@ public partial class AddDurationInTicks : Migration
             defaultValue: new TimeSpan(0, 0, 0, 0, 0));
     }
 }
-
-
-

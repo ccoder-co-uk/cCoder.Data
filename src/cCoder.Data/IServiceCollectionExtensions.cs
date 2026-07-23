@@ -1,11 +1,9 @@
-using cCoder.Data.Brokers.Caching;
-using cCoder.Data.Exposures;
-using cCoder.Data.Services.Foundations;
-using cCoder.Eventing.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
 
+using cCoder.Data.Services.Processings;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace cCoder.Data;
 
@@ -13,84 +11,24 @@ public static class IServiceCollectionExtensions
 {
     public static void AddCoreData(
         this IServiceCollection services,
-        string connectionString
-    )
-    {
-        services.AddCoreDataAccess(connectionString);
-        services.AddCoreAuthInfo();
-    }
+        string connectionString) =>
+        CreateServiceCollectionProcessingService()
+            .AddCoreData(
+                services: services,
+                connectionString: connectionString);
 
     public static void AddCoreDataAccess(
         this IServiceCollection services,
-        string connectionString
-    )
-    {
-        services.TryAddSingleton(new Config
-        {
-            ConnectionStrings = new Dictionary<string, string>
-            {
-                ["Core"] = connectionString,
-            },
-            Settings = new Dictionary<string, string>(),
-            Services = new Dictionary<string, string>(),
-        });
+        string connectionString) =>
+        CreateServiceCollectionProcessingService()
+            .AddCoreDataAccess(
+                services: services,
+                connectionString: connectionString);
 
-        services.TryAddScoped<CoreDataContext>();
-        services.TryAddScoped<ICoreContextFactory, CoreContextFactory>();
-        services.TryAddSingleton<IMetadataTypeCacheBroker, MetadataTypeCacheBroker>();
-        services.TryAddSingleton<IMetadataTypeCacheService, MetadataTypeCacheService>();
-        services.TryAddSingleton<IMetadataTypeCache, MetadataTypeCache>();
+    public static void AddCoreAuthInfo(this IServiceCollection services) =>
+        CreateServiceCollectionProcessingService()
+            .AddCoreAuthInfo(services: services);
 
-        if (!services.Any(serviceDescriptor => serviceDescriptor.ServiceType == typeof(IDbContextFactory<CoreDataContext>)))
-            services.AddDbContextFactory<CoreDataContext>(lifetime: ServiceLifetime.Scoped);
-
-    }
-
-    public static void AddCoreAuthInfo(this IServiceCollection services)
-    {
-        services.Replace(ServiceDescriptor.Transient<ICoreAuthInfo>(ctx => new CoreAuthInfo
-        {
-            SSOUserId = ResolveSsoUserId(ctx),
-        }));
-    }
-
-    private static string ResolveSsoUserId(IServiceProvider serviceProvider)
-    {
-        string eventUserId = serviceProvider.GetService<IEventAuthInfo>()?.SSOUserId;
-
-        if (!string.IsNullOrWhiteSpace(eventUserId))
-            return eventUserId;
-
-        string ssoUserId;
-
-        try
-        {
-            Type authInfoType = Type.GetType(
-                "cCoder.Security.Objects.ISSOAuthInfo, cCoder.Security.Data",
-                throwOnError: false);
-
-            object authInfo = authInfoType is null
-                ? null
-                : serviceProvider.GetService(authInfoType);
-
-            ssoUserId = authInfo?.GetType().GetProperty("SSOUserId")?.GetValue(authInfo)?.ToString();
-        }
-        catch
-        {
-            ssoUserId = "Guest";
-        }
-
-        return string.IsNullOrWhiteSpace(ssoUserId)
-            ? "Guest"
-            : ssoUserId;
-    }
+    private static ServiceCollectionProcessingService CreateServiceCollectionProcessingService() =>
+        new ServiceCollectionProcessingService();
 }
-
-public class CoreAuthInfo : ICoreAuthInfo
-{
-    public string SSOUserId { get; internal set; } = string.Empty;
-}
-
-
-
-

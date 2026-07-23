@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models;
 
 public class CommonObject
@@ -26,8 +30,3 @@ public class CommonObject
 
     public string Culture { get; set; }
 }
-
-
-
-
-

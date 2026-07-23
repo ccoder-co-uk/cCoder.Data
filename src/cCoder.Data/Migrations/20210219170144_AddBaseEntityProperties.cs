@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -9,8 +13,8 @@ public partial class AddBaseEntityProperties : Migration
     {
 
 
-        migrationBuilder.RenameColumn("Created", "Workflows", "CreatedOn", "Workflow");
-        migrationBuilder.RenameColumn("Created", "BusinessProcesses", "CreatedOn", "Workflow");
+        migrationBuilder.RenameColumn(name:"Created", table:"Workflows", newName:"CreatedOn", schema:"Workflow");
+        migrationBuilder.RenameColumn(name:"Created", table:"BusinessProcesses", newName:"CreatedOn", schema:"Workflow");
 
         migrationBuilder.AlterColumn<string>(
             name: "Name",
@@ -495,6 +499,3 @@ public partial class AddBaseEntityProperties : Migration
             oldMaxLength: 100);
     }
 }
-
-
-

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -236,7 +240,8 @@ public partial class RemoveOldAdminPrivs : Migration
             keyValue: "workflowevent_admin");
     }
 
-    protected override void Down(MigrationBuilder migrationBuilder) => migrationBuilder.InsertData(
+    protected override void Down(MigrationBuilder migrationBuilder) =>
+        migrationBuilder.InsertData(
             schema: "Security",
             table: "Privileges",
             columns: new[] { "Id", "Description", "Operation", "PortalAdminsOnly", "Type" },
@@ -282,6 +287,3 @@ public partial class RemoveOldAdminPrivs : Migration
                 { "user_admin", "Allows users to Administer Users.", "Admin", false, "User" }
             });
 }
-
-
-

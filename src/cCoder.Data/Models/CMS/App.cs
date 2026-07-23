@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Dynamic;
 using System.Text.Json;
 using cCoder.Data.Models.DMS;
@@ -29,8 +33,8 @@ public class App
     public dynamic Config
     {
         get => JsonConvert.DeserializeObject<ExpandoObject>(
-            ConfigJson ?? "{}",
-            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+value:            ConfigJson ?? "{}",
+settings:            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
         set => ConfigJson = value switch
         {
             null => "{}",
@@ -59,4 +63,3 @@ public class App
     public virtual ICollection<SentEmail> SentMail { get; set; }
     public virtual ICollection<ReceivedEmail> ReceivedMail { get; set; }
 }
-

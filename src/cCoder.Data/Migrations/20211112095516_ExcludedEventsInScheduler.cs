@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -61,6 +65,3 @@ public partial class ExcludedEventsInScheduler : Migration
             table: "ScheduledTasks");
     }
 }
-
-
-

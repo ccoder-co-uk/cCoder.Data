@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
@@ -99,7 +103,7 @@ namespace cCoder.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                     AppId = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
@@ -110,7 +114,8 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BackgroundJobs", x => x.Id);
+                    table.PrimaryKey(name:"PK_BackgroundJobs", columns:x => x.Id);
+
                     table.ForeignKey(
                         name: "FK_BackgroundJobs_Apps_AppId",
                         column: x => x.AppId,
@@ -139,7 +144,8 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BusinessProcesses", x => x.Id);
+                    table.PrimaryKey(name:"PK_BusinessProcesses", columns:x => x.Id);
+
                     table.ForeignKey(
                         name: "FK_BusinessProcesses_Apps_AppId",
                         column: x => x.AppId,
@@ -194,6 +200,3 @@ namespace cCoder.Core.Migrations
         }
     }
 }
-
-
-

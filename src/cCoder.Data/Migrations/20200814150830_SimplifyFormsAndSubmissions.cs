@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -210,7 +214,8 @@ public partial class SimplifyFormsAndSubmissions : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Forms", x => x.Id);
+                table.PrimaryKey(name:"PK_Forms", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Forms_Apps_AppId",
                     column: x => x.AppId,
@@ -260,6 +265,3 @@ public partial class SimplifyFormsAndSubmissions : Migration
             onDelete: ReferentialAction.Restrict);
     }
 }
-
-
-

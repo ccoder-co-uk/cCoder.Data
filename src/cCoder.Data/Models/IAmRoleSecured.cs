@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.Security;
 
 
@@ -9,7 +13,3 @@ public interface IAmRoleSecured<TRole>
 
     bool UserCan(User user, string priv);
 }
-
-
-
-

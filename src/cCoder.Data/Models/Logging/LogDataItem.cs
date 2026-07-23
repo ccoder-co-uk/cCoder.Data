@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Logging;
 
 public class LogDataItem
@@ -12,8 +16,3 @@ public class LogDataItem
 
     public virtual LogEntry LogEntry { get; set; }
 }
-
-
-
-
-

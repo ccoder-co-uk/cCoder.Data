@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 namespace cCoder.Data.Models.Mail;
@@ -10,7 +14,7 @@ public class MailSender
 
     public string Name { get; set; }
 
-    public string ProviderName { get; set; } = "Smtp";
+    public string ProviderName { get; set; }
 
     public string User { get; set; }
 

@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Script
@@ -22,8 +26,3 @@ public class Script
 
     public virtual App App { get; set; }
 }
-
-
-
-
-

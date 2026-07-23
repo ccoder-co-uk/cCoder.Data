@@ -1,9 +1,13 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Text.Json;
 using Data.Web.Models;
 
 namespace Data.Web.Brokers;
 
-public interface IDataSetBroker
+internal interface IDataSetBroker
 {
     string GetCurrentSsoUserId();
 

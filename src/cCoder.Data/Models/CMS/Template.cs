@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class Template
@@ -24,4 +28,3 @@ public class Template
 
     public virtual App App { get; set; }
 }
-

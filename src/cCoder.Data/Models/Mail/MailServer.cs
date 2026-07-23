@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 
@@ -25,8 +29,3 @@ public class MailServer
 
     public virtual App App { get; set; }
 }
-
-
-
-
-

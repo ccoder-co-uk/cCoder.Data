@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.DMS;
 
 
@@ -13,8 +17,3 @@ public class FolderRole
 
     public virtual Role Role { get; set; }
 }
-
-
-
-
-

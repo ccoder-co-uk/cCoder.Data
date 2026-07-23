@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -5,7 +9,8 @@ namespace cCoder.Data.Extensions;
 
 public static class ObjectExtensions
 {
-    public static JsonSerializerSettings GetJSONSettings() => new()
+    public static JsonSerializerSettings GetJSONSettings() =>
+        new()
     {
         ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         TypeNameHandling = TypeNameHandling.Objects,
@@ -16,7 +21,8 @@ public static class ObjectExtensions
         ContractResolver = new DefaultContractResolver { IgnoreSerializableAttribute = true },
     };
 
-    public static JsonSerializerSettings GetODataJsonSettings() => new()
+    public static JsonSerializerSettings GetODataJsonSettings() =>
+        new()
     {
         ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         TypeNameHandling = TypeNameHandling.None,
@@ -29,18 +35,18 @@ public static class ObjectExtensions
     };
 
     public static string ToJson(this object value) =>
-        JsonConvert.SerializeObject(value, Formatting.None, GetJSONSettings());
+        JsonConvert.SerializeObject(value:value, formatting:Formatting.None, settings:GetJSONSettings());
 
     public static string ToJson(this object value, int depth)
     {
         JsonSerializerSettings settings = GetJSONSettings();
         settings.MaxDepth = depth;
-        return JsonConvert.SerializeObject(value, Formatting.None, settings);
+        return JsonConvert.SerializeObject(value:value, formatting:Formatting.None, settings:settings);
     }
 
     public static string ToJson(this object value, JsonSerializerSettings settings) =>
-        JsonConvert.SerializeObject(value, Formatting.None, settings);
+        JsonConvert.SerializeObject(value:value, formatting:Formatting.None, settings:settings);
 
     public static string ToJsonForOdata(this object value) =>
-        JsonConvert.SerializeObject(value, Formatting.None, GetODataJsonSettings());
+        JsonConvert.SerializeObject(value:value, formatting:Formatting.None, settings:GetODataJsonSettings());
 }

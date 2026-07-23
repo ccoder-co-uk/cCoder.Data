@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.DMS;
 
 public class File
@@ -24,10 +28,5 @@ public class File
 
     public Folder Folder { get; set; }
 
-    public ICollection<FileContent> Contents { get; set; } = new List<FileContent>();
+    public ICollection<FileContent> Contents { get; set; }
 }
-
-
-
-
-

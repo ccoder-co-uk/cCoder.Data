@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -13,7 +17,7 @@ public partial class AddCommonObjectTable : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
+                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                 Version = table.Column<int>(type: "int", nullable: false),
                 Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                 Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -26,7 +30,7 @@ public partial class AddCommonObjectTable : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_CommonObjects", x => x.Id);
+                table.PrimaryKey(name:"PK_CommonObjects", columns:x => x.Id);
             });
 
         migrationBuilder.CreateTable(
@@ -35,7 +39,7 @@ public partial class AddCommonObjectTable : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
+                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
                 AppId = table.Column<int>(type: "int", nullable: false),
                 Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
@@ -47,7 +51,8 @@ public partial class AddCommonObjectTable : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey("PK_Scripts", x => x.Id);
+                table.PrimaryKey(name:"PK_Scripts", columns:x => x.Id);
+
                 table.ForeignKey(
                     name: "FK_Scripts_Apps_AppId",
                     column: x => x.AppId,
@@ -79,7 +84,7 @@ public partial class AddCommonObjectTable : Migration
             table: "Scripts",
             column: "AppId");
 
-        migrationBuilder.Sql(@"
+        migrationBuilder.Sql(sql:@"
 UPDATE [Security].[Roles] SET [Privs]=CONCAT('script_create,script_read,script_update,script_delete,commonobject_create,commonobject_read,commonobject_update,commonobject_delete,',[Privs])
 WHERE [Privs] LIKE '%app_admin%'
             ");
@@ -144,6 +149,3 @@ WHERE [Privs] LIKE '%app_admin%'
             keyValue: "script_update");
     }
 }
-
-
-

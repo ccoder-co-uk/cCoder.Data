@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.CMS;
 
 public class AppCulture
@@ -10,5 +14,3 @@ public class AppCulture
 
     public virtual Culture Culture { get; set; }
 }
-
-

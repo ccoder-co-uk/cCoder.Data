@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 
 
@@ -23,10 +27,5 @@ public class Role
 
     public virtual ICollection<FolderRole> Folders { get; set; }
 
-    public virtual ICollection<string> Privileges { get => Privs.Split(","); set => Privs = string.Join(',', value); }
+    public virtual ICollection<string> Privileges { get => Privs.Split(separator:","); set => Privs = string.Join(separator:',', values:value); }
 }
-
-
-
-
-

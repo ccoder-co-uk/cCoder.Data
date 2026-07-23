@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Workflow;
 
 public class FlowInstanceData
@@ -18,8 +22,8 @@ public class FlowInstanceData
 
     public string ContextString
     {
-        get => ContextJson != null ? System.Text.Encoding.UTF8.GetString(ContextJson) : string.Empty;
-        set => ContextJson = value != null ? System.Text.Encoding.UTF8.GetBytes(value) : null;
+        get => ContextJson != null ? System.Text.Encoding.UTF8.GetString(bytes:ContextJson) : string.Empty;
+        set => ContextJson = value != null ? System.Text.Encoding.UTF8.GetBytes(s:value) : null;
     }
 
     public DateTimeOffset Start { get; set; }
@@ -28,8 +32,3 @@ public class FlowInstanceData
 
     public virtual FlowDefinition FlowDefinition { get; set; }
 }
-
-
-
-
-

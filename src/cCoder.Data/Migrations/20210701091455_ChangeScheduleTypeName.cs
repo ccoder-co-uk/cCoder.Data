@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 
@@ -20,7 +24,7 @@ public partial class ChangeScheduleTypeName : Migration
             nullable: false,
             defaultValue: 0L);
 
-        migrationBuilder.Sql("UPDATE [Planning].[ScheduledTasks] SET ScheduleInTicks=864000000000");
+        migrationBuilder.Sql(sql:"UPDATE [Planning].[ScheduledTasks] SET ScheduleInTicks=864000000000");
     }
 
     protected override void Down(MigrationBuilder migrationBuilder)
@@ -37,10 +41,7 @@ public partial class ChangeScheduleTypeName : Migration
             type: "time",
             nullable: true);
 
-        migrationBuilder.Sql("UPDATE [Planning].[ScheduledTasks] SET Schedule='23:59:00'");
+        migrationBuilder.Sql(sql:"UPDATE [Planning].[ScheduledTasks] SET Schedule='23:59:00'");
 
     }
 }
-
-
-

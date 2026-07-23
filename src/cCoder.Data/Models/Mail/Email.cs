@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using cCoder.Data.Models.CMS;
 using cCoder.Data.Models.Security;
 
@@ -20,14 +24,9 @@ public class Email
 
     public string CC { get; set; }
 
-    public bool IsBodyHtml { get; set; } = true;
+    public bool IsBodyHtml { get; set; }
 
     public virtual App App { get; set; }
 
     public virtual User SentBy { get; set; }
 }
-
-
-
-
-

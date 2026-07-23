@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace Data.Web.AcceptanceTests.Infrastructure;
 
 [CollectionDefinition(Name)]

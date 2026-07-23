@@ -1,19 +1,25 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using System.Text.Json;
 using Data.Web.Models;
 
-namespace Data.Web.Services.Foundations;
+namespace Data.Web.Dependencies;
 
-public interface IDataSetService
+internal interface IDataSetDependency
 {
-    Task<DataEntitySet[]> GetEntitySetsAsync(CancellationToken cancellationToken);
+    string GetCurrentSsoUserId();
 
-    Task<DataRows> GetRowsAsync(
+    Task<DataEntitySet[]> SelectEntitySetsAsync(CancellationToken cancellationToken);
+
+    Task<DataRows> SelectRowsAsync(
         string entitySet,
         int skip,
         int take,
         CancellationToken cancellationToken);
 
-    Task<Dictionary<string, object>> CreateRowAsync(
+    Task<Dictionary<string, object>> InsertRowAsync(
         string entitySet,
         Dictionary<string, JsonElement> values,
         CancellationToken cancellationToken);

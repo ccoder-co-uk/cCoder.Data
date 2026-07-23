@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Security;
 
 public class UserRole
@@ -10,8 +14,3 @@ public class UserRole
 
     public virtual Role Role { get; set; }
 }
-
-
-
-
-

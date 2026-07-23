@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Models.Mail;
 
 public class EmailSendFailure
@@ -12,8 +16,3 @@ public class EmailSendFailure
 
     public virtual QueuedEmail Email { get; set; }
 }
-
-
-
-
-

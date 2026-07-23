@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 using FluentAssertions;
 
 namespace Data.Web.AcceptanceTests.Tests.Api;
@@ -7,9 +11,20 @@ public sealed partial class RootTests
     [Fact]
     public async Task ShouldRedirectToTools()
     {
-        HttpResponseMessage response = await client.GetAsync("/");
+        // Given
+        const string requestUri = "/";
 
-        response.StatusCode.Should().Be(System.Net.HttpStatusCode.Redirect);
-        response.Headers.Location?.ToString().Should().Be("/tools/index.html");
+        // When
+        HttpResponseMessage response = await client.GetAsync(requestUri: requestUri);
+
+        // Then
+        response.StatusCode
+            .Should()
+            .Be(expected: System.Net.HttpStatusCode.Redirect);
+
+        response.Headers.Location
+            ?.ToString()
+            .Should()
+            .Be(expected: "/tools/index.html");
     }
 }

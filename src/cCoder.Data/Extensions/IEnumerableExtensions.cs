@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------
+// Copyright (c) Paul.Ward@ccoder.co.uk
+// ---------------------------------------------------------------
+
 namespace cCoder.Data.Extensions;
 
 public static class IEnumerableExtensions
@@ -9,7 +13,7 @@ public static class IEnumerableExtensions
 
         int index = 0;
         foreach (T item in source)
-            action(item, index++);
+            action(arg1:item, arg2:index++);
     }
 
     public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
@@ -18,6 +22,6 @@ public static class IEnumerableExtensions
             return;
 
         foreach (T item in source)
-            action(item);
+            action(obj:item);
     }
 }
