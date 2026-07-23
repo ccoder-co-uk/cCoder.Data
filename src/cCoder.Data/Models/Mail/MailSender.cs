@@ -14,7 +14,7 @@ public class MailSender
 
     public string Name { get; set; }
 
-    public string ProviderName { get; set; } = "Smtp";
+    public string ProviderName { get; set; }
 
     public string User { get; set; }
 

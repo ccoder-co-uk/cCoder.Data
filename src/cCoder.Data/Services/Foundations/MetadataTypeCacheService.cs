@@ -13,9 +13,9 @@ internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
     public void Set(string scope, IEnumerable<string> typeSetPayloads) =>
         TryCatch(operation: () =>
         {
-            ValidateScope(scope: scope);
-            ValidateTypeSetPayloads(typeSetPayloads: typeSetPayloads);
-            Validate(inputs: [scope, typeSetPayloads]);
+            ValidateMetadataTypeCacheOnSet(
+                scope: scope,
+                typeSetPayloads: typeSetPayloads);
 
             broker.Set(
                 scope: scope,
@@ -32,7 +32,12 @@ internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
         });
 
     public string[] GetAll() =>
-        TryCatch(operation: () => broker.GetAll());
+        TryCatch(operation: () =>
+        {
+            Validate(inputs: []);
+
+            return broker.GetAll();
+        });
 
     public bool Contains(string scope) =>
         TryCatch(operation: () =>

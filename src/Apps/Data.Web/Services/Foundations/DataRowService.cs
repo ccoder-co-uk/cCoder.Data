@@ -3,7 +3,7 @@
 // ---------------------------------------------------------------
 
 using System.Text.Json;
-using Data.Web.Dependencies;
+using Data.Web.Brokers;
 using Data.Web.Models;
 
 namespace Data.Web.Services.Foundations;
@@ -18,7 +18,12 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
-            Validate(inputs: [entitySet, skip, take, cancellationToken]);
+            ValidateRowsOnGet(
+                entitySet: entitySet,
+                skip: skip,
+                take: take,
+                cancellationToken: cancellationToken);
+
             ValidateAuthentication();
 
             return await dataSetBroker.SelectRowsAsync(
@@ -34,7 +39,11 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
-            Validate(inputs: [entitySet, newValues, cancellationToken]);
+            ValidateRowOnAdd(
+                entitySet: entitySet,
+                newValues: newValues,
+                cancellationToken: cancellationToken);
+
             ValidateAuthentication();
 
             return await dataSetBroker.InsertRowAsync(
@@ -49,7 +58,11 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
-            Validate(inputs: [entitySet, updatedValues, cancellationToken]);
+            ValidateRowOnUpdate(
+                entitySet: entitySet,
+                updatedValues: updatedValues,
+                cancellationToken: cancellationToken);
+
             ValidateAuthentication();
 
             return await dataSetBroker.UpdateRowAsync(
@@ -64,7 +77,11 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
-            Validate(inputs: [entitySet, deletedValues, cancellationToken]);
+            ValidateRowOnDelete(
+                entitySet: entitySet,
+                deletedValues: deletedValues,
+                cancellationToken: cancellationToken);
+
             ValidateAuthentication();
 
             await dataSetBroker.DeleteRowAsync(

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Data.Web.Dependencies;
 
-internal sealed class DataSetBroker(CoreDataContext context)
-    : IDataSetBroker
+internal sealed class DataSetDependency(CoreDataContext context)
+    : IDataSetDependency
 {
     private static readonly MethodInfo SetMethod = typeof(DbContext)
         .GetMethods()

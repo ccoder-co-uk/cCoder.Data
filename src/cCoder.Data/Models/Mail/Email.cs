@@ -24,7 +24,7 @@ public class Email
 
     public string CC { get; set; }
 
-    public bool IsBodyHtml { get; set; } = true;
+    public bool IsBodyHtml { get; set; }
 
     public virtual App App { get; set; }
 

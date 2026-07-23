@@ -12,6 +12,14 @@ internal partial class MetadataTypeCacheService
     private static void Validate(params object[] inputs) =>
         ValidationRulesEngine.Validate(inputs: inputs);
 
+    private static void ValidateMetadataTypeCacheOnSet(
+        string scope,
+        IEnumerable<string> typeSetPayloads)
+    {
+        ValidateScope(scope: scope);
+        ValidateTypeSetPayloads(typeSetPayloads: typeSetPayloads);
+    }
+
     private static void ValidateScope(string scope)
     {
         if (string.IsNullOrWhiteSpace(value: scope))

@@ -6,5 +6,5 @@ namespace cCoder.Data;
 
 public class CoreAuthInfo : ICoreAuthInfo
 {
-    public string SSOUserId { get; internal set; } = string.Empty;
+    public string SSOUserId { get; internal set; }
 }

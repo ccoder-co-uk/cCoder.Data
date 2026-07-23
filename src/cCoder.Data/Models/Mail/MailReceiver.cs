@@ -28,7 +28,7 @@ public class MailReceiver
 
     public DateTimeOffset? LastReceivedOn { get; set; }
 
-    public bool IsEnabled { get; set; } = true;
+    public bool IsEnabled { get; set; }
 
     public virtual App App { get; set; }
 

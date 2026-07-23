@@ -997,7 +997,7 @@
     },
     {
       "Name": "cCoder.Data.IServiceCollectionExtensions",
-      "StandardElementType": "Exposure",
+      "StandardElementType": "App",
       "Properties": [],
       "Methods": [
         {

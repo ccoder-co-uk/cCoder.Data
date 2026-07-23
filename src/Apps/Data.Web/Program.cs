@@ -3,8 +3,6 @@
 // ---------------------------------------------------------------
 
 using System.Security;
-using cCoder.Security;
-using cCoder.Security.Data.EF;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace Data.Web;
@@ -17,30 +15,7 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args:args);
 
-        string coreConnection = builder.Configuration.GetConnectionString(name:"Core")
-            ?? throw new InvalidOperationException("ConnectionStrings:Core is required.");
-
-        string ssoConnection = builder.Configuration.GetConnectionString(name:"SSO")
-            ?? throw new InvalidOperationException("ConnectionStrings:SSO is required.");
-
-        cCoder.Data.Config config = new();
-        builder.Configuration.Bind(instance:config);
-        builder.Services.AddSingleton(implementationInstance:config);
-
-        builder.Services.AddSecurityApi(configAction:(services, securityConfig) =>
-        {
-            securityConfig.AddMSSQLModelProvider(services:services, connectionString:ssoConnection);
-
-            securityConfig.UseAESHMMACPasswordEncryption(
-                services: services,
-                decryptionKey: builder.Configuration.GetSection(key: "Settings")["DecryptionKey"]);
-        });
-
-        cCoder.Data.IServiceCollectionExtensions.AddCoreData(
-            services: builder.Services,
-            connectionString: coreConnection);
-
-        builder.Services.AddDataWeb();
+        builder.Services.AddDataWeb(configuration: builder.Configuration);
 
         WebApplication app = builder.Build();
         log = app.Services.GetRequiredService<ILogger<Program>>();

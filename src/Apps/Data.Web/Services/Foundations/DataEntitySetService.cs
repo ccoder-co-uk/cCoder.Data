@@ -2,7 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using Data.Web.Dependencies;
+using Data.Web.Brokers;
 using Data.Web.Models;
 
 namespace Data.Web.Services.Foundations;
@@ -14,7 +14,7 @@ internal sealed partial class DataEntitySetService(IDataSetBroker dataSetBroker)
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
-            Validate(inputs: cancellationToken);
+            ValidateEntitySetsOnGet(cancellationToken: cancellationToken);
             ValidateAuthentication();
 
             return await dataSetBroker.SelectEntitySetsAsync(

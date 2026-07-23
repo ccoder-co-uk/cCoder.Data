@@ -1,7 +1,105 @@
 {
   "Classes": [
     {
-      "Name": "Data.Web.Dependencies.DataSetBroker",
+      "Name": "Data.Web.Brokers.DataSetBroker",
+      "StandardElementType": "Broker",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "DeleteRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task"
+        },
+        {
+          "Name": "GetCurrentSsoUserId",
+          "Inputs": [],
+          "ReturnType": "System.String"
+        },
+        {
+          "Name": "InsertRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        },
+        {
+          "Name": "SelectEntitySetsAsync",
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E"
+        },
+        {
+          "Name": "SelectRowsAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E"
+        },
+        {
+          "Name": "UpdateRowAsync",
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Dependencies.DataSetDependency",
       "StandardElementType": "Dependency",
       "Properties": [],
       "Methods": [
@@ -200,7 +298,7 @@
     },
     {
       "Name": "Data.Web.IServiceCollectionExtensions",
-      "StandardElementType": "Exposure",
+      "StandardElementType": "App",
       "Properties": [],
       "Methods": []
     },
@@ -313,7 +411,7 @@
     },
     {
       "Name": "Data.Web.Program",
-      "StandardElementType": "Exposure",
+      "StandardElementType": "App",
       "Properties": [],
       "Methods": [
         {
@@ -439,6 +537,10 @@
             {
               "Name": "services",
               "Type": "IServiceCollection"
+            },
+            {
+              "Name": "configuration",
+              "Type": "IConfiguration"
             }
           ],
           "ReturnType": "System.Void"
@@ -447,6 +549,10 @@
     }
   ],
   "Links": [
+    {
+      "FromType": "Data.Web.Brokers.DataSetBroker",
+      "ToType": "Data.Web.Dependencies.DataSetDependency"
+    },
     {
       "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "ToType": "Data.Web.Services.Foundations.DataEntitySetService"
@@ -457,11 +563,11 @@
     },
     {
       "FromType": "Data.Web.Services.Foundations.DataEntitySetService",
-      "ToType": "Data.Web.Dependencies.DataSetBroker"
+      "ToType": "Data.Web.Brokers.DataSetBroker"
     },
     {
       "FromType": "Data.Web.Services.Foundations.DataRowService",
-      "ToType": "Data.Web.Dependencies.DataSetBroker"
+      "ToType": "Data.Web.Brokers.DataSetBroker"
     }
   ],
   "AnalysisItems": []

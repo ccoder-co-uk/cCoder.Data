@@ -6,5 +6,7 @@ namespace Data.Web.Services.Processings;
 
 internal interface IServiceCollectionProcessingService
 {
-    void AddDataWeb(IServiceCollection services);
+    void AddDataWeb(
+        IServiceCollection services,
+        IConfiguration configuration);
 }
