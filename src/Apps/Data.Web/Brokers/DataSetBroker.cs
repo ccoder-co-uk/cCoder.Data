@@ -3,14 +3,18 @@
 // ---------------------------------------------------------------
 
 using System.Text.Json;
+using cCoder.Data;
 using Data.Web.Dependencies;
 using Data.Web.Models;
 
 namespace Data.Web.Brokers;
 
-internal sealed class DataSetBroker(IDataSetDependency dataSetDependency)
+internal sealed class DataSetBroker(CoreDataContext context)
     : IDataSetBroker
 {
+    private readonly DataSetDependency dataSetDependency =
+        new(context: context);
+
     public string GetCurrentSsoUserId() =>
         dataSetDependency.GetCurrentSsoUserId();
 

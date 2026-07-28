@@ -100,7 +100,7 @@
     },
     {
       "Name": "Data.Web.Dependencies.DataSetDependency",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Unknown",
       "Properties": [],
       "Methods": [
         {
@@ -300,7 +300,26 @@
       "Name": "Data.Web.IServiceCollectionExtensions",
       "StandardElementType": "App",
       "Properties": [],
-      "Methods": []
+      "Methods": [
+        {
+          "Name": "AddDataWeb",
+          "Inputs": [
+            {
+              "Name": "services",
+              "Type": "IServiceCollection"
+            },
+            {
+              "Name": "applicationConfiguration",
+              "Type": "IConfiguration"
+            },
+            {
+              "Name": "configure",
+              "Type": "System.Action\u003CData.Web.Models.DataWebConfiguration\u003E"
+            }
+          ],
+          "ReturnType": "System.Void"
+        }
+      ]
     },
     {
       "Name": "Data.Web.Models.DataEntitySet",
@@ -387,6 +406,21 @@
         {
           "Name": "Take",
           "Type": "System.Int32"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Models.DataWebConfiguration",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "Data",
+          "Type": "cCoder.Data.Models.DataConfiguration"
+        },
+        {
+          "Name": "Security",
+          "Type": "cCoder.Security.Objects.SecurityConfiguration"
         }
       ],
       "Methods": []
@@ -525,34 +559,9 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
         }
       ]
-    },
-    {
-      "Name": "Data.Web.Services.Processings.ServiceCollectionProcessingService",
-      "StandardElementType": "ProcessingService",
-      "Properties": [],
-      "Methods": [
-        {
-          "Name": "AddDataWeb",
-          "Inputs": [
-            {
-              "Name": "services",
-              "Type": "IServiceCollection"
-            },
-            {
-              "Name": "configuration",
-              "Type": "IConfiguration"
-            }
-          ],
-          "ReturnType": "System.Void"
-        }
-      ]
     }
   ],
   "Links": [
-    {
-      "FromType": "Data.Web.Brokers.DataSetBroker",
-      "ToType": "Data.Web.Dependencies.DataSetDependency"
-    },
     {
       "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "ToType": "Data.Web.Services.Foundations.DataEntitySetService"

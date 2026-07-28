@@ -4,6 +4,7 @@
 
 using cCoder.Data.Models.CMS;
 using cCoder.Data.Models.Security;
+using cCoder.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Logging;
@@ -24,7 +25,7 @@ public partial class CoreDataContext : DbContext
     // Join entities
     public virtual DbSet<UserRole> UserRoles { get; set; }
 
-    protected Config Config { get; }
+    protected DataConfiguration Configuration { get; }
 
     private User user;
 
@@ -55,20 +56,21 @@ public partial class CoreDataContext : DbContext
 
     public CoreDataContext(
         ICoreAuthInfo auth,
-        Config config,
+        DataConfiguration configuration,
         ILogger<CoreDataContext> log)
     {
         AuthInfo = auth;
-        Config = config;
+        Configuration = configuration;
         this.log = log;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(connectionString:Config.ConnectionStrings["Core"]);
+        optionsBuilder.UseSqlServer(
+            connectionString: Configuration.ConnectionString);
         optionsBuilder.ConfigureWarnings(warningsConfigurationBuilderAction:warnings => warnings.Ignore(eventIds:RelationalEventId.PendingModelChangesWarning));
 
-        if (Config.LogSQL)
+        if (Configuration.LogSQL)
         {
             optionsBuilder.LogTo(action:message =>
             {

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using cCoder.Data.Models;
 
 
 namespace cCoder.Data;
@@ -25,11 +26,14 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
             .AddEnvironmentVariables()
             .Build();
 
-        string connection = configuration.GetConnectionString(name:"Core");
+        DataConfiguration dataConfiguration = new();
+        configuration
+            .GetSection(key: "Data")
+            .Bind(instance: dataConfiguration);
 
         ServiceCollection services = [];
         services.AddLogging();
-        services.AddCoreData(connectionString:connection);
+        services.AddData(configuration: dataConfiguration);
 
         serviceProvider = services.BuildServiceProvider();
     }
@@ -40,11 +44,13 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
     public CoreDataContext CreateCoreContext()
     {
         if (serviceProvider is null)
+        {
             return CreateDbContext(args:[]);
+        }
 
         return new(
             serviceProvider.GetRequiredService<ICoreAuthInfo>(),
-            serviceProvider.GetRequiredService<Config>(),
+            serviceProvider.GetRequiredService<DataConfiguration>(),
             serviceProvider.GetRequiredService<ILogger<CoreDataContext>>());
     }
 

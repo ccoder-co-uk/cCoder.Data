@@ -15,7 +15,8 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args:args);
 
-        builder.Services.AddDataWeb(configuration: builder.Configuration);
+        builder.Services.AddDataWeb(
+            applicationConfiguration: builder.Configuration);
 
         WebApplication app = builder.Build();
         log = app.Services.GetRequiredService<ILogger<Program>>();

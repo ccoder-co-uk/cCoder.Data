@@ -1,5 +1,18 @@
 # cCoder.Data
 
+## Local configuration
+
+Bind a `DataConfiguration` from the owning domain configuration. For an empty
+connection string, define that domain's `__ConnectionString` user- or
+machine-level environment variable, restart Visual Studio, and run with F5.
+
+Register the supporting data services with either the bound configuration or a
+configuration callback:
+
+```csharp
+services.AddData(configuration.Data);
+```
+
 `cCoder.Data` contains the shared data access layer for the cCoder platform.
 
 ## Contents
@@ -21,9 +34,9 @@ The app uses the standard cCoder security login flow because the shared data con
 
 Required configuration:
 
-- `ConnectionStrings:Core`
-- `ConnectionStrings:SSO`
-- `Settings:DecryptionKey`
+- `Data__ConnectionString`
+- `Security__ConnectionString`
+- `Security__DecryptionKey`
 
 Run locally:
 
@@ -34,13 +47,13 @@ dotnet run --project src/Apps/Data.Web/Data.Web.csproj
 ## Build
 
 ```powershell
-dotnet build src/cCoder.Data.sln -v minimal
+dotnet build src/cCoder.Data.slnx -v minimal
 ```
 
 ## Test
 
 ```powershell
-dotnet test src/cCoder.Data.sln -v minimal --no-build
+dotnet test src/cCoder.Data.slnx -v minimal --no-build
 ```
 
 ## Package

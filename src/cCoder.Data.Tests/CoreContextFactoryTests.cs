@@ -3,6 +3,7 @@
 // ---------------------------------------------------------------
 
 using FluentAssertions;
+using cCoder.Data.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -36,7 +37,10 @@ public sealed partial class CoreContextFactoryTests
     {
         ServiceCollection services = [];
         services.AddSingleton(implementationInstance: Mock.Of<ICoreAuthInfo>());
-        services.AddSingleton(implementationInstance: new Config());
+
+        services.AddSingleton(
+            implementationInstance: new DataConfiguration());
+
         services.AddSingleton(implementationInstance: Mock.Of<ILogger<CoreDataContext>>());
 
         return services.BuildServiceProvider();
