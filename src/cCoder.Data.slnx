@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Apps/">
+    <Project Path="Apps/Data.Web.AcceptanceTests/Data.Web.AcceptanceTests.csproj" />
+    <Project Path="Apps/Data.Web/Data.Web.csproj" />
+  </Folder>
+  <Project Path="cCoder.Data.Tests/cCoder.Data.Tests.csproj" />
+  <Project Path="cCoder.Data/cCoder.Data.csproj" />
+</Solution>
