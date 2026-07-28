@@ -187,12 +187,6 @@
       "Methods": []
     },
     {
-      "Name": "cCoder.Core.Migrations.CoreDataContextModelSnapshot",
-      "StandardElementType": "Dependency",
-      "Properties": [],
-      "Methods": []
-    },
-    {
       "Name": "cCoder.Core.Migrations.DestroyFlowInstances",
       "StandardElementType": "Dependency",
       "Properties": [],
@@ -379,33 +373,6 @@
           "ReturnType": "System.Void"
         }
       ]
-    },
-    {
-      "Name": "cCoder.Data.Config",
-      "StandardElementType": "Model",
-      "Properties": [
-        {
-          "Name": "ConnectionStrings",
-          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
-        },
-        {
-          "Name": "DebugInfo",
-          "Type": "System.Boolean"
-        },
-        {
-          "Name": "LogSQL",
-          "Type": "System.Boolean"
-        },
-        {
-          "Name": "Services",
-          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
-        },
-        {
-          "Name": "Settings",
-          "Type": "System.Collections.Generic.IDictionary\u003CSystem.String, System.String\u003E"
-        }
-      ],
-      "Methods": []
     },
     {
       "Name": "cCoder.Data.CoreAuthInfo",
@@ -638,7 +605,7 @@
     },
     {
       "Name": "cCoder.Data.Cultures",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "Properties": [
         {
           "Name": "Known",
@@ -870,7 +837,7 @@
     },
     {
       "Name": "cCoder.Data.Extensions.IEnumerableExtensions",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Exposure",
       "Properties": [],
       "Methods": [
         {
@@ -905,7 +872,7 @@
     },
     {
       "Name": "cCoder.Data.Extensions.ObjectExtensions",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Exposure",
       "Properties": [],
       "Methods": [
         {
@@ -969,8 +936,14 @@
       ]
     },
     {
+      "Name": "cCoder.Data.Extensions.ServiceProviderExtensions",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Data.Extensions.TypeExtensions",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Exposure",
       "Properties": [],
       "Methods": [
         {
@@ -1001,39 +974,29 @@
       "Properties": [],
       "Methods": [
         {
-          "Name": "AddCoreAuthInfo",
-          "Inputs": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            }
-          ],
-          "ReturnType": "System.Void"
-        },
-        {
-          "Name": "AddCoreData",
+          "Name": "AddData",
           "Inputs": [
             {
               "Name": "services",
               "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
             },
             {
-              "Name": "connectionString",
-              "Type": "System.String"
+              "Name": "configure",
+              "Type": "System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E"
             }
           ],
           "ReturnType": "System.Void"
         },
         {
-          "Name": "AddCoreDataAccess",
+          "Name": "AddData",
           "Inputs": [
             {
               "Name": "services",
               "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
             },
             {
-              "Name": "connectionString",
-              "Type": "System.String"
+              "Name": "configuration",
+              "Type": "cCoder.Data.Models.DataConfiguration"
             }
           ],
           "ReturnType": "System.Void"
@@ -1971,6 +1934,25 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Models.DataConfiguration",
+      "StandardElementType": "Model",
+      "Properties": [
+        {
+          "Name": "ConnectionString",
+          "Type": "System.String"
+        },
+        {
+          "Name": "DebugInfo",
+          "Type": "System.Boolean"
+        },
+        {
+          "Name": "LogSQL",
+          "Type": "System.Boolean"
+        }
+      ],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
       "StandardElementType": "Dependency",
       "Properties": [],
@@ -2583,7 +2565,7 @@
     },
     {
       "Name": "cCoder.Data.Models.Security.AuthorizationExtensions",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Exposure",
       "Properties": [],
       "Methods": [
         {
@@ -3042,61 +3024,16 @@
           "ReturnType": "System.Void"
         }
       ]
-    },
-    {
-      "Name": "cCoder.Data.Services.Processings.ServiceCollectionProcessingService",
-      "StandardElementType": "ProcessingService",
-      "Properties": [],
-      "Methods": [
-        {
-          "Name": "AddCoreAuthInfo",
-          "Inputs": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            }
-          ],
-          "ReturnType": "System.Void"
-        },
-        {
-          "Name": "AddCoreData",
-          "Inputs": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            },
-            {
-              "Name": "connectionString",
-              "Type": "System.String"
-            }
-          ],
-          "ReturnType": "System.Void"
-        },
-        {
-          "Name": "AddCoreDataAccess",
-          "Inputs": [
-            {
-              "Name": "services",
-              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
-            },
-            {
-              "Name": "connectionString",
-              "Type": "System.String"
-            }
-          ],
-          "ReturnType": "System.Void"
-        }
-      ]
     }
   ],
   "Links": [
     {
       "FromType": "cCoder.Data.CoreDataContext",
-      "ToType": "cCoder.Data.Config"
+      "ToType": "cCoder.Data.CoreAuthInfo"
     },
     {
       "FromType": "cCoder.Data.CoreDataContext",
-      "ToType": "cCoder.Data.CoreAuthInfo"
+      "ToType": "cCoder.Data.Models.DataConfiguration"
     },
     {
       "FromType": "cCoder.Data.Exposures.MetadataTypeCache",

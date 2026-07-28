@@ -2,13 +2,16 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-namespace cCoder.Data;
+namespace cCoder.Data.Models;
 
-public class Config
+public sealed class DataConfiguration
 {
-    public IDictionary<string, string> ConnectionStrings { get; set; }
-    public IDictionary<string, string> Settings { get; set; }
-    public IDictionary<string, string> Services { get; set; }
+    public DataConfiguration() =>
+        ConnectionString = string.Empty;
+
+    public string ConnectionString { get; set; }
+
     public bool DebugInfo { get; set; }
+
     public bool LogSQL { get; set; }
 }

@@ -25,18 +25,27 @@ public static class TypeExtensions
     {
         if (!type.IsJoinType())
         {
-            PropertyInfo idProperty = type.GetProperty(name:"ID")
+            PropertyInfo idProperty = type
+                .GetProperty(name:"ID")
                 ?? type.GetProperty(name:"Id")
                 ?? type.GetProperty(name:type.Name + "Id")
                 ?? type.GetProperty(name:type.Name + "ID")
-                ?? type.GetProperties().FirstOrDefault(predicate:p => p.GetCustomAttributes(attributeType:typeof(KeyAttribute), inherit:false).Any());
+                ?? type.GetProperties()
+                    .FirstOrDefault(
+                        predicate:p =>
+                            p.GetCustomAttributes(
+                                    attributeType:typeof(KeyAttribute),
+                                    inherit:false)
+                                .Any());
 
             if (idProperty != null)
+            {
                 return idProperty;
+            }
         }
         else
         {
-            return new CompositePropertyInfo(type);
+            return new CompositePropertyInfo(type: type);
         }
 
         return null;
