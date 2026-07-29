@@ -12,8 +12,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Data.Web.Dependencies;
 
-internal sealed class DataSetDependency(CoreDataContext context)
+internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
+    IDisposable
 {
+    private readonly CoreDataContext context =
+        contextFactory.CreateCoreContext();
+
     private static readonly MethodInfo SetMethod = typeof(DbContext)
         .GetMethods()
         .Single(predicate:method =>
@@ -351,4 +355,7 @@ elementSelector:                property => ToJsonFriendlyValue(value:property.P
             index > 0 && char.IsUpper(character)
                 ? " " + character
                 : character.ToString()));
+
+    public void Dispose() =>
+        context.Dispose();
 }

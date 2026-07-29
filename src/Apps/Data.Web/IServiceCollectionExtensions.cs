@@ -33,8 +33,11 @@ public static class IServiceCollectionExtensions
         services.AddSecurityWeb(configuration.Security);
     }
 
-    private static void AddBrokers(this IServiceCollection services) =>
+    private static void AddBrokers(this IServiceCollection services)
+    {
+        services.AddTransient<DataSetDependency>();
         services.AddTransient<IDataSetBroker, DataSetBroker>();
+    }
 
     private static void AddFoundations(this IServiceCollection services)
     {

@@ -100,7 +100,7 @@
     },
     {
       "Name": "Data.Web.Dependencies.DataSetDependency",
-      "StandardElementType": "Unknown",
+      "StandardElementType": "Dependency",
       "Properties": [],
       "Methods": [
         {
@@ -120,6 +120,11 @@
             }
           ],
           "ReturnType": "System.Threading.Tasks.Task"
+        },
+        {
+          "Name": "Dispose",
+          "Inputs": [],
+          "ReturnType": "System.Void"
         },
         {
           "Name": "GetCurrentSsoUserId",
@@ -420,7 +425,7 @@
         },
         {
           "Name": "Security",
-          "Type": "cCoder.Security.Objects.SecurityConfiguration"
+          "Type": "cCoder.Security.Models.SecurityConfiguration"
         }
       ],
       "Methods": []
@@ -562,6 +567,10 @@
     }
   ],
   "Links": [
+    {
+      "FromType": "Data.Web.Brokers.DataSetBroker",
+      "ToType": "Data.Web.Dependencies.DataSetDependency"
+    },
     {
       "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "ToType": "Data.Web.Services.Foundations.DataEntitySetService"

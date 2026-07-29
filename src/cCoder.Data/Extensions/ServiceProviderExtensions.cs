@@ -27,7 +27,7 @@ internal static class ServiceProviderExtensions
         {
             Type authInfoType = Type.GetType(
                 typeName:
-                    "cCoder.Security.Objects.ISSOAuthInfo, " +
+                    "cCoder.Security.Models.ISSOAuthInfo, " +
                     "cCoder.Security.Data",
                 throwOnError: false);
 
