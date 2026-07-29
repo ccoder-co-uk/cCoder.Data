@@ -2564,60 +2564,10 @@
       "Methods": []
     },
     {
-      "Name": "cCoder.Data.Models.Security.AuthorizationExtensions",
+      "Name": "cCoder.Data.Models.Security.AppExtensions",
       "StandardElementType": "Exposure",
       "Properties": [],
       "Methods": [
-        {
-          "Name": "Allows",
-          "Inputs": [
-            {
-              "Name": "role",
-              "Type": "cCoder.Data.Models.Security.Role"
-            },
-            {
-              "Name": "user",
-              "Type": "cCoder.Data.Models.Security.User"
-            },
-            {
-              "Name": "privilege",
-              "Type": "System.String"
-            }
-          ],
-          "ReturnType": "System.Boolean"
-        },
-        {
-          "Name": "Can",
-          "Inputs": [
-            {
-              "Name": "user",
-              "Type": "cCoder.Data.Models.Security.User"
-            },
-            {
-              "Name": "appId",
-              "Type": "System.Int32?"
-            },
-            {
-              "Name": "operation",
-              "Type": "System.String"
-            }
-          ],
-          "ReturnType": "System.Boolean"
-        },
-        {
-          "Name": "IsAdminOfApp",
-          "Inputs": [
-            {
-              "Name": "user",
-              "Type": "cCoder.Data.Models.Security.User"
-            },
-            {
-              "Name": "appId",
-              "Type": "System.Int32?"
-            }
-          ],
-          "ReturnType": "System.Boolean"
-        },
         {
           "Name": "IsAppAdmin",
           "Inputs": [
@@ -2755,6 +2705,31 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Models.Security.RoleExtensions",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Allows",
+          "Inputs": [
+            {
+              "Name": "role",
+              "Type": "cCoder.Data.Models.Security.Role"
+            },
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "privilege",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.Models.Security.User",
       "StandardElementType": "Model",
       "Properties": [
@@ -2788,6 +2763,45 @@
         }
       ],
       "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Security.UserExtensions",
+      "StandardElementType": "Exposure",
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Can",
+          "Inputs": [
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "appId",
+              "Type": "System.Int32?"
+            },
+            {
+              "Name": "operation",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        },
+        {
+          "Name": "IsAdminOfApp",
+          "Inputs": [
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "appId",
+              "Type": "System.Int32?"
+            }
+          ],
+          "ReturnType": "System.Boolean"
+        }
+      ]
     },
     {
       "Name": "cCoder.Data.Models.Security.UserRole",
