@@ -27,5 +27,5 @@ public class Role
 
     public virtual ICollection<FolderRole> Folders { get; set; }
 
-    public virtual ICollection<string> Privileges { get => Privs.Split(separator:","); set => Privs = string.Join(separator:',', values:value); }
+    public virtual ICollection<string> Privileges { get => Privs.Split(separator: ","); set => Privs = string.Join(separator: ',', values: value); }
 }

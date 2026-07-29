@@ -20,9 +20,9 @@ public class CompositePropertyInfo(Type type) : PropertyInfo
     public override MethodInfo[] GetAccessors(bool nonPublic) =>
         throw new NotImplementedException();
     public override object[] GetCustomAttributes(bool inherit) =>
-        PropertyType.GetCustomAttributes(inherit:inherit);
+        PropertyType.GetCustomAttributes(inherit: inherit);
     public override object[] GetCustomAttributes(Type attributeType, bool inherit) =>
-        PropertyType.GetCustomAttributes(attributeType:attributeType, inherit:inherit);
+        PropertyType.GetCustomAttributes(attributeType: attributeType, inherit: inherit);
     public override MethodInfo GetGetMethod(bool nonPublic) =>
         throw new NotImplementedException();
     public override ParameterInfo[] GetIndexParameters() =>
@@ -32,7 +32,7 @@ public class CompositePropertyInfo(Type type) : PropertyInfo
     public override object GetValue(object obj, BindingFlags invokeAttr, Binder binder, object[] index, CultureInfo culture) =>
         throw new NotImplementedException();
     public override bool IsDefined(Type attributeType, bool inherit) =>
-        PropertyType.IsDefined(attributeType:attributeType, inherit:inherit);
+        PropertyType.IsDefined(attributeType: attributeType, inherit: inherit);
     public override void SetValue(object obj, object value, BindingFlags invokeAttr, Binder binder, object[] index, CultureInfo culture) =>
         throw new NotImplementedException();
 }

@@ -33,8 +33,8 @@ public class App
     public dynamic Config
     {
         get => JsonConvert.DeserializeObject<ExpandoObject>(
-value:            ConfigJson ?? "{}",
-settings:            cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+value: ConfigJson ?? "{}",
+settings: cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
         set => ConfigJson = value switch
         {
             null => "{}",

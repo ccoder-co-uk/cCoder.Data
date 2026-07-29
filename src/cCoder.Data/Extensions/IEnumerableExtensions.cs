@@ -17,7 +17,7 @@ public static class IEnumerableExtensions
 
         foreach (T item in source)
         {
-            action(arg1:item, arg2:index++);
+            action(arg1: item, arg2: index++);
         }
     }
 
@@ -30,7 +30,7 @@ public static class IEnumerableExtensions
 
         foreach (T item in source)
         {
-            action(obj:item);
+            action(obj: item);
         }
     }
 }

@@ -22,8 +22,8 @@ public class FlowInstanceData
 
     public string ContextString
     {
-        get => ContextJson != null ? System.Text.Encoding.UTF8.GetString(bytes:ContextJson) : string.Empty;
-        set => ContextJson = value != null ? System.Text.Encoding.UTF8.GetBytes(s:value) : null;
+        get => ContextJson != null ? System.Text.Encoding.UTF8.GetString(bytes: ContextJson) : string.Empty;
+        set => ContextJson = value != null ? System.Text.Encoding.UTF8.GetBytes(s: value) : null;
     }
 
     public DateTimeOffset Start { get; set; }

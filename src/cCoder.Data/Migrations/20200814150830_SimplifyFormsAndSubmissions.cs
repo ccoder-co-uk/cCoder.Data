@@ -214,7 +214,7 @@ public partial class SimplifyFormsAndSubmissions : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey(name:"PK_Forms", columns:x => x.Id);
+                table.PrimaryKey(name: "PK_Forms", columns: x => x.Id);
 
                 table.ForeignKey(
                     name: "FK_Forms_Apps_AppId",

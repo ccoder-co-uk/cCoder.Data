@@ -11,7 +11,7 @@ public partial class AddRequiredAttributes : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(sql:@"
+        migrationBuilder.Sql(sql: @"
                                     UPDATE WorkFlow.Workflows SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;
                                     UPDATE WorkFlow.BusinessProcesses SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;
                                     UPDATE CMS.Templates SET CreatedOn=SYSUTCDATETIME() WHERE CreatedBy IS NULL;

@@ -59,7 +59,7 @@ public partial class DestroyFlowInstances : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey(name:"PK_FlowInstances", columns:x => x.Id);
+                table.PrimaryKey(name: "PK_FlowInstances", columns: x => x.Id);
 
                 table.ForeignKey(
                     name: "FK_FlowInstances_WorkFlows_FlowDefinitionId",

@@ -17,8 +17,8 @@ public static class TypeExtensions
         return table != null
             && type.GetProperties().Length == 4
             && type.GetProperties()
-                .Where(predicate:p => p.PropertyType.IsValueType || p.PropertyType == typeof(string))
-                .All(predicate:p => p.GetCustomAttribute<ForeignKeyAttribute>() != null);
+                .Where(predicate: p => p.PropertyType.IsValueType || p.PropertyType == typeof(string))
+                .All(predicate: p => p.GetCustomAttribute<ForeignKeyAttribute>() != null);
     }
 
     public static PropertyInfo GetIdProperty(this Type type)
@@ -26,16 +26,16 @@ public static class TypeExtensions
         if (!type.IsJoinType())
         {
             PropertyInfo idProperty = type
-                .GetProperty(name:"ID")
-                ?? type.GetProperty(name:"Id")
-                ?? type.GetProperty(name:type.Name + "Id")
-                ?? type.GetProperty(name:type.Name + "ID")
+                .GetProperty(name: "ID")
+                ?? type.GetProperty(name: "Id")
+                ?? type.GetProperty(name: type.Name + "Id")
+                ?? type.GetProperty(name: type.Name + "ID")
                 ?? type.GetProperties()
                     .FirstOrDefault(
-                        predicate:p =>
+                        predicate: p =>
                             p.GetCustomAttributes(
-                                    attributeType:typeof(KeyAttribute),
-                                    inherit:false)
+                                    attributeType: typeof(KeyAttribute),
+                                    inherit: false)
                                 .Any());
 
             if (idProperty != null)

@@ -18,7 +18,7 @@ public partial class AddBackgroundJobs : Migration
             columns: table => new
             {
                 Id = table.Column<int>(type: "int", nullable: false)
-                    .Annotation(name:"SqlServer:Identity", value:"1, 1"),
+                    .Annotation(name: "SqlServer:Identity", value: "1, 1"),
                 AppId = table.Column<int>(type: "int", nullable: false),
                 CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                 State = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
@@ -29,7 +29,7 @@ public partial class AddBackgroundJobs : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey(name:"PK_BackgroundJobs", columns:x => x.Id);
+                table.PrimaryKey(name: "PK_BackgroundJobs", columns: x => x.Id);
 
                 table.ForeignKey(
                     name: "FK_BackgroundJobs_Apps_AppId",

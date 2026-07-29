@@ -11,7 +11,7 @@ public partial class AddMorePrivsToUsersAndGuests : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(sql:@"
+        migrationBuilder.Sql(sql: @"
                 UPDATE [Security].[Users] SET DefaultCultureId='en-GB' WHERE DefaultCultureId='en';
                 UPDATE [Security].[Roles] SET [Privs]='culture_read,folderrole_read,pagerole_read,userrole_read,appculture_read,page_read,folder_read,file_read,app_read' WHERE [Name]='Users';
                 UPDATE [Security].[Roles] SET [Privs]='folderrole_read,pagerole_read,userrole_read,appculture_read,page_read,folder_read,file_read,app_read' WHERE [Name]='Guests';

@@ -13,8 +13,8 @@ public partial class AddBaseEntityProperties : Migration
     {
 
 
-        migrationBuilder.RenameColumn(name:"Created", table:"Workflows", newName:"CreatedOn", schema:"Workflow");
-        migrationBuilder.RenameColumn(name:"Created", table:"BusinessProcesses", newName:"CreatedOn", schema:"Workflow");
+        migrationBuilder.RenameColumn(name: "Created", table: "Workflows", newName: "CreatedOn", schema: "Workflow");
+        migrationBuilder.RenameColumn(name: "Created", table: "BusinessProcesses", newName: "CreatedOn", schema: "Workflow");
 
         migrationBuilder.AlterColumn<string>(
             name: "Name",

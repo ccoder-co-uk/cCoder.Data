@@ -45,7 +45,7 @@ public class CoreContextFactory : ICoreContextFactory, IDesignTimeDbContextFacto
     {
         if (serviceProvider is null)
         {
-            return CreateDbContext(args:[]);
+            return CreateDbContext(args: []);
         }
 
         return new(

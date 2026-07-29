@@ -11,7 +11,7 @@ public partial class AddPermissionsComputeFunctions : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(sql:@"
+        migrationBuilder.Sql(sql: @"
 CREATE FUNCTION [DMS].[GetFolderPrivList] 
 (	
 	@UserId nvarchar(450),
@@ -50,7 +50,7 @@ BEGIN
 END
             ");
 
-        migrationBuilder.Sql(sql:@"
+        migrationBuilder.Sql(sql: @"
 CREATE FUNCTION [CMS].[GetPagePrivList] 
 (	@UserId nvarchar(450),
 	@PageId int
@@ -91,7 +91,7 @@ END
 
     protected override void Down(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(sql:@"IF OBJECT_ID (N'CMS.GetPagePrivList', N'TF') IS NOT NULL DROP FUNCTION [CMS].[GetPagePrivList]");
-        migrationBuilder.Sql(sql:@"IF OBJECT_ID (N'DMS.GetFolderPrivList', N'TF') IS NOT NULL DROP FUNCTION [DMS].[GetFolderPrivList]");
+        migrationBuilder.Sql(sql: @"IF OBJECT_ID (N'CMS.GetPagePrivList', N'TF') IS NOT NULL DROP FUNCTION [CMS].[GetPagePrivList]");
+        migrationBuilder.Sql(sql: @"IF OBJECT_ID (N'DMS.GetFolderPrivList', N'TF') IS NOT NULL DROP FUNCTION [DMS].[GetFolderPrivList]");
     }
 }
