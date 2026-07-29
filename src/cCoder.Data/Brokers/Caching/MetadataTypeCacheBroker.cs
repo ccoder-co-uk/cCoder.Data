@@ -26,8 +26,8 @@ internal sealed class MetadataTypeCacheBroker : IMetadataTypeCacheBroker
             .ToArray();
 
     public bool Contains(string scope) =>
-        cache.ContainsKey(key:scope);
+        cache.ContainsKey(key: scope);
 
     public void Clear(string scope) =>
-        cache.TryRemove(key:scope, value:out _);
+        cache.TryRemove(key: scope, value: out _);
 }

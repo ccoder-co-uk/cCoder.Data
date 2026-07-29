@@ -43,7 +43,7 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey(name:"PK_MailReceivers", columns:x => x.Id);
+                    table.PrimaryKey(name: "PK_MailReceivers", columns: x => x.Id);
 
                     table.ForeignKey(
                         name: "FK_MailReceivers_Apps_AppId",
@@ -72,7 +72,7 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey(name:"PK_MailSenders", columns:x => x.Id);
+                    table.PrimaryKey(name: "PK_MailSenders", columns: x => x.Id);
 
                     table.ForeignKey(
                         name: "FK_MailSenders_Apps_AppId",
@@ -89,7 +89,7 @@ namespace cCoder.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation(name:"SqlServer:Identity", value:"1, 1"),
+                        .Annotation(name: "SqlServer:Identity", value: "1, 1"),
                     ReceivedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     From = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MessageId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -104,7 +104,7 @@ namespace cCoder.Core.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey(name:"PK_ReceivedEmails", columns:x => x.Id);
+                    table.PrimaryKey(name: "PK_ReceivedEmails", columns: x => x.Id);
 
                     table.ForeignKey(
                         name: "FK_ReceivedEmails_Apps_AppId",

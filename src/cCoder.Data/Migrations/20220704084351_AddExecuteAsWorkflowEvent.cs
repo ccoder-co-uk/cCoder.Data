@@ -12,7 +12,7 @@ public partial class AddExecuteAsWorkflowEvent : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.Sql(sql:"DELETE FROM [Workflow].[WorkflowEvents]");
+        migrationBuilder.Sql(sql: "DELETE FROM [Workflow].[WorkflowEvents]");
 
         migrationBuilder.AddColumn<string>(
             name: "ExecuteAs",

@@ -65,7 +65,7 @@ public partial class UpdateBPtoWFKey : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey(name:"PK_BusinessProcessWorkflows", columns:x => new { x.FlowId, x.BusinessProcessId });
+                table.PrimaryKey(name: "PK_BusinessProcessWorkflows", columns: x => new { x.FlowId, x.BusinessProcessId });
 
                 table.ForeignKey(
                     name: "FK_BusinessProcessWorkflows_BusinessProcesses_BusinessProcessId",

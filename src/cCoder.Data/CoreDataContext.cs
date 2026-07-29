@@ -37,10 +37,10 @@ public partial class CoreDataContext : DbContext
         {
             if (user == null)
             {
-                string userName = string.IsNullOrWhiteSpace(value:AuthInfo.SSOUserId)
+                string userName = string.IsNullOrWhiteSpace(value: AuthInfo.SSOUserId)
                     ? "Guest"
                     : AuthInfo.SSOUserId;
-                user = GetUserInformation(userName:userName);
+                user = GetUserInformation(userName: userName);
             }
 
             return user;
@@ -48,11 +48,11 @@ public partial class CoreDataContext : DbContext
     }
 
     private IEnumerable<int> AdminOf => User.Roles?
-        .Where(predicate:r => r.Role.Privileges.Any(p => p == "app_admin"))
-        .Select(selector:r => r.Role.AppId) ?? Array.Empty<int>();
+        .Where(predicate: r => r.Role.Privileges.Any(p => p == "app_admin"))
+        .Select(selector: r => r.Role.AppId) ?? Array.Empty<int>();
 
     private IEnumerable<Guid> CurrentUserRoleIds =>
-        User.Roles?.Select(selector:r => r.RoleId) ?? Array.Empty<Guid>();
+        User.Roles?.Select(selector: r => r.RoleId) ?? Array.Empty<Guid>();
 
     public CoreDataContext(
         ICoreAuthInfo auth,
@@ -68,40 +68,40 @@ public partial class CoreDataContext : DbContext
     {
         optionsBuilder.UseSqlServer(
             connectionString: Configuration.ConnectionString);
-        optionsBuilder.ConfigureWarnings(warningsConfigurationBuilderAction:warnings => warnings.Ignore(eventIds:RelationalEventId.PendingModelChangesWarning));
+        optionsBuilder.ConfigureWarnings(warningsConfigurationBuilderAction: warnings => warnings.Ignore(eventIds: RelationalEventId.PendingModelChangesWarning));
 
         if (Configuration.LogSQL)
         {
-            optionsBuilder.LogTo(action:message =>
+            optionsBuilder.LogTo(action: message =>
             {
-                if (message.Contains(value:"Executing") || message.Contains(value:"transaction"))
-                    System.Diagnostics.Debug.WriteLine(message:message);
+                if (message.Contains(value: "Executing") || message.Contains(value: "transaction"))
+                    System.Diagnostics.Debug.WriteLine(message: message);
             });
         }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        ConfigureModel(builder:modelBuilder);
-        ApplyFilters(builder:modelBuilder);
-        Seed(builder:modelBuilder);
-        base.OnModelCreating(modelBuilder:modelBuilder);
+        ConfigureModel(builder: modelBuilder);
+        ApplyFilters(builder: modelBuilder);
+        Seed(builder: modelBuilder);
+        base.OnModelCreating(modelBuilder: modelBuilder);
     }
 
     private static void ConfigureModel(ModelBuilder builder)
     {
         builder.UseIdentityColumns();
 
-        ConfigureCmsModel(builder:builder);
-        ConfigureDmsModel(builder:builder);
-        ConfigureLoggingModel(builder:builder);
-        ConfigureMailModel(builder:builder);
-        ConfigurePlanningModel(builder:builder);
-        ConfigureWorkflowModel(builder:builder);
+        ConfigureCmsModel(builder: builder);
+        ConfigureDmsModel(builder: builder);
+        ConfigureLoggingModel(builder: builder);
+        ConfigureMailModel(builder: builder);
+        ConfigurePlanningModel(builder: builder);
+        ConfigureWorkflowModel(builder: builder);
 
         IEnumerable<global::Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey> cascadingRelationships = builder.Model.GetEntityTypes()
-            .SelectMany(selector:t => t.GetForeignKeys())
-            .Where(predicate:fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+            .SelectMany(selector: t => t.GetForeignKeys())
+            .Where(predicate: fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
 
         foreach (global::Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey relationship in cascadingRelationships)
             relationship.DeleteBehavior = DeleteBehavior.Restrict;
@@ -109,18 +109,18 @@ public partial class CoreDataContext : DbContext
 
     private void ApplyFilters(ModelBuilder builder)
     {
-        ApplyCmsFilters(builder:builder);
-        ApplyDmsFilters(builder:builder);
-        ApplyLoggingFilters(builder:builder);
-        ApplyMailFilters(builder:builder);
-        ApplyPlanningFilters(builder:builder);
-        ApplyWorkflowFilters(builder:builder);
+        ApplyCmsFilters(builder: builder);
+        ApplyDmsFilters(builder: builder);
+        ApplyLoggingFilters(builder: builder);
+        ApplyMailFilters(builder: builder);
+        ApplyPlanningFilters(builder: builder);
+        ApplyWorkflowFilters(builder: builder);
     }
 
     private void Seed(ModelBuilder builder)
     {
-        _ = builder.Entity<Culture>().HasData(data:Data.Cultures.Known);
-        _ = builder.Entity<Privilege>().HasData(data:GetAllPrivileges());
+        _ = builder.Entity<Culture>().HasData(data: Data.Cultures.Known);
+        _ = builder.Entity<Privilege>().HasData(data: GetAllPrivileges());
     }
 
     public virtual void SetAuth(ICoreAuthInfo auth)
@@ -137,9 +137,9 @@ public partial class CoreDataContext : DbContext
         User loadedUser = Users
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .FirstOrDefault(predicate:u => u.Id == userName);
+            .FirstOrDefault(predicate: u => u.Id == userName);
 
-        if (string.IsNullOrWhiteSpace(value:userName) || userName == "Guest" || loadedUser == null)
+        if (string.IsNullOrWhiteSpace(value: userName) || userName == "Guest" || loadedUser == null)
         {
             loadedUser = new User
             {
@@ -154,18 +154,18 @@ public partial class CoreDataContext : DbContext
         Guid[] roleIds = UserRoles
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .Where(predicate:userRole => userRole.UserId == loadedUser.Id)
-            .Select(selector:userRole => userRole.RoleId)
+            .Where(predicate: userRole => userRole.UserId == loadedUser.Id)
+            .Select(selector: userRole => userRole.RoleId)
             .Distinct()
             .ToArray();
 
         Role[] roles = Roles
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .Where(predicate:role => roleIds.Contains(value:role.Id))
+            .Where(predicate: role => roleIds.Contains(value: role.Id))
             .ToArray();
 
-        loadedUser.Roles = roles.Select(selector:r => new UserRole
+        loadedUser.Roles = roles.Select(selector: r => new UserRole
         {
             UserId = loadedUser.Id,
             RoleId = r.Id,

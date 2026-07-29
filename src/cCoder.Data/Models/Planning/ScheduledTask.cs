@@ -24,7 +24,7 @@ public class ScheduledTask
     public string ExecutionArgs { get; set; }
     public long ScheduleInTicks { get; set; }
 
-    public TimeSpan Schedule => TimeSpan.FromTicks(value:ScheduleInTicks);
+    public TimeSpan Schedule => TimeSpan.FromTicks(value: ScheduleInTicks);
 
     public string CreatedBy { get; set; }
     public string UpdatedBy { get; set; }

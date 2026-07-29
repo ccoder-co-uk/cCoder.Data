@@ -72,7 +72,7 @@ public partial class AddMailServers : Migration
             columns: table => new
             {
                 Id = table.Column<int>(nullable: false)
-                    .Annotation(name:"SqlServer:ValueGenerationStrategy", value:SqlServerValueGenerationStrategy.IdentityColumn),
+                    .Annotation(name: "SqlServer:ValueGenerationStrategy", value: SqlServerValueGenerationStrategy.IdentityColumn),
                 AppId = table.Column<int>(nullable: false),
                 Name = table.Column<string>(nullable: false),
                 User = table.Column<string>(nullable: false),
@@ -83,7 +83,7 @@ public partial class AddMailServers : Migration
             },
             constraints: table =>
             {
-                table.PrimaryKey(name:"PK_MailServers", columns:x => x.Id);
+                table.PrimaryKey(name: "PK_MailServers", columns: x => x.Id);
 
                 table.ForeignKey(
                     name: "FK_MailServers_Apps_AppId",
