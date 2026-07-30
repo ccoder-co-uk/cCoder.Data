@@ -4,7 +4,7 @@
 
 namespace cCoder.Data.Services.Foundations;
 
-public interface IMetadataTypeCacheService
+internal interface IMetadataTypeCacheService
 {
     void Set(string scope, IEnumerable<string> typeSetPayloads);
     string[] Get(string scope);

@@ -10,7 +10,7 @@ namespace Data.Web.Exposures.Controllers;
 
 [ApiController]
 [Route("Api/Data/EntitySets")]
-public sealed class DataEntitySetsController(IDataEntitySetService dataEntitySetService)
+public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySetService)
     : ControllerBase
 {
     [HttpGet]

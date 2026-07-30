@@ -7,7 +7,7 @@ using cCoder.Data.Services.Foundations;
 
 namespace cCoder.Data.Exposures;
 
-public sealed class MetadataTypeCache(IMetadataTypeCacheService service) : IMetadataTypeCache
+internal sealed class MetadataTypeCache(IMetadataTypeCacheService service) : IMetadataTypeCache
 {
     public void Set(string scope, IEnumerable<string> typeSetPayloads) =>
         service.Set(scope: scope, typeSetPayloads: typeSetPayloads);
