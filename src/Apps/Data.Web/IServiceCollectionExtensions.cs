@@ -6,6 +6,7 @@ using cCoder.Data.Models;
 using cCoder.Security;
 using Data.Web.Brokers;
 using Data.Web.Dependencies;
+using Data.Web.Exposures;
 using Data.Web.Models;
 using Data.Web.Services.Foundations;
 
@@ -42,7 +43,9 @@ public static class IServiceCollectionExtensions
     private static void AddFoundations(this IServiceCollection services)
     {
         services.AddTransient<IDataEntitySetService, DataEntitySetService>();
+        services.AddTransient<IDataEntitySetManager, DataEntitySetService>();
         services.AddTransient<IDataRowService, DataRowService>();
+        services.AddTransient<IDataRowManager, DataRowService>();
     }
 
     private static void AddExposures(this IServiceCollection services)

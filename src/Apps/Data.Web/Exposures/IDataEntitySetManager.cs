@@ -2,11 +2,12 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using System.Text.Json;
 using Data.Web.Models;
 
-using Data.Web.Exposures;
+namespace Data.Web.Exposures;
 
-namespace Data.Web.Services.Foundations;
-
-internal interface IDataRowService : IDataRowManager { }
+public interface IDataEntitySetManager
+{
+    ValueTask<DataEntitySet[]> GetEntitySetsAsync(
+        CancellationToken cancellationToken);
+}
