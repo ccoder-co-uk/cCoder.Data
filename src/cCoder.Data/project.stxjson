@@ -271,6 +271,12 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Core.Migrations.RestorePrivilegeCatalogue",
+      "StandardElementType": "Dependency",
+      "Properties": [],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Core.Migrations.RetireGenericAuditing",
       "StandardElementType": "Dependency",
       "Properties": [],
