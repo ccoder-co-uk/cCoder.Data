@@ -24,17 +24,21 @@ public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySet
 
             return Ok(value: entitySets);
         }
-        catch (ServiceValidationException exception)
+        catch (ServiceValidationException)
         {
-            return BadRequest(error: exception.Message);
+            return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException exception)
+        catch (ServiceDependencyException)
         {
-            return Problem(detail: exception.Message);
+            return StatusCode(
+                statusCode: StatusCodes.Status503ServiceUnavailable,
+                value: "The data service is unavailable.");
         }
-        catch (ServiceException exception)
+        catch (ServiceException)
         {
-            return Problem(detail: exception.Message);
+            return StatusCode(
+                statusCode: StatusCodes.Status500InternalServerError,
+                value: "The data operation failed.");
         }
     }
 }

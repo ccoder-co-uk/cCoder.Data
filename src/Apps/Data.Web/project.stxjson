@@ -1,12 +1,36 @@
 {
+  "SchemaVersion": 2,
+  "Project": {
+    "Id": "Data.Web",
+    "Name": "Data.Web",
+    "AssemblyName": "Data.Web"
+  },
   "Classes": [
     {
       "Name": "Data.Web.Brokers.DataSetBroker",
       "StandardElementType": "Broker",
+      "LineNumber": 11,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Brokers.IDataSetBroker",
+          "FullName": "Data.Web.Brokers.IDataSetBroker",
+          "Name": "IDataSetBroker",
+          "Namespace": "Data.Web.Brokers",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Broker"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
+          "LineNumber": 49,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -21,15 +45,74 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task"
+          "ReturnType": "System.Threading.Tasks.Task",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "DeleteRowAsync",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
+          "LineNumber": 14,
           "Inputs": [],
-          "ReturnType": "System.String"
+          "ReturnType": "System.String",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.GetCurrentSsoUserId()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "GetCurrentSsoUserId",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.GetCurrentSsoUserId()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -44,20 +127,79 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "InsertRowAsync",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "SelectEntitySetsAsync",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.SelectEntitySetsAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -76,10 +218,41 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "SelectRowsAsync",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Brokers.DataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
+          "LineNumber": 40,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -94,17 +267,67 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [
+            "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Dependencies.DataSetDependency",
+              "MethodName": "UpdateRowAsync",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "Data.Web.Dependencies.DataSetDependency",
       "StandardElementType": "Dependency",
+      "LineNumber": 15,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "System.Private.CoreLib:System.IDisposable",
+          "FullName": "System.IDisposable",
+          "Name": "IDisposable",
+          "Namespace": "System",
+          "AssemblyName": "System.Private.CoreLib",
+          "Kind": "Interface",
+          "IsInCurrentProject": false,
+          "StandardElementType": "Dependency"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
+          "LineNumber": 107,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -119,20 +342,99 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task"
+          "ReturnType": "System.Threading.Tasks.Task",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "Remove",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.Remove(System.Object)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.Dispose()",
           "Name": "Dispose",
+          "LineNumber": 359,
           "Inputs": [],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "System.IDisposable.Dispose()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "Dispose",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.Dispose()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
+          "LineNumber": 28,
           "Inputs": [],
-          "ReturnType": "System.String"
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
+          "LineNumber": 72,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -147,20 +449,124 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "Add",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.Add(System.Object)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Activator",
+              "MethodName": "CreateInstance",
+              "MethodId": "System.Activator.CreateInstance(System.Type)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.InvalidOperationException",
+              "MethodName": ".ctor",
+              "MethodId": "System.InvalidOperationException..ctor(System.String?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "OrderBy",
+              "MethodId": "System.Linq.Enumerable.OrderBy(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, TKey\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Select",
+              "MethodId": "System.Linq.Enumerable.Select(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, TResult\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Threading.CancellationToken",
+              "MethodName": "ThrowIfCancellationRequested",
+              "MethodId": "System.Threading.CancellationToken.ThrowIfCancellationRequested()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Threading.Tasks.Task",
+              "MethodName": "FromResult",
+              "MethodId": "System.Threading.Tasks.Task.FromResult(TResult)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
+          "LineNumber": 43,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -179,10 +585,67 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Queryable",
+              "MethodName": "Cast",
+              "MethodId": "System.Linq.Queryable.Cast(System.Linq.IQueryable)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Queryable",
+              "MethodName": "Select",
+              "MethodId": "System.Linq.Queryable.Select(System.Linq.IQueryable\u003CTSource\u003E,System.Linq.Expressions.Expression\u003CSystem.Func\u003CTSource, TResult\u003E\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Threading.CancellationToken",
+              "MethodName": "ThrowIfCancellationRequested",
+              "MethodId": "System.Threading.CancellationToken.ThrowIfCancellationRequested()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Threading.Tasks.Task",
+              "MethodName": "FromResult",
+              "MethodId": "System.Threading.Tasks.Task.FromResult(TResult)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
+          "LineNumber": 91,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -197,34 +660,145 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "Data.Web.Exposures.Controllers.DataEntitySetsController",
-      "StandardElementType": "Exposure",
+      "StandardElementType": "HttpExposure",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "Data.Web:ControllerBase",
+        "FullName": "ControllerBase",
+        "Name": "ControllerBase",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "Data.Web",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Exposures.Controllers.DataEntitySetsController.GetEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "GetEntitySetsAsync",
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Exposures.IDataEntitySetManager",
+              "MethodName": "GetEntitySetsAsync",
+              "MethodId": "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [
+            "GET"
+          ],
+          "HttpResponses": [
+            {
+              "StatusCode": 200,
+              "ResultMethod": "Ok",
+              "ExceptionType": "",
+              "IsExceptionPath": false,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            },
+            {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            }
+          ],
+          "IsHttpRequestHandler": true,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": true,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": true
         }
       ]
     },
     {
       "Name": "Data.Web.Exposures.Controllers.DataRowsController",
-      "StandardElementType": "Exposure",
+      "StandardElementType": "HttpExposure",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "Data.Web:ControllerBase",
+        "FullName": "ControllerBase",
+        "Name": "ControllerBase",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "Data.Web",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
+          "LineNumber": 121,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -239,10 +813,64 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "MethodName": "DeleteRowAsync",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [
+            "DELETE"
+          ],
+          "HttpResponses": [
+            {
+              "StatusCode": 204,
+              "ResultMethod": "NoContent",
+              "ExceptionType": "",
+              "IsExceptionPath": false,
+              "IsNullPath": false,
+              "HasBody": false,
+              "ExposesExceptionDetails": false
+            },
+            {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            }
+          ],
+          "IsHttpRequestHandler": true,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": true
         },
         {
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -261,10 +889,63 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "MethodName": "GetRowsAsync",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [
+            "GET"
+          ],
+          "HttpResponses": [
+            {
+              "StatusCode": 200,
+              "ResultMethod": "Ok",
+              "ExceptionType": "",
+              "IsExceptionPath": false,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            },
+            {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            }
+          ],
+          "IsHttpRequestHandler": true,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": true,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": true
         },
         {
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PostRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "PostRowAsync",
+          "LineNumber": 53,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -279,10 +960,55 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "MethodName": "AddRowAsync",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [
+            "POST"
+          ],
+          "HttpResponses": [
+            {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            }
+          ],
+          "IsHttpRequestHandler": true,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": true
         },
         {
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PutRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "PutRowAsync",
+          "LineNumber": 88,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -297,17 +1023,76 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "MethodName": "UpdateRowAsync",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [
+            "PUT"
+          ],
+          "HttpResponses": [
+            {
+              "StatusCode": 200,
+              "ResultMethod": "Ok",
+              "ExceptionType": "",
+              "IsExceptionPath": false,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            },
+            {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false
+            }
+          ],
+          "IsHttpRequestHandler": true,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": true
         }
       ]
     },
     {
       "Name": "Data.Web.IServiceCollectionExtensions",
       "StandardElementType": "App",
+      "LineNumber": 15,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.IServiceCollectionExtensions.AddDataWeb(IServiceCollection,IConfiguration,System.Action\u003CData.Web.Models.DataWebConfiguration\u003E)",
           "Name": "AddDataWeb",
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "services",
@@ -322,13 +1107,46 @@
               "Type": "System.Action\u003CData.Web.Models.DataWebConfiguration\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Action\u003CT\u003E",
+              "MethodName": "Invoke",
+              "MethodId": "System.Action\u003CT\u003E.Invoke(T)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.IServiceCollectionExtensions",
+              "MethodName": "AddData",
+              "MethodId": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "Data.Web.Models.DataEntitySet",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "ClrType",
@@ -360,6 +1178,11 @@
     {
       "Name": "Data.Web.Models.DataProperty",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "CanCreate",
@@ -395,6 +1218,11 @@
     {
       "Name": "Data.Web.Models.DataRows",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "EntitySet",
@@ -418,6 +1246,11 @@
     {
       "Name": "Data.Web.Models.DataWebConfiguration",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Data",
@@ -433,62 +1266,193 @@
     {
       "Name": "Data.Web.Models.Exceptions.ServiceDependencyException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Exception",
+        "FullName": "System.Exception",
+        "Name": "Exception",
+        "Namespace": "System",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "Data.Web.Models.Exceptions.ServiceException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Exception",
+        "FullName": "System.Exception",
+        "Name": "Exception",
+        "Namespace": "System",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "Data.Web.Models.Exceptions.ServiceValidationException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Exception",
+        "FullName": "System.Exception",
+        "Name": "Exception",
+        "Namespace": "System",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "Data.Web.Program",
       "StandardElementType": "App",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Program.Main(System.String[])",
           "Name": "Main",
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "args",
               "Type": "System.String[]"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "Data.Web.Services.Foundations.DataEntitySetService",
       "StandardElementType": "FoundationService",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Services.Foundations.IDataEntitySetService",
+          "FullName": "Data.Web.Services.Foundations.IDataEntitySetService",
+          "Name": "IDataEntitySetService",
+          "Namespace": "Data.Web.Services.Foundations",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "FoundationService"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Services.Foundations.DataEntitySetService.GetEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "GetEntitySetsAsync",
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataEntitySet[]\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "Implements": [
+            "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.IDataSetBroker",
+              "MethodName": "SelectEntitySetsAsync",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "Data.Web.Services.Foundations.DataRowService",
       "StandardElementType": "FoundationService",
+      "LineNumber": 11,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Services.Foundations.IDataRowService",
+          "FullName": "Data.Web.Services.Foundations.IDataRowService",
+          "Name": "IDataRowService",
+          "Namespace": "Data.Web.Services.Foundations",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "FoundationService"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "Data.Web.Services.Foundations.DataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "AddRowAsync",
+          "LineNumber": 36,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -503,10 +1467,50 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [
+            "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.IDataSetBroker",
+              "MethodName": "InsertRowAsync",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Services.Foundations.DataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
+          "LineNumber": 74,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -521,10 +1525,50 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask"
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [
+            "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.IDataSetBroker",
+              "MethodName": "DeleteRowAsync",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Services.Foundations.DataRowService.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -543,10 +1587,62 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataRows\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataRows\u003E",
+          "Implements": [
+            "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.IDataSetBroker",
+              "MethodName": "SelectRowsAsync",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "System.Math",
+              "MethodName": "Clamp",
+              "MethodId": "System.Math.Clamp(System.Int32,System.Int32,System.Int32)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Math",
+              "MethodName": "Max",
+              "MethodId": "System.Math.Max(System.Int32,System.Int32)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "Data.Web.Services.Foundations.DataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
+          "LineNumber": 55,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -561,9 +1657,471 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E"
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [
+            "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.IDataSetBroker",
+              "MethodName": "UpdateRowAsync",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Data.Web.Models.Exceptions.ServiceValidationException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "IncomingExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceException",
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.InvalidOperationException",
+            "System.UnauthorizedAccessException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Data.Web.Models.Exceptions.ServiceDependencyException",
+            "Data.Web.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
+    }
+  ],
+  "Interfaces": [
+    {
+      "Name": "Data.Web.Brokers.IDataSetBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "DeleteRowAsync",
+          "LineNumber": 32,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.GetCurrentSsoUserId()",
+          "Name": "GetCurrentSsoUserId",
+          "LineNumber": 12,
+          "Inputs": [],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "InsertRowAsync",
+          "LineNumber": 22,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
+          "Name": "SelectEntitySetsAsync",
+          "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+          "Name": "SelectRowsAsync",
+          "LineNumber": 16,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "UpdateRowAsync",
+          "LineNumber": 27,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "values",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Exposures.IDataEntitySetManager",
+      "StandardElementType": "Exposure",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)",
+          "Name": "GetEntitySetsAsync",
+          "LineNumber": 11,
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Exposures.IDataRowManager",
+      "StandardElementType": "Exposure",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "AddRowAsync",
+          "LineNumber": 18,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "newValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "DeleteRowAsync",
+          "LineNumber": 28,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "deletedValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+          "Name": "GetRowsAsync",
+          "LineNumber": 12,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "skip",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "take",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataRows\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Name": "UpdateRowAsync",
+          "LineNumber": 23,
+          "Inputs": [
+            {
+              "Name": "entitySet",
+              "Type": "System.String"
+            },
+            {
+              "Name": "updatedValues",
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "Data.Web.Services.Foundations.IDataEntitySetService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 11,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Exposures.IDataEntitySetManager",
+          "FullName": "Data.Web.Exposures.IDataEntitySetManager",
+          "Name": "IDataEntitySetManager",
+          "Namespace": "Data.Web.Exposures",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Exposure"
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "Data.Web.Services.Foundations.IDataRowService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 12,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Exposures.IDataRowManager",
+          "FullName": "Data.Web.Exposures.IDataRowManager",
+          "Name": "IDataRowManager",
+          "Namespace": "Data.Web.Exposures",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Exposure"
+        }
+      ],
+      "Properties": [],
+      "Methods": []
     }
   ],
   "Links": [
@@ -588,5 +2146,41 @@
       "ToType": "Data.Web.Brokers.DataSetBroker"
     }
   ],
-  "AnalysisItems": []
+  "AnalysisItems": [
+    {
+      "Code": "STXAPI005",
+      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Exposures.Controllers.DataEntitySetsController",
+      "LineNumber": 17
+    },
+    {
+      "Code": "STXAPI005",
+      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
+      "LineNumber": 18
+    },
+    {
+      "Code": "STXAPI005",
+      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
+      "LineNumber": 53
+    },
+    {
+      "Code": "STXAPI005",
+      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
+      "LineNumber": 88
+    },
+    {
+      "Code": "STXAPI005",
+      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
+      "LineNumber": 121
+    }
+  ]
 }
