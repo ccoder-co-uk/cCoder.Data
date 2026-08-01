@@ -1,371 +1,1258 @@
 {
+  "SchemaVersion": 2,
+  "Project": {
+    "Id": "cCoder.Data",
+    "Name": "cCoder.Data",
+    "AssemblyName": "cCoder.Data"
+  },
   "Classes": [
     {
       "Name": "cCoder.Core.Migrations.AddAppIdToLogEntries",
       "StandardElementType": "Dependency",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddAuditFields",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddBackgroundJobs",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddBaseEntityProperties",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddCommonObjectTable",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddCommonObjectTableCulture",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddCommonObjectTableKey",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddDefaultNameValue",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddDeletedOnToFilesTable",
       "StandardElementType": "Dependency",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddDeletedOnToFoldersTable",
       "StandardElementType": "Dependency",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddDescriptionToRole",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddDurationInTicks",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddExecuteAsWorkflowEvent",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddFileSize",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddFileSizeToContents",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddFlowInstances",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddFromAddressToMailServers",
       "StandardElementType": "Dependency",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddJoinEntityDBSets",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddKeysToScripts",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddMailServers",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddMorePrivsToUsersAndGuests",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddPermissionsComputeFunctions",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddReceivedMail",
       "StandardElementType": "Dependency",
+      "LineNumber": 15,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddRelatedSenderToQueuedEmails",
       "StandardElementType": "Dependency",
+      "LineNumber": 13,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddRemovedAdminPriv",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddRequiredAttributes",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddScriptExecutionPriv",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddSystemUser",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddTenantIds",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.AddUserInfoToBPAndWFTypes",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.ChangeScheduleTypeName",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.DestroyFlowInstances",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.DropProcessesAndBackgroundJobs",
       "StandardElementType": "Dependency",
+      "LineNumber": 13,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.ExcludedEventsInScheduler",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.Initial",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.LinkSubmissionsToApps",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.MakeExecuteAsForeignKey",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.MakeInstanceEndTimesNullable",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.MovePrivsIntoRam",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.NewReportingFields",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RemoveOldAdminPrivs",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RemoveProcessFromEvents",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RemoveRequired",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RemoveScriptFromPages",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RenameComponentCategories",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RestorePrivilegeCatalogue",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.RetireGenericAuditing",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.ScheduledTasksReWork",
       "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.SimplifyFormsAndSubmissions",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.UpdateBPtoWFKey",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.UpdateMailObjects",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.UpdatePrivData",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.VariousMinorFixes",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Core.Migrations.VariousNewFields",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker",
       "StandardElementType": "Broker",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+          "FullName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+          "Name": "IMetadataTypeCacheBroker",
+          "Namespace": "cCoder.Data.Brokers.Caching",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Broker"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Clear(System.String)",
           "Name": "Clear",
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Clear(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Collections.Concurrent.ConcurrentDictionary\u003CTKey, TValue\u003E",
+              "MethodName": "TryRemove",
+              "MethodId": "System.Collections.Concurrent.ConcurrentDictionary\u003CTKey, TValue\u003E.TryRemove(TKey,TValue)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Contains(System.String)",
           "Name": "Contains",
+          "LineNumber": 28,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Contains(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Collections.Concurrent.ConcurrentDictionary\u003CTKey, TValue\u003E",
+              "MethodName": "ContainsKey",
+              "MethodId": "System.Collections.Concurrent.ConcurrentDictionary\u003CTKey, TValue\u003E.ContainsKey(TKey)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Get(System.String)",
           "Name": "Get",
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Get(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Collections.Generic.CollectionExtensions",
+              "MethodName": "GetValueOrDefault",
+              "MethodId": "System.Collections.Generic.CollectionExtensions.GetValueOrDefault(System.Collections.Generic.IReadOnlyDictionary\u003CTKey, TValue\u003E,TKey,TValue)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.GetAll()",
           "Name": "GetAll",
+          "LineNumber": 23,
           "Inputs": [],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.GetAll()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "SelectMany",
+              "MethodId": "System.Linq.Enumerable.SelectMany(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Collections.Generic.IEnumerable\u003CTResult\u003E\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Set(System.String,System.String[])",
           "Name": "Set",
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "scope",
@@ -376,13 +1263,44 @@
               "Type": "System.String[]"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Set(System.String,System.String[])"
+          ],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.CoreAuthInfo",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.ICoreAuthInfo",
+          "FullName": "cCoder.Data.ICoreAuthInfo",
+          "Name": "ICoreAuthInfo",
+          "Namespace": "cCoder.Data",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Unknown"
+        }
+      ],
       "Properties": [
         {
           "Name": "SSOUserId",
@@ -394,28 +1312,123 @@
     {
       "Name": "cCoder.Data.CoreContextFactory",
       "StandardElementType": "Dependency",
+      "LineNumber": 19,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:IDesignTimeDbContextFactory\u003CcCoder.Data.CoreDataContext\u003E",
+          "FullName": "IDesignTimeDbContextFactory\u003CcCoder.Data.CoreDataContext\u003E",
+          "Name": "IDesignTimeDbContextFactory",
+          "Namespace": "\u003Cglobal namespace\u003E",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Class",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Dependency"
+        },
+        {
+          "Id": "cCoder.Data:cCoder.Data.ICoreContextFactory",
+          "FullName": "cCoder.Data.ICoreContextFactory",
+          "Name": "ICoreContextFactory",
+          "Namespace": "cCoder.Data",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Unknown"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.CoreContextFactory.CreateCoreContext()",
           "Name": "CreateCoreContext",
+          "LineNumber": 44,
           "Inputs": [],
-          "ReturnType": "cCoder.Data.CoreDataContext"
+          "ReturnType": "cCoder.Data.CoreDataContext",
+          "Implements": [
+            "cCoder.Data.ICoreContextFactory.CreateCoreContext()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions",
+              "MethodName": "GetRequiredService",
+              "MethodId": "Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(System.IServiceProvider)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.CoreContextFactory",
+              "MethodName": "CreateDbContext",
+              "MethodId": "cCoder.Data.CoreContextFactory.CreateDbContext(System.String[])",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.CoreContextFactory.CreateDbContext(System.String[])",
           "Name": "CreateDbContext",
+          "LineNumber": 57,
           "Inputs": [
             {
               "Name": "args",
               "Type": "System.String[]"
             }
           ],
-          "ReturnType": "cCoder.Data.CoreDataContext"
+          "ReturnType": "cCoder.Data.CoreDataContext",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.CoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.CoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.CoreDataContext",
       "StandardElementType": "Dependency",
+      "LineNumber": 14,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:DbContext",
+        "FullName": "DbContext",
+        "Name": "DbContext",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "AppCultures",
@@ -588,30 +1601,80 @@
       ],
       "Methods": [
         {
+          "Id": "cCoder.Data.CoreDataContext.GetAllPrivileges()",
           "Name": "GetAllPrivileges",
+          "LineNumber": 15,
           "Inputs": [],
-          "ReturnType": "cCoder.Data.Models.Security.Privilege[]"
+          "ReturnType": "cCoder.Data.Models.Security.Privilege[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.CoreDataContext.Migrate()",
           "Name": "Migrate",
+          "LineNumber": 132,
           "Inputs": [],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.CoreDataContext.SetAuth(cCoder.Data.ICoreAuthInfo)",
           "Name": "SetAuth",
+          "LineNumber": 126,
           "Inputs": [
             {
               "Name": "auth",
               "Type": "cCoder.Data.ICoreAuthInfo"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Cultures",
       "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Known",
@@ -623,45 +1686,204 @@
     {
       "Name": "cCoder.Data.Exposures.MetadataTypeCache",
       "StandardElementType": "Exposure",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Exposures.IMetadataTypeCache",
+          "FullName": "cCoder.Data.Exposures.IMetadataTypeCache",
+          "Name": "IMetadataTypeCache",
+          "Namespace": "cCoder.Data.Exposures",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Exposure"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Exposures.MetadataTypeCache.Clear(System.String)",
           "Name": "Clear",
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Exposures.IMetadataTypeCache.Clear(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+              "MethodName": "Clear",
+              "MethodId": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Clear(System.String)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Exposures.MetadataTypeCache.Contains(System.String)",
           "Name": "Contains",
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [
+            "cCoder.Data.Exposures.IMetadataTypeCache.Contains(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+              "MethodName": "Contains",
+              "MethodId": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Contains(System.String)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Exposures.MetadataTypeCache.Get(System.String)",
           "Name": "Get",
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Exposures.IMetadataTypeCache.Get(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+              "MethodName": "Get",
+              "MethodId": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Get(System.String)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Exposures.MetadataTypeCache.GetAll()",
           "Name": "GetAll",
+          "LineNumber": 18,
           "Inputs": [],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Exposures.IMetadataTypeCache.GetAll()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+              "MethodName": "GetAll",
+              "MethodId": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.GetAll()",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Exposures.MetadataTypeCache.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
+          "LineNumber": 12,
           "Inputs": [
             {
               "Name": "scope",
@@ -672,13 +1894,61 @@
               "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Exposures.IMetadataTypeCache.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+              "MethodName": "Set",
+              "MethodId": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Extensions.CompositePropertyInfo",
       "StandardElementType": "Dependency",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Reflection.PropertyInfo",
+        "FullName": "System.Reflection.PropertyInfo",
+        "Name": "PropertyInfo",
+        "Namespace": "System.Reflection",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Attributes",
@@ -711,27 +1981,81 @@
       ],
       "Methods": [
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetAccessors(System.Boolean)",
           "Name": "GetAccessors",
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "nonPublic",
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Reflection.MethodInfo[]"
+          "ReturnType": "System.Reflection.MethodInfo[]",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetCustomAttributes(System.Boolean)",
           "Name": "GetCustomAttributes",
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "inherit",
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Object[]"
+          "ReturnType": "System.Object[]",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Reflection.MemberInfo",
+              "MethodName": "GetCustomAttributes",
+              "MethodId": "System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetCustomAttributes(System.Type,System.Boolean)",
           "Name": "GetCustomAttributes",
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "attributeType",
@@ -742,35 +2066,145 @@
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Object[]"
+          "ReturnType": "System.Object[]",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Reflection.MemberInfo",
+              "MethodName": "GetCustomAttributes",
+              "MethodId": "System.Reflection.MemberInfo.GetCustomAttributes(System.Type,System.Boolean)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetGetMethod(System.Boolean)",
           "Name": "GetGetMethod",
+          "LineNumber": 26,
           "Inputs": [
             {
               "Name": "nonPublic",
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Reflection.MethodInfo"
+          "ReturnType": "System.Reflection.MethodInfo",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetIndexParameters()",
           "Name": "GetIndexParameters",
+          "LineNumber": 28,
           "Inputs": [],
-          "ReturnType": "System.Reflection.ParameterInfo[]"
+          "ReturnType": "System.Reflection.ParameterInfo[]",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetSetMethod(System.Boolean)",
           "Name": "GetSetMethod",
+          "LineNumber": 30,
           "Inputs": [
             {
               "Name": "nonPublic",
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Reflection.MethodInfo"
+          "ReturnType": "System.Reflection.MethodInfo",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetValue(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)",
           "Name": "GetValue",
+          "LineNumber": 32,
           "Inputs": [
             {
               "Name": "obj",
@@ -793,10 +2227,39 @@
               "Type": "System.Globalization.CultureInfo"
             }
           ],
-          "ReturnType": "System.Object"
+          "ReturnType": "System.Object",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.IsDefined(System.Type,System.Boolean)",
           "Name": "IsDefined",
+          "LineNumber": 34,
           "Inputs": [
             {
               "Name": "attributeType",
@@ -807,10 +2270,33 @@
               "Type": "System.Boolean"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Reflection.MemberInfo",
+              "MethodName": "IsDefined",
+              "MethodId": "System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.CompositePropertyInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)",
           "Name": "SetValue",
+          "LineNumber": 36,
           "Inputs": [
             {
               "Name": "obj",
@@ -837,17 +2323,51 @@
               "Type": "System.Globalization.CultureInfo"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.NotImplementedException",
+              "MethodName": ".ctor",
+              "MethodId": "System.NotImplementedException..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "ThrowsExceptionTypes": [
+            "System.NotImplementedException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Extensions.IEnumerableExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Extensions.IEnumerableExtensions.ForEach(System.Collections.Generic.IEnumerable\u003CT\u003E,System.Action\u003CT, System.Int32\u003E)",
           "Name": "ForEach",
+          "LineNumber": 9,
           "Inputs": [
             {
               "Name": "source",
@@ -858,10 +2378,33 @@
               "Type": "System.Action\u003CT, System.Int32\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Action\u003CT1, T2\u003E",
+              "MethodName": "Invoke",
+              "MethodId": "System.Action\u003CT1, T2\u003E.Invoke(T1,T2)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.IEnumerableExtensions.ForEach(System.Collections.Generic.IEnumerable\u003CT\u003E,System.Action\u003CT\u003E)",
           "Name": "ForEach",
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "source",
@@ -872,51 +2415,155 @@
               "Type": "System.Action\u003CT\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Action\u003CT\u003E",
+              "MethodName": "Invoke",
+              "MethodId": "System.Action\u003CT\u003E.Invoke(T)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Extensions.ObjectExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
           "Name": "GetJSONSettings",
+          "LineNumber": 12,
           "Inputs": [],
-          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings"
-        },
-        {
-          "Name": "GetODataJsonSettings",
-          "Inputs": [],
-          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings"
-        },
-        {
-          "Name": "ToJson",
-          "Inputs": [
+          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings",
+          "Implements": [],
+          "Calls": [
             {
-              "Name": "value",
-              "Type": "System.Object"
-            }
-          ],
-          "ReturnType": "System.String"
-        },
-        {
-          "Name": "ToJson",
-          "Inputs": [
-            {
-              "Name": "value",
-              "Type": "System.Object"
+              "TypeName": "Newtonsoft.Json.JsonSerializerSettings",
+              "MethodName": ".ctor",
+              "MethodId": "Newtonsoft.Json.JsonSerializerSettings..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             },
             {
-              "Name": "depth",
-              "Type": "System.Int32"
+              "TypeName": "Newtonsoft.Json.Serialization.DefaultContractResolver",
+              "MethodName": ".ctor",
+              "MethodId": "Newtonsoft.Json.Serialization.DefaultContractResolver..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
-          "ReturnType": "System.String"
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.GetODataJsonSettings()",
+          "Name": "GetODataJsonSettings",
+          "LineNumber": 24,
+          "Inputs": [],
+          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Newtonsoft.Json.JsonSerializerSettings",
+              "MethodName": ".ctor",
+              "MethodId": "Newtonsoft.Json.JsonSerializerSettings..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Newtonsoft.Json.Serialization.DefaultContractResolver",
+              "MethodName": ".ctor",
+              "MethodId": "Newtonsoft.Json.Serialization.DefaultContractResolver..ctor()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object)",
           "Name": "ToJson",
+          "LineNumber": 37,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Newtonsoft.Json.JsonConvert",
+              "MethodName": "SerializeObject",
+              "MethodId": "Newtonsoft.Json.JsonConvert.SerializeObject(System.Object?,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
+              "MethodName": "GetJSONSettings",
+              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+          "Name": "ToJson",
+          "LineNumber": 47,
           "Inputs": [
             {
               "Name": "value",
@@ -927,60 +2574,274 @@
               "Type": "Newtonsoft.Json.JsonSerializerSettings"
             }
           ],
-          "ReturnType": "System.String"
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Newtonsoft.Json.JsonConvert",
+              "MethodName": "SerializeObject",
+              "MethodId": "Newtonsoft.Json.JsonConvert.SerializeObject(System.Object?,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object,System.Int32)",
+          "Name": "ToJson",
+          "LineNumber": 40,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "depth",
+              "Type": "System.Int32"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Newtonsoft.Json.JsonConvert",
+              "MethodName": "SerializeObject",
+              "MethodId": "Newtonsoft.Json.JsonConvert.SerializeObject(System.Object?,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
+              "MethodName": "GetJSONSettings",
+              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJsonForOdata(System.Object)",
           "Name": "ToJsonForOdata",
+          "LineNumber": 50,
           "Inputs": [
             {
               "Name": "value",
               "Type": "System.Object"
             }
           ],
-          "ReturnType": "System.String"
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "Newtonsoft.Json.JsonConvert",
+              "MethodName": "SerializeObject",
+              "MethodId": "Newtonsoft.Json.JsonConvert.SerializeObject(System.Object?,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
+              "MethodName": "GetODataJsonSettings",
+              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetODataJsonSettings()",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Extensions.ServiceProviderExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Data.Extensions.TypeExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Extensions.TypeExtensions.GetIdProperty(System.Type)",
           "Name": "GetIdProperty",
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "type",
               "Type": "System.Type"
             }
           ],
-          "ReturnType": "System.Reflection.PropertyInfo"
+          "ReturnType": "System.Reflection.PropertyInfo",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Any",
+              "MethodId": "System.Linq.Enumerable.Any(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "FirstOrDefault",
+              "MethodId": "System.Linq.Enumerable.FirstOrDefault(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Reflection.MemberInfo",
+              "MethodName": "GetCustomAttributes",
+              "MethodId": "System.Reflection.MemberInfo.GetCustomAttributes(System.Type,System.Boolean)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Type",
+              "MethodName": "GetProperties",
+              "MethodId": "System.Type.GetProperties()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Type",
+              "MethodName": "GetProperty",
+              "MethodId": "System.Type.GetProperty(System.String)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Extensions.TypeExtensions",
+              "MethodName": "IsJoinType",
+              "MethodId": "cCoder.Data.Extensions.TypeExtensions.IsJoinType(System.Type)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Extensions.TypeExtensions.IsJoinType(System.Type)",
           "Name": "IsJoinType",
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "type",
               "Type": "System.Type"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "All",
+              "MethodId": "System.Linq.Enumerable.All(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Where",
+              "MethodId": "System.Linq.Enumerable.Where(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Reflection.CustomAttributeExtensions",
+              "MethodName": "GetCustomAttribute",
+              "MethodId": "System.Reflection.CustomAttributeExtensions.GetCustomAttribute(System.Reflection.MemberInfo)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Type",
+              "MethodName": "GetProperties",
+              "MethodId": "System.Type.GetProperties()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.IServiceCollectionExtensions",
       "StandardElementType": "App",
+      "LineNumber": 16,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E)",
           "Name": "AddData",
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "services",
@@ -991,10 +2852,40 @@
               "Type": "System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Action\u003CT\u003E",
+              "MethodName": "Invoke",
+              "MethodId": "System.Action\u003CT\u003E.Invoke(T)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.IServiceCollectionExtensions",
+              "MethodName": "AddData",
+              "MethodId": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Data.Models.DataConfiguration)",
+              "StandardElementType": "App",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Data.Models.DataConfiguration)",
           "Name": "AddData",
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "services",
@@ -1005,13 +2896,39 @@
               "Type": "cCoder.Data.Models.DataConfiguration"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.ArgumentNullException",
+              "MethodName": "ThrowIfNull",
+              "MethodId": "System.ArgumentNullException.ThrowIfNull(System.Object?,System.String?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Models.ApiInfo",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Kind",
@@ -1035,6 +2952,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.App",
       "StandardElementType": "Model",
+      "LineNumber": 17,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Calendars",
@@ -1146,6 +3068,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.AppCulture",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1169,6 +3096,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Component",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1228,6 +3160,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Content",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Culture",
@@ -1263,6 +3200,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Culture",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Apps",
@@ -1295,25 +3237,68 @@
       ],
       "Methods": [
         {
+          "Id": "cCoder.Data.Models.CMS.Culture.Equals(System.Object)",
           "Name": "Equals",
+          "LineNumber": 26,
           "Inputs": [
             {
               "Name": "obj",
               "Type": "System.Object"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Models.CMS.Culture.GetHashCode()",
           "Name": "GetHashCode",
+          "LineNumber": 29,
           "Inputs": [],
-          "ReturnType": "System.Int32"
+          "ReturnType": "System.Int32",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.String",
+              "MethodName": "GetHashCode",
+              "MethodId": "System.String.GetHashCode()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Models.CMS.Layout",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1369,6 +3354,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.MetaItem",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Content",
@@ -1404,6 +3394,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Page",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1487,6 +3482,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.PageInfo",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Culture",
@@ -1526,6 +3526,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Resource",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1585,6 +3590,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Script",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1636,6 +3646,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Submission",
       "StandardElementType": "Model",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1687,6 +3702,11 @@
     {
       "Name": "cCoder.Data.Models.CMS.Template",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1738,6 +3758,11 @@
     {
       "Name": "cCoder.Data.Models.CommonObject",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "CreatedBy",
@@ -1793,6 +3818,11 @@
     {
       "Name": "cCoder.Data.Models.DMS.File",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Contents",
@@ -1848,6 +3878,11 @@
     {
       "Name": "cCoder.Data.Models.DMS.FileContent",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "CreatedBy",
@@ -1891,6 +3926,11 @@
     {
       "Name": "cCoder.Data.Models.DMS.Folder",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -1942,6 +3982,11 @@
     {
       "Name": "cCoder.Data.Models.DataConfiguration",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "ConnectionString",
@@ -1961,24 +4006,71 @@
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Exception",
+        "FullName": "System.Exception",
+        "Name": "Exception",
+        "Namespace": "System",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.Private.CoreLib:System.Exception",
+        "FullName": "System.Exception",
+        "Name": "Exception",
+        "Namespace": "System",
+        "AssemblyName": "System.Private.CoreLib",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceValidationException",
       "StandardElementType": "Dependency",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "System.ComponentModel.Annotations:System.ComponentModel.DataAnnotations.ValidationException",
+        "FullName": "System.ComponentModel.DataAnnotations.ValidationException",
+        "Name": "ValidationException",
+        "Namespace": "System.ComponentModel.DataAnnotations",
+        "AssemblyName": "System.ComponentModel.Annotations",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
       "Properties": [],
       "Methods": []
     },
     {
       "Name": "cCoder.Data.Models.Logging.LogDataItem",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Id",
@@ -2006,6 +4098,11 @@
     {
       "Name": "cCoder.Data.Models.Logging.LogEntry",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "AppId",
@@ -2045,6 +4142,11 @@
     {
       "Name": "cCoder.Data.Models.Mail.Email",
       "StandardElementType": "Model",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2092,6 +4194,11 @@
     {
       "Name": "cCoder.Data.Models.Mail.EmailSendFailure",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "AttemptedOn",
@@ -2119,6 +4226,11 @@
     {
       "Name": "cCoder.Data.Models.Mail.MailReceiver",
       "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2178,6 +4290,11 @@
     {
       "Name": "cCoder.Data.Models.Mail.MailSender",
       "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2237,6 +4354,11 @@
     {
       "Name": "cCoder.Data.Models.Mail.MailServer",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2284,6 +4406,20 @@
     {
       "Name": "cCoder.Data.Models.Mail.QueuedEmail",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:cCoder.Data.Models.Mail.Email",
+        "FullName": "cCoder.Data.Models.Mail.Email",
+        "Name": "Email",
+        "Namespace": "cCoder.Data.Models.Mail",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Model"
+      },
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "FailedSends",
@@ -2307,6 +4443,20 @@
     {
       "Name": "cCoder.Data.Models.Mail.ReceivedEmail",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:cCoder.Data.Models.Mail.Email",
+        "FullName": "cCoder.Data.Models.Mail.Email",
+        "Name": "Email",
+        "Namespace": "cCoder.Data.Models.Mail",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Model"
+      },
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "From",
@@ -2334,6 +4484,20 @@
     {
       "Name": "cCoder.Data.Models.Mail.SentEmail",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:cCoder.Data.Models.Mail.Email",
+        "FullName": "cCoder.Data.Models.Mail.Email",
+        "Name": "Email",
+        "Namespace": "cCoder.Data.Models.Mail",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Model"
+      },
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "From",
@@ -2357,6 +4521,11 @@
     {
       "Name": "cCoder.Data.Models.Packaging.Package",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Category",
@@ -2388,6 +4557,11 @@
     {
       "Name": "cCoder.Data.Models.Packaging.PackageItem",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Data",
@@ -2415,6 +4589,11 @@
     {
       "Name": "cCoder.Data.Models.Planning.Calendar",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2446,6 +4625,11 @@
     {
       "Name": "cCoder.Data.Models.Planning.CalendarEvent",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Calendar",
@@ -2481,6 +4665,11 @@
     {
       "Name": "cCoder.Data.Models.Planning.ScheduledTask",
       "StandardElementType": "Model",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2572,10 +4761,17 @@
     {
       "Name": "cCoder.Data.Models.Security.AppExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Models.Security.AppExtensions.IsAppAdmin(cCoder.Data.Models.CMS.App,cCoder.Data.Models.Security.User)",
           "Name": "IsAppAdmin",
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "app",
@@ -2586,13 +4782,46 @@
               "Type": "cCoder.Data.Models.Security.User"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Any",
+              "MethodId": "System.Linq.Enumerable.Any(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Models.Security.RoleExtensions",
+              "MethodName": "Allows",
+              "MethodId": "cCoder.Data.Models.Security.RoleExtensions.Allows(cCoder.Data.Models.Security.Role,cCoder.Data.Models.Security.User,System.String)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Models.Security.FolderRole",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Folder",
@@ -2616,6 +4845,11 @@
     {
       "Name": "cCoder.Data.Models.Security.PageRole",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Page",
@@ -2639,6 +4873,11 @@
     {
       "Name": "cCoder.Data.Models.Security.Privilege",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Description",
@@ -2666,6 +4905,11 @@
     {
       "Name": "cCoder.Data.Models.Security.Role",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2713,10 +4957,17 @@
     {
       "Name": "cCoder.Data.Models.Security.RoleExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Models.Security.RoleExtensions.Allows(cCoder.Data.Models.Security.Role,cCoder.Data.Models.Security.User,System.String)",
           "Name": "Allows",
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "role",
@@ -2731,13 +4982,46 @@
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Any",
+              "MethodId": "System.Linq.Enumerable.Any(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.String",
+              "MethodName": "ToLowerInvariant",
+              "MethodId": "System.String.ToLowerInvariant()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Models.Security.User",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "DefaultCulture",
@@ -2773,10 +5057,17 @@
     {
       "Name": "cCoder.Data.Models.Security.UserExtensions",
       "StandardElementType": "Exposure",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Models.Security.UserExtensions.Can(cCoder.Data.Models.Security.User,System.Int32?,System.String)",
           "Name": "Can",
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "user",
@@ -2791,10 +5082,54 @@
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Collections.Generic.ICollection\u003CT\u003E",
+              "MethodName": "Contains",
+              "MethodId": "System.Collections.Generic.ICollection\u003CT\u003E.Contains(T)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Any",
+              "MethodId": "System.Linq.Enumerable.Any(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.String",
+              "MethodName": "ToLowerInvariant",
+              "MethodId": "System.String.ToLowerInvariant()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Models.Security.UserExtensions",
+              "MethodName": "IsAdminOfApp",
+              "MethodId": "cCoder.Data.Models.Security.UserExtensions.IsAdminOfApp(cCoder.Data.Models.Security.User,System.Int32?)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Models.Security.UserExtensions.IsAdminOfApp(cCoder.Data.Models.Security.User,System.Int32?)",
           "Name": "IsAdminOfApp",
+          "LineNumber": 9,
           "Inputs": [
             {
               "Name": "user",
@@ -2805,13 +5140,46 @@
               "Type": "System.Int32?"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Any",
+              "MethodId": "System.Linq.Enumerable.Any(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, System.Boolean\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Models.Security.RoleExtensions",
+              "MethodName": "Allows",
+              "MethodId": "cCoder.Data.Models.Security.RoleExtensions.Allows(cCoder.Data.Models.Security.Role,cCoder.Data.Models.Security.User,System.String)",
+              "StandardElementType": "Exposure",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     },
     {
       "Name": "cCoder.Data.Models.Security.UserRole",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Role",
@@ -2835,6 +5203,11 @@
     {
       "Name": "cCoder.Data.Models.Workflow.FlowDefinition",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "App",
@@ -2898,6 +5271,11 @@
     {
       "Name": "cCoder.Data.Models.Workflow.FlowInstanceData",
       "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "Caller",
@@ -2949,6 +5327,11 @@
     {
       "Name": "cCoder.Data.Models.Workflow.WorkflowEvent",
       "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
       "Properties": [
         {
           "Name": "CreatedBy",
@@ -2992,45 +5375,204 @@
     {
       "Name": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
       "StandardElementType": "FoundationService",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+          "FullName": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+          "Name": "IMetadataTypeCacheService",
+          "Namespace": "cCoder.Data.Services.Foundations",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "FoundationService"
+        }
+      ],
       "Properties": [],
       "Methods": [
         {
+          "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Clear(System.String)",
           "Name": "Clear",
+          "LineNumber": 51,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Clear(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+              "MethodName": "Clear",
+              "MethodId": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Clear(System.String)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Contains(System.String)",
           "Name": "Contains",
+          "LineNumber": 42,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.Boolean"
+          "ReturnType": "System.Boolean",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Contains(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+              "MethodName": "Contains",
+              "MethodId": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Contains(System.String)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Get(System.String)",
           "Name": "Get",
+          "LineNumber": 25,
           "Inputs": [
             {
               "Name": "scope",
               "Type": "System.String"
             }
           ],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Get(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+              "MethodName": "Get",
+              "MethodId": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Get(System.String)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.GetAll()",
           "Name": "GetAll",
+          "LineNumber": 34,
           "Inputs": [],
-          "ReturnType": "System.String[]"
+          "ReturnType": "System.String[]",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.GetAll()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+              "MethodName": "GetAll",
+              "MethodId": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.GetAll()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         },
         {
+          "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "scope",
@@ -3041,7 +5583,552 @@
               "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
             }
           ],
-          "ReturnType": "System.Void"
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+              "MethodName": "Set",
+              "MethodId": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Set(System.String,System.String[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ComponentModel.DataAnnotations.ValidationException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    }
+  ],
+  "Interfaces": [
+    {
+      "Name": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Clear(System.String)",
+          "Name": "Clear",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Contains(System.String)",
+          "Name": "Contains",
+          "LineNumber": 12,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Get(System.String)",
+          "Name": "Get",
+          "LineNumber": 10,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.GetAll()",
+          "Name": "GetAll",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker.Set(System.String,System.String[])",
+          "Name": "Set",
+          "LineNumber": 9,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.String[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Exposures.IMetadataTypeCache",
+      "StandardElementType": "Exposure",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Clear(System.String)",
+          "Name": "Clear",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Contains(System.String)",
+          "Name": "Contains",
+          "LineNumber": 12,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Get(System.String)",
+          "Name": "Get",
+          "LineNumber": 10,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.IMetadataTypeCache.GetAll()",
+          "Name": "GetAll",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
+          "Name": "Set",
+          "LineNumber": 9,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.ICoreAuthInfo",
+      "StandardElementType": "Unknown",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "SSOUserId",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.ICoreContextFactory",
+      "StandardElementType": "Unknown",
+      "LineNumber": 14,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+          "Name": "CreateCoreContext",
+          "LineNumber": 16,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.CoreDataContext",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Models.IAmRoleSecured\u003CTRole\u003E",
+      "StandardElementType": "Model",
+      "LineNumber": 10,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "Roles",
+          "Type": "System.Collections.Generic.ICollection\u003CTRole\u003E"
+        }
+      ],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Models.IAmRoleSecured\u003CTRole\u003E.UserCan(cCoder.Data.Models.Security.User,System.String)",
+          "Name": "UserCan",
+          "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "user",
+              "Type": "cCoder.Data.Models.Security.User"
+            },
+            {
+              "Name": "priv",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Clear(System.String)",
+          "Name": "Clear",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Contains(System.String)",
+          "Name": "Contains",
+          "LineNumber": 12,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.Boolean",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Get(System.String)",
+          "Name": "Get",
+          "LineNumber": 10,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.GetAll()",
+          "Name": "GetAll",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "System.String[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
+          "Name": "Set",
+          "LineNumber": 9,
+          "Inputs": [
+            {
+              "Name": "scope",
+              "Type": "System.String"
+            },
+            {
+              "Name": "typeSetPayloads",
+              "Type": "System.Collections.Generic.IEnumerable\u003CSystem.String\u003E"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
         }
       ]
     }
