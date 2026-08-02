@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.1.1211" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.1.1857" />
     <PackageReference Include="cCoder.Security" Version="2026.8.1.1419" Condition="'$(UseLocalSecurity)' != 'true'" />
     <PackageReference Include="cCoder.Security.Data" Version="2026.8.1.1419" Condition="'$(UseLocalSecurity)' != 'true'" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
