@@ -1531,6 +1531,10 @@
           "Type": "DbSet\u003CcCoder.Data.Models.CMS.PageInfo\u003E"
         },
         {
+          "Name": "PageRenderCaches",
+          "Type": "DbSet\u003CcCoder.Data.Models.CMS.PageRenderCache\u003E"
+        },
+        {
           "Name": "PageRoles",
           "Type": "DbSet\u003CcCoder.Data.Models.Security.PageRole\u003E"
         },
@@ -2922,6 +2926,66 @@
       ]
     },
     {
+      "Name": "cCoder.Data.Migrations.AddApiMetadataPrivilege",
+      "StandardElementType": "Dependency",
+      "LineNumber": 8,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Migrations.AddPageRenderCache",
+      "StandardElementType": "Dependency",
+      "LineNumber": 11,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Migrations.RemoveAppApiMetadataPrivilege",
+      "StandardElementType": "Dependency",
+      "LineNumber": 8,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:Migration",
+        "FullName": "Migration",
+        "Name": "Migration",
+        "Namespace": "\u003Cglobal namespace\u003E",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Data.Models.ApiInfo",
       "StandardElementType": "Model",
       "LineNumber": 7,
@@ -3518,6 +3582,54 @@
         },
         {
           "Name": "Title",
+          "Type": "System.String"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.CMS.PageRenderCache",
+      "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "AppId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "Culture",
+          "Type": "System.String"
+        },
+        {
+          "Name": "HeaderValue",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "PageId",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "RenderedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "SourceFingerprint",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Theme",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Value",
           "Type": "System.String"
         }
       ],

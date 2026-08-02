@@ -6,22 +6,10 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <LocalSecurityProject>..\..\..\..\cCoder.Security\src\cCoder.Security\cCoder.Security.csproj</LocalSecurityProject>
-    <LocalSecurityDataProject>..\..\..\..\cCoder.Security\src\cCoder.Security.Data\cCoder.Security.Data.csproj</LocalSecurityDataProject>
-    <UseLocalSecurity Condition="'$(UseLocalSecurity)' == ''">false</UseLocalSecurity>
-    <UseLocalSecurity Condition="'$(UseLocalSecurity)' == 'true' and !Exists('$(LocalSecurityProject)')">false</UseLocalSecurity>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(UseLocalSecurity)' == 'true'">
-    <ProjectReference Include="$(LocalSecurityProject)" />
-    <ProjectReference Include="$(LocalSecurityDataProject)" />
-  </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.1.1857" />
-    <PackageReference Include="cCoder.Security" Version="2026.8.1.1419" Condition="'$(UseLocalSecurity)' != 'true'" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.8.1.1419" Condition="'$(UseLocalSecurity)' != 'true'" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.2.1256" />
+    <PackageReference Include="cCoder.Security" Version="2026.8.2.1523" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.8.2.1523" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.2.3" />

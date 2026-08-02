@@ -25,7 +25,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Install .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
 
       - name: Create version number
         id: version
@@ -39,7 +44,16 @@ jobs:
         run: dotnet build src/cCoder.Data.slnx -c Release --no-restore /p:Version="${{ steps.version.outputs.value }}"
 
       - name: Test
-        run: dotnet test src/cCoder.Data.slnx -c Release --no-build
+        run: >
+          dotnet test src/cCoder.Data.slnx -c Release --no-build --no-restore
+          --logger "trx;LogFileName=data-tests.trx"
+          --results-directory artifacts/test-results
+
+      - name: Audit NuGet dependencies
+        run: >
+          dotnet list src/cCoder.Data.slnx package
+          --vulnerable
+          --include-transitive
 
       - name: Pack
         run: |
@@ -47,7 +61,7 @@ jobs:
           dotnet pack src/cCoder.Data/cCoder.Data.csproj -c Release --no-build --output "${{ env.NUGET_DIRECTORY }}" /p:Version="${{ steps.version.outputs.value }}"
 
       - name: Upload package artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nuget
           if-no-files-found: error
@@ -55,6 +69,15 @@ jobs:
           path: |
             ${{ env.NUGET_DIRECTORY }}/*.nupkg
             !${{ env.NUGET_DIRECTORY }}/*.snupkg
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 14
+          path: artifacts/test-results
 
   publish:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -66,13 +89,13 @@ jobs:
 
     steps:
       - name: Download package artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: nuget
           path: ${{ env.NUGET_DIRECTORY }}
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.x
 

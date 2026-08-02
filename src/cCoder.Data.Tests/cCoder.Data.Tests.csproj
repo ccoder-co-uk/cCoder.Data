@@ -8,7 +8,7 @@
     <RootNamespace>cCoder.Data.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.1.1857" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.2.1256" />
     <PackageReference Include="FluentAssertions" Version="8.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
     <PackageReference Include="Moq" Version="4.20.72" />
