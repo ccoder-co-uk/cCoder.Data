@@ -22,7 +22,6 @@ public partial class CoreDataContext
         new Privilege { Id = "app_delete",                  Type = "App",               Operation = "Delete",           Description = "Allows users to Delete Apps.",               PortalAdminsOnly = false },
         new Privilege { Id = "app_read",                    Type = "App",               Operation = "Read",             Description = "Allows users to Read Apps.",                 PortalAdminsOnly = false },
         new Privilege { Id = "app_update",                  Type = "App",               Operation = "Update",           Description = "Allows users to Update Apps.",               PortalAdminsOnly = false },
-        new Privilege { Id = "api_metadata_read",           Type = "ApiMetadata",       Operation = "Read",             Description = "Allows users to read API metadata.",         PortalAdminsOnly = false },
         new Privilege { Id = "appculture_create",           Type = "AppCulture",        Operation = "Create",           Description = "Allows users to Create AppCultures.",        PortalAdminsOnly = false },
         new Privilege { Id = "appculture_delete",           Type = "AppCulture",        Operation = "Delete",           Description = "Allows users to Delete AppCultures.",        PortalAdminsOnly = false },
         new Privilege { Id = "appculture_read",             Type = "AppCulture",        Operation = "Read",             Description = "Allows users to Read AppCultures.",          PortalAdminsOnly = false },
