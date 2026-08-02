@@ -21,30 +21,15 @@
     <Authors>cCoder</Authors>
     <PackageId>cCoder.Data</PackageId>
   </PropertyGroup>
-  <PropertyGroup>
-    <LocalSecurityDataProject>..\..\..\cCoder.Security\src\cCoder.Security.Data\cCoder.Security.Data.csproj</LocalSecurityDataProject>
-    <LocalEventingProject>..\..\..\ccoder.Eventing\src\cCoder.Eventing\cCoder.Eventing.csproj</LocalEventingProject>
-    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == ''">false</UseLocalSecurityData>
-    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == 'true' and !Exists('$(LocalSecurityDataProject)')">false</UseLocalSecurityData>
-    <UseLocalSecurityData Condition="'$(UseLocalSecurity)' == 'true' and Exists('$(LocalSecurityDataProject)')">true</UseLocalSecurityData>
-    <UseLocalEventing Condition="'$(UseLocalEventing)' == ''">false</UseLocalEventing>
-    <UseLocalEventing Condition="'$(UseLocalEventing)' == 'true' and !Exists('$(LocalEventingProject)')">false</UseLocalEventing>
-  </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup Condition="'$(UseLocalSecurityData)' == 'true'">
-    <ProjectReference Include="$(LocalSecurityDataProject)" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(UseLocalEventing)' == 'true'">
-    <ProjectReference Include="$(LocalEventingProject)" />
-  </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.1.1857" />
-      <PackageReference Include="cCoder.Eventing" Version="2026.7.29.144" Condition="'$(UseLocalEventing)' != 'true'" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.8.1.1419" Condition="'$(UseLocalSecurityData)' != 'true'" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.2.1256" />
+    <PackageReference Include="cCoder.Eventing" Version="2026.8.2.1306" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.8.2.1523" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />

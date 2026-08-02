@@ -23,12 +23,44 @@ internal sealed class WebAcceptanceFactory : WebApplicationFactory<Program>
 
     protected override void Dispose(bool disposing)
     {
-        base.Dispose(disposing: disposing);
-
-        if (disposing)
+        try
         {
-            DropDatabase(connectionString: connectionStrings.Data);
-            DropDatabase(connectionString: connectionStrings.Security);
+            base.Dispose(disposing: disposing);
+        }
+        finally
+        {
+            if (disposing)
+            {
+                DropDatabases();
+            }
+        }
+    }
+
+    private void DropDatabases()
+    {
+        List<Exception> exceptions = [];
+
+        foreach (string connectionString in new[]
+        {
+            connectionStrings.Data,
+            connectionStrings.Security,
+        })
+        {
+            try
+            {
+                DropDatabase(connectionString: connectionString);
+            }
+            catch (Exception exception)
+            {
+                exceptions.Add(item: exception);
+            }
+        }
+
+        if (exceptions.Count > 0)
+        {
+            throw new AggregateException(
+                message: "One or more acceptance databases could not be removed.",
+                innerExceptions: exceptions);
         }
     }
 

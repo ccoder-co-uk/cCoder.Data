@@ -29,6 +29,7 @@ public partial class CoreDataContext
     public virtual DbSet<PackageItem> PackageItems { get; set; }
     public virtual DbSet<AppCulture> AppCultures { get; set; }
     public virtual DbSet<PageRole> PageRoles { get; set; }
+    public virtual DbSet<PageRenderCache> PageRenderCaches { get; set; }
 
     private static void ConfigureCmsModel(ModelBuilder builder)
     {
@@ -64,6 +65,25 @@ public partial class CoreDataContext
             entity.Property(i => i.LastUpdatedBy).HasMaxLength(maxLength: 100);
             entity.Property(propertyExpression: i => i.CreatedOn);
             entity.Property(i => i.CreatedBy).HasMaxLength(maxLength: 100);
+        });
+
+        _ = builder.Entity<PageRenderCache>(buildAction: entity =>
+        {
+            entity.ToTable(name: "PageRenderCache", schema: "CMS");
+            entity.Property(propertyExpression: i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(propertyExpression: i => i.AppId).IsRequired();
+            entity.Property(propertyExpression: i => i.PageId).IsRequired();
+            entity.Property(propertyExpression: i => i.Culture).IsRequired().HasMaxLength(maxLength: 20);
+            entity.Property(propertyExpression: i => i.Theme).IsRequired().HasMaxLength(maxLength: 100);
+            entity.Property(propertyExpression: i => i.Value).IsRequired();
+            entity.Property(propertyExpression: i => i.HeaderValue).IsRequired();
+            entity.Property(propertyExpression: i => i.SourceFingerprint).HasMaxLength(maxLength: 128);
+            entity.Property(propertyExpression: i => i.RenderedOn).IsRequired();
+
+            entity.HasIndex(indexExpression: i => new { i.AppId, i.PageId, i.Culture, i.Theme })
+                .IsUnique();
+
+            entity.HasIndex(indexExpression: i => i.PageId);
         });
 
         _ = builder.Entity<PageInfo>(buildAction: entity =>
