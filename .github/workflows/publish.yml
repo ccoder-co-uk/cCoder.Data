@@ -15,22 +15,25 @@ env:
   NUGET_DIRECTORY: ${{ github.workspace }}/artifacts/nuget
   DOTNET_CLI_DISABLE_PERSISTENT_MSBUILD_SERVER: true
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
 defaults:
   run:
     shell: pwsh
 
 jobs:
   build-test-pack:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Windows, X64, test]
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
-      - name: Install .NET
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: 10.0.x
 
       - name: Create version number
         id: version
@@ -41,11 +44,12 @@ jobs:
         run: dotnet restore src/cCoder.Data.slnx
 
       - name: Build
-        run: dotnet build src/cCoder.Data.slnx -c Release --no-restore /p:Version="${{ steps.version.outputs.value }}"
+        run: dotnet build src/cCoder.Data.slnx -c Release --no-restore -m /p:BuildInParallel=true /p:UseSharedCompilation=true /p:Version="${{ steps.version.outputs.value }}"
 
       - name: Test
         run: >
           dotnet test src/cCoder.Data.slnx -c Release --no-build --no-restore
+          -m /p:BuildInParallel=true /p:UseSharedCompilation=true
           --logger "trx;LogFileName=data-tests.trx"
           --results-directory artifacts/test-results
 
@@ -58,12 +62,13 @@ jobs:
       - name: Pack
         run: |
           New-Item -ItemType Directory -Path "${{ env.NUGET_DIRECTORY }}" -Force | Out-Null
-          dotnet pack src/cCoder.Data/cCoder.Data.csproj -c Release --no-build --output "${{ env.NUGET_DIRECTORY }}" /p:Version="${{ steps.version.outputs.value }}"
+          dotnet pack src/cCoder.Data/cCoder.Data.csproj -c Release --no-build --no-restore -m --output "${{ env.NUGET_DIRECTORY }}" /p:BuildInParallel=true /p:Version="${{ steps.version.outputs.value }}"
 
       - name: Upload package artifacts
         uses: actions/upload-artifact@v7
         with:
           name: nuget
+          compression-level: 0
           if-no-files-found: error
           retention-days: 7
           path: |
