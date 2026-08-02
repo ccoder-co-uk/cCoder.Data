@@ -25,6 +25,7 @@ public sealed partial class CoreDataContextPrivilegeTests
             .ToArray();
 
         // Then
+        Assert.Contains(expected: "api_metadata_read", collection: privilegeIds);
         Assert.Contains(expected: "privilege_create", collection: privilegeIds);
         Assert.Contains(expected: "privilege_delete", collection: privilegeIds);
         Assert.Contains(expected: "privilege_read", collection: privilegeIds);
