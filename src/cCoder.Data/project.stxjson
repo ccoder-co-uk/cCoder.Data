@@ -2690,7 +2690,7 @@
     {
       "Name": "cCoder.Data.Extensions.ServiceProviderExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,

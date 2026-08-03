@@ -3,6 +3,7 @@
 // ---------------------------------------------------------------
 
 using cCoder.Eventing.Models;
+using cCoder.Security.Models.Configurations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace cCoder.Data.Extensions;
@@ -21,30 +22,9 @@ internal static class ServiceProviderExtensions
             return eventUserId;
         }
 
-        string ssoUserId;
-
-        try
-        {
-            Type authInfoType = Type.GetType(
-                typeName:
-                    "cCoder.Security.Models.Configurations.ISSOAuthInfo, " +
-                    "cCoder.Security.Data",
-                throwOnError: false);
-
-            object authInfo = authInfoType is null
-                ? null
-                : serviceProvider.GetService(serviceType: authInfoType);
-
-            ssoUserId = authInfo
-                ?.GetType()
-                .GetProperty(name: "SSOUserId")
-                ?.GetValue(obj: authInfo)
-                ?.ToString();
-        }
-        catch
-        {
-            ssoUserId = "Guest";
-        }
+        string ssoUserId = serviceProvider
+            .GetService<ISSOAuthInfo>()
+            ?.SSOUserId;
 
         return string.IsNullOrWhiteSpace(value: ssoUserId)
             ? "Guest"
