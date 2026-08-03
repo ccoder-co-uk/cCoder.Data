@@ -3601,24 +3601,48 @@
           "Type": "System.Int32"
         },
         {
+          "Name": "Body",
+          "Type": "System.String"
+        },
+        {
           "Name": "Culture",
           "Type": "System.String"
         },
         {
-          "Name": "HeaderValue",
+          "Name": "Description",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Header",
           "Type": "System.String"
         },
         {
           "Name": "Id",
-          "Type": "System.Int32"
+          "Type": "System.String"
+        },
+        {
+          "Name": "Keywords",
+          "Type": "System.String"
         },
         {
           "Name": "PageId",
           "Type": "System.Int32"
         },
         {
+          "Name": "ParentId",
+          "Type": "System.Int32?"
+        },
+        {
+          "Name": "Path",
+          "Type": "System.String"
+        },
+        {
           "Name": "RenderedOn",
           "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "ShowOnMenus",
+          "Type": "System.Boolean"
         },
         {
           "Name": "SourceFingerprint",
@@ -3629,7 +3653,7 @@
           "Type": "System.String"
         },
         {
-          "Name": "Value",
+          "Name": "Title",
           "Type": "System.String"
         }
       ],

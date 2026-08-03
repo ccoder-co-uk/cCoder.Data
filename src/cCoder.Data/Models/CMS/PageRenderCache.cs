@@ -6,7 +6,7 @@ namespace cCoder.Data.Models.CMS;
 
 public class PageRenderCache
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
 
     public int AppId { get; set; }
 
@@ -16,9 +16,21 @@ public class PageRenderCache
 
     public string Theme { get; set; }
 
-    public string Value { get; set; }
+    public int? ParentId { get; set; }
 
-    public string HeaderValue { get; set; }
+    public string Path { get; set; }
+
+    public string Title { get; set; }
+
+    public string Description { get; set; }
+
+    public string Keywords { get; set; }
+
+    public bool ShowOnMenus { get; set; }
+
+    public string Header { get; set; }
+
+    public string Body { get; set; }
 
     public string SourceFingerprint { get; set; }
 

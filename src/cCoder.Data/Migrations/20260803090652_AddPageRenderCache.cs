@@ -18,14 +18,19 @@ namespace cCoder.Data.Migrations
                 schema: "CMS",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     AppId = table.Column<int>(type: "int", nullable: false),
                     PageId = table.Column<int>(type: "int", nullable: false),
                     Culture = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Theme = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HeaderValue = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ParentId = table.Column<int>(type: "int", nullable: true),
+                    Path = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Keywords = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ShowOnMenus = table.Column<bool>(type: "bit", nullable: false),
+                    Header = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SourceFingerprint = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
                     RenderedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
                 },
@@ -46,13 +51,6 @@ namespace cCoder.Data.Migrations
                     { "pagerendercache_rebuild", "Allows users to rebuild PageRenderCaches.", "Rebuild", false, "PageRenderCache" },
                     { "pagerendercache_update", "Allows users to Update PageRenderCaches.", "Update", false, "PageRenderCache" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PageRenderCache_AppId_PageId_Culture_Theme",
-                schema: "CMS",
-                table: "PageRenderCache",
-                columns: new[] { "AppId", "PageId", "Culture", "Theme" },
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_PageRenderCache_PageId",

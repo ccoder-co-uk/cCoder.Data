@@ -5,7 +5,17 @@
     <NoWarn>1591</NoWarn>
     <AssemblyName>cCoder.Data</AssemblyName>
     <RootNamespace>cCoder.Data</RootNamespace>
+    <LocalEventingProject>..\..\..\ccoder.Eventing\src\cCoder.Eventing\cCoder.Eventing.csproj</LocalEventingProject>
+    <LocalSecurityDataProject>..\..\..\cCoder.Security\src\cCoder.Security.Data\cCoder.Security.Data.csproj</LocalSecurityDataProject>
+    <UseLocalEventing Condition="'$(UseLocalEventing)' == ''">false</UseLocalEventing>
+    <UseLocalSecurityData Condition="'$(UseLocalSecurityData)' == ''">false</UseLocalSecurityData>
   </PropertyGroup>
+  <ItemGroup Condition="'$(UseLocalEventing)' == 'true'">
+    <ProjectReference Include="$(LocalEventingProject)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(UseLocalSecurityData)' == 'true'">
+    <ProjectReference Include="$(LocalSecurityDataProject)" />
+  </ItemGroup>
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>cCoder;Data;cCoder.Data</PackageTags>
@@ -28,8 +38,8 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.2.1256" />
-    <PackageReference Include="cCoder.Eventing" Version="2026.8.2.1306" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.8.2.1523" />
+    <PackageReference Include="cCoder.Eventing" Version="2026.8.2.1306" Condition="'$(UseLocalEventing)' != 'true'" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.8.2.1523" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />
