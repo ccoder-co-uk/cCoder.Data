@@ -70,18 +70,20 @@ public partial class CoreDataContext
         _ = builder.Entity<PageRenderCache>(buildAction: entity =>
         {
             entity.ToTable(name: "PageRenderCache", schema: "CMS");
-            entity.Property(propertyExpression: i => i.Id).ValueGeneratedOnAdd();
+            entity.Property(propertyExpression: i => i.Id).HasMaxLength(maxLength: 300);
             entity.Property(propertyExpression: i => i.AppId).IsRequired();
             entity.Property(propertyExpression: i => i.PageId).IsRequired();
             entity.Property(propertyExpression: i => i.Culture).IsRequired().HasMaxLength(maxLength: 20);
             entity.Property(propertyExpression: i => i.Theme).IsRequired().HasMaxLength(maxLength: 100);
-            entity.Property(propertyExpression: i => i.Value).IsRequired();
-            entity.Property(propertyExpression: i => i.HeaderValue).IsRequired();
+            entity.Property(propertyExpression: i => i.Path).IsRequired().HasMaxLength(maxLength: 450);
+            entity.Property(propertyExpression: i => i.Title).HasMaxLength(maxLength: 450);
+            entity.Property(propertyExpression: i => i.Description);
+            entity.Property(propertyExpression: i => i.Keywords);
+            entity.Property(propertyExpression: i => i.ShowOnMenus).IsRequired();
+            entity.Property(propertyExpression: i => i.Header).IsRequired();
+            entity.Property(propertyExpression: i => i.Body).IsRequired();
             entity.Property(propertyExpression: i => i.SourceFingerprint).HasMaxLength(maxLength: 128);
             entity.Property(propertyExpression: i => i.RenderedOn).IsRequired();
-
-            entity.HasIndex(indexExpression: i => new { i.AppId, i.PageId, i.Culture, i.Theme })
-                .IsUnique();
 
             entity.HasIndex(indexExpression: i => i.PageId);
         });

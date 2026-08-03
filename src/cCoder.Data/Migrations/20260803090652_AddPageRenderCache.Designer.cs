@@ -12,7 +12,7 @@ using cCoder.Data;
 namespace cCoder.Data.Migrations
 {
     [DbContext(typeof(CoreDataContext))]
-    [Migration("20260802150646_AddPageRenderCache")]
+    [Migration("20260803090652_AddPageRenderCache")]
     partial class AddPageRenderCache
     {
         /// <inheritdoc />
@@ -363,29 +363,48 @@ namespace cCoder.Data.Migrations
 
             modelBuilder.Entity("cCoder.Data.Models.CMS.PageRenderCache", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<int>("AppId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Culture")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("HeaderValue")
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Header")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Keywords")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PageId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTimeOffset>("RenderedOn")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("ShowOnMenus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("SourceFingerprint")
                         .HasMaxLength(128)
@@ -396,16 +415,13 @@ namespace cCoder.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Title")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PageId");
-
-                    b.HasIndex("AppId", "PageId", "Culture", "Theme")
-                        .IsUnique();
 
                     b.ToTable("PageRenderCache", "CMS");
                 });
