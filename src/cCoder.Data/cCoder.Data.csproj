@@ -37,7 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.2.1256" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.3.1611" />
     <PackageReference Include="cCoder.Eventing" Version="2026.8.2.1306" Condition="'$(UseLocalEventing)' != 'true'" />
     <PackageReference Include="cCoder.Security.Data" Version="2026.8.2.1523" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
