@@ -15,6 +15,8 @@ services.AddData(configuration.Data);
 
 `cCoder.Data` contains the shared data access layer for the cCoder platform.
 
+[View the latest code coverage report](https://ccoder-co-uk.github.io/cCoder.Data/)
+
 ## Contents
 
 - `src/cCoder.Data`
