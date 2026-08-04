@@ -6,6 +6,7 @@
   </Configurations>
   <Folder Name="/Apps/">
     <Project Path="Apps/Data.Web.AcceptanceTests/Data.Web.AcceptanceTests.csproj" />
+    <Project Path="Apps/Data.Web.Tests/Data.Web.Tests.csproj" />
     <Project Path="Apps/Data.Web/Data.Web.csproj" />
   </Folder>
   <Project Path="cCoder.Data.Tests/cCoder.Data.Tests.csproj" />
