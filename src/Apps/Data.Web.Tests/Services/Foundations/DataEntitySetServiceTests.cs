@@ -12,20 +12,31 @@ using Xunit;
 
 namespace Data.Web.Tests.Services.Foundations;
 
-public sealed class DataEntitySetServiceTests
+public sealed partial class DataEntitySetServiceTests
 {
     [Fact]
     public async Task ShouldReturnEntitySetsForAuthenticatedUser()
     {
+        // Given
         DataEntitySet[] expected = [new() { Name = "Customers" }];
         Mock<IDataSetBroker> broker = new();
-        broker.Setup(expression: broker => broker.GetCurrentSsoUserId()).Returns(value: "user-1");
-        broker.Setup(expression: broker => broker.SelectEntitySetsAsync(CancellationToken.None)).ReturnsAsync(value: expected);
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: "user-1");
+
+        broker.Setup(expression: broker => broker.SelectEntitySetsAsync(
+                cancellationToken: CancellationToken.None))
+            .ReturnsAsync(value: expected);
+
         DataEntitySetService service = new(dataSetBroker: broker.Object);
 
-        DataEntitySet[] actual = await service.GetEntitySetsAsync(CancellationToken.None);
+        // When
+        DataEntitySet[] actual = await service.GetEntitySetsAsync(
+            cancellationToken: CancellationToken.None);
 
-        actual.Should().BeSameAs(expected);
+        // Then
+        actual.Should()
+            .BeSameAs(expected: expected);
     }
 
     [Theory]
@@ -35,31 +46,57 @@ public sealed class DataEntitySetServiceTests
     [InlineData("Guest")]
     public async Task ShouldRejectUnauthenticatedUser(string userId)
     {
+        // Given
         Mock<IDataSetBroker> broker = new();
-        broker.Setup(expression: broker => broker.GetCurrentSsoUserId()).Returns(value: userId);
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: userId);
+
         DataEntitySetService service = new(dataSetBroker: broker.Object);
 
-        Func<Task> action = async () => await service.GetEntitySetsAsync(CancellationToken.None);
+        // When
+        Func<Task> action = async () => await service.GetEntitySetsAsync(
+            cancellationToken: CancellationToken.None);
 
-        ServiceException exception = (await action.Should().ThrowAsync<ServiceException>()).Which;
-        exception.InnerException.Should().BeOfType<UnauthorizedAccessException>();
-        broker.Verify(expression: broker => broker.SelectEntitySetsAsync(It.IsAny<CancellationToken>()), Times.Never);
+        // Then
+        ServiceException exception = (await action.Should()
+            .ThrowAsync<ServiceException>()).Which;
+
+        exception.InnerException.Should()
+            .BeOfType<UnauthorizedAccessException>();
+
+        broker.Verify(
+            expression: broker => broker.SelectEntitySetsAsync(
+                cancellationToken: It.IsAny<CancellationToken>()),
+            times: Times.Never);
     }
 
     [Fact]
     public async Task ShouldTranslateBrokerFailureToDependencyException()
     {
+        // Given
         Mock<IDataSetBroker> broker = new();
-        broker.Setup(expression: broker => broker.GetCurrentSsoUserId()).Returns(value: "user-1");
-        broker.Setup(expression: broker => broker.SelectEntitySetsAsync(CancellationToken.None))
-            .ThrowsAsync(exception: new InvalidOperationException("offline"));
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: "user-1");
+
+        broker.Setup(expression: broker => broker.SelectEntitySetsAsync(
+                cancellationToken: CancellationToken.None))
+            .ThrowsAsync(exception: new InvalidOperationException(
+                message: "offline"));
+
         DataEntitySetService service = new(dataSetBroker: broker.Object);
 
-        Func<Task> action = async () => await service.GetEntitySetsAsync(CancellationToken.None);
+        // When
+        Func<Task> action = async () => await service.GetEntitySetsAsync(
+            cancellationToken: CancellationToken.None);
 
+        // Then
         ServiceDependencyException exception =
-            (await action.Should().ThrowAsync<ServiceDependencyException>()).Which;
+            (await action.Should()
+                .ThrowAsync<ServiceDependencyException>()).Which;
 
-        exception.InnerException.Should().BeOfType<InvalidOperationException>();
+        exception.InnerException.Should()
+            .BeOfType<InvalidOperationException>();
     }
 }

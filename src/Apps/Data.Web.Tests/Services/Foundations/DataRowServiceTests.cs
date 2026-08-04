@@ -13,87 +13,195 @@ using Xunit;
 
 namespace Data.Web.Tests.Services.Foundations;
 
-public sealed class DataRowServiceTests
+public sealed partial class DataRowServiceTests
 {
     [Fact]
     public async Task ShouldClampPagingAndReturnRows()
     {
+        // Given
         DataRows expected = new() { EntitySet = "Customers", Rows = [] };
         Mock<IDataSetBroker> broker = CreateAuthenticatedBroker();
-        broker.Setup(expression: broker => broker.SelectRowsAsync("Customers", 0, 500, CancellationToken.None)).ReturnsAsync(value: expected);
+
+        broker.Setup(expression: broker => broker.SelectRowsAsync(
+                entitySet: "Customers",
+                skip: 0,
+                take: 500,
+                cancellationToken: CancellationToken.None))
+            .ReturnsAsync(value: expected);
+
         DataRowService service = new(dataSetBroker: broker.Object);
 
-        DataRows actual = await service.GetRowsAsync("Customers", -10, 999, CancellationToken.None);
+        // When
+        DataRows actual = await service.GetRowsAsync(
+            entitySet: "Customers",
+            skip: -10,
+            take: 999,
+            cancellationToken: CancellationToken.None);
 
-        actual.Should().BeSameAs(expected);
+        // Then
+        actual.Should()
+            .BeSameAs(expected: expected);
     }
 
     [Fact]
     public async Task ShouldAddUpdateAndDeleteRows()
     {
-        Dictionary<string, JsonElement> values = new() { ["Name"] = JsonDocument.Parse("\"Ada\"").RootElement };
+        // Given
+        Dictionary<string, JsonElement> values = new()
+        {
+            ["Name"] = JsonDocument.Parse(json: "\"Ada\"").RootElement
+        };
+
         Dictionary<string, object> expected = new() { ["Name"] = "Ada" };
         Mock<IDataSetBroker> broker = CreateAuthenticatedBroker();
-        broker.Setup(expression: broker => broker.InsertRowAsync("Customers", values, CancellationToken.None)).ReturnsAsync(value: expected);
-        broker.Setup(expression: broker => broker.UpdateRowAsync("Customers", values, CancellationToken.None)).ReturnsAsync(value: expected);
+
+        broker.Setup(expression: broker => broker.InsertRowAsync(
+                entitySet: "Customers",
+                values: values,
+                cancellationToken: CancellationToken.None))
+            .ReturnsAsync(value: expected);
+
+        broker.Setup(expression: broker => broker.UpdateRowAsync(
+                entitySet: "Customers",
+                values: values,
+                cancellationToken: CancellationToken.None))
+            .ReturnsAsync(value: expected);
+
         DataRowService service = new(dataSetBroker: broker.Object);
 
-        (await service.AddRowAsync("Customers", values, CancellationToken.None)).Should().BeSameAs(expected);
-        (await service.UpdateRowAsync("Customers", values, CancellationToken.None)).Should().BeSameAs(expected);
-        await service.DeleteRowAsync("Customers", values, CancellationToken.None);
+        // When
+        Dictionary<string, object> actualAdded = await service.AddRowAsync(
+            entitySet: "Customers",
+            newValues: values,
+            cancellationToken: CancellationToken.None);
 
-        broker.Verify(expression: broker => broker.DeleteRowAsync("Customers", values, CancellationToken.None), Times.Once);
+        Dictionary<string, object> actualUpdated = await service.UpdateRowAsync(
+            entitySet: "Customers",
+            updatedValues: values,
+            cancellationToken: CancellationToken.None);
+
+        await service.DeleteRowAsync(
+            entitySet: "Customers",
+            deletedValues: values,
+            cancellationToken: CancellationToken.None);
+
+        // Then
+        actualAdded.Should()
+            .BeSameAs(expected: expected);
+
+        actualUpdated.Should()
+            .BeSameAs(expected: expected);
+
+        broker.Verify(
+            expression: broker => broker.DeleteRowAsync(
+                entitySet: "Customers",
+                values: values,
+                cancellationToken: CancellationToken.None),
+            times: Times.Once);
     }
 
     [Fact]
     public async Task ShouldRejectNullValuesBeforeCallingBroker()
     {
+        // Given
         Mock<IDataSetBroker> broker = CreateAuthenticatedBroker();
         DataRowService service = new(dataSetBroker: broker.Object);
 
-        Func<Task> action = async () => await service.AddRowAsync("Customers", null, CancellationToken.None);
+        // When
+        Func<Task> action = async () => await service.AddRowAsync(
+            entitySet: "Customers",
+            newValues: null,
+            cancellationToken: CancellationToken.None);
 
+        // Then
         ServiceValidationException exception =
-            (await action.Should().ThrowAsync<ServiceValidationException>()).Which;
+            (await action.Should()
+                .ThrowAsync<ServiceValidationException>()).Which;
 
-        exception.InnerException.Should().BeOfType<ArgumentNullException>();
-        broker.Verify(expression: broker => broker.InsertRowAsync(It.IsAny<string>(), It.IsAny<Dictionary<string, JsonElement>>(), It.IsAny<CancellationToken>()), Times.Never);
+        exception.InnerException.Should()
+            .BeOfType<ArgumentNullException>();
+
+        broker.Verify(
+            expression: broker => broker.InsertRowAsync(
+                entitySet: It.IsAny<string>(),
+                values: It.IsAny<Dictionary<string, JsonElement>>(),
+                cancellationToken: It.IsAny<CancellationToken>()),
+            times: Times.Never);
     }
 
     [Fact]
     public async Task ShouldRejectGuestBeforeCallingBroker()
     {
+        // Given
         Mock<IDataSetBroker> broker = new();
-        broker.Setup(expression: broker => broker.GetCurrentSsoUserId()).Returns(value: "Guest");
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: "Guest");
+
         DataRowService service = new(dataSetBroker: broker.Object);
 
-        Func<Task> action = async () => await service.GetRowsAsync("Customers", 0, 10, CancellationToken.None);
+        // When
+        Func<Task> action = async () => await service.GetRowsAsync(
+            entitySet: "Customers",
+            skip: 0,
+            take: 10,
+            cancellationToken: CancellationToken.None);
 
-        ServiceException exception = (await action.Should().ThrowAsync<ServiceException>()).Which;
-        exception.InnerException.Should().BeOfType<UnauthorizedAccessException>();
-        broker.Verify(expression: broker => broker.SelectRowsAsync(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Never);
+        // Then
+        ServiceException exception = (await action.Should()
+            .ThrowAsync<ServiceException>()).Which;
+
+        exception.InnerException.Should()
+            .BeOfType<UnauthorizedAccessException>();
+
+        broker.Verify(
+            expression: broker => broker.SelectRowsAsync(
+                entitySet: It.IsAny<string>(),
+                skip: It.IsAny<int>(),
+                take: It.IsAny<int>(),
+                cancellationToken: It.IsAny<CancellationToken>()),
+            times: Times.Never);
     }
 
     [Fact]
     public async Task ShouldTranslateBrokerFailureToDependencyException()
     {
+        // Given
         Mock<IDataSetBroker> broker = CreateAuthenticatedBroker();
-        broker.Setup(expression: broker => broker.SelectRowsAsync("Customers", 0, 10, CancellationToken.None))
-            .ThrowsAsync(exception: new InvalidOperationException("offline"));
+
+        broker.Setup(expression: broker => broker.SelectRowsAsync(
+                entitySet: "Customers",
+                skip: 0,
+                take: 10,
+                cancellationToken: CancellationToken.None))
+            .ThrowsAsync(exception: new InvalidOperationException(
+                message: "offline"));
+
         DataRowService service = new(dataSetBroker: broker.Object);
 
-        Func<Task> action = async () => await service.GetRowsAsync("Customers", 0, 10, CancellationToken.None);
+        // When
+        Func<Task> action = async () => await service.GetRowsAsync(
+            entitySet: "Customers",
+            skip: 0,
+            take: 10,
+            cancellationToken: CancellationToken.None);
 
+        // Then
         ServiceDependencyException exception =
-            (await action.Should().ThrowAsync<ServiceDependencyException>()).Which;
+            (await action.Should()
+                .ThrowAsync<ServiceDependencyException>()).Which;
 
-        exception.InnerException.Should().BeOfType<InvalidOperationException>();
+        exception.InnerException.Should()
+            .BeOfType<InvalidOperationException>();
     }
 
     private static Mock<IDataSetBroker> CreateAuthenticatedBroker()
     {
         Mock<IDataSetBroker> broker = new();
-        broker.Setup(expression: broker => broker.GetCurrentSsoUserId()).Returns(value: "user-1");
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: "user-1");
+
         return broker;
     }
 }
