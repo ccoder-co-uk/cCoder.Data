@@ -8,7 +8,8 @@
       <DataCollector friendlyName="XPlat Code Coverage">
         <Configuration>
           <Format>cobertura</Format>
-          <ExcludeByFile>**/Models/**/*.cs,**/Brokers/**/*.cs</ExcludeByFile>
+          <Exclude>[Data.Web]*</Exclude>
+          <ExcludeByFile>**/Models/**/*.cs,**/Brokers/**/*.cs,**/Migrations/**/*.cs</ExcludeByFile>
         </Configuration>
       </DataCollector>
     </DataCollectors>
