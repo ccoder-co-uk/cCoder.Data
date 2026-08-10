@@ -304,6 +304,64 @@
       ]
     },
     {
+      "Name": "Data.Web.Brokers.Loggings.LoggingBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 7,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "Data.Web:Data.Web.Brokers.Loggings.ILoggingBroker",
+          "FullName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+          "Name": "ILoggingBroker",
+          "Namespace": "Data.Web.Brokers.Loggings",
+          "AssemblyName": "Data.Web",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Broker"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "Data.Web.Brokers.Loggings.LoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+          "Name": "LogError",
+          "LineNumber": 9,
+          "Inputs": [
+            {
+              "Name": "exception",
+              "Type": "System.Exception"
+            },
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])"
+          ],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "Data.Web.Dependencies.DataSetDependency",
       "StandardElementType": "Dependency",
       "LineNumber": 15,
@@ -697,7 +755,7 @@
     {
       "Name": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "StandardElementType": "HttpExposure",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -716,7 +774,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataEntitySetsController.GetEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "GetEntitySetsAsync",
-          "LineNumber": 17,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "cancellationToken",
@@ -726,6 +784,13 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
           "Implements": [],
           "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogError",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
             {
               "TypeName": "Data.Web.Exposures.IDataEntitySetManager",
               "MethodName": "GetEntitySetsAsync",
@@ -755,7 +820,8 @@
               "IsExceptionPath": false,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": false
             },
             {
               "StatusCode": 400,
@@ -764,7 +830,8 @@
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -779,7 +846,7 @@
     {
       "Name": "Data.Web.Exposures.Controllers.DataRowsController",
       "StandardElementType": "HttpExposure",
-      "LineNumber": 12,
+      "LineNumber": 13,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -798,7 +865,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 121,
+          "LineNumber": 141,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -816,6 +883,13 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
           "Implements": [],
           "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogError",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "DeleteRowAsync",
@@ -848,7 +922,8 @@
               "IsExceptionPath": false,
               "IsNullPath": false,
               "HasBody": false,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": false
             },
             {
               "StatusCode": 400,
@@ -857,7 +932,8 @@
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -870,7 +946,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
-          "LineNumber": 18,
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -892,6 +968,13 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
           "Implements": [],
           "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogError",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "GetRowsAsync",
@@ -923,7 +1006,8 @@
               "IsExceptionPath": false,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": false
             },
             {
               "StatusCode": 400,
@@ -932,7 +1016,8 @@
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -945,7 +1030,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.PostRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "PostRowAsync",
-          "LineNumber": 53,
+          "LineNumber": 61,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -963,6 +1048,13 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
           "Implements": [],
           "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogError",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "AddRowAsync",
@@ -995,7 +1087,8 @@
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -1008,7 +1101,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.PutRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
           "Name": "PutRowAsync",
-          "LineNumber": 88,
+          "LineNumber": 102,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1026,6 +1119,13 @@
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
           "Implements": [],
           "Calls": [
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogError",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "UpdateRowAsync",
@@ -1058,7 +1158,8 @@
               "IsExceptionPath": false,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": false
             },
             {
               "StatusCode": 400,
@@ -1067,7 +1168,8 @@
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
-              "ExposesExceptionDetails": false
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -1895,6 +1997,51 @@
       ]
     },
     {
+      "Name": "Data.Web.Brokers.Loggings.ILoggingBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+          "Name": "LogError",
+          "LineNumber": 9,
+          "Inputs": [
+            {
+              "Name": "exception",
+              "Type": "System.Exception"
+            },
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "Data.Web.Exposures.IDataEntitySetManager",
       "StandardElementType": "Exposure",
       "LineNumber": 9,
@@ -2131,7 +2278,15 @@
     },
     {
       "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
+      "ToType": "Data.Web.Brokers.Loggings.LoggingBroker"
+    },
+    {
+      "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "ToType": "Data.Web.Services.Foundations.DataEntitySetService"
+    },
+    {
+      "FromType": "Data.Web.Exposures.Controllers.DataRowsController",
+      "ToType": "Data.Web.Brokers.Loggings.LoggingBroker"
     },
     {
       "FromType": "Data.Web.Exposures.Controllers.DataRowsController",
@@ -2152,35 +2307,35 @@
       "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataEntitySetsController",
-      "LineNumber": 17
+      "LineNumber": 19
     },
     {
       "Code": "STXAPI005",
       "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 18
+      "LineNumber": 20
     },
     {
       "Code": "STXAPI005",
       "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 53
+      "LineNumber": 61
     },
     {
       "Code": "STXAPI005",
       "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 88
+      "LineNumber": 102
     },
     {
       "Code": "STXAPI005",
       "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 121
+      "LineNumber": 141
     }
   ]
 }

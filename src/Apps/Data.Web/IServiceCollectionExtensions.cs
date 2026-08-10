@@ -19,6 +19,7 @@ public static class IServiceCollectionExtensions
         IConfiguration applicationConfiguration,
         Action<DataWebConfiguration> configure = null)
     {
+        services.AddTransient<Brokers.Loggings.ILoggingBroker, Brokers.Loggings.LoggingBroker>();
         DataWebConfiguration configuration = new();
         applicationConfiguration.Bind(configuration);
         configure?.Invoke(configuration);

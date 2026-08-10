@@ -21,13 +21,6 @@ public class LogEntry
     public DateTime Date { get; set; }
 
     public virtual IEnumerable<LogDataItem> Data { get; set; }
-
-    public LogEntry() { }
-
-    public LogEntry(LoggingLevel level)
-    {
-        Level = (int)level;
-    }
 }
 
 public enum LoggingLevel

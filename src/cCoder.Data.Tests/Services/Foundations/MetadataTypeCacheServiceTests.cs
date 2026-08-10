@@ -12,6 +12,26 @@ namespace cCoder.Data.Tests.Services.Foundations;
 
 public sealed partial class MetadataTypeCacheServiceTests
 {
+    [Fact]
+    public void ShouldWrapArgumentExceptionOnSet()
+    {
+        // Given
+        MetadataTypeCacheService service =
+            CreateMetadataTypeCacheService(
+                broker: new ArgumentExceptionMetadataTypeCacheBroker());
+
+        // When
+        Action setAction = () => service.Set(
+            scope: "cms",
+            typeSetPayloads: CreateTypeSetPayloads(names: ["App"]));
+
+        // Then
+        setAction
+            .Should()
+            .Throw<ValidationException>()
+            .WithInnerException<ArgumentException>();
+    }
+
     [Theory]
     [InlineData(null)]
     [InlineData("")]
@@ -184,4 +204,24 @@ public sealed partial class MetadataTypeCacheServiceTests
         names
             .Select(selector: CreateTypeSetPayload)
             .ToArray();
+
+    private sealed class ArgumentExceptionMetadataTypeCacheBroker
+        : IMetadataTypeCacheBroker
+    {
+        public void Set(string scope, string[] typeSetPayloads) =>
+            throw new ArgumentException();
+
+        public string[] Get(string scope) =>
+            [];
+
+        public string[] GetAll() =>
+            [];
+
+        public bool Contains(string scope) =>
+            false;
+
+        public void Clear(string scope)
+        {
+        }
+    }
 }

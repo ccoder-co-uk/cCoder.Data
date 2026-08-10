@@ -3299,61 +3299,7 @@
           "Type": "System.Collections.Generic.ICollection\u003CcCoder.Data.Models.Security.User\u003E"
         }
       ],
-      "Methods": [
-        {
-          "Id": "cCoder.Data.Models.CMS.Culture.Equals(System.Object)",
-          "Name": "Equals",
-          "LineNumber": 26,
-          "Inputs": [
-            {
-              "Name": "obj",
-              "Type": "System.Object"
-            }
-          ],
-          "ReturnType": "System.Boolean",
-          "Implements": [],
-          "Calls": [],
-          "PossibleExceptionTypes": [],
-          "IncomingExceptionTypes": [],
-          "ThrowsExceptionTypes": [],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        },
-        {
-          "Id": "cCoder.Data.Models.CMS.Culture.GetHashCode()",
-          "Name": "GetHashCode",
-          "LineNumber": 29,
-          "Inputs": [],
-          "ReturnType": "System.Int32",
-          "Implements": [],
-          "Calls": [
-            {
-              "TypeName": "System.String",
-              "MethodName": "GetHashCode",
-              "MethodId": "System.String.GetHashCode()",
-              "StandardElementType": "Dependency",
-              "IsDependencyBoundary": true
-            }
-          ],
-          "PossibleExceptionTypes": [],
-          "IncomingExceptionTypes": [],
-          "ThrowsExceptionTypes": [],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        }
-      ]
+      "Methods": []
     },
     {
       "Name": "cCoder.Data.Models.CMS.Layout",
@@ -5532,7 +5478,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 51,
+          "LineNumber": 49,
           "Inputs": [
             {
               "Name": "scope",
@@ -5578,7 +5524,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 42,
+          "LineNumber": 40,
           "Inputs": [
             {
               "Name": "scope",

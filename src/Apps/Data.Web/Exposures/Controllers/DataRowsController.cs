@@ -2,6 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using Data.Web.Brokers.Loggings;
 using System.Text.Json;
 using Data.Web.Models.Exceptions;
 using Data.Web.Services.Foundations;
@@ -11,7 +12,8 @@ namespace Data.Web.Exposures.Controllers;
 
 [ApiController]
 [Route("Api/Data")]
-public sealed class DataRowsController(IDataRowManager dataRowService)
+public sealed class DataRowsController(IDataRowManager dataRowService,
+    ILoggingBroker loggingBroker)
     : ControllerBase
 {
     [HttpGet("{entitySet}")]
@@ -31,18 +33,24 @@ public sealed class DataRowsController(IDataRowManager dataRowService)
 
             return Ok(value: rows);
         }
-        catch (ServiceValidationException)
+        catch (ServiceValidationException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException)
+        catch (ServiceDependencyException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status503ServiceUnavailable,
                 value: "The data service is unavailable.");
         }
-        catch (ServiceException)
+        catch (ServiceException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status500InternalServerError,
                 value: "The data operation failed.");
@@ -66,18 +74,24 @@ public sealed class DataRowsController(IDataRowManager dataRowService)
                 statusCode: StatusCodes.Status201Created,
                 value: savedRow);
         }
-        catch (ServiceValidationException)
+        catch (ServiceValidationException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException)
+        catch (ServiceDependencyException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status503ServiceUnavailable,
                 value: "The data service is unavailable.");
         }
-        catch (ServiceException)
+        catch (ServiceException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status500InternalServerError,
                 value: "The data operation failed.");
@@ -99,18 +113,24 @@ public sealed class DataRowsController(IDataRowManager dataRowService)
 
             return Ok(value: updatedRow);
         }
-        catch (ServiceValidationException)
+        catch (ServiceValidationException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException)
+        catch (ServiceDependencyException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status503ServiceUnavailable,
                 value: "The data service is unavailable.");
         }
-        catch (ServiceException)
+        catch (ServiceException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status500InternalServerError,
                 value: "The data operation failed.");
@@ -132,18 +152,24 @@ public sealed class DataRowsController(IDataRowManager dataRowService)
 
             return NoContent();
         }
-        catch (ServiceValidationException)
+        catch (ServiceValidationException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException)
+        catch (ServiceDependencyException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status503ServiceUnavailable,
                 value: "The data service is unavailable.");
         }
-        catch (ServiceException)
+        catch (ServiceException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status500InternalServerError,
                 value: "The data operation failed.");

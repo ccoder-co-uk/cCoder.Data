@@ -2,6 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using Data.Web.Brokers.Loggings;
 using Data.Web.Models.Exceptions;
 using Data.Web.Services.Foundations;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,8 @@ namespace Data.Web.Exposures.Controllers;
 
 [ApiController]
 [Route("Api/Data/EntitySets")]
-public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySetService)
+public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySetService,
+    ILoggingBroker loggingBroker)
     : ControllerBase
 {
     [HttpGet]
@@ -24,18 +26,24 @@ public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySet
 
             return Ok(value: entitySets);
         }
-        catch (ServiceValidationException)
+        catch (ServiceValidationException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return BadRequest(error: "The data request is invalid.");
         }
-        catch (ServiceDependencyException)
+        catch (ServiceDependencyException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status503ServiceUnavailable,
                 value: "The data service is unavailable.");
         }
-        catch (ServiceException)
+        catch (ServiceException exception)
         {
+            loggingBroker.LogError(exception: exception, message: "Controller request failed.");
+
             return StatusCode(
                 statusCode: StatusCodes.Status500InternalServerError,
                 value: "The data operation failed.");
