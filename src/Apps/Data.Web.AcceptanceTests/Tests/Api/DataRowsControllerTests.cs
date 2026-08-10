@@ -4,6 +4,7 @@
 
 using Data.Web.Exposures;
 using Data.Web.Exposures.Controllers;
+using Data.Web.Brokers.Loggings;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,7 @@ public sealed partial class DataRowsControllerTests
         Dictionary<string, JsonElement> values = [];
         Dictionary<string, object> savedRow = [];
         Mock<IDataRowManager> dataRowManager = new();
+        Mock<ILoggingBroker> loggingBroker = new();
 
         dataRowManager
             .Setup(expression: manager => manager.AddRowAsync(
@@ -31,7 +33,9 @@ public sealed partial class DataRowsControllerTests
             .ReturnsAsync(value: savedRow);
 
         DataRowsController controller =
-            new(dataRowService: dataRowManager.Object);
+            new(
+                dataRowService: dataRowManager.Object,
+                loggingBroker: loggingBroker.Object);
 
         // When
         IActionResult result = await controller.PostRowAsync(
