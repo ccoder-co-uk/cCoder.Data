@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="Data.Web.AcceptanceTests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="cCoder.CodeAnalysis" Version="2026.8.10.1538" />
     <PackageReference Include="cCoder.Security" Version="2026.8.5.1" />
     <PackageReference Include="cCoder.Security.Data" Version="2026.8.5.1" />
