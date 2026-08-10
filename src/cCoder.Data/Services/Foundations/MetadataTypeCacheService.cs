@@ -34,8 +34,6 @@ internal partial class MetadataTypeCacheService(IMetadataTypeCacheBroker broker)
     public string[] GetAll() =>
         TryCatch(operation: () =>
         {
-            Validate(inputs: []);
-
             return broker.GetAll();
         });
 

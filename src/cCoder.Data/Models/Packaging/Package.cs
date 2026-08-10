@@ -17,11 +17,4 @@ public class Package
     public string SourceApi { get; set; }
 
     public virtual ICollection<PackageItem> Items { get; set; }
-
-    public Package() { }
-
-    public Package(string name)
-    {
-        Name = name;
-    }
 }
