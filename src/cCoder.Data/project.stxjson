@@ -3898,6 +3898,26 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Models.CoreDataConfiguration",
+      "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "cCoder.Data:cCoder.Data.Models.DataConfiguration",
+        "FullName": "cCoder.Data.Models.DataConfiguration",
+        "Name": "DataConfiguration",
+        "Namespace": "cCoder.Data.Models",
+        "AssemblyName": "cCoder.Data",
+        "Kind": "Class",
+        "IsInCurrentProject": true,
+        "StandardElementType": "Model"
+      },
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Data.Models.DMS.File",
       "StandardElementType": "Model",
       "LineNumber": 7,
@@ -4070,6 +4090,10 @@
       "BaseType": null,
       "Interfaces": [],
       "Properties": [
+        {
+          "Name": "AdminConnectionString",
+          "Type": "System.String"
+        },
         {
           "Name": "ConnectionString",
           "Type": "System.String"
