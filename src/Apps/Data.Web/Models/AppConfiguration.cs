@@ -7,15 +7,11 @@ using cCoder.Security.Models;
 
 namespace Data.Web.Models;
 
-public sealed class DataWebConfiguration
+public sealed class AppConfiguration
 {
-    public DataWebConfiguration()
-    {
-        Data = new DataConfiguration();
-        Security = new SecurityConfiguration();
-    }
-
-    public DataConfiguration Data { get; set; }
+    public CoreDataConfiguration CoreData { get; set; }
 
     public SecurityConfiguration Security { get; set; }
+
+    public SecurityDataConfiguration SecurityData { get; set; }
 }

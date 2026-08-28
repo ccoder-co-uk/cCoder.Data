@@ -4,6 +4,7 @@
 
 using cCoder.Data.Models;
 using cCoder.Security;
+using cCoder.Security.Data.EF;
 using Data.Web.Brokers;
 using Data.Web.Dependencies;
 using Data.Web.Exposures;
@@ -14,13 +15,13 @@ namespace Data.Web;
 
 public static class IServiceCollectionExtensions
 {
-    public static void AddDataWeb(
+    public static void AddWeb(
         this IServiceCollection services,
         IConfiguration applicationConfiguration,
-        Action<DataWebConfiguration> configure = null)
+        Action<AppConfiguration> configure = null)
     {
         services.AddTransient<Brokers.Loggings.ILoggingBroker, Brokers.Loggings.LoggingBroker>();
-        DataWebConfiguration configuration = new();
+        AppConfiguration configuration = new();
         applicationConfiguration.Bind(configuration);
         configure?.Invoke(configuration);
 
@@ -30,8 +31,9 @@ public static class IServiceCollectionExtensions
 
         cCoder.Data.IServiceCollectionExtensions.AddData(
             services,
-            configuration.Data);
+            configuration.CoreData);
 
+        services.AddSecurityData(configuration.SecurityData);
         services.AddSecurityWeb(configuration.Security);
     }
 
