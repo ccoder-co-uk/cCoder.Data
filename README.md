@@ -2,15 +2,15 @@
 
 ## Local configuration
 
-Bind a `DataConfiguration` from the owning domain configuration. For an empty
-connection string, define that domain's `__ConnectionString` user- or
-machine-level environment variable, restart Visual Studio, and run with F5.
+`cCoder.Data` owns Core persistence. Bind `CoreDataConfiguration` from the
+`CoreData` section at the application's composition root. Business domains do
+not register this dependency or carry their own connection strings.
 
 Register the supporting data services with either the bound configuration or a
 configuration callback:
 
 ```csharp
-services.AddData(configuration.Data);
+services.AddData(configuration.CoreData);
 ```
 
 `cCoder.Data` contains the shared data access layer for the cCoder platform.
@@ -32,13 +32,25 @@ services.AddData(configuration.Data);
 
 `Data.Web` is a local support tool, not a published production app. It provides a tabbed CRUD view over every entity set exposed by `CoreDataContext`.
 
-The app uses the standard cCoder security login flow because the shared data context applies user-aware query filters.
+The app uses the standard cCoder security login flow because the shared data
+context applies user-aware query filters. Its root `AppConfiguration` contains
+`CoreData`, `SecurityData`, and `Security`; the complete `IConfiguration` root
+is bound once and those domains are registered side by side.
 
 Required configuration:
 
-- `Data__ConnectionString`
-- `Security__ConnectionString`
+- `CoreData__ConnectionString`
+- `SecurityData__ConnectionString`
 - `Security__DecryptionKey`
+
+Optional migration-only overrides:
+
+- `CoreData__AdminConnectionString`
+- `SecurityData__AdminConnectionString`
+
+Applications that consume `cCoder.Core` should use Core's composite API rather
+than registering these domains directly. Core remains the deliberate aggregate
+composition root for its configured domain graph.
 
 Run locally:
 

@@ -15,7 +15,7 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args:args);
 
-        builder.Services.AddDataWeb(
+        builder.Services.AddWeb(
             applicationConfiguration: builder.Configuration);
 
         WebApplication app = builder.Build();

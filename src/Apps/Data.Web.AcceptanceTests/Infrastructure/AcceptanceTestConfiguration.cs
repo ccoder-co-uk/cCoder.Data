@@ -11,9 +11,9 @@ internal sealed class AcceptanceTestConfiguration
     private AcceptanceTestConfiguration()
     {
         DataConnectionString = GetConnectionString(
-            variableName: "Data__ConnectionString");
+            variableName: "CoreData__ConnectionString");
         SecurityConnectionString = GetConnectionString(
-            variableName: "Security__ConnectionString");
+            variableName: "SecurityData__ConnectionString");
     }
 
     internal static AcceptanceTestConfiguration Current { get; } = new();
@@ -36,11 +36,11 @@ internal sealed class AcceptanceTestConfiguration
                 runId: runId));
 
         Environment.SetEnvironmentVariable(
-            variable: "Data__ConnectionString",
+            variable: "CoreData__ConnectionString",
             value: connectionStrings.Data);
 
         Environment.SetEnvironmentVariable(
-            variable: "Security__ConnectionString",
+            variable: "SecurityData__ConnectionString",
             value: connectionStrings.Security);
 
         return connectionStrings;
