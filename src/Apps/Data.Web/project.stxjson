@@ -1371,7 +1371,7 @@
     },
     {
       "Name": "Data.Web.Models.Exceptions.ServiceDependencyException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -1391,7 +1391,7 @@
     },
     {
       "Name": "Data.Web.Models.Exceptions.ServiceException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -1411,7 +1411,7 @@
     },
     {
       "Name": "Data.Web.Models.Exceptions.ServiceValidationException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -2281,6 +2281,14 @@
       "ToType": "Data.Web.Dependencies.DataSetDependency"
     },
     {
+      "FromType": "Data.Web.Brokers.Loggings.LoggingBroker",
+      "ToType": "ILogger\u003CData.Web.Brokers.Loggings.LoggingBroker\u003E"
+    },
+    {
+      "FromType": "Data.Web.Dependencies.DataSetDependency",
+      "ToType": "cCoder.Data.ICoreContextFactory"
+    },
+    {
       "FromType": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "ToType": "Data.Web.Brokers.Loggings.LoggingBroker"
     },
@@ -2295,6 +2303,18 @@
     {
       "FromType": "Data.Web.Exposures.Controllers.DataRowsController",
       "ToType": "Data.Web.Services.Foundations.DataRowService"
+    },
+    {
+      "FromType": "Data.Web.Models.Exceptions.ServiceDependencyException",
+      "ToType": "System.Exception"
+    },
+    {
+      "FromType": "Data.Web.Models.Exceptions.ServiceException",
+      "ToType": "System.Exception"
+    },
+    {
+      "FromType": "Data.Web.Models.Exceptions.ServiceValidationException",
+      "ToType": "System.Exception"
     },
     {
       "FromType": "Data.Web.Services.Foundations.DataEntitySetService",
