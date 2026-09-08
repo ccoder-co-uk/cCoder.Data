@@ -4111,7 +4111,7 @@
     },
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -4131,7 +4131,7 @@
     },
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -4151,7 +4151,7 @@
     },
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceValidationException",
-      "StandardElementType": "Dependency",
+      "StandardElementType": "Model",
       "LineNumber": 7,
       "IsPublic": false,
       "Kind": "Class",
@@ -6241,6 +6241,14 @@
   ],
   "Links": [
     {
+      "FromType": "cCoder.Data.CoreContextFactory",
+      "ToType": "System.IServiceProvider"
+    },
+    {
+      "FromType": "cCoder.Data.CoreDataContext",
+      "ToType": "Microsoft.Extensions.Logging.ILogger\u003CcCoder.Data.CoreDataContext\u003E"
+    },
+    {
       "FromType": "cCoder.Data.CoreDataContext",
       "ToType": "cCoder.Data.CoreAuthInfo"
     },
@@ -6251,6 +6259,22 @@
     {
       "FromType": "cCoder.Data.Exposures.MetadataTypeCache",
       "ToType": "cCoder.Data.Services.Foundations.MetadataTypeCacheService"
+    },
+    {
+      "FromType": "cCoder.Data.Extensions.CompositePropertyInfo",
+      "ToType": "System.Type"
+    },
+    {
+      "FromType": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+      "ToType": "System.Exception"
+    },
+    {
+      "FromType": "cCoder.Data.Models.Exceptions.ServiceException",
+      "ToType": "System.Exception"
+    },
+    {
+      "FromType": "cCoder.Data.Models.Exceptions.ServiceValidationException",
+      "ToType": "System.Exception"
     },
     {
       "FromType": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
