@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.8.2205" PrivateAssets="all" />
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.9.809" PrivateAssets="all" />
     <PackageReference Include="cCoder.Security" Version="2026.8.28.1335" />
     <PackageReference Include="cCoder.Security.Data" Version="2026.8.28.1335" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
