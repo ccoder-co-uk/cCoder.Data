@@ -4,13 +4,12 @@
 
 using System.Dynamic;
 using System.Text.Json;
+using cCoder.Data.Extensions;
 using cCoder.Data.Models.DMS;
 using cCoder.Data.Models.Mail;
 using cCoder.Data.Models.Planning;
 using cCoder.Data.Models.Security;
 using cCoder.Data.Models.Workflow;
-using Newtonsoft.Json;
-
 
 namespace cCoder.Data.Models.CMS;
 
@@ -32,9 +31,8 @@ public class App
 
     public dynamic Config
     {
-        get => JsonConvert.DeserializeObject<ExpandoObject>(
-value: ConfigJson ?? "{}",
-settings: cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+        get => ObjectExtensions.FromJson<ExpandoObject>(
+            value: ConfigJson ?? "{}");
         set => ConfigJson = value switch
         {
             null => "{}",
