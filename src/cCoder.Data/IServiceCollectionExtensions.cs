@@ -4,9 +4,10 @@
 
 using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Exposures;
-using cCoder.Data.Extensions;
 using cCoder.Data.Models;
 using cCoder.Data.Services.Foundations;
+using cCoder.Eventing.Models;
+using cCoder.Security.Models.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -69,11 +70,26 @@ public static class IServiceCollectionExtensions
         services.Replace(
             descriptor: ServiceDescriptor.Transient<ICoreAuthInfo>(
                 implementationFactory: serviceProvider =>
-                    new CoreAuthInfo
+                {
+                    string eventUserId = serviceProvider
+                        .GetService<IEventAuthInfo>()
+                        ?.SSOUserId;
+
+                    string ssoUserId = serviceProvider
+                        .GetService<ISSOAuthInfo>()
+                        ?.SSOUserId;
+
+                    return new CoreAuthInfo
                     {
-                        SSOUserId =
-                            serviceProvider.ResolveSsoUserId(),
-                    }));
+                        SSOUserId = !string.IsNullOrWhiteSpace(
+                            value: eventUserId)
+                                ? eventUserId
+                                : string.IsNullOrWhiteSpace(
+                                    value: ssoUserId)
+                                        ? "Guest"
+                                        : ssoUserId,
+                    };
+                }));
     }
 
     private static void AddExposures(this IServiceCollection services) =>

@@ -3,8 +3,7 @@
 // ---------------------------------------------------------------
 
 using System.Text.Json;
-using Newtonsoft.Json;
-
+using cCoder.Data.Extensions;
 
 namespace cCoder.Data.Models.CMS;
 
@@ -28,15 +27,13 @@ public class Submission
 
     public dynamic Data
     {
-        get => JsonConvert.DeserializeObject<dynamic>(
-            value: DataJson,
-            settings: cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings());
+        get => ObjectExtensions.FromJson<dynamic>(value: DataJson);
         set => DataJson = value switch
         {
             null => "null",
             JsonElement jsonElement => jsonElement.GetRawText(),
             string json => json,
-            _ => JsonConvert.SerializeObject(value: value)
+            _ => ObjectExtensions.ToJsonUsingDefaultSettings(value: value)
         };
     }
 
