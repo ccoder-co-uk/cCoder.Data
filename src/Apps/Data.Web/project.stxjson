@@ -346,7 +346,15 @@
           "Implements": [
             "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])"
           ],
-          "Calls": [],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.Extensions.Logging.LoggerExtensions",
+              "MethodName": "LogError",
+              "MethodId": "Microsoft.Extensions.Logging.LoggerExtensions.LogError(Microsoft.Extensions.Logging.ILogger,System.Exception?,System.String?,System.Object?[])",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
           "PossibleExceptionTypes": [],
           "IncomingExceptionTypes": [],
           "ThrowsExceptionTypes": [],
@@ -759,13 +767,13 @@
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
-        "Id": "Data.Web:ControllerBase",
-        "FullName": "ControllerBase",
+        "Id": "Microsoft.AspNetCore.Mvc.Core:Microsoft.AspNetCore.Mvc.ControllerBase",
+        "FullName": "Microsoft.AspNetCore.Mvc.ControllerBase",
         "Name": "ControllerBase",
-        "Namespace": "\u003Cglobal namespace\u003E",
-        "AssemblyName": "Data.Web",
+        "Namespace": "Microsoft.AspNetCore.Mvc",
+        "AssemblyName": "Microsoft.AspNetCore.Mvc.Core",
         "Kind": "Class",
-        "IsInCurrentProject": true,
+        "IsInCurrentProject": false,
         "StandardElementType": "Dependency"
       },
       "Interfaces": [],
@@ -781,7 +789,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CMicrosoft.AspNetCore.Mvc.IActionResult\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -797,6 +805,27 @@
               "MethodId": "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "BadRequest",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Ok",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Ok(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "StatusCode",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -832,6 +861,26 @@
               "HasBody": true,
               "ExposesExceptionDetails": false,
               "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 503,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceDependencyException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -850,13 +899,13 @@
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
-        "Id": "Data.Web:ControllerBase",
-        "FullName": "ControllerBase",
+        "Id": "Microsoft.AspNetCore.Mvc.Core:Microsoft.AspNetCore.Mvc.ControllerBase",
+        "FullName": "Microsoft.AspNetCore.Mvc.ControllerBase",
         "Name": "ControllerBase",
-        "Namespace": "\u003Cglobal namespace\u003E",
-        "AssemblyName": "Data.Web",
+        "Namespace": "Microsoft.AspNetCore.Mvc",
+        "AssemblyName": "Microsoft.AspNetCore.Mvc.Core",
         "Kind": "Class",
-        "IsInCurrentProject": true,
+        "IsInCurrentProject": false,
         "StandardElementType": "Dependency"
       },
       "Interfaces": [],
@@ -880,7 +929,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CMicrosoft.AspNetCore.Mvc.IActionResult\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -896,6 +945,27 @@
               "MethodId": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "BadRequest",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "NoContent",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.NoContent()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "StatusCode",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -934,11 +1004,31 @@
               "HasBody": true,
               "ExposesExceptionDetails": false,
               "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 503,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceDependencyException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
           "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
+          "HasFromBodyParameter": true,
           "HasKeyParameter": false,
           "HandlesNullWithNotFound": false,
           "HasTryCatch": true
@@ -965,7 +1055,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CMicrosoft.AspNetCore.Mvc.IActionResult\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -981,6 +1071,27 @@
               "MethodId": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "BadRequest",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Ok",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Ok(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "StatusCode",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1018,6 +1129,26 @@
               "HasBody": true,
               "ExposesExceptionDetails": false,
               "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 503,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceDependencyException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
@@ -1045,7 +1176,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CMicrosoft.AspNetCore.Mvc.IActionResult\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -1061,6 +1192,20 @@
               "MethodId": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "BadRequest",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "StatusCode",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1081,9 +1226,39 @@
           ],
           "HttpResponses": [
             {
+              "StatusCode": 201,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "",
+              "IsExceptionPath": false,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": false
+            },
+            {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceValidationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 503,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceDependencyException",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -1093,7 +1268,7 @@
           ],
           "IsHttpRequestHandler": true,
           "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
+          "HasFromBodyParameter": true,
           "HasKeyParameter": false,
           "HandlesNullWithNotFound": false,
           "HasTryCatch": true
@@ -1116,7 +1291,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.ValueTask\u003CIActionResult\u003E",
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CMicrosoft.AspNetCore.Mvc.IActionResult\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -1132,6 +1307,27 @@
               "MethodId": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "BadRequest",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Ok",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Ok(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "StatusCode",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1170,11 +1366,31 @@
               "HasBody": true,
               "ExposesExceptionDetails": false,
               "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 503,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "Data.Web.Models.Exceptions.ServiceDependencyException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
             }
           ],
           "IsHttpRequestHandler": true,
           "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
+          "HasFromBodyParameter": true,
           "HasKeyParameter": false,
           "HandlesNullWithNotFound": false,
           "HasTryCatch": true
@@ -1192,17 +1408,17 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.IServiceCollectionExtensions.AddWeb(IServiceCollection,IConfiguration,System.Action\u003CData.Web.Models.AppConfiguration\u003E)",
+          "Id": "Data.Web.IServiceCollectionExtensions.AddWeb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action\u003CData.Web.Models.AppConfiguration\u003E)",
           "Name": "AddWeb",
           "LineNumber": 18,
           "Inputs": [
             {
               "Name": "services",
-              "Type": "IServiceCollection"
+              "Type": "Microsoft.Extensions.DependencyInjection.IServiceCollection"
             },
             {
               "Name": "applicationConfiguration",
-              "Type": "IConfiguration"
+              "Type": "Microsoft.Extensions.Configuration.IConfiguration"
             },
             {
               "Name": "configure",
@@ -1213,6 +1429,20 @@
           "Implements": [],
           "Calls": [
             {
+              "TypeName": "Microsoft.Extensions.Configuration.ConfigurationBinder",
+              "MethodName": "Bind",
+              "MethodId": "Microsoft.Extensions.Configuration.ConfigurationBinder.Bind(Microsoft.Extensions.Configuration.IConfiguration,System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions",
+              "MethodName": "AddTransient",
+              "MethodId": "Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
               "TypeName": "System.Action\u003CT\u003E",
               "MethodName": "Invoke",
               "MethodId": "System.Action\u003CT\u003E.Invoke(T)",
@@ -1222,7 +1452,21 @@
             {
               "TypeName": "cCoder.Data.IServiceCollectionExtensions",
               "MethodName": "AddData",
-              "MethodId": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E)",
+              "MethodId": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Data.Models.DataConfiguration)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Security.Data.EF.IServiceCollectionExtensions",
+              "MethodName": "AddSecurityData",
+              "MethodId": "cCoder.Security.Data.EF.IServiceCollectionExtensions.AddSecurityData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Security.Models.SecurityDataConfiguration)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Security.IServiceCollectionExtensions",
+              "MethodName": "AddSecurityWeb",
+              "MethodId": "cCoder.Security.IServiceCollectionExtensions.AddSecurityWeb(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Security.Models.SecurityConfiguration,Microsoft.OData.ModelBuilder.ODataConventionModelBuilder)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
             }
@@ -1451,7 +1695,134 @@
           ],
           "ReturnType": "System.Void",
           "Implements": [],
-          "Calls": [],
+          "Calls": [
+            {
+              "TypeName": "Data.Web.IServiceCollectionExtensions",
+              "MethodName": "AddWeb",
+              "MethodId": "Data.Web.IServiceCollectionExtensions.AddWeb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action\u003CData.Web.Models.AppConfiguration\u003E)",
+              "StandardElementType": "App",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions",
+              "MethodName": "MapControllers",
+              "MethodId": "Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions",
+              "MethodName": "MapGet",
+              "MethodId": "Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.MapGet(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder,System.String,System.Delegate)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions",
+              "MethodName": "UseRouting",
+              "MethodId": "Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseRouting(Microsoft.AspNetCore.Builder.IApplicationBuilder)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions",
+              "MethodName": "UseExceptionHandler",
+              "MethodId": "Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action\u003CMicrosoft.AspNetCore.Builder.IApplicationBuilder\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.HttpsPolicyBuilderExtensions",
+              "MethodName": "UseHttpsRedirection",
+              "MethodId": "Microsoft.AspNetCore.Builder.HttpsPolicyBuilderExtensions.UseHttpsRedirection(Microsoft.AspNetCore.Builder.IApplicationBuilder)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.RunExtensions",
+              "MethodName": "Run",
+              "MethodId": "Microsoft.AspNetCore.Builder.RunExtensions.Run(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.RequestDelegate)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.SessionMiddlewareExtensions",
+              "MethodName": "UseSession",
+              "MethodId": "Microsoft.AspNetCore.Builder.SessionMiddlewareExtensions.UseSession(Microsoft.AspNetCore.Builder.IApplicationBuilder)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.StaticFileExtensions",
+              "MethodName": "UseStaticFiles",
+              "MethodId": "Microsoft.AspNetCore.Builder.StaticFileExtensions.UseStaticFiles(Microsoft.AspNetCore.Builder.IApplicationBuilder)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.SwaggerBuilderExtensions",
+              "MethodName": "UseSwagger",
+              "MethodId": "Microsoft.AspNetCore.Builder.SwaggerBuilderExtensions.UseSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action\u003CSwashbuckle.AspNetCore.Swagger.SwaggerOptions\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.SwaggerUIBuilderExtensions",
+              "MethodName": "UseSwaggerUI",
+              "MethodId": "Microsoft.AspNetCore.Builder.SwaggerUIBuilderExtensions.UseSwaggerUI(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action\u003CSwashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.SwaggerUIOptionsExtensions",
+              "MethodName": "SwaggerEndpoint",
+              "MethodId": "Microsoft.AspNetCore.Builder.SwaggerUIOptionsExtensions.SwaggerEndpoint(Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions,System.String,System.String)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.WebApplication",
+              "MethodName": "CreateBuilder",
+              "MethodId": "Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(System.String[])",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.WebApplication",
+              "MethodName": "Run",
+              "MethodId": "Microsoft.AspNetCore.Builder.WebApplication.Run(System.String?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Builder.WebApplicationBuilder",
+              "MethodName": "Build",
+              "MethodId": "Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Http.Results",
+              "MethodName": "Redirect",
+              "MethodId": "Microsoft.AspNetCore.Http.Results.Redirect(System.String,System.Boolean,System.Boolean)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Http.Results",
+              "MethodName": "Text",
+              "MethodId": "Microsoft.AspNetCore.Http.Results.Text(System.String?,System.String?,System.Text.Encoding?,System.Int32?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions",
+              "MethodName": "GetRequiredService",
+              "MethodId": "Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(System.IServiceProvider)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
           "PossibleExceptionTypes": [],
           "IncomingExceptionTypes": [],
           "ThrowsExceptionTypes": [],
@@ -2282,7 +2653,7 @@
     },
     {
       "FromType": "Data.Web.Brokers.Loggings.LoggingBroker",
-      "ToType": "ILogger\u003CData.Web.Brokers.Loggings.LoggingBroker\u003E"
+      "ToType": "Microsoft.Extensions.Logging.ILogger\u003CData.Web.Brokers.Loggings.LoggingBroker\u003E"
     },
     {
       "FromType": "Data.Web.Dependencies.DataSetDependency",
@@ -2327,39 +2698,67 @@
   ],
   "AnalysisItems": [
     {
-      "Code": "STXAPI005",
-      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Exposures.Controllers.DataEntitySetsController",
-      "LineNumber": 19
-    },
-    {
-      "Code": "STXAPI005",
-      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 20
+      "LineNumber": 63
     },
     {
-      "Code": "STXAPI005",
-      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 61
+      "LineNumber": 104
     },
     {
-      "Code": "STXAPI005",
-      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
       "Severity": "Warning",
       "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 102
+      "LineNumber": 143
     },
     {
-      "Code": "STXAPI005",
-      "Description": "Every public HTTP handler must map success and caught failure paths to 2xx, 4xx, or 5xx responses.",
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
       "Severity": "Warning",
-      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 141
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 24
+    },
+    {
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 30
+    },
+    {
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 36
+    },
+    {
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 38
+    },
+    {
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 57
+    },
+    {
+      "Code": "STXD005",
+      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
+      "Severity": "Warning",
+      "Type": "Data.Web.Services.Foundations.DataRowService",
+      "LineNumber": 76
     }
   ]
 }
