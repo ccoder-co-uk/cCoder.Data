@@ -2,7 +2,6 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using System.Text.Json;
 using Data.Web.Models;
 
 namespace Data.Web.Brokers;
@@ -21,16 +20,16 @@ internal interface IDataSetBroker
 
     Task<Dictionary<string, object>> InsertRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken);
 
     Task<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken);
 
     Task DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken);
 }

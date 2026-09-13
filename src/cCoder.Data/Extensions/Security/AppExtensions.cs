@@ -10,6 +10,10 @@ public static class AppExtensions
 {
     public static bool IsAppAdmin(this App app, User user) =>
         user?.Roles?.Any(predicate: role =>
-            role.Role?.AppId == app?.Id
-            && role.Role.Allows(user: user, privilege: "app_admin")) ?? false;
+            role.Role is not null
+            && role.Role.AppId == app?.Id
+            && user.Roles.Any(predicate: userRole =>
+                userRole.RoleId == role.Role.Id)
+            && role.Role.Privileges.Any(predicate: privilege =>
+                privilege == "app_admin")) ?? false;
 }

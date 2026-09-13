@@ -2,7 +2,6 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using System.Text.Json;
 using Data.Web.Brokers;
 using Data.Web.Models;
 
@@ -35,7 +34,7 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
 
     public ValueTask<Dictionary<string, object>> AddRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> newValues,
+        Dictionary<string, object> newValues,
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
@@ -54,7 +53,7 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
 
     public ValueTask<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> updatedValues,
+        Dictionary<string, object> updatedValues,
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {
@@ -73,7 +72,7 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
 
     public ValueTask DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> deletedValues,
+        Dictionary<string, object> deletedValues,
         CancellationToken cancellationToken) =>
         TryCatch(operation: async () =>
         {

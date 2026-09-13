@@ -41,6 +41,12 @@ internal sealed class JsonBroker : IJsonBroker
         };
 
     public T Deserialize<T>(
+        string value) =>
+        Deserialize<T>(
+            value: value,
+            jsonSerializerSettings: GetJsonSerializerSettings());
+
+    public T Deserialize<T>(
         string value,
         JsonSerializerSettings jsonSerializerSettings) =>
         JsonConvert.DeserializeObject<T>(
@@ -49,6 +55,28 @@ internal sealed class JsonBroker : IJsonBroker
 
     public string Serialize(object value) =>
         JsonConvert.SerializeObject(value: value);
+
+    public string SerializeUsingJsonSettings(object value) =>
+        Serialize(
+            value: value,
+            jsonSerializerSettings: GetJsonSerializerSettings());
+
+    public string SerializeUsingJsonSettings(object value, int maxDepth)
+    {
+        JsonSerializerSettings jsonSerializerSettings =
+            GetJsonSerializerSettings();
+
+        jsonSerializerSettings.MaxDepth = maxDepth;
+
+        return Serialize(
+            value: value,
+            jsonSerializerSettings: jsonSerializerSettings);
+    }
+
+    public string SerializeForOData(object value) =>
+        Serialize(
+            value: value,
+            jsonSerializerSettings: GetODataJsonSerializerSettings());
 
     public string Serialize(
         object value,

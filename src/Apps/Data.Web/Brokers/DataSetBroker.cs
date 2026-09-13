@@ -2,7 +2,6 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using System.Text.Json;
 using Data.Web.Dependencies;
 using Data.Web.Models;
 
@@ -30,7 +29,7 @@ internal sealed class DataSetBroker(DataSetDependency dataSetDependency)
 
     public Task<Dictionary<string, object>> InsertRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken) =>
         dataSetDependency.InsertRowAsync(
             entitySet: entitySet,
@@ -39,7 +38,7 @@ internal sealed class DataSetBroker(DataSetDependency dataSetDependency)
 
     public Task<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken) =>
         dataSetDependency.UpdateRowAsync(
             entitySet: entitySet,
@@ -48,7 +47,7 @@ internal sealed class DataSetBroker(DataSetDependency dataSetDependency)
 
     public Task DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken) =>
         dataSetDependency.DeleteRowAsync(
             entitySet: entitySet,

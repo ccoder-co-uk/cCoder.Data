@@ -71,7 +71,7 @@ internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
 
     public async Task<Dictionary<string, object>> InsertRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
@@ -90,7 +90,7 @@ internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
 
     public async Task<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
@@ -106,7 +106,7 @@ internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
 
     public async Task DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         (_, IEntityType entityType) = GetEntitySet(entitySet:entitySet);
@@ -171,7 +171,7 @@ comparisonType:                StringComparison.OrdinalIgnoreCase));
 
     private async Task<object> FindEntityAsync(
         IEntityType entityType,
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         IProperty[] keyProperties = entityType.FindPrimaryKey()?.Properties.ToArray() ?? [];
@@ -260,31 +260,36 @@ elementSelector:                property => ToJsonFriendlyValue(value:property.P
     private static void TrySetProperty(
         object entity,
         IProperty property,
-        Dictionary<string, JsonElement> values)
+        Dictionary<string, object> values)
     {
-        if (!TryGetJson(values:values, name:property.Name, value:out JsonElement element))
+        if (!TryGetValue(values:values, name:property.Name, value:out object sourceValue))
             return;
 
-        object value = ConvertJsonElement(element:element, targetType:property.ClrType);
+        object value = ConvertValue(
+            sourceValue: sourceValue,
+            targetType: property.ClrType);
+
         property.PropertyInfo?.SetValue(obj:entity, value:value);
     }
 
     private static object GetPropertyValue(
-        Dictionary<string, JsonElement> values,
+        Dictionary<string, object> values,
         IProperty property)
     {
-        if (!TryGetJson(values:values, name:property.Name, value:out JsonElement element))
+        if (!TryGetValue(values:values, name:property.Name, value:out object sourceValue))
             throw new InvalidOperationException($"Key property '{property.Name}' is required.");
 
-        return ConvertJsonElement(element:element, targetType:property.ClrType);
+        return ConvertValue(
+            sourceValue: sourceValue,
+            targetType: property.ClrType);
     }
 
-    private static bool TryGetJson(
-        Dictionary<string, JsonElement> values,
+    private static bool TryGetValue(
+        Dictionary<string, object> values,
         string name,
-        out JsonElement value)
+        out object value)
     {
-        foreach (KeyValuePair<string, JsonElement> item in values)
+        foreach (KeyValuePair<string, object> item in values)
         {
             if (string.Equals(a:item.Key, b:name, comparisonType:StringComparison.OrdinalIgnoreCase))
             {
@@ -295,6 +300,33 @@ elementSelector:                property => ToJsonFriendlyValue(value:property.P
 
         value = default;
         return false;
+    }
+
+    private static object ConvertValue(object sourceValue, Type targetType)
+    {
+        Type type = Nullable.GetUnderlyingType(nullableType:targetType) ?? targetType;
+
+        if (sourceValue is JsonElement element)
+        {
+            return ConvertJsonElement(
+                element: element,
+                targetType: targetType);
+        }
+
+        if (sourceValue is null || type.IsInstanceOfType(o:sourceValue))
+            return sourceValue;
+
+        if (type.IsEnum)
+        {
+            return Enum.Parse(
+                enumType: type,
+                value: sourceValue.ToString() ?? string.Empty,
+                ignoreCase: true);
+        }
+
+        return Convert.ChangeType(
+            value: sourceValue,
+            conversionType: type);
     }
 
     private static object ConvertJsonElement(JsonElement element, Type targetType)
