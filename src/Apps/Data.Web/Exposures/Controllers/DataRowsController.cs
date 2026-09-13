@@ -3,7 +3,6 @@
 // ---------------------------------------------------------------
 
 using Data.Web.Brokers.Loggings;
-using System.Text.Json;
 using Data.Web.Models.Exceptions;
 using Data.Web.Services.Foundations;
 using Microsoft.AspNetCore.Mvc;
@@ -60,7 +59,7 @@ public sealed class DataRowsController(IDataRowManager dataRowService,
     [HttpPost("{entitySet}")]
     public async ValueTask<IActionResult> PostRowAsync(
         string entitySet,
-        [FromBody] Dictionary<string, JsonElement> values,
+        [FromBody] Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         try
@@ -101,7 +100,7 @@ public sealed class DataRowsController(IDataRowManager dataRowService,
     [HttpPut("{entitySet}")]
     public async ValueTask<IActionResult> PutRowAsync(
         string entitySet,
-        [FromBody] Dictionary<string, JsonElement> values,
+        [FromBody] Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         try
@@ -140,7 +139,7 @@ public sealed class DataRowsController(IDataRowManager dataRowService,
     [HttpDelete("{entitySet}")]
     public async ValueTask<IActionResult> DeleteRowAsync(
         string entitySet,
-        [FromBody] Dictionary<string, JsonElement> values,
+        [FromBody] Dictionary<string, object> values,
         CancellationToken cancellationToken)
     {
         try

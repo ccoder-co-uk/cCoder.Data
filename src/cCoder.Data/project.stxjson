@@ -1304,9 +1304,51 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "cCoder.Data.Brokers.JsonBroker.Deserialize(System.String,Newtonsoft.Json.JsonSerializerSettings)",
+          "Id": "cCoder.Data.Brokers.JsonBroker.Deserialize(System.String)",
           "Name": "Deserialize",
           "LineNumber": 43,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "T",
+          "Implements": [
+            "cCoder.Data.Brokers.IJsonBroker.Deserialize(System.String)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "Deserialize",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.Deserialize(System.String,Newtonsoft.Json.JsonSerializerSettings)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "GetJsonSerializerSettings",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.GetJsonSerializerSettings()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.JsonBroker.Deserialize(System.String,Newtonsoft.Json.JsonSerializerSettings)",
+          "Name": "Deserialize",
+          "LineNumber": 49,
           "Inputs": [
             {
               "Name": "value",
@@ -1419,7 +1461,7 @@
         {
           "Id": "cCoder.Data.Brokers.JsonBroker.Serialize(System.Object)",
           "Name": "Serialize",
-          "LineNumber": 50,
+          "LineNumber": 56,
           "Inputs": [
             {
               "Name": "value",
@@ -1454,7 +1496,7 @@
         {
           "Id": "cCoder.Data.Brokers.JsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
           "Name": "Serialize",
-          "LineNumber": 53,
+          "LineNumber": 81,
           "Inputs": [
             {
               "Name": "value",
@@ -1476,6 +1518,136 @@
               "MethodId": "Newtonsoft.Json.JsonConvert.SerializeObject(System.Object?,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.JsonBroker.SerializeForOData(System.Object)",
+          "Name": "SerializeForOData",
+          "LineNumber": 76,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [
+            "cCoder.Data.Brokers.IJsonBroker.SerializeForOData(System.Object)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "GetODataJsonSerializerSettings",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.GetODataJsonSerializerSettings()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "Serialize",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.JsonBroker.SerializeUsingJsonSettings(System.Object)",
+          "Name": "SerializeUsingJsonSettings",
+          "LineNumber": 59,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [
+            "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "GetJsonSerializerSettings",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.GetJsonSerializerSettings()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "Serialize",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.JsonBroker.SerializeUsingJsonSettings(System.Object,System.Int32)",
+          "Name": "SerializeUsingJsonSettings",
+          "LineNumber": 64,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "maxDepth",
+              "Type": "System.Int32"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [
+            "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object,System.Int32)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "GetJsonSerializerSettings",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.GetJsonSerializerSettings()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.JsonBroker",
+              "MethodName": "Serialize",
+              "MethodId": "cCoder.Data.Brokers.JsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
             }
           ],
           "PossibleExceptionTypes": [],
@@ -2667,7 +2839,7 @@
     {
       "Name": "cCoder.Data.Extensions.ObjectExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 10,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -2675,65 +2847,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
-          "Name": "GetJSONSettings",
-          "LineNumber": 14,
-          "Inputs": [],
-          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings",
-          "Implements": [],
-          "Calls": [
-            {
-              "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "GetJsonSerializerSettings",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.GetJsonSerializerSettings()",
-              "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            }
-          ],
-          "PossibleExceptionTypes": [],
-          "IncomingExceptionTypes": [],
-          "ThrowsExceptionTypes": [],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        },
-        {
-          "Id": "cCoder.Data.Extensions.ObjectExtensions.GetODataJsonSettings()",
-          "Name": "GetODataJsonSettings",
-          "LineNumber": 17,
-          "Inputs": [],
-          "ReturnType": "Newtonsoft.Json.JsonSerializerSettings",
-          "Implements": [],
-          "Calls": [
-            {
-              "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "GetODataJsonSerializerSettings",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.GetODataJsonSerializerSettings()",
-              "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            }
-          ],
-          "PossibleExceptionTypes": [],
-          "IncomingExceptionTypes": [],
-          "ThrowsExceptionTypes": [],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        },
-        {
           "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object)",
           "Name": "ToJson",
-          "LineNumber": 28,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "value",
@@ -2745,52 +2861,8 @@
           "Calls": [
             {
               "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "Serialize",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
-              "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            },
-            {
-              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
-              "MethodName": "GetJSONSettings",
-              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
-              "StandardElementType": "Exposure",
-              "IsDependencyBoundary": false
-            }
-          ],
-          "PossibleExceptionTypes": [],
-          "IncomingExceptionTypes": [],
-          "ThrowsExceptionTypes": [],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        },
-        {
-          "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
-          "Name": "ToJson",
-          "LineNumber": 43,
-          "Inputs": [
-            {
-              "Name": "value",
-              "Type": "System.Object"
-            },
-            {
-              "Name": "jsonSerializerSettings",
-              "Type": "Newtonsoft.Json.JsonSerializerSettings"
-            }
-          ],
-          "ReturnType": "System.String",
-          "Implements": [],
-          "Calls": [
-            {
-              "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "Serialize",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "MethodName": "SerializeUsingJsonSettings",
+              "MethodId": "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object)",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             }
@@ -2810,7 +2882,7 @@
         {
           "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJson(System.Object,System.Int32)",
           "Name": "ToJson",
-          "LineNumber": 33,
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "value",
@@ -2826,16 +2898,9 @@
           "Calls": [
             {
               "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "Serialize",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "MethodName": "SerializeUsingJsonSettings",
+              "MethodId": "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object,System.Int32)",
               "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            },
-            {
-              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
-              "MethodName": "GetJSONSettings",
-              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetJSONSettings()",
-              "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
             }
           ],
@@ -2854,7 +2919,7 @@
         {
           "Id": "cCoder.Data.Extensions.ObjectExtensions.ToJsonForOdata(System.Object)",
           "Name": "ToJsonForOdata",
-          "LineNumber": 50,
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "value",
@@ -2866,16 +2931,9 @@
           "Calls": [
             {
               "TypeName": "cCoder.Data.Brokers.IJsonBroker",
-              "MethodName": "Serialize",
-              "MethodId": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
+              "MethodName": "SerializeForOData",
+              "MethodId": "cCoder.Data.Brokers.IJsonBroker.SerializeForOData(System.Object)",
               "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            },
-            {
-              "TypeName": "cCoder.Data.Extensions.ObjectExtensions",
-              "MethodName": "GetODataJsonSettings",
-              "MethodId": "cCoder.Data.Extensions.ObjectExtensions.GetODataJsonSettings()",
-              "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
             }
           ],
@@ -6057,9 +6115,34 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "cCoder.Data.Brokers.IJsonBroker.Deserialize(System.String,Newtonsoft.Json.JsonSerializerSettings)",
+          "Id": "cCoder.Data.Brokers.IJsonBroker.Deserialize(System.String)",
           "Name": "Deserialize",
           "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.String"
+            }
+          ],
+          "ReturnType": "T",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.IJsonBroker.Deserialize(System.String,Newtonsoft.Json.JsonSerializerSettings)",
+          "Name": "Deserialize",
+          "LineNumber": 16,
           "Inputs": [
             {
               "Name": "value",
@@ -6128,7 +6211,7 @@
         {
           "Id": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object)",
           "Name": "Serialize",
-          "LineNumber": 18,
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "value",
@@ -6153,7 +6236,7 @@
         {
           "Id": "cCoder.Data.Brokers.IJsonBroker.Serialize(System.Object,Newtonsoft.Json.JsonSerializerSettings)",
           "Name": "Serialize",
-          "LineNumber": 20,
+          "LineNumber": 28,
           "Inputs": [
             {
               "Name": "value",
@@ -6162,6 +6245,85 @@
             {
               "Name": "jsonSerializerSettings",
               "Type": "Newtonsoft.Json.JsonSerializerSettings"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.IJsonBroker.SerializeForOData(System.Object)",
+          "Name": "SerializeForOData",
+          "LineNumber": 26,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object)",
+          "Name": "SerializeUsingJsonSettings",
+          "LineNumber": 22,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.IJsonBroker.SerializeUsingJsonSettings(System.Object,System.Int32)",
+          "Name": "SerializeUsingJsonSettings",
+          "LineNumber": 24,
+          "Inputs": [
+            {
+              "Name": "value",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "maxDepth",
+              "Type": "System.Int32"
             }
           ],
           "ReturnType": "System.String",
@@ -6590,34 +6752,5 @@
       "ToType": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker"
     }
   ],
-  "AnalysisItems": [
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027Newtonsoft.Json.JsonSerializerSettings\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "cCoder.Data.Extensions.ObjectExtensions",
-      "LineNumber": 14
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027Newtonsoft.Json.JsonSerializerSettings\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "cCoder.Data.Extensions.ObjectExtensions",
-      "LineNumber": 17
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027Newtonsoft.Json.JsonSerializerSettings\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "cCoder.Data.Extensions.ObjectExtensions",
-      "LineNumber": 35
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027Newtonsoft.Json.JsonSerializerSettings\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "cCoder.Data.Extensions.ObjectExtensions",
-      "LineNumber": 45
-    }
-  ]
+  "AnalysisItems": []
 }

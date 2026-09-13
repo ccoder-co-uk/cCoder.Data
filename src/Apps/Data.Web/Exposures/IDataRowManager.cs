@@ -2,7 +2,6 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using System.Text.Json;
 using Data.Web.Models;
 
 namespace Data.Web.Exposures;
@@ -17,16 +16,16 @@ public interface IDataRowManager
 
     ValueTask<Dictionary<string, object>> AddRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> newValues,
+        Dictionary<string, object> newValues,
         CancellationToken cancellationToken);
 
     ValueTask<Dictionary<string, object>> UpdateRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> updatedValues,
+        Dictionary<string, object> updatedValues,
         CancellationToken cancellationToken);
 
     ValueTask DeleteRowAsync(
         string entitySet,
-        Dictionary<string, JsonElement> deletedValues,
+        Dictionary<string, object> deletedValues,
         CancellationToken cancellationToken);
 }

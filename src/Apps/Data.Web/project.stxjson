@@ -9,7 +9,7 @@
     {
       "Name": "Data.Web.Brokers.DataSetBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 11,
+      "LineNumber": 10,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -28,9 +28,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Brokers.DataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.DataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 49,
+          "LineNumber": 48,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -38,7 +38,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -47,13 +47,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.Task",
           "Implements": [
-            "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Dependencies.DataSetDependency",
               "MethodName": "DeleteRowAsync",
-              "MethodId": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": false
             }
@@ -82,7 +82,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
-          "LineNumber": 14,
+          "LineNumber": 13,
           "Inputs": [],
           "ReturnType": "System.String",
           "Implements": [
@@ -110,9 +110,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Brokers.DataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.DataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
-          "LineNumber": 31,
+          "LineNumber": 30,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -120,7 +120,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -129,13 +129,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Dependencies.DataSetDependency",
               "MethodName": "InsertRowAsync",
-              "MethodId": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": false
             }
@@ -164,7 +164,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
-          "LineNumber": 17,
+          "LineNumber": 16,
           "Inputs": [
             {
               "Name": "cancellationToken",
@@ -199,7 +199,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
-          "LineNumber": 20,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -250,9 +250,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Brokers.DataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.DataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 40,
+          "LineNumber": 39,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -260,7 +260,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -269,13 +269,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Dependencies.DataSetDependency",
               "MethodName": "UpdateRowAsync",
-              "MethodId": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": false
             }
@@ -391,7 +391,7 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
           "LineNumber": 107,
           "Inputs": [
@@ -401,7 +401,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -450,7 +450,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.Dispose()",
           "Name": "Dispose",
-          "LineNumber": 359,
+          "LineNumber": 391,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [
@@ -498,7 +498,7 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
           "LineNumber": 72,
           "Inputs": [
@@ -508,7 +508,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -709,7 +709,7 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
           "LineNumber": 91,
           "Inputs": [
@@ -719,7 +719,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -895,7 +895,7 @@
     {
       "Name": "Data.Web.Exposures.Controllers.DataRowsController",
       "StandardElementType": "HttpExposure",
-      "LineNumber": 13,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -912,9 +912,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Exposures.Controllers.DataRowsController.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 141,
+          "LineNumber": 140,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -922,7 +922,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -942,7 +942,7 @@
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "DeleteRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
             },
@@ -1036,7 +1036,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
-          "LineNumber": 20,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1159,9 +1159,9 @@
           "HasTryCatch": true
         },
         {
-          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PostRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PostRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "PostRowAsync",
-          "LineNumber": 61,
+          "LineNumber": 60,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1169,7 +1169,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -1189,7 +1189,7 @@
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "AddRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
             },
@@ -1274,9 +1274,9 @@
           "HasTryCatch": true
         },
         {
-          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PutRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.Controllers.DataRowsController.PutRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "PutRowAsync",
-          "LineNumber": 102,
+          "LineNumber": 101,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1284,7 +1284,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -1304,7 +1304,7 @@
             {
               "TypeName": "Data.Web.Exposures.IDataRowManager",
               "MethodName": "UpdateRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Exposure",
               "IsDependencyBoundary": false
             },
@@ -1908,7 +1908,7 @@
     {
       "Name": "Data.Web.Services.Foundations.DataRowService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 11,
+      "LineNumber": 10,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -1927,9 +1927,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Services.Foundations.DataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.DataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "AddRowAsync",
-          "LineNumber": 36,
+          "LineNumber": 35,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1937,7 +1937,7 @@
             },
             {
               "Name": "newValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -1946,13 +1946,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Brokers.IDataSetBroker",
               "MethodName": "InsertRowAsync",
-              "MethodId": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             }
@@ -1985,9 +1985,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Services.Foundations.DataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.DataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 74,
+          "LineNumber": 73,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1995,7 +1995,7 @@
             },
             {
               "Name": "deletedValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2004,13 +2004,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Brokers.IDataSetBroker",
               "MethodName": "DeleteRowAsync",
-              "MethodId": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             }
@@ -2045,7 +2045,7 @@
         {
           "Id": "Data.Web.Services.Foundations.DataRowService.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
-          "LineNumber": 14,
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2117,9 +2117,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Services.Foundations.DataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.DataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 55,
+          "LineNumber": 54,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2127,7 +2127,7 @@
             },
             {
               "Name": "updatedValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2136,13 +2136,13 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
               "TypeName": "Data.Web.Brokers.IDataSetBroker",
               "MethodName": "UpdateRowAsync",
-              "MethodId": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+              "MethodId": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             }
@@ -2181,7 +2181,7 @@
     {
       "Name": "Data.Web.Brokers.IDataSetBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 10,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -2189,9 +2189,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 32,
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2199,7 +2199,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2224,7 +2224,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
-          "LineNumber": 12,
+          "LineNumber": 11,
           "Inputs": [],
           "ReturnType": "System.String",
           "Implements": [],
@@ -2242,9 +2242,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
-          "LineNumber": 22,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2252,7 +2252,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2277,7 +2277,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
-          "LineNumber": 14,
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "cancellationToken",
@@ -2302,7 +2302,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
-          "LineNumber": 16,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2337,9 +2337,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 27,
+          "LineNumber": 26,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2347,7 +2347,7 @@
             },
             {
               "Name": "values",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2456,7 +2456,7 @@
     {
       "Name": "Data.Web.Exposures.IDataRowManager",
       "StandardElementType": "Exposure",
-      "LineNumber": 10,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Interface",
       "BaseType": null,
@@ -2464,9 +2464,9 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "AddRowAsync",
-          "LineNumber": 18,
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2474,7 +2474,7 @@
             },
             {
               "Name": "newValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2497,9 +2497,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 28,
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2507,7 +2507,7 @@
             },
             {
               "Name": "deletedValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2532,7 +2532,7 @@
         {
           "Id": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
-          "LineNumber": 12,
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2567,9 +2567,9 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 23,
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2577,7 +2577,7 @@
             },
             {
               "Name": "updatedValues",
-              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Text.Json.JsonElement\u003E"
+              "Type": "System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E"
             },
             {
               "Name": "cancellationToken",
@@ -2626,7 +2626,7 @@
     {
       "Name": "Data.Web.Services.Foundations.IDataRowService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 12,
+      "LineNumber": 10,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -2696,69 +2696,5 @@
       "ToType": "Data.Web.Brokers.DataSetBroker"
     }
   ],
-  "AnalysisItems": [
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 63
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 104
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Exposures.Controllers.DataRowsController",
-      "LineNumber": 143
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 24
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 30
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 36
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 38
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 57
-    },
-    {
-      "Code": "STXD005",
-      "Description": "External API type \u0027System.Text.Json.JsonElement\u0027 must be isolated behind a broker or dependency.",
-      "Severity": "Warning",
-      "Type": "Data.Web.Services.Foundations.DataRowService",
-      "LineNumber": 76
-    }
-  ]
+  "AnalysisItems": []
 }

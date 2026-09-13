@@ -47,7 +47,7 @@ public sealed partial class DataRowServiceTests
     public async Task ShouldAddUpdateAndDeleteRows()
     {
         // Given
-        Dictionary<string, JsonElement> values = new()
+        Dictionary<string, object> values = new()
         {
             ["Name"] = JsonDocument.Parse(json: "\"Ada\"").RootElement
         };
@@ -124,7 +124,7 @@ public sealed partial class DataRowServiceTests
         broker.Verify(
             expression: broker => broker.InsertRowAsync(
                 entitySet: It.IsAny<string>(),
-                values: It.IsAny<Dictionary<string, JsonElement>>(),
+                values: It.IsAny<Dictionary<string, object>>(),
                 cancellationToken: It.IsAny<CancellationToken>()),
             times: Times.Never);
     }

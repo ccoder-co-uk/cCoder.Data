@@ -10,7 +10,6 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System.Text.Json;
 using Xunit;
 
 namespace Data.Web.AcceptanceTests.Tests.Api;
@@ -21,7 +20,7 @@ public sealed partial class DataRowsControllerTests
     public async Task PostRowAsync_WhenValidationFails_ShouldLogAndReturnBadRequest()
     {
         // Given
-        Dictionary<string, JsonElement> values = [];
+        Dictionary<string, object> values = [];
         Mock<IDataRowManager> dataRowManager = new();
         Mock<ILoggingBroker> loggingBroker = new();
         ServiceValidationException exception = new(innerException: new Exception());
@@ -59,7 +58,7 @@ public sealed partial class DataRowsControllerTests
     public async Task PostRowAsync_WhenSuccessful_ShouldReturnCreated()
     {
         // Given
-        Dictionary<string, JsonElement> values = [];
+        Dictionary<string, object> values = [];
         Dictionary<string, object> savedRow = [];
         Mock<IDataRowManager> dataRowManager = new();
         Mock<ILoggingBroker> loggingBroker = new();
