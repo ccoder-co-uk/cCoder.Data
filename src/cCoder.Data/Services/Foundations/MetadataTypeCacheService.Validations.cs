@@ -2,15 +2,19 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using cCoder.Data.Dependencies;
 using System.ComponentModel.DataAnnotations;
 
 namespace cCoder.Data.Services.Foundations;
 
 internal partial class MetadataTypeCacheService
 {
-    private static void Validate(params object[] inputs) =>
-        ValidationRulesEngine.Validate(inputs: inputs);
+    private static void Validate(params object[] inputs)
+    {
+        if (inputs.Any(predicate: input => input is null))
+        {
+            throw new ArgumentNullException(nameof(inputs));
+        }
+    }
 
     private static void ValidateMetadataTypeCacheOnSet(
         string scope,
@@ -27,7 +31,7 @@ internal partial class MetadataTypeCacheService
             throw new ValidationException("Scope is required.");
         }
 
-        ValidationRulesEngine.Validate(inputs: scope);
+        Validate(inputs: scope);
     }
 
     private static void ValidateTypeSetPayloads(IEnumerable<string> typeSetPayloads)
@@ -37,7 +41,7 @@ internal partial class MetadataTypeCacheService
             throw new ValidationException("Type sets are required.");
         }
 
-        ValidationRulesEngine.Validate(inputs: typeSetPayloads);
+        Validate(inputs: typeSetPayloads);
 
         if (typeSetPayloads.Any(predicate: typeSetPayload => typeSetPayload is null))
         {

@@ -19,7 +19,14 @@ public sealed partial class DataRowServiceTests
     public async Task ShouldClampPagingAndReturnRows()
     {
         // Given
-        DataRows expected = new() { EntitySet = "Customers", Rows = [] };
+        DataRows expected = new()
+        {
+            EntitySet = "Customers",
+            Skip = 0,
+            Take = 500,
+            Rows = []
+        };
+
         Mock<IDataSetBroker> broker = CreateAuthenticatedBroker();
 
         broker.Setup(expression: broker => broker.SelectRowsAsync(
@@ -27,7 +34,7 @@ public sealed partial class DataRowServiceTests
                 skip: 0,
                 take: 500,
                 cancellationToken: CancellationToken.None))
-            .ReturnsAsync(value: expected);
+            .ReturnsAsync(value: (expected.EntitySet, expected.Rows));
 
         DataRowService service = new(dataSetBroker: broker.Object);
 
@@ -40,7 +47,7 @@ public sealed partial class DataRowServiceTests
 
         // Then
         actual.Should()
-            .BeSameAs(expected: expected);
+            .BeEquivalentTo(expectation: expected);
     }
 
     [Fact]

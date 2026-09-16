@@ -6,7 +6,6 @@ using System.Collections;
 using System.Reflection;
 using System.Text.Json;
 using cCoder.Data;
-using Data.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -28,19 +27,33 @@ internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
     public string GetCurrentSsoUserId() =>
         context.AuthInfo?.SSOUserId ?? string.Empty;
 
-    public Task<DataEntitySet[]> SelectEntitySetsAsync(CancellationToken cancellationToken)
+    public Task<(
+        string Name,
+        string DisplayName,
+        string ClrType,
+        string Table,
+        string[] KeyProperties,
+        (
+            string Name,
+            string Type,
+            bool IsKey,
+            bool IsNullable,
+            bool CanCreate,
+            bool CanUpdate,
+            bool IsLongText)[] Properties)[]> SelectEntitySetsAsync(
+        CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        DataEntitySet[] entitySets = GetEntitySets()
-            .Select(selector:item => ToEntitySet(item.Name, item.EntityType))
-            .OrderBy(keySelector:entitySet => entitySet.DisplayName)
-            .ToArray();
-
-        return Task.FromResult(result:entitySets);
+        return Task.FromResult(result: GetEntitySets()
+            .Select(selector: item => ToEntitySet(
+                name: item.Name,
+                entityType: item.EntityType))
+            .OrderBy(keySelector: entitySet => entitySet.DisplayName)
+            .ToArray());
     }
 
-    public Task<DataRows> SelectRowsAsync(
+    public Task<(string EntitySet, Dictionary<string, object>[] Rows)> SelectRowsAsync(
         string entitySet,
         int skip,
         int take,
@@ -60,13 +73,7 @@ internal sealed class DataSetDependency(ICoreContextFactory contextFactory) :
             .Select(selector:entity => ToDictionary(entityType:entityType, entity:entity))
             .ToArray();
 
-        return Task.FromResult(result:new DataRows
-        {
-            EntitySet = setName,
-            Skip = skip,
-            Take = take,
-            Rows = rows
-        });
+        return Task.FromResult(result: (setName, rows));
     }
 
     public async Task<Dictionary<string, object>> InsertRowAsync(
@@ -142,6 +149,64 @@ comparisonType:                StringComparison.OrdinalIgnoreCase));
             : match.Value;
     }
 
+    private static (
+        string Name,
+        string DisplayName,
+        string ClrType,
+        string Table,
+        string[] KeyProperties,
+        (
+            string Name,
+            string Type,
+            bool IsKey,
+            bool IsNullable,
+            bool CanCreate,
+            bool CanUpdate,
+            bool IsLongText)[] Properties) ToEntitySet(
+        string name,
+        IEntityType entityType) =>
+        (
+            Name: name,
+            DisplayName: SplitName(name: name),
+            ClrType: entityType.ClrType.FullName ?? entityType.ClrType.Name,
+            Table: entityType.GetTableName() ?? name,
+            KeyProperties: entityType.FindPrimaryKey()?.Properties
+                .Select(selector: property => property.Name)
+                .ToArray() ?? [],
+            Properties: entityType.GetProperties()
+                .Where(predicate: property => !property.IsShadowProperty())
+                .OrderByDescending(keySelector: property => property.IsPrimaryKey())
+                .ThenBy(keySelector: property => property.Name)
+                .Select(selector: ToProperty)
+                .ToArray());
+
+    private static (
+        string Name,
+        string Type,
+        bool IsKey,
+        bool IsNullable,
+        bool CanCreate,
+        bool CanUpdate,
+        bool IsLongText) ToProperty(IProperty property)
+    {
+        Type type = Nullable.GetUnderlyingType(nullableType: property.ClrType)
+            ?? property.ClrType;
+
+        return (
+            Name: property.Name,
+            Type: type.Name,
+            IsKey: property.IsPrimaryKey(),
+            IsNullable: property.IsNullable
+                || Nullable.GetUnderlyingType(nullableType: property.ClrType) is not null,
+            CanCreate: !property.IsPrimaryKey()
+                || property.ValueGenerated == ValueGenerated.Never,
+            CanUpdate: !property.IsPrimaryKey()
+                && property.GetAfterSaveBehavior() != PropertySaveBehavior.Throw,
+            IsLongText: type == typeof(string)
+                && (property.GetMaxLength() is null
+                    || property.GetMaxLength() > 255));
+    }
+
     private IQueryable CreateQueryable(Type clrType)
     {
         object dbSet = SetMethod
@@ -190,40 +255,6 @@ cancellationToken:            cancellationToken);
 
         return entity
             ?? throw new InvalidOperationException($"{entityType.ClrType.Name} row was not found.");
-    }
-
-    private static DataEntitySet ToEntitySet(string name, IEntityType entityType) =>
-        new()
-        {
-            Name = name,
-            DisplayName = SplitName(name:name),
-            ClrType = entityType.ClrType.FullName ?? entityType.ClrType.Name,
-            Table = entityType.GetTableName() ?? name,
-            KeyProperties = entityType.FindPrimaryKey()?.Properties
-                .Select(selector:property => property.Name)
-                .ToArray() ?? [],
-            Properties = entityType.GetProperties()
-                .Where(property => !property.IsShadowProperty())
-                .OrderByDescending(property => property.IsPrimaryKey())
-                .ThenBy(keySelector:property => property.Name)
-                .Select(selector:ToProperty)
-                .ToArray()
-        };
-
-    private static DataProperty ToProperty(IProperty property)
-    {
-        Type type = Nullable.GetUnderlyingType(nullableType:property.ClrType) ?? property.ClrType;
-
-        return new()
-        {
-            Name = property.Name,
-            Type = type.Name,
-            IsKey = property.IsPrimaryKey(),
-            IsNullable = property.IsNullable || Nullable.GetUnderlyingType(nullableType:property.ClrType) is not null,
-            CanCreate = !property.IsPrimaryKey() || property.ValueGenerated == ValueGenerated.Never,
-            CanUpdate = !property.IsPrimaryKey() && property.GetAfterSaveBehavior() != PropertySaveBehavior.Throw,
-            IsLongText = type == typeof(string) && (property.GetMaxLength() is null || property.GetMaxLength() > 255)
-        };
     }
 
     private static IEnumerable<IProperty> GetWritableProperties(
@@ -383,7 +414,7 @@ elementSelector:                property => ToJsonFriendlyValue(value:property.P
     }
 
     private static string SplitName(string name) =>
-        string.Concat(values:name.Select(selector:(character, index) =>
+        string.Concat(values: name.Select(selector: (character, index) =>
             index > 0 && char.IsUpper(character)
                 ? " " + character
                 : character.ToString()));

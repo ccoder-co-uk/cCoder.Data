@@ -9,7 +9,7 @@
     {
       "Name": "Data.Web.Brokers.DataSetBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 10,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -30,7 +30,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 48,
+          "LineNumber": 62,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -82,7 +82,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
-          "LineNumber": 13,
+          "LineNumber": 12,
           "Inputs": [],
           "ReturnType": "System.String",
           "Implements": [
@@ -112,7 +112,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
-          "LineNumber": 30,
+          "LineNumber": 44,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -164,14 +164,14 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
-          "LineNumber": 16,
+          "LineNumber": 28,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String Name, System.String DisplayName, System.String ClrType, System.String Table, System.String[] KeyProperties, (System.String Name, System.String Type, System.Boolean IsKey, System.Boolean IsNullable, System.Boolean CanCreate, System.Boolean CanUpdate, System.Boolean IsLongText)[] Properties)[]\u003E",
           "Implements": [
             "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)"
           ],
@@ -199,7 +199,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
-          "LineNumber": 19,
+          "LineNumber": 33,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -218,7 +218,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String EntitySet, System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E[] Rows)\u003E",
           "Implements": [
             "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)"
           ],
@@ -252,7 +252,7 @@
         {
           "Id": "Data.Web.Brokers.DataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 39,
+          "LineNumber": 53,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -306,7 +306,7 @@
     {
       "Name": "Data.Web.Brokers.Loggings.LoggingBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -320,6 +320,16 @@
           "Kind": "Interface",
           "IsInCurrentProject": true,
           "StandardElementType": "Broker"
+        },
+        {
+          "Id": "cCoder.CodeAnalysis:cCoder.CodeAnalysis.Exposures.IUtilityBroker",
+          "FullName": "cCoder.CodeAnalysis.Exposures.IUtilityBroker",
+          "Name": "IUtilityBroker",
+          "Namespace": "cCoder.CodeAnalysis.Exposures",
+          "AssemblyName": "cCoder.CodeAnalysis",
+          "Kind": "Interface",
+          "IsInCurrentProject": false,
+          "StandardElementType": "Dependency"
         }
       ],
       "Properties": [],
@@ -327,7 +337,7 @@
         {
           "Id": "Data.Web.Brokers.Loggings.LoggingBroker.LogError(System.Exception,System.String,System.Object[])",
           "Name": "LogError",
-          "LineNumber": 9,
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "exception",
@@ -372,7 +382,7 @@
     {
       "Name": "Data.Web.Dependencies.DataSetDependency",
       "StandardElementType": "Dependency",
-      "LineNumber": 15,
+      "LineNumber": 14,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -393,7 +403,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 107,
+          "LineNumber": 114,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -450,7 +460,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.Dispose()",
           "Name": "Dispose",
-          "LineNumber": 391,
+          "LineNumber": 422,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [
@@ -480,7 +490,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.GetCurrentSsoUserId()",
           "Name": "GetCurrentSsoUserId",
-          "LineNumber": 28,
+          "LineNumber": 27,
           "Inputs": [],
           "ReturnType": "System.String",
           "Implements": [],
@@ -500,7 +510,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
-          "LineNumber": 72,
+          "LineNumber": 79,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -571,14 +581,14 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
-          "LineNumber": 31,
+          "LineNumber": 43,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String Name, System.String DisplayName, System.String ClrType, System.String Table, System.String[] KeyProperties, (System.String Name, System.String Type, System.Boolean IsKey, System.Boolean IsNullable, System.Boolean CanCreate, System.Boolean CanUpdate, System.Boolean IsLongText)[] Properties)[]\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -632,7 +642,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
-          "LineNumber": 43,
+          "LineNumber": 56,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -651,7 +661,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String EntitySet, System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E[] Rows)\u003E",
           "Implements": [],
           "Calls": [
             {
@@ -711,7 +721,7 @@
         {
           "Id": "Data.Web.Dependencies.DataSetDependency.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 91,
+          "LineNumber": 98,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -832,6 +842,7 @@
             "Data.Web.Models.Exceptions.ServiceDependencyException",
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.ArgumentNullException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
@@ -973,6 +984,7 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -1098,6 +1110,7 @@
             "Data.Web.Models.Exceptions.ServiceDependencyException",
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -1213,6 +1226,7 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -1335,6 +1349,7 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -1879,16 +1894,32 @@
               "MethodId": "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "Select",
+              "MethodId": "System.Linq.Enumerable.Select(System.Collections.Generic.IEnumerable\u003CTSource\u003E,System.Func\u003CTSource, TResult\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.ArgumentNullException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceException",
+            "System.ArgumentNullException",
             "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [
@@ -1929,7 +1960,7 @@
         {
           "Id": "Data.Web.Services.Foundations.DataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "AddRowAsync",
-          "LineNumber": 35,
+          "LineNumber": 47,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1962,12 +1993,14 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -1987,7 +2020,7 @@
         {
           "Id": "Data.Web.Services.Foundations.DataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 73,
+          "LineNumber": 85,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2020,12 +2053,14 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -2095,11 +2130,13 @@
             "Data.Web.Models.Exceptions.ServiceDependencyException",
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -2119,7 +2156,7 @@
         {
           "Id": "Data.Web.Services.Foundations.DataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 54,
+          "LineNumber": 66,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2152,12 +2189,14 @@
             "Data.Web.Models.Exceptions.ServiceException",
             "Data.Web.Models.Exceptions.ServiceValidationException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceException",
             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
             "System.InvalidOperationException",
             "System.UnauthorizedAccessException"
           ],
@@ -2191,7 +2230,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 31,
+          "LineNumber": 45,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2244,7 +2283,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.InsertRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "InsertRowAsync",
-          "LineNumber": 21,
+          "LineNumber": 35,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2277,14 +2316,14 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.SelectEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "SelectEntitySetsAsync",
-          "LineNumber": 13,
+          "LineNumber": 26,
           "Inputs": [
             {
               "Name": "cancellationToken",
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataEntitySet[]\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String Name, System.String DisplayName, System.String ClrType, System.String Table, System.String[] KeyProperties, (System.String Name, System.String Type, System.Boolean IsKey, System.Boolean IsNullable, System.Boolean CanCreate, System.Boolean CanUpdate, System.Boolean IsLongText)[] Properties)[]\u003E",
           "Implements": [],
           "Calls": [],
           "PossibleExceptionTypes": [],
@@ -2302,7 +2341,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.SelectRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "SelectRowsAsync",
-          "LineNumber": 15,
+          "LineNumber": 29,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -2321,7 +2360,7 @@
               "Type": "System.Threading.CancellationToken"
             }
           ],
-          "ReturnType": "System.Threading.Tasks.Task\u003CData.Web.Models.DataRows\u003E",
+          "ReturnType": "System.Threading.Tasks.Task\u003C(System.String EntitySet, System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E[] Rows)\u003E",
           "Implements": [],
           "Calls": [],
           "PossibleExceptionTypes": [],
@@ -2339,7 +2378,7 @@
         {
           "Id": "Data.Web.Brokers.IDataSetBroker.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
-          "LineNumber": 26,
+          "LineNumber": 40,
           "Inputs": [
             {
               "Name": "entitySet",
