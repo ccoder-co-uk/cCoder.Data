@@ -41,10 +41,10 @@ jobs:
           "value=$(Get-Date -Format 'yyyy.M.d.HHmm')" >> $env:GITHUB_OUTPUT
 
       - name: Restore
-        run: dotnet restore src/cCoder.Data.slnx
+        run: dotnet restore src/cCoder.Data.slnx --no-http-cache
 
       - name: Build
-        run: dotnet build src/cCoder.Data.slnx -c Release --no-restore -m /p:BuildInParallel=true /p:UseSharedCompilation=true /p:Version="${{ steps.version.outputs.value }}"
+        run: dotnet build src/cCoder.Data.slnx -c Release --no-restore -m:1 -nr:false /p:BuildInParallel=false /p:UseSharedCompilation=false /p:Version="${{ steps.version.outputs.value }}"
 
       - name: Test with coverage
         run: |
