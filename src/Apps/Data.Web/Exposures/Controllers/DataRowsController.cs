@@ -11,7 +11,7 @@ namespace Data.Web.Exposures.Controllers;
 
 [ApiController]
 [Route("Api/Data")]
-public sealed class DataRowsController(IDataRowManager dataRowService,
+public sealed class DataRowsController(IDataRowService dataRowService,
     ILoggingBroker loggingBroker)
     : ControllerBase
 {

@@ -11,7 +11,7 @@ namespace Data.Web.Exposures.Controllers;
 
 [ApiController]
 [Route("Api/Data/EntitySets")]
-public sealed class DataEntitySetsController(IDataEntitySetManager dataEntitySetService,
+public sealed class DataEntitySetsController(IDataEntitySetService dataEntitySetService,
     ILoggingBroker loggingBroker)
     : ControllerBase
 {

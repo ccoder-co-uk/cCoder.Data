@@ -3,9 +3,9 @@
 // ---------------------------------------------------------------
 
 using Data.Web.Brokers.Loggings;
-using Data.Web.Exposures;
 using Data.Web.Exposures.Controllers;
 using Data.Web.Models.Exceptions;
+using Data.Web.Services.Foundations;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +21,7 @@ public sealed partial class DataRowsControllerTests
     {
         // Given
         Dictionary<string, object> values = [];
-        Mock<IDataRowManager> dataRowManager = new();
+        Mock<IDataRowService> dataRowManager = new();
         Mock<ILoggingBroker> loggingBroker = new();
         ServiceValidationException exception = new(innerException: new Exception());
 
@@ -60,7 +60,7 @@ public sealed partial class DataRowsControllerTests
         // Given
         Dictionary<string, object> values = [];
         Dictionary<string, object> savedRow = [];
-        Mock<IDataRowManager> dataRowManager = new();
+        Mock<IDataRowService> dataRowManager = new();
         Mock<ILoggingBroker> loggingBroker = new();
 
         dataRowManager

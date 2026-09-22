@@ -4,8 +4,10 @@
 
 using Data.Web.Models;
 
-using Data.Web.Exposures;
-
 namespace Data.Web.Services.Foundations;
 
-internal interface IDataEntitySetService : IDataEntitySetManager { }
+public interface IDataEntitySetService
+{
+    ValueTask<DataEntitySet[]> GetEntitySetsAsync(
+        CancellationToken cancellationToken);
+}

@@ -810,10 +810,10 @@
               "IsDependencyBoundary": false
             },
             {
-              "TypeName": "Data.Web.Exposures.IDataEntitySetManager",
+              "TypeName": "Data.Web.Services.Foundations.IDataEntitySetService",
               "MethodName": "GetEntitySetsAsync",
-              "MethodId": "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)",
-              "StandardElementType": "Exposure",
+              "MethodId": "Data.Web.Services.Foundations.IDataEntitySetService.GetEntitySetsAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "FoundationService",
               "IsDependencyBoundary": false
             },
             {
@@ -951,10 +951,10 @@
               "IsDependencyBoundary": false
             },
             {
-              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "TypeName": "Data.Web.Services.Foundations.IDataRowService",
               "MethodName": "DeleteRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
-              "StandardElementType": "Exposure",
+              "MethodId": "Data.Web.Services.Foundations.IDataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "FoundationService",
               "IsDependencyBoundary": false
             },
             {
@@ -1078,10 +1078,10 @@
               "IsDependencyBoundary": false
             },
             {
-              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "TypeName": "Data.Web.Services.Foundations.IDataRowService",
               "MethodName": "GetRowsAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
-              "StandardElementType": "Exposure",
+              "MethodId": "Data.Web.Services.Foundations.IDataRowService.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+              "StandardElementType": "FoundationService",
               "IsDependencyBoundary": false
             },
             {
@@ -1200,10 +1200,10 @@
               "IsDependencyBoundary": false
             },
             {
-              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "TypeName": "Data.Web.Services.Foundations.IDataRowService",
               "MethodName": "AddRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
-              "StandardElementType": "Exposure",
+              "MethodId": "Data.Web.Services.Foundations.IDataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "FoundationService",
               "IsDependencyBoundary": false
             },
             {
@@ -1316,10 +1316,10 @@
               "IsDependencyBoundary": false
             },
             {
-              "TypeName": "Data.Web.Exposures.IDataRowManager",
+              "TypeName": "Data.Web.Services.Foundations.IDataRowService",
               "MethodName": "UpdateRowAsync",
-              "MethodId": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
-              "StandardElementType": "Exposure",
+              "MethodId": "Data.Web.Services.Foundations.IDataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+              "StandardElementType": "FoundationService",
               "IsDependencyBoundary": false
             },
             {
@@ -1415,7 +1415,7 @@
     {
       "Name": "Data.Web.IServiceCollectionExtensions",
       "StandardElementType": "App",
-      "LineNumber": 16,
+      "LineNumber": 15,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -1425,7 +1425,7 @@
         {
           "Id": "Data.Web.IServiceCollectionExtensions.AddWeb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action\u003CData.Web.Models.AppConfiguration\u003E)",
           "Name": "AddWeb",
-          "LineNumber": 18,
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "services",
@@ -1885,7 +1885,7 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataEntitySet[]\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)"
+            "Data.Web.Services.Foundations.IDataEntitySetService.GetEntitySetsAsync(System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
@@ -1977,7 +1977,7 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Services.Foundations.IDataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
@@ -2037,7 +2037,7 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Services.Foundations.IDataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
@@ -2101,7 +2101,7 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CData.Web.Models.DataRows\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)"
+            "Data.Web.Services.Foundations.IDataRowService.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
@@ -2173,7 +2173,7 @@
           ],
           "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E\u003E",
           "Implements": [
-            "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
+            "Data.Web.Services.Foundations.IDataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)"
           ],
           "Calls": [
             {
@@ -2456,8 +2456,8 @@
       ]
     },
     {
-      "Name": "Data.Web.Exposures.IDataEntitySetManager",
-      "StandardElementType": "Exposure",
+      "Name": "Data.Web.Services.Foundations.IDataEntitySetService",
+      "StandardElementType": "FoundationService",
       "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Interface",
@@ -2466,7 +2466,7 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Exposures.IDataEntitySetManager.GetEntitySetsAsync(System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.IDataEntitySetService.GetEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "GetEntitySetsAsync",
           "LineNumber": 11,
           "Inputs": [
@@ -2493,8 +2493,8 @@
       ]
     },
     {
-      "Name": "Data.Web.Exposures.IDataRowManager",
-      "StandardElementType": "Exposure",
+      "Name": "Data.Web.Services.Foundations.IDataRowService",
+      "StandardElementType": "FoundationService",
       "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Interface",
@@ -2503,7 +2503,7 @@
       "Properties": [],
       "Methods": [
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.IDataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "AddRowAsync",
           "LineNumber": 17,
           "Inputs": [
@@ -2536,7 +2536,7 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.IDataRowService.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
           "LineNumber": 27,
           "Inputs": [
@@ -2569,7 +2569,7 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.IDataRowService.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
           "LineNumber": 11,
           "Inputs": [
@@ -2606,7 +2606,7 @@
           "HasTryCatch": false
         },
         {
-          "Id": "Data.Web.Exposures.IDataRowManager.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
+          "Id": "Data.Web.Services.Foundations.IDataRowService.UpdateRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "UpdateRowAsync",
           "LineNumber": 22,
           "Inputs": [
@@ -2639,50 +2639,6 @@
           "HasTryCatch": false
         }
       ]
-    },
-    {
-      "Name": "Data.Web.Services.Foundations.IDataEntitySetService",
-      "StandardElementType": "FoundationService",
-      "LineNumber": 11,
-      "IsPublic": false,
-      "Kind": "Interface",
-      "BaseType": null,
-      "Interfaces": [
-        {
-          "Id": "Data.Web:Data.Web.Exposures.IDataEntitySetManager",
-          "FullName": "Data.Web.Exposures.IDataEntitySetManager",
-          "Name": "IDataEntitySetManager",
-          "Namespace": "Data.Web.Exposures",
-          "AssemblyName": "Data.Web",
-          "Kind": "Interface",
-          "IsInCurrentProject": true,
-          "StandardElementType": "Exposure"
-        }
-      ],
-      "Properties": [],
-      "Methods": []
-    },
-    {
-      "Name": "Data.Web.Services.Foundations.IDataRowService",
-      "StandardElementType": "FoundationService",
-      "LineNumber": 10,
-      "IsPublic": false,
-      "Kind": "Interface",
-      "BaseType": null,
-      "Interfaces": [
-        {
-          "Id": "Data.Web:Data.Web.Exposures.IDataRowManager",
-          "FullName": "Data.Web.Exposures.IDataRowManager",
-          "Name": "IDataRowManager",
-          "Namespace": "Data.Web.Exposures",
-          "AssemblyName": "Data.Web",
-          "Kind": "Interface",
-          "IsInCurrentProject": true,
-          "StandardElementType": "Exposure"
-        }
-      ],
-      "Properties": [],
-      "Methods": []
     }
   ],
   "Links": [
