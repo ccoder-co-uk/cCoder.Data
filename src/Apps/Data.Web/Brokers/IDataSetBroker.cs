@@ -10,9 +10,23 @@ internal interface IDataSetBroker
 {
     string GetCurrentSsoUserId();
 
-    Task<DataEntitySet[]> SelectEntitySetsAsync(CancellationToken cancellationToken);
+    Task<(
+        string Name,
+        string DisplayName,
+        string ClrType,
+        string Table,
+        string[] KeyProperties,
+        (
+            string Name,
+            string Type,
+            bool IsKey,
+            bool IsNullable,
+            bool CanCreate,
+            bool CanUpdate,
+            bool IsLongText)[] Properties)[]> SelectEntitySetsAsync(
+        CancellationToken cancellationToken);
 
-    Task<DataRows> SelectRowsAsync(
+    Task<(string EntitySet, Dictionary<string, object>[] Rows)> SelectRowsAsync(
         string entitySet,
         int skip,
         int take,

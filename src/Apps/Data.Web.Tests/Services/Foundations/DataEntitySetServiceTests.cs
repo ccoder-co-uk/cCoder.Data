@@ -18,7 +18,19 @@ public sealed partial class DataEntitySetServiceTests
     public async Task ShouldReturnEntitySetsForAuthenticatedUser()
     {
         // Given
-        DataEntitySet[] expected = [new() { Name = "Customers" }];
+        DataEntitySet[] expected =
+        [
+            new()
+            {
+                Name = "Customers",
+                DisplayName = "Customers",
+                ClrType = typeof(object).FullName,
+                Table = "Customers",
+                KeyProperties = [],
+                Properties = []
+            }
+        ];
+
         Mock<IDataSetBroker> broker = new();
 
         broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
@@ -26,7 +38,16 @@ public sealed partial class DataEntitySetServiceTests
 
         broker.Setup(expression: broker => broker.SelectEntitySetsAsync(
                 cancellationToken: CancellationToken.None))
-            .ReturnsAsync(value: expected);
+            .ReturnsAsync(value:
+            [
+                (
+                    Name: "Customers",
+                    DisplayName: "Customers",
+                    ClrType: typeof(object).FullName,
+                    Table: "Customers",
+                    KeyProperties: [],
+                    Properties: [])
+            ]);
 
         DataEntitySetService service = new(dataSetBroker: broker.Object);
 
@@ -36,7 +57,7 @@ public sealed partial class DataEntitySetServiceTests
 
         // Then
         actual.Should()
-            .BeSameAs(expected: expected);
+            .BeEquivalentTo(expectation: expected);
     }
 
     [Theory]

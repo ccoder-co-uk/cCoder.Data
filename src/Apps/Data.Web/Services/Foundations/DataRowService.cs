@@ -25,11 +25,23 @@ internal sealed partial class DataRowService(IDataSetBroker dataSetBroker)
 
             ValidateAuthentication();
 
-            return await dataSetBroker.SelectRowsAsync(
+            int actualSkip = Math.Max(val1: skip, val2: 0);
+            int actualTake = Math.Clamp(value: take, min: 1, max: 500);
+
+            (string EntitySet, Dictionary<string, object>[] Rows) result =
+                await dataSetBroker.SelectRowsAsync(
                 entitySet: entitySet,
-                skip: Math.Max(val1: skip, val2: 0),
-                take: Math.Clamp(value: take, min: 1, max: 500),
+                skip: actualSkip,
+                take: actualTake,
                 cancellationToken: cancellationToken);
+
+            return new DataRows
+            {
+                EntitySet = result.EntitySet,
+                Skip = actualSkip,
+                Take = actualTake,
+                Rows = result.Rows
+            };
         });
 
     public ValueTask<Dictionary<string, object>> AddRowAsync(

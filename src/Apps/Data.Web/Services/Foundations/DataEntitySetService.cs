@@ -17,8 +17,29 @@ internal sealed partial class DataEntitySetService(IDataSetBroker dataSetBroker)
             ValidateEntitySetsOnGet(cancellationToken: cancellationToken);
             ValidateAuthentication();
 
-            return await dataSetBroker.SelectEntitySetsAsync(
-                cancellationToken: cancellationToken);
+            return (await dataSetBroker.SelectEntitySetsAsync(
+                    cancellationToken: cancellationToken))
+                .Select(selector: item => new DataEntitySet
+                {
+                    Name = item.Name,
+                    DisplayName = item.DisplayName,
+                    ClrType = item.ClrType,
+                    Table = item.Table,
+                    KeyProperties = item.KeyProperties,
+                    Properties = item.Properties
+                        .Select(selector: property => new DataProperty
+                        {
+                            Name = property.Name,
+                            Type = property.Type,
+                            IsKey = property.IsKey,
+                            IsNullable = property.IsNullable,
+                            CanCreate = property.CanCreate,
+                            CanUpdate = property.CanUpdate,
+                            IsLongText = property.IsLongText
+                        })
+                        .ToArray()
+                })
+                .ToArray();
         });
 
     private void ValidateAuthentication()

@@ -2124,6 +2124,7 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
@@ -2170,6 +2171,7 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
@@ -2216,6 +2218,7 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
@@ -2304,6 +2307,7 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
@@ -5755,12 +5759,14 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
             "cCoder.Data.Models.Exceptions.ServiceValidationException"
           ],
           "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceException"
           ],
@@ -5801,12 +5807,14 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
             "cCoder.Data.Models.Exceptions.ServiceValidationException"
           ],
           "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceException"
           ],
@@ -5847,12 +5855,14 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
             "cCoder.Data.Models.Exceptions.ServiceValidationException"
           ],
           "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceException"
           ],
@@ -5942,12 +5952,14 @@
             }
           ],
           "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceDependencyException",
             "cCoder.Data.Models.Exceptions.ServiceException",
             "cCoder.Data.Models.Exceptions.ServiceValidationException"
           ],
           "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
             "System.ComponentModel.DataAnnotations.ValidationException",
             "cCoder.Data.Models.Exceptions.ServiceException"
           ],

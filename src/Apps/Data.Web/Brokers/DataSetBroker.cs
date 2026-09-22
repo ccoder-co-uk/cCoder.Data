@@ -3,7 +3,6 @@
 // ---------------------------------------------------------------
 
 using Data.Web.Dependencies;
-using Data.Web.Models;
 
 namespace Data.Web.Brokers;
 
@@ -13,10 +12,25 @@ internal sealed class DataSetBroker(DataSetDependency dataSetDependency)
     public string GetCurrentSsoUserId() =>
         dataSetDependency.GetCurrentSsoUserId();
 
-    public Task<DataEntitySet[]> SelectEntitySetsAsync(CancellationToken cancellationToken) =>
-        dataSetDependency.SelectEntitySetsAsync(cancellationToken: cancellationToken);
+    public Task<(
+        string Name,
+        string DisplayName,
+        string ClrType,
+        string Table,
+        string[] KeyProperties,
+        (
+            string Name,
+            string Type,
+            bool IsKey,
+            bool IsNullable,
+            bool CanCreate,
+            bool CanUpdate,
+            bool IsLongText)[] Properties)[]> SelectEntitySetsAsync(
+        CancellationToken cancellationToken) =>
+        dataSetDependency.SelectEntitySetsAsync(
+            cancellationToken: cancellationToken);
 
-    public Task<DataRows> SelectRowsAsync(
+    public Task<(string EntitySet, Dictionary<string, object>[] Rows)> SelectRowsAsync(
         string entitySet,
         int skip,
         int take,
