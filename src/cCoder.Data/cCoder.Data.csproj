@@ -37,11 +37,11 @@
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.27.1158" PrivateAssets="all">
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.27.1258" PrivateAssets="all">
       <IncludeAssets>build;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="cCoder.Eventing" Version="2026.9.23.1651" Condition="'$(UseLocalEventing)' != 'true'" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.9.23.2254" Condition="'$(UseLocalSecurityData)' != 'true'" />
+    <PackageReference Include="cCoder.Eventing" Version="2026.9.27.1313" Condition="'$(UseLocalEventing)' != 'true'" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.9.27.1325" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.11" />
