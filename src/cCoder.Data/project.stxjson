@@ -1087,6 +1087,78 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Brokers.Caching.CommonObjectCacheBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker",
+          "FullName": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker",
+          "Name": "ICommonObjectCacheBroker",
+          "Namespace": "cCoder.Data.Brokers.Caching",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Broker"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Brokers.Caching.CommonObjectCacheBroker.GetCommonObjects()",
+          "Name": "GetCommonObjects",
+          "LineNumber": 14,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.GetCommonObjects()"
+          ],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.CommonObjectCacheBroker.SetCommonObjects(cCoder.Data.Models.CommonObject[])",
+          "Name": "SetCommonObjects",
+          "LineNumber": 22,
+          "Inputs": [
+            {
+              "Name": "commonObjects",
+              "Type": "cCoder.Data.Models.CommonObject[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.SetCommonObjects(cCoder.Data.Models.CommonObject[])"
+          ],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker",
       "StandardElementType": "Broker",
       "LineNumber": 9,
@@ -1665,6 +1737,312 @@
       ]
     },
     {
+      "Name": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+          "FullName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+          "Name": "ICommonObjectStorageBroker",
+          "Namespace": "cCoder.Data.Brokers.Storages",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Broker"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 41,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E",
+              "MethodName": "AddAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E.AddAsync(TEntity,System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 69,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E",
+              "MethodName": "Remove",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E.Remove(TEntity)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetAllCommonObjects()",
+          "Name": "GetAllCommonObjects",
+          "LineNumber": 14,
+          "Inputs": [],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjects()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()",
+          "Name": "GetAllCommonObjectsIgnoringFilters",
+          "LineNumber": 22,
+          "Inputs": [],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
+              "MethodName": "IgnoreQueryFilters",
+              "MethodId": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.IgnoreQueryFilters(System.Linq.IQueryable\u003CTEntity\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetCommonObjectSnapshot()",
+          "Name": "GetCommonObjectSnapshot",
+          "LineNumber": 30,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
+              "MethodName": "AsNoTracking",
+              "MethodId": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AsNoTracking(System.Linq.IQueryable\u003CTEntity\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
+              "MethodName": "IgnoreQueryFilters",
+              "MethodId": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.IgnoreQueryFilters(System.Linq.IQueryable\u003CTEntity\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "System.Linq.Enumerable",
+              "MethodName": "ToArray",
+              "MethodId": "System.Linq.Enumerable.ToArray(System.Collections.Generic.IEnumerable\u003CTSource\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 55,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbContext",
+              "MethodName": "SaveChangesAsync",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E",
+              "MethodName": "Update",
+              "MethodId": "Microsoft.EntityFrameworkCore.DbSet\u003CTEntity\u003E.Update(TEntity)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.ICoreContextFactory",
+              "MethodName": "CreateCoreContext",
+              "MethodId": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
+              "StandardElementType": "Unknown",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "ThrowsExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.CoreAuthInfo",
       "StandardElementType": "Model",
       "LineNumber": 7,
@@ -2078,6 +2456,296 @@
         }
       ],
       "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Exposures.CommonObjectCacheManager",
+      "StandardElementType": "Exposure",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Exposures.ICommonObjectCacheManager",
+          "FullName": "cCoder.Data.Exposures.ICommonObjectCacheManager",
+          "Name": "ICommonObjectCacheManager",
+          "Namespace": "cCoder.Data.Exposures",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "Exposure"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.AddAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddAsync",
+          "LineNumber": 21,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.AddAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "AddCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.DeleteAllAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
+          "Name": "DeleteAllAsync",
+          "LineNumber": 36,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObjects",
+              "Type": "System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAllAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "DeleteAllCommonObjectsAsync",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.DeleteAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteAsync",
+          "LineNumber": 31,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "DeleteCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.Get(System.Boolean,System.Boolean)",
+          "Name": "Get",
+          "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "fromCache",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.Get(System.Boolean,System.Boolean)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "GetCommonObjects",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.Refresh()",
+          "Name": "Refresh",
+          "LineNumber": 41,
+          "Inputs": [],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.Refresh()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "RefreshCommonObjects",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.RefreshCommonObjects()",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.UpdateAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateAsync",
+          "LineNumber": 26,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Exposures.ICommonObjectCacheManager.UpdateAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+              "MethodName": "UpdateCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "OrchestrationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
     },
     {
       "Name": "cCoder.Data.Exposures.MetadataTypeCache",
@@ -3092,7 +3760,7 @@
     {
       "Name": "cCoder.Data.IServiceCollectionExtensions",
       "StandardElementType": "App",
-      "LineNumber": 17,
+      "LineNumber": 19,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -3102,7 +3770,7 @@
         {
           "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E)",
           "Name": "AddData",
-          "LineNumber": 19,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "services",
@@ -3146,7 +3814,7 @@
         {
           "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Data.Models.DataConfiguration)",
           "Name": "AddData",
-          "LineNumber": 28,
+          "LineNumber": 30,
           "Inputs": [
             {
               "Name": "services",
@@ -5715,6 +6383,369 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Services.Foundations.CommonObjectCacheService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Services.Foundations.ICommonObjectCacheService",
+          "FullName": "cCoder.Data.Services.Foundations.ICommonObjectCacheService",
+          "Name": "ICommonObjectCacheService",
+          "Namespace": "cCoder.Data.Services.Foundations",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "FoundationService"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectCacheService.GetCommonObjects()",
+          "Name": "GetCommonObjects",
+          "LineNumber": 14,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectCacheService.GetCommonObjects()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker",
+              "MethodName": "GetCommonObjects",
+              "MethodId": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.GetCommonObjects()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectCacheService.SetCommonObjects(cCoder.Data.Models.CommonObject[])",
+          "Name": "SetCommonObjects",
+          "LineNumber": 20,
+          "Inputs": [
+            {
+              "Name": "commonObjects",
+              "Type": "cCoder.Data.Models.CommonObject[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectCacheService.SetCommonObjects(cCoder.Data.Models.CommonObject[])"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker",
+              "MethodName": "SetCommonObjects",
+              "MethodId": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.SetCommonObjects(cCoder.Data.Models.CommonObject[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Foundations.CommonObjectStorageService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+          "FullName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+          "Name": "ICommonObjectStorageService",
+          "Namespace": "cCoder.Data.Services.Foundations",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "FoundationService"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 31,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "AddCommonObjectAsync",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 55,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "DeleteCommonObjectAsync",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjectSnapshot()",
+          "Name": "GetCommonObjectSnapshot",
+          "LineNumber": 25,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectSnapshot()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "GetCommonObjectSnapshot",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjects(System.Boolean)",
+          "Name": "GetCommonObjects",
+          "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "GetAllCommonObjects",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjects()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "GetAllCommonObjectsIgnoringFilters",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 41,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "UpdateCommonObjectAsync",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
       "StandardElementType": "FoundationService",
       "LineNumber": 10,
@@ -5977,9 +7008,372 @@
           "HasTryCatch": false
         }
       ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService",
+      "StandardElementType": "OrchestrationService",
+      "LineNumber": 10,
+      "IsPublic": false,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [
+        {
+          "Id": "cCoder.Data:cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+          "FullName": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+          "Name": "ICommonObjectCacheOrchestrationService",
+          "Namespace": "cCoder.Data.Services.Orchestrations",
+          "AssemblyName": "cCoder.Data",
+          "Kind": "Interface",
+          "IsInCurrentProject": true,
+          "StandardElementType": "OrchestrationService"
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 41,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+              "MethodName": "AddCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
+          "Name": "DeleteAllCommonObjectsAsync",
+          "LineNumber": 83,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObjects",
+              "Type": "System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+              "MethodName": "DeleteCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 69,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+              "MethodName": "DeleteCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)",
+          "Name": "GetCommonObjects",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "fromCache",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "System.Linq.Queryable",
+              "MethodName": "AsQueryable",
+              "MethodId": "System.Linq.Queryable.AsQueryable(System.Collections.Generic.IEnumerable\u003CTElement\u003E)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectCacheService",
+              "MethodName": "GetCommonObjects",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectCacheService.GetCommonObjects()",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+              "MethodName": "GetCommonObjects",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.RefreshCommonObjects()",
+          "Name": "RefreshCommonObjects",
+          "LineNumber": 98,
+          "Inputs": [],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.RefreshCommonObjects()"
+          ],
+          "Calls": [],
+          "PossibleExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 55,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [
+            "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+              "MethodName": "UpdateCommonObjectAsync",
+              "MethodId": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+              "StandardElementType": "FoundationService",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
+            "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
     }
   ],
   "Interfaces": [
+    {
+      "Name": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.GetCommonObjects()",
+          "Name": "GetCommonObjects",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Caching.ICommonObjectCacheBroker.SetCommonObjects(cCoder.Data.Models.CommonObject[])",
+          "Name": "SetCommonObjects",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "commonObjects",
+              "Type": "cCoder.Data.Models.CommonObject[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
     {
       "Name": "cCoder.Data.Brokers.Caching.IMetadataTypeCacheBroker",
       "StandardElementType": "Broker",
@@ -6356,6 +7750,314 @@
       ]
     },
     {
+      "Name": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+      "StandardElementType": "Broker",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 17,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 21,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjects()",
+          "Name": "GetAllCommonObjects",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()",
+          "Name": "GetAllCommonObjectsIgnoringFilters",
+          "LineNumber": 13,
+          "Inputs": [],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()",
+          "Name": "GetCommonObjectSnapshot",
+          "LineNumber": 15,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 19,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Exposures.ICommonObjectCacheManager",
+      "StandardElementType": "Exposure",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.AddAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddAsync",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAllAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
+          "Name": "DeleteAllAsync",
+          "LineNumber": 21,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObjects",
+              "Type": "System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteAsync",
+          "LineNumber": 19,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.Get(System.Boolean,System.Boolean)",
+          "Name": "Get",
+          "LineNumber": 11,
+          "Inputs": [
+            {
+              "Name": "fromCache",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.Refresh()",
+          "Name": "Refresh",
+          "LineNumber": 23,
+          "Inputs": [],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.UpdateAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateAsync",
+          "LineNumber": 17,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.Exposures.IMetadataTypeCache",
       "StandardElementType": "Exposure",
       "LineNumber": 7,
@@ -6586,6 +8288,195 @@
       ]
     },
     {
+      "Name": "cCoder.Data.Services.Foundations.ICommonObjectCacheService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectCacheService.GetCommonObjects()",
+          "Name": "GetCommonObjects",
+          "LineNumber": 11,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectCacheService.SetCommonObjects(cCoder.Data.Models.CommonObject[])",
+          "Name": "SetCommonObjects",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "commonObjects",
+              "Type": "cCoder.Data.Models.CommonObject[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
+      "StandardElementType": "FoundationService",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 19,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectSnapshot()",
+          "Name": "GetCommonObjectSnapshot",
+          "LineNumber": 13,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)",
+          "Name": "GetCommonObjects",
+          "LineNumber": 11,
+          "Inputs": [
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 17,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
       "Name": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
       "StandardElementType": "FoundationService",
       "LineNumber": 7,
@@ -6720,9 +8611,174 @@
           "HasTryCatch": false
         }
       ]
+    },
+    {
+      "Name": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
+      "StandardElementType": "OrchestrationService",
+      "LineNumber": 9,
+      "IsPublic": false,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "AddCommonObjectAsync",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "newCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
+          "Name": "DeleteAllCommonObjectsAsync",
+          "LineNumber": 21,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObjects",
+              "Type": "System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "DeleteCommonObjectAsync",
+          "LineNumber": 19,
+          "Inputs": [
+            {
+              "Name": "deletedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CSystem.Int32\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)",
+          "Name": "GetCommonObjects",
+          "LineNumber": 11,
+          "Inputs": [
+            {
+              "Name": "fromCache",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.RefreshCommonObjects()",
+          "Name": "RefreshCommonObjects",
+          "LineNumber": 23,
+          "Inputs": [],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
+          "Name": "UpdateCommonObjectAsync",
+          "LineNumber": 17,
+          "Inputs": [
+            {
+              "Name": "updatedCommonObject",
+              "Type": "cCoder.Data.Models.CommonObject"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
     }
   ],
   "Links": [
+    {
+      "FromType": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker",
+      "ToType": "cCoder.Data.CoreContextFactory"
+    },
     {
       "FromType": "cCoder.Data.CoreContextFactory",
       "ToType": "System.IServiceProvider"
@@ -6738,6 +8794,10 @@
     {
       "FromType": "cCoder.Data.CoreDataContext",
       "ToType": "cCoder.Data.Models.DataConfiguration"
+    },
+    {
+      "FromType": "cCoder.Data.Exposures.CommonObjectCacheManager",
+      "ToType": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService"
     },
     {
       "FromType": "cCoder.Data.Exposures.MetadataTypeCache",
@@ -6760,8 +8820,24 @@
       "ToType": "System.Exception"
     },
     {
+      "FromType": "cCoder.Data.Services.Foundations.CommonObjectCacheService",
+      "ToType": "cCoder.Data.Brokers.Caching.CommonObjectCacheBroker"
+    },
+    {
+      "FromType": "cCoder.Data.Services.Foundations.CommonObjectStorageService",
+      "ToType": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker"
+    },
+    {
       "FromType": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
       "ToType": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker"
+    },
+    {
+      "FromType": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService",
+      "ToType": "cCoder.Data.Services.Foundations.CommonObjectCacheService"
+    },
+    {
+      "FromType": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService",
+      "ToType": "cCoder.Data.Services.Foundations.CommonObjectStorageService"
     }
   ],
   "AnalysisItems": []
