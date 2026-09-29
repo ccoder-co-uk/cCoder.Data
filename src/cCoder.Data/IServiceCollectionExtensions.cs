@@ -3,9 +3,11 @@
 // ---------------------------------------------------------------
 
 using cCoder.Data.Brokers.Caching;
+using cCoder.Data.Brokers.Storages;
 using cCoder.Data.Exposures;
 using cCoder.Data.Models;
 using cCoder.Data.Services.Foundations;
+using cCoder.Data.Services.Orchestrations;
 using cCoder.Eventing.Models;
 using cCoder.Security.Models.Configurations;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +35,7 @@ public static class IServiceCollectionExtensions
         services.AddDependencies(configuration);
         services.AddBrokers();
         services.AddFoundations();
+        services.AddOrchestrations();
         services.AddExposures();
     }
 
@@ -56,13 +59,31 @@ public static class IServiceCollectionExtensions
         }
     }
 
-    private static void AddBrokers(this IServiceCollection services) =>
+    private static void AddBrokers(this IServiceCollection services)
+    {
+        services.TryAddSingleton<
+            ICommonObjectCacheBroker,
+            CommonObjectCacheBroker>();
+
+        services.TryAddScoped<
+            ICommonObjectStorageBroker,
+            CommonObjectStorageBroker>();
+
         services.TryAddSingleton<
             IMetadataTypeCacheBroker,
             MetadataTypeCacheBroker>();
+    }
 
     private static void AddFoundations(this IServiceCollection services)
     {
+        services.TryAddSingleton<
+            ICommonObjectCacheService,
+            CommonObjectCacheService>();
+
+        services.TryAddScoped<
+            ICommonObjectStorageService,
+            CommonObjectStorageService>();
+
         services.TryAddSingleton<
             IMetadataTypeCacheService,
             MetadataTypeCacheService>();
@@ -92,6 +113,17 @@ public static class IServiceCollectionExtensions
                 }));
     }
 
-    private static void AddExposures(this IServiceCollection services) =>
+    private static void AddExposures(this IServiceCollection services)
+    {
+        services.TryAddScoped<
+            ICommonObjectCacheManager,
+            CommonObjectCacheManager>();
+
         services.TryAddSingleton<IMetadataTypeCache, MetadataTypeCache>();
+    }
+
+    private static void AddOrchestrations(this IServiceCollection services) =>
+        services.TryAddScoped<
+            ICommonObjectCacheOrchestrationService,
+            CommonObjectCacheOrchestrationService>();
 }
