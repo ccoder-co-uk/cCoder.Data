@@ -2,7 +2,10 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Net.Http;
+using System.Threading.Tasks;
 using FluentAssertions;
+using Xunit;
 
 namespace Data.Web.AcceptanceTests.Tests.Api;
 

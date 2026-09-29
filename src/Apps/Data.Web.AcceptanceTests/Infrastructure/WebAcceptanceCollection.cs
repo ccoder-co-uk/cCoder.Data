@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using Xunit;
+
 namespace Data.Web.AcceptanceTests.Infrastructure;
 
 [CollectionDefinition(Name)]

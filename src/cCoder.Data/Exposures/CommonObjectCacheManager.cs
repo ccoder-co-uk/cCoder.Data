@@ -2,6 +2,9 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 using cCoder.Data.Models;
 using cCoder.Data.Services.Orchestrations;
 

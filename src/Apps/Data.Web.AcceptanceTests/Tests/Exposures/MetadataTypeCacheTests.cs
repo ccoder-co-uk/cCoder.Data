@@ -2,12 +2,13 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Collections.Generic;
 using cCoder.Data.Exposures;
 using cCoder.Data.Services.Foundations;
 using FluentAssertions;
 using Xunit;
 
-namespace cCoder.Data.Tests.Exposures;
+namespace Data.Web.AcceptanceTests.Tests.Exposures;
 
 public sealed partial class MetadataTypeCacheTests
 {

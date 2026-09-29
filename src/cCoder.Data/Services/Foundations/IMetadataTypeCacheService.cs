@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Collections.Generic;
+
 namespace cCoder.Data.Services.Foundations;
 
 internal interface IMetadataTypeCacheService

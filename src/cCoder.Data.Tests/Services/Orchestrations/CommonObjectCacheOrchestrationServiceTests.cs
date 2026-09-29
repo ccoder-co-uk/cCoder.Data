@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Linq;
+using System.Threading.Tasks;
 using cCoder.Data.Models;
 using cCoder.Data.Services.Orchestrations;
 using cCoder.Data.Services.Foundations;
