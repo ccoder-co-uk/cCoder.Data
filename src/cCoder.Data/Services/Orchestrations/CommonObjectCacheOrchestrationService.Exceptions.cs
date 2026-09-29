@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Threading.Tasks;
+using System;
 using cCoder.Data.Models.Exceptions;
 using System.ComponentModel.DataAnnotations;
 

@@ -2,6 +2,9 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System;
+using System.Net.Http;
+
 namespace Data.Web.AcceptanceTests.Infrastructure;
 
 public sealed class WebAcceptanceFixture : IDisposable

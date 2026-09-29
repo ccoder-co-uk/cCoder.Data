@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System;
+
 namespace Data.Web.Brokers.Loggings;
 
 public interface ILoggingBroker

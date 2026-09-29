@@ -2,6 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Linq;
 using cCoder.Data.Models;
 using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;

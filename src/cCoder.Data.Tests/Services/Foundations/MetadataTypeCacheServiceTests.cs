@@ -2,7 +2,9 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using cCoder.Data.Brokers.Caching;
 using cCoder.Data.Services.Foundations;
 using FluentAssertions;

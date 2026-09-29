@@ -2,9 +2,10 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Linq;
+using System.Reflection;
 using cCoder.Data.Extensions;
 using FluentAssertions;
-using System.Reflection;
 using Xunit;
 
 namespace cCoder.Data.Tests.Extensions;

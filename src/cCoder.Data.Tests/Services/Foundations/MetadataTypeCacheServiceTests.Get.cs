@@ -2,6 +2,7 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System;
 using System.ComponentModel.DataAnnotations;
 using cCoder.Data.Models.Exceptions;
 using cCoder.Data.Services.Foundations;

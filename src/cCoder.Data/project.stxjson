@@ -29,7 +29,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddAuditFields",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -49,7 +49,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddBackgroundJobs",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -69,7 +69,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddBaseEntityProperties",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -89,7 +89,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddCommonObjectTable",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -169,7 +169,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddDeletedOnToFilesTable",
       "StandardElementType": "Dependency",
-      "LineNumber": 12,
+      "LineNumber": 13,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -189,7 +189,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddDeletedOnToFoldersTable",
       "StandardElementType": "Dependency",
-      "LineNumber": 12,
+      "LineNumber": 13,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -229,7 +229,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddDurationInTicks",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -309,7 +309,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddFlowInstances",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -589,7 +589,7 @@
     {
       "Name": "cCoder.Core.Migrations.AddUserInfoToBPAndWFTypes",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -609,7 +609,7 @@
     {
       "Name": "cCoder.Core.Migrations.ChangeScheduleTypeName",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -629,7 +629,7 @@
     {
       "Name": "cCoder.Core.Migrations.DestroyFlowInstances",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -649,7 +649,7 @@
     {
       "Name": "cCoder.Core.Migrations.DropProcessesAndBackgroundJobs",
       "StandardElementType": "Dependency",
-      "LineNumber": 13,
+      "LineNumber": 14,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -689,7 +689,7 @@
     {
       "Name": "cCoder.Core.Migrations.Initial",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -749,7 +749,7 @@
     {
       "Name": "cCoder.Core.Migrations.MakeInstanceEndTimesNullable",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -829,7 +829,7 @@
     {
       "Name": "cCoder.Core.Migrations.RemoveProcessFromEvents",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -929,7 +929,7 @@
     {
       "Name": "cCoder.Core.Migrations.RetireGenericAuditing",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -949,7 +949,7 @@
     {
       "Name": "cCoder.Core.Migrations.ScheduledTasksReWork",
       "StandardElementType": "Dependency",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -969,7 +969,7 @@
     {
       "Name": "cCoder.Core.Migrations.SimplifyFormsAndSubmissions",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -989,7 +989,7 @@
     {
       "Name": "cCoder.Core.Migrations.UpdateBPtoWFKey",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -1069,7 +1069,7 @@
     {
       "Name": "cCoder.Core.Migrations.VariousNewFields",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -1161,7 +1161,7 @@
     {
       "Name": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 9,
+      "LineNumber": 12,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -1182,7 +1182,7 @@
         {
           "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 31,
+          "LineNumber": 34,
           "Inputs": [
             {
               "Name": "scope",
@@ -1217,7 +1217,7 @@
         {
           "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 28,
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "scope",
@@ -1252,7 +1252,7 @@
         {
           "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Get(System.String)",
           "Name": "Get",
-          "LineNumber": 18,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "scope",
@@ -1287,7 +1287,7 @@
         {
           "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.GetAll()",
           "Name": "GetAll",
-          "LineNumber": 23,
+          "LineNumber": 26,
           "Inputs": [],
           "ReturnType": "System.String[]",
           "Implements": [
@@ -1324,7 +1324,7 @@
         {
           "Id": "cCoder.Data.Brokers.Caching.MetadataTypeCacheBroker.Set(System.String,System.String[])",
           "Name": "Set",
-          "LineNumber": 15,
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "scope",
@@ -1739,7 +1739,7 @@
     {
       "Name": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -1760,7 +1760,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 41,
+          "LineNumber": 43,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -1815,7 +1815,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 69,
+          "LineNumber": 71,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -1870,7 +1870,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetAllCommonObjects()",
           "Name": "GetAllCommonObjects",
-          "LineNumber": 14,
+          "LineNumber": 16,
           "Inputs": [],
           "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
           "Implements": [
@@ -1900,7 +1900,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()",
           "Name": "GetAllCommonObjectsIgnoringFilters",
-          "LineNumber": 22,
+          "LineNumber": 24,
           "Inputs": [],
           "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
           "Implements": [
@@ -1937,7 +1937,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetCommonObjectSnapshot()",
           "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 30,
+          "LineNumber": 32,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [
@@ -1988,7 +1988,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 55,
+          "LineNumber": 57,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -2072,7 +2072,7 @@
     {
       "Name": "cCoder.Data.CoreContextFactory",
       "StandardElementType": "Dependency",
-      "LineNumber": 19,
+      "LineNumber": 20,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -2103,7 +2103,7 @@
         {
           "Id": "cCoder.Data.CoreContextFactory.CreateCoreContext()",
           "Name": "CreateCoreContext",
-          "LineNumber": 44,
+          "LineNumber": 45,
           "Inputs": [],
           "ReturnType": "cCoder.Data.CoreDataContext",
           "Implements": [
@@ -2140,7 +2140,7 @@
         {
           "Id": "cCoder.Data.CoreContextFactory.CreateDbContext(System.String[])",
           "Name": "CreateDbContext",
-          "LineNumber": 57,
+          "LineNumber": 58,
           "Inputs": [
             {
               "Name": "args",
@@ -2177,7 +2177,7 @@
     {
       "Name": "cCoder.Data.CoreDataContext",
       "StandardElementType": "Dependency",
-      "LineNumber": 14,
+      "LineNumber": 15,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -2389,7 +2389,7 @@
         {
           "Id": "cCoder.Data.CoreDataContext.Migrate()",
           "Name": "Migrate",
-          "LineNumber": 132,
+          "LineNumber": 135,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [],
@@ -2417,7 +2417,7 @@
         {
           "Id": "cCoder.Data.CoreDataContext.SetAuth(cCoder.Data.ICoreAuthInfo)",
           "Name": "SetAuth",
-          "LineNumber": 126,
+          "LineNumber": 129,
           "Inputs": [
             {
               "Name": "auth",
@@ -2460,7 +2460,7 @@
     {
       "Name": "cCoder.Data.Exposures.CommonObjectCacheManager",
       "StandardElementType": "Exposure",
-      "LineNumber": 10,
+      "LineNumber": 13,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -2481,7 +2481,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.AddAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddAsync",
-          "LineNumber": 21,
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -2526,7 +2526,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.DeleteAllAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
           "Name": "DeleteAllAsync",
-          "LineNumber": 36,
+          "LineNumber": 39,
           "Inputs": [
             {
               "Name": "deletedCommonObjects",
@@ -2571,7 +2571,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.DeleteAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteAsync",
-          "LineNumber": 31,
+          "LineNumber": 34,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -2616,7 +2616,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.Get(System.Boolean,System.Boolean)",
           "Name": "Get",
-          "LineNumber": 14,
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "fromCache",
@@ -2664,7 +2664,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.Refresh()",
           "Name": "Refresh",
-          "LineNumber": 41,
+          "LineNumber": 44,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [
@@ -2703,7 +2703,7 @@
         {
           "Id": "cCoder.Data.Exposures.CommonObjectCacheManager.UpdateAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateAsync",
-          "LineNumber": 26,
+          "LineNumber": 29,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -2750,7 +2750,7 @@
     {
       "Name": "cCoder.Data.Exposures.MetadataTypeCache",
       "StandardElementType": "Exposure",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -2771,7 +2771,7 @@
         {
           "Id": "cCoder.Data.Exposures.MetadataTypeCache.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 24,
+          "LineNumber": 25,
           "Inputs": [
             {
               "Name": "scope",
@@ -2818,7 +2818,7 @@
         {
           "Id": "cCoder.Data.Exposures.MetadataTypeCache.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 21,
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "scope",
@@ -2865,7 +2865,7 @@
         {
           "Id": "cCoder.Data.Exposures.MetadataTypeCache.Get(System.String)",
           "Name": "Get",
-          "LineNumber": 15,
+          "LineNumber": 16,
           "Inputs": [
             {
               "Name": "scope",
@@ -2912,7 +2912,7 @@
         {
           "Id": "cCoder.Data.Exposures.MetadataTypeCache.GetAll()",
           "Name": "GetAll",
-          "LineNumber": 18,
+          "LineNumber": 19,
           "Inputs": [],
           "ReturnType": "System.String[]",
           "Implements": [
@@ -2950,7 +2950,7 @@
         {
           "Id": "cCoder.Data.Exposures.MetadataTypeCache.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
-          "LineNumber": 12,
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "scope",
@@ -3003,7 +3003,7 @@
     {
       "Name": "cCoder.Data.Extensions.CompositePropertyInfo",
       "StandardElementType": "Dependency",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -3051,7 +3051,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetAccessors(System.Boolean)",
           "Name": "GetAccessors",
-          "LineNumber": 20,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "nonPublic",
@@ -3090,7 +3090,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetCustomAttributes(System.Boolean)",
           "Name": "GetCustomAttributes",
-          "LineNumber": 22,
+          "LineNumber": 23,
           "Inputs": [
             {
               "Name": "inherit",
@@ -3123,7 +3123,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetCustomAttributes(System.Type,System.Boolean)",
           "Name": "GetCustomAttributes",
-          "LineNumber": 24,
+          "LineNumber": 25,
           "Inputs": [
             {
               "Name": "attributeType",
@@ -3160,7 +3160,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetGetMethod(System.Boolean)",
           "Name": "GetGetMethod",
-          "LineNumber": 26,
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "nonPublic",
@@ -3199,7 +3199,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetIndexParameters()",
           "Name": "GetIndexParameters",
-          "LineNumber": 28,
+          "LineNumber": 29,
           "Inputs": [],
           "ReturnType": "System.Reflection.ParameterInfo[]",
           "Implements": [],
@@ -3233,7 +3233,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetSetMethod(System.Boolean)",
           "Name": "GetSetMethod",
-          "LineNumber": 30,
+          "LineNumber": 31,
           "Inputs": [
             {
               "Name": "nonPublic",
@@ -3272,7 +3272,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.GetValue(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)",
           "Name": "GetValue",
-          "LineNumber": 32,
+          "LineNumber": 33,
           "Inputs": [
             {
               "Name": "obj",
@@ -3327,7 +3327,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.IsDefined(System.Type,System.Boolean)",
           "Name": "IsDefined",
-          "LineNumber": 34,
+          "LineNumber": 35,
           "Inputs": [
             {
               "Name": "attributeType",
@@ -3364,7 +3364,7 @@
         {
           "Id": "cCoder.Data.Extensions.CompositePropertyInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)",
           "Name": "SetValue",
-          "LineNumber": 36,
+          "LineNumber": 37,
           "Inputs": [
             {
               "Name": "obj",
@@ -3425,7 +3425,7 @@
     {
       "Name": "cCoder.Data.Extensions.IEnumerableExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 7,
+      "LineNumber": 10,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -3435,7 +3435,7 @@
         {
           "Id": "cCoder.Data.Extensions.IEnumerableExtensions.ForEach(System.Collections.Generic.IEnumerable\u003CT\u003E,System.Action\u003CT, System.Int32\u003E)",
           "Name": "ForEach",
-          "LineNumber": 9,
+          "LineNumber": 12,
           "Inputs": [
             {
               "Name": "source",
@@ -3472,7 +3472,7 @@
         {
           "Id": "cCoder.Data.Extensions.IEnumerableExtensions.ForEach(System.Collections.Generic.IEnumerable\u003CT\u003E,System.Action\u003CT\u003E)",
           "Name": "ForEach",
-          "LineNumber": 24,
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "source",
@@ -3626,7 +3626,7 @@
     {
       "Name": "cCoder.Data.Extensions.TypeExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 11,
+      "LineNumber": 13,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -3636,7 +3636,7 @@
         {
           "Id": "cCoder.Data.Extensions.TypeExtensions.GetIdProperty(System.Type)",
           "Name": "GetIdProperty",
-          "LineNumber": 24,
+          "LineNumber": 26,
           "Inputs": [
             {
               "Name": "type",
@@ -3704,7 +3704,7 @@
         {
           "Id": "cCoder.Data.Extensions.TypeExtensions.IsJoinType(System.Type)",
           "Name": "IsJoinType",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "type",
@@ -3760,7 +3760,7 @@
     {
       "Name": "cCoder.Data.IServiceCollectionExtensions",
       "StandardElementType": "App",
-      "LineNumber": 19,
+      "LineNumber": 21,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -3770,7 +3770,7 @@
         {
           "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action\u003CcCoder.Data.Models.DataConfiguration\u003E)",
           "Name": "AddData",
-          "LineNumber": 21,
+          "LineNumber": 23,
           "Inputs": [
             {
               "Name": "services",
@@ -3814,7 +3814,7 @@
         {
           "Id": "cCoder.Data.IServiceCollectionExtensions.AddData(Microsoft.Extensions.DependencyInjection.IServiceCollection,cCoder.Data.Models.DataConfiguration)",
           "Name": "AddData",
-          "LineNumber": 30,
+          "LineNumber": 32,
           "Inputs": [
             {
               "Name": "services",
@@ -3941,7 +3941,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.App",
       "StandardElementType": "Model",
-      "LineNumber": 16,
+      "LineNumber": 17,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4085,7 +4085,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Component",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4189,7 +4189,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Culture",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4229,7 +4229,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Layout",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4329,7 +4329,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Page",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4461,7 +4461,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.PageRenderCache",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4533,7 +4533,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Resource",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4597,7 +4597,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Script",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4653,7 +4653,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Submission",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4709,7 +4709,7 @@
     {
       "Name": "cCoder.Data.Models.CMS.Template",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4765,7 +4765,7 @@
     {
       "Name": "cCoder.Data.Models.CommonObject",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4845,7 +4845,7 @@
     {
       "Name": "cCoder.Data.Models.DMS.File",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 10,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4905,7 +4905,7 @@
     {
       "Name": "cCoder.Data.Models.DMS.FileContent",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -4953,7 +4953,7 @@
     {
       "Name": "cCoder.Data.Models.DMS.Folder",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5037,7 +5037,7 @@
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceDependencyException",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": {
@@ -5057,7 +5057,7 @@
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceException",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": {
@@ -5077,7 +5077,7 @@
     {
       "Name": "cCoder.Data.Models.Exceptions.ServiceValidationException",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": {
@@ -5129,7 +5129,7 @@
     {
       "Name": "cCoder.Data.Models.Logging.LogEntry",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 10,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5225,7 +5225,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.EmailSendFailure",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5257,7 +5257,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.MailReceiver",
       "StandardElementType": "Model",
-      "LineNumber": 9,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5321,7 +5321,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.MailSender",
       "StandardElementType": "Model",
-      "LineNumber": 9,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5437,7 +5437,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.QueuedEmail",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 13,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -5474,7 +5474,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.ReceivedEmail",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -5515,7 +5515,7 @@
     {
       "Name": "cCoder.Data.Models.Mail.SentEmail",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -5552,7 +5552,7 @@
     {
       "Name": "cCoder.Data.Models.Packaging.Package",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 10,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5588,7 +5588,7 @@
     {
       "Name": "cCoder.Data.Models.Packaging.PackageItem",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5620,7 +5620,7 @@
     {
       "Name": "cCoder.Data.Models.Planning.Calendar",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5656,7 +5656,7 @@
     {
       "Name": "cCoder.Data.Models.Planning.CalendarEvent",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5696,7 +5696,7 @@
     {
       "Name": "cCoder.Data.Models.Planning.ScheduledTask",
       "StandardElementType": "Model",
-      "LineNumber": 11,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5792,7 +5792,7 @@
     {
       "Name": "cCoder.Data.Models.Security.AppExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 9,
+      "LineNumber": 10,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5802,7 +5802,7 @@
         {
           "Id": "cCoder.Data.Models.Security.AppExtensions.IsAppAdmin(cCoder.Data.Models.CMS.App,cCoder.Data.Models.Security.User)",
           "Name": "IsAppAdmin",
-          "LineNumber": 11,
+          "LineNumber": 12,
           "Inputs": [
             {
               "Name": "app",
@@ -5841,7 +5841,7 @@
     {
       "Name": "cCoder.Data.Models.Security.FolderRole",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5869,7 +5869,7 @@
     {
       "Name": "cCoder.Data.Models.Security.PageRole",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -5929,7 +5929,7 @@
     {
       "Name": "cCoder.Data.Models.Security.Role",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6041,7 +6041,7 @@
     {
       "Name": "cCoder.Data.Models.Security.User",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6081,7 +6081,7 @@
     {
       "Name": "cCoder.Data.Models.Security.UserExtensions",
       "StandardElementType": "Exposure",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6091,7 +6091,7 @@
         {
           "Id": "cCoder.Data.Models.Security.UserExtensions.Can(cCoder.Data.Models.Security.User,System.Int32?,System.String)",
           "Name": "Can",
-          "LineNumber": 18,
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "user",
@@ -6146,7 +6146,7 @@
         {
           "Id": "cCoder.Data.Models.Security.UserExtensions.IsAdminOfApp(cCoder.Data.Models.Security.User,System.Int32?)",
           "Name": "IsAdminOfApp",
-          "LineNumber": 9,
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "user",
@@ -6185,7 +6185,7 @@
     {
       "Name": "cCoder.Data.Models.Security.UserRole",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6213,7 +6213,7 @@
     {
       "Name": "cCoder.Data.Models.Workflow.FlowDefinition",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6281,7 +6281,7 @@
     {
       "Name": "cCoder.Data.Models.Workflow.FlowInstanceData",
       "StandardElementType": "Model",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6337,7 +6337,7 @@
     {
       "Name": "cCoder.Data.Models.Workflow.WorkflowEvent",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": null,
@@ -6491,7 +6491,7 @@
     {
       "Name": "cCoder.Data.Services.Foundations.CommonObjectStorageService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -6512,7 +6512,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 31,
+          "LineNumber": 33,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -6560,7 +6560,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 55,
+          "LineNumber": 57,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -6608,7 +6608,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjectSnapshot()",
           "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 25,
+          "LineNumber": 27,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [
@@ -6646,7 +6646,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjects(System.Boolean)",
           "Name": "GetCommonObjects",
-          "LineNumber": 14,
+          "LineNumber": 16,
           "Inputs": [
             {
               "Name": "ignoreFilters",
@@ -6698,7 +6698,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 41,
+          "LineNumber": 43,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -6748,7 +6748,7 @@
     {
       "Name": "cCoder.Data.Services.Foundations.MetadataTypeCacheService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 10,
+      "LineNumber": 12,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -6769,7 +6769,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 49,
+          "LineNumber": 51,
           "Inputs": [
             {
               "Name": "scope",
@@ -6817,7 +6817,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 40,
+          "LineNumber": 42,
           "Inputs": [
             {
               "Name": "scope",
@@ -6865,7 +6865,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Get(System.String)",
           "Name": "Get",
-          "LineNumber": 25,
+          "LineNumber": 27,
           "Inputs": [
             {
               "Name": "scope",
@@ -6913,7 +6913,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.GetAll()",
           "Name": "GetAll",
-          "LineNumber": 34,
+          "LineNumber": 36,
           "Inputs": [],
           "ReturnType": "System.String[]",
           "Implements": [
@@ -6951,7 +6951,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.MetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "scope",
@@ -7012,7 +7012,7 @@
     {
       "Name": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService",
       "StandardElementType": "OrchestrationService",
-      "LineNumber": 10,
+      "LineNumber": 13,
       "IsPublic": false,
       "Kind": "Class",
       "BaseType": null,
@@ -7033,7 +7033,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 41,
+          "LineNumber": 44,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -7080,7 +7080,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
           "Name": "DeleteAllCommonObjectsAsync",
-          "LineNumber": 83,
+          "LineNumber": 86,
           "Inputs": [
             {
               "Name": "deletedCommonObjects",
@@ -7127,7 +7127,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 69,
+          "LineNumber": 72,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -7174,7 +7174,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)",
           "Name": "GetCommonObjects",
-          "LineNumber": 15,
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "fromCache",
@@ -7237,7 +7237,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.RefreshCommonObjects()",
           "Name": "RefreshCommonObjects",
-          "LineNumber": 98,
+          "LineNumber": 101,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [
@@ -7269,7 +7269,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.CommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 55,
+          "LineNumber": 58,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -7752,7 +7752,7 @@
     {
       "Name": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
       "StandardElementType": "Broker",
-      "LineNumber": 9,
+      "LineNumber": 11,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -7762,7 +7762,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 17,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -7787,7 +7787,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 21,
+          "LineNumber": 23,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -7812,7 +7812,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjects()",
           "Name": "GetAllCommonObjects",
-          "LineNumber": 11,
+          "LineNumber": 13,
           "Inputs": [],
           "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
           "Implements": [],
@@ -7832,7 +7832,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetAllCommonObjectsIgnoringFilters()",
           "Name": "GetAllCommonObjectsIgnoringFilters",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [],
           "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
           "Implements": [],
@@ -7852,7 +7852,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()",
           "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 15,
+          "LineNumber": 17,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [],
@@ -7872,7 +7872,7 @@
         {
           "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 19,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -7899,7 +7899,7 @@
     {
       "Name": "cCoder.Data.Exposures.ICommonObjectCacheManager",
       "StandardElementType": "Exposure",
-      "LineNumber": 9,
+      "LineNumber": 12,
       "IsPublic": true,
       "Kind": "Interface",
       "BaseType": null,
@@ -7909,7 +7909,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.AddAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddAsync",
-          "LineNumber": 15,
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -7934,7 +7934,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAllAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
           "Name": "DeleteAllAsync",
-          "LineNumber": 21,
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "deletedCommonObjects",
@@ -7959,7 +7959,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.DeleteAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteAsync",
-          "LineNumber": 19,
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -7984,7 +7984,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.Get(System.Boolean,System.Boolean)",
           "Name": "Get",
-          "LineNumber": 11,
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "fromCache",
@@ -8013,7 +8013,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.Refresh()",
           "Name": "Refresh",
-          "LineNumber": 23,
+          "LineNumber": 26,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [],
@@ -8033,7 +8033,7 @@
         {
           "Id": "cCoder.Data.Exposures.ICommonObjectCacheManager.UpdateAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateAsync",
-          "LineNumber": 17,
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -8060,7 +8060,7 @@
     {
       "Name": "cCoder.Data.Exposures.IMetadataTypeCache",
       "StandardElementType": "Exposure",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": true,
       "Kind": "Interface",
       "BaseType": null,
@@ -8070,7 +8070,7 @@
         {
           "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "scope",
@@ -8095,7 +8095,7 @@
         {
           "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 12,
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "scope",
@@ -8120,7 +8120,7 @@
         {
           "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Get(System.String)",
           "Name": "Get",
-          "LineNumber": 10,
+          "LineNumber": 12,
           "Inputs": [
             {
               "Name": "scope",
@@ -8145,7 +8145,7 @@
         {
           "Id": "cCoder.Data.Exposures.IMetadataTypeCache.GetAll()",
           "Name": "GetAll",
-          "LineNumber": 11,
+          "LineNumber": 13,
           "Inputs": [],
           "ReturnType": "System.String[]",
           "Implements": [],
@@ -8165,7 +8165,7 @@
         {
           "Id": "cCoder.Data.Exposures.IMetadataTypeCache.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
-          "LineNumber": 9,
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "scope",
@@ -8212,7 +8212,7 @@
     {
       "Name": "cCoder.Data.ICoreContextFactory",
       "StandardElementType": "Unknown",
-      "LineNumber": 14,
+      "LineNumber": 15,
       "IsPublic": true,
       "Kind": "Interface",
       "BaseType": null,
@@ -8222,7 +8222,7 @@
         {
           "Id": "cCoder.Data.ICoreContextFactory.CreateCoreContext()",
           "Name": "CreateCoreContext",
-          "LineNumber": 16,
+          "LineNumber": 17,
           "Inputs": [],
           "ReturnType": "cCoder.Data.CoreDataContext",
           "Implements": [],
@@ -8244,7 +8244,7 @@
     {
       "Name": "cCoder.Data.Models.IAmRoleSecured\u003CTRole\u003E",
       "StandardElementType": "Model",
-      "LineNumber": 10,
+      "LineNumber": 11,
       "IsPublic": true,
       "Kind": "Interface",
       "BaseType": null,
@@ -8259,7 +8259,7 @@
         {
           "Id": "cCoder.Data.Models.IAmRoleSecured\u003CTRole\u003E.UserCan(cCoder.Data.Models.Security.User,System.String)",
           "Name": "UserCan",
-          "LineNumber": 14,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "user",
@@ -8347,7 +8347,7 @@
     {
       "Name": "cCoder.Data.Services.Foundations.ICommonObjectStorageService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 9,
+      "LineNumber": 11,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -8357,7 +8357,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 15,
+          "LineNumber": 17,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -8382,7 +8382,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 19,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -8407,7 +8407,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectSnapshot()",
           "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [],
@@ -8427,7 +8427,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)",
           "Name": "GetCommonObjects",
-          "LineNumber": 11,
+          "LineNumber": 13,
           "Inputs": [
             {
               "Name": "ignoreFilters",
@@ -8452,7 +8452,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 17,
+          "LineNumber": 19,
           "Inputs": [
             {
               "Name": "updatedCommonObject",
@@ -8479,7 +8479,7 @@
     {
       "Name": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService",
       "StandardElementType": "FoundationService",
-      "LineNumber": 7,
+      "LineNumber": 9,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -8489,7 +8489,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Clear(System.String)",
           "Name": "Clear",
-          "LineNumber": 13,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "scope",
@@ -8514,7 +8514,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Contains(System.String)",
           "Name": "Contains",
-          "LineNumber": 12,
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "scope",
@@ -8539,7 +8539,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Get(System.String)",
           "Name": "Get",
-          "LineNumber": 10,
+          "LineNumber": 12,
           "Inputs": [
             {
               "Name": "scope",
@@ -8564,7 +8564,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.GetAll()",
           "Name": "GetAll",
-          "LineNumber": 11,
+          "LineNumber": 13,
           "Inputs": [],
           "ReturnType": "System.String[]",
           "Implements": [],
@@ -8584,7 +8584,7 @@
         {
           "Id": "cCoder.Data.Services.Foundations.IMetadataTypeCacheService.Set(System.String,System.Collections.Generic.IEnumerable\u003CSystem.String\u003E)",
           "Name": "Set",
-          "LineNumber": 9,
+          "LineNumber": 11,
           "Inputs": [
             {
               "Name": "scope",
@@ -8615,7 +8615,7 @@
     {
       "Name": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService",
       "StandardElementType": "OrchestrationService",
-      "LineNumber": 9,
+      "LineNumber": 12,
       "IsPublic": false,
       "Kind": "Interface",
       "BaseType": null,
@@ -8625,7 +8625,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.AddCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "AddCommonObjectAsync",
-          "LineNumber": 15,
+          "LineNumber": 18,
           "Inputs": [
             {
               "Name": "newCommonObject",
@@ -8650,7 +8650,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteAllCommonObjectsAsync(System.Collections.Generic.IEnumerable\u003CcCoder.Data.Models.CommonObject\u003E)",
           "Name": "DeleteAllCommonObjectsAsync",
-          "LineNumber": 21,
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "deletedCommonObjects",
@@ -8675,7 +8675,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.DeleteCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "DeleteCommonObjectAsync",
-          "LineNumber": 19,
+          "LineNumber": 22,
           "Inputs": [
             {
               "Name": "deletedCommonObject",
@@ -8700,7 +8700,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.GetCommonObjects(System.Boolean,System.Boolean)",
           "Name": "GetCommonObjects",
-          "LineNumber": 11,
+          "LineNumber": 14,
           "Inputs": [
             {
               "Name": "fromCache",
@@ -8729,7 +8729,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.RefreshCommonObjects()",
           "Name": "RefreshCommonObjects",
-          "LineNumber": 23,
+          "LineNumber": 26,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [],
@@ -8749,7 +8749,7 @@
         {
           "Id": "cCoder.Data.Services.Orchestrations.ICommonObjectCacheOrchestrationService.UpdateCommonObjectAsync(cCoder.Data.Models.CommonObject)",
           "Name": "UpdateCommonObjectAsync",
-          "LineNumber": 17,
+          "LineNumber": 20,
           "Inputs": [
             {
               "Name": "updatedCommonObject",

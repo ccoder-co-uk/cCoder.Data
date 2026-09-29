@@ -2,6 +2,10 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System;
+using System.Linq;
+using System.Threading;
+
 namespace Data.Web.Services.Foundations;
 
 internal sealed partial class DataEntitySetService

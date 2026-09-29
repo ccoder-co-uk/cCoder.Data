@@ -2,6 +2,8 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
+using System.Linq;
+
 namespace cCoder.Data.Models.Security;
 
 public static class UserExtensions
