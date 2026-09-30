@@ -29,7 +29,7 @@ internal sealed class CommonObjectStorageBroker(
         return coreDataContext.CommonObjects.IgnoreQueryFilters();
     }
 
-    public CommonObject[] GetCommonObjectSnapshot()
+    public CommonObject[] GetCommonObjectsSnapshot()
     {
         using CoreDataContext coreDataContext =
             coreContextFactory.CreateCoreContext();

@@ -41,7 +41,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             .Returns(value: ValueTask.FromResult(result: commonObject));
 
         storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectSnapshot())
+                service.GetCommonObjectsSnapshot())
             .Returns(value: new[] { commonObject });
 
         CommonObjectCacheOrchestrationService service = new(
@@ -80,7 +80,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             .Returns(value: ValueTask.FromResult(result: 1));
 
         storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectSnapshot())
+                service.GetCommonObjectsSnapshot())
             .Returns(value: []);
 
         CommonObjectCacheOrchestrationService service = new(
@@ -124,7 +124,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             .Returns(value: ValueTask.FromResult(result: 1));
 
         storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectSnapshot())
+                service.GetCommonObjectsSnapshot())
             .Returns(value: []);
 
         CommonObjectCacheOrchestrationService service = new(
@@ -159,7 +159,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
         Mock<ICommonObjectCacheService> cacheServiceMock = new();
 
         storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectSnapshot())
+                service.GetCommonObjectsSnapshot())
             .Returns(value: commonObjects);
 
         CommonObjectCacheOrchestrationService service = new(

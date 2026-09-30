@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.29.1241" PrivateAssets="all">
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.30.859" PrivateAssets="all">
       <IncludeAssets>build;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="cCoder.Eventing" Version="2026.9.29.1451" Condition="'$(UseLocalEventing)' != 'true'" />

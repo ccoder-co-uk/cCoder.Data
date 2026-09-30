@@ -12,7 +12,7 @@ internal interface ICommonObjectStorageService
 {
     IQueryable<CommonObject> GetCommonObjects(bool ignoreFilters);
 
-    CommonObject[] GetCommonObjectSnapshot();
+    CommonObject[] GetCommonObjectsSnapshot();
 
     ValueTask<CommonObject> AddCommonObjectAsync(CommonObject newCommonObject);
 
