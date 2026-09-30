@@ -44,7 +44,7 @@
       <IncludeAssets>build;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="cCoder.Eventing" Version="2026.9.30.1112" Condition="'$(UseLocalEventing)' != 'true'" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.9.30.1118" Condition="'$(UseLocalSecurityData)' != 'true'" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.9.30.1202" Condition="'$(UseLocalSecurityData)' != 'true'" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.11" />
