@@ -14,7 +14,7 @@ internal interface ICommonObjectStorageBroker
 
     IQueryable<CommonObject> GetAllCommonObjectsIgnoringFilters();
 
-    CommonObject[] GetCommonObjectSnapshot();
+    CommonObject[] GetCommonObjectsSnapshot();
 
     ValueTask<CommonObject> AddCommonObjectAsync(CommonObject newCommonObject);
 

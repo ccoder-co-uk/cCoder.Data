@@ -24,10 +24,10 @@ internal sealed partial class CommonObjectStorageService(
                 : commonObjectStorageBroker.GetAllCommonObjects();
         });
 
-    public CommonObject[] GetCommonObjectSnapshot() =>
+    public CommonObject[] GetCommonObjectsSnapshot() =>
         TryCatch(operation: () =>
         {
-            return commonObjectStorageBroker.GetCommonObjectSnapshot();
+            return commonObjectStorageBroker.GetCommonObjectsSnapshot();
         });
 
     public ValueTask<CommonObject> AddCommonObjectAsync(

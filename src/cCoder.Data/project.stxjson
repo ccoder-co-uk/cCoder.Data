@@ -1935,13 +1935,13 @@
           "HasTryCatch": false
         },
         {
-          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetCommonObjectSnapshot()",
-          "Name": "GetCommonObjectSnapshot",
+          "Id": "cCoder.Data.Brokers.Storages.CommonObjectStorageBroker.GetCommonObjectsSnapshot()",
+          "Name": "GetCommonObjectsSnapshot",
           "LineNumber": 32,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [
-            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()"
+            "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectsSnapshot()"
           ],
           "Calls": [
             {
@@ -6606,44 +6606,6 @@
           "HasTryCatch": false
         },
         {
-          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjectSnapshot()",
-          "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 27,
-          "Inputs": [],
-          "ReturnType": "cCoder.Data.Models.CommonObject[]",
-          "Implements": [
-            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectSnapshot()"
-          ],
-          "Calls": [
-            {
-              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
-              "MethodName": "GetCommonObjectSnapshot",
-              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()",
-              "StandardElementType": "Broker",
-              "IsDependencyBoundary": false
-            }
-          ],
-          "PossibleExceptionTypes": [
-            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
-            "cCoder.Data.Models.Exceptions.ServiceException",
-            "cCoder.Data.Models.Exceptions.ServiceValidationException"
-          ],
-          "IncomingExceptionTypes": [
-            "cCoder.Data.Models.Exceptions.ServiceException"
-          ],
-          "ThrowsExceptionTypes": [
-            "cCoder.Data.Models.Exceptions.ServiceException"
-          ],
-          "HttpMethods": [],
-          "HttpResponses": [],
-          "IsHttpRequestHandler": false,
-          "IsODataControllerAction": false,
-          "HasFromBodyParameter": false,
-          "HasKeyParameter": false,
-          "HandlesNullWithNotFound": false,
-          "HasTryCatch": false
-        },
-        {
           "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjects(System.Boolean)",
           "Name": "GetCommonObjects",
           "LineNumber": 16,
@@ -6681,6 +6643,44 @@
           ],
           "IncomingExceptionTypes": [
             "System.ArgumentNullException",
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "ThrowsExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceException"
+          ],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Services.Foundations.CommonObjectStorageService.GetCommonObjectsSnapshot()",
+          "Name": "GetCommonObjectsSnapshot",
+          "LineNumber": 27,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Implements": [
+            "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectsSnapshot()"
+          ],
+          "Calls": [
+            {
+              "TypeName": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker",
+              "MethodName": "GetCommonObjectsSnapshot",
+              "MethodId": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectsSnapshot()",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            }
+          ],
+          "PossibleExceptionTypes": [
+            "cCoder.Data.Models.Exceptions.ServiceDependencyException",
+            "cCoder.Data.Models.Exceptions.ServiceException",
+            "cCoder.Data.Models.Exceptions.ServiceValidationException"
+          ],
+          "IncomingExceptionTypes": [
             "cCoder.Data.Models.Exceptions.ServiceException"
           ],
           "ThrowsExceptionTypes": [
@@ -7850,8 +7850,8 @@
           "HasTryCatch": false
         },
         {
-          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectSnapshot()",
-          "Name": "GetCommonObjectSnapshot",
+          "Id": "cCoder.Data.Brokers.Storages.ICommonObjectStorageBroker.GetCommonObjectsSnapshot()",
+          "Name": "GetCommonObjectsSnapshot",
           "LineNumber": 17,
           "Inputs": [],
           "ReturnType": "cCoder.Data.Models.CommonObject[]",
@@ -8405,11 +8405,16 @@
           "HasTryCatch": false
         },
         {
-          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectSnapshot()",
-          "Name": "GetCommonObjectSnapshot",
-          "LineNumber": 15,
-          "Inputs": [],
-          "ReturnType": "cCoder.Data.Models.CommonObject[]",
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)",
+          "Name": "GetCommonObjects",
+          "LineNumber": 13,
+          "Inputs": [
+            {
+              "Name": "ignoreFilters",
+              "Type": "System.Boolean"
+            }
+          ],
+          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
           "Implements": [],
           "Calls": [],
           "PossibleExceptionTypes": [],
@@ -8425,16 +8430,11 @@
           "HasTryCatch": false
         },
         {
-          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjects(System.Boolean)",
-          "Name": "GetCommonObjects",
-          "LineNumber": 13,
-          "Inputs": [
-            {
-              "Name": "ignoreFilters",
-              "Type": "System.Boolean"
-            }
-          ],
-          "ReturnType": "System.Linq.IQueryable\u003CcCoder.Data.Models.CommonObject\u003E",
+          "Id": "cCoder.Data.Services.Foundations.ICommonObjectStorageService.GetCommonObjectsSnapshot()",
+          "Name": "GetCommonObjectsSnapshot",
+          "LineNumber": 15,
+          "Inputs": [],
+          "ReturnType": "cCoder.Data.Models.CommonObject[]",
           "Implements": [],
           "Calls": [],
           "PossibleExceptionTypes": [],

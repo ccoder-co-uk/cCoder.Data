@@ -72,7 +72,7 @@ public sealed partial class CommonObjectStorageServiceTests
     }
 
     [Fact]
-    public void GetCommonObjectSnapshot_WhenCalled_ReturnsBrokerSnapshot()
+    public void GetCommonObjectsSnapshot_WhenCalled_ReturnsBrokerSnapshot()
     {
         // Given
 
@@ -80,7 +80,7 @@ public sealed partial class CommonObjectStorageServiceTests
         Mock<ICommonObjectStorageBroker> brokerMock = new();
 
         brokerMock.Setup(expression: broker =>
-                broker.GetCommonObjectSnapshot())
+                broker.GetCommonObjectsSnapshot())
             .Returns(value: expectedCommonObjects);
 
         CommonObjectStorageService service = new(
@@ -89,7 +89,7 @@ public sealed partial class CommonObjectStorageServiceTests
         // When
 
         CommonObject[] actualCommonObjects =
-            service.GetCommonObjectSnapshot();
+            service.GetCommonObjectsSnapshot();
 
         // Then
 

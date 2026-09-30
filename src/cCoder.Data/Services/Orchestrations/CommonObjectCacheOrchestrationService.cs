@@ -108,7 +108,7 @@ internal sealed partial class CommonObjectCacheOrchestrationService(
     private CommonObject[] RefreshCommonObjectsCore()
     {
         CommonObject[] commonObjects =
-            commonObjectStorageService.GetCommonObjectSnapshot();
+            commonObjectStorageService.GetCommonObjectsSnapshot();
 
         commonObjectCacheService.SetCommonObjects(
             commonObjects: commonObjects);

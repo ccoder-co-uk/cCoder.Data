@@ -11,10 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.29.1241" PrivateAssets="all">
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.30.859" PrivateAssets="all">
       <IncludeAssets>build;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="cCoder.CodeAnalysis.Contracts" Version="2026.9.29.1241" />
+    <PackageReference Include="cCoder.CodeAnalysis.Contracts" Version="2026.9.30.859" />
     <PackageReference Include="cCoder.Security" Version="2026.9.29.1813" />
     <PackageReference Include="cCoder.Security.Data" Version="2026.9.29.1813" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />

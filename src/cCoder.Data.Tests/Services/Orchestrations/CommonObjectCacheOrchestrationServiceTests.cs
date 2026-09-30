@@ -202,7 +202,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             return storedCommonObjects.AsQueryable();
         }
 
-        public CommonObject[] GetCommonObjectSnapshot()
+        public CommonObject[] GetCommonObjectsSnapshot()
         {
             SnapshotCalls++;
             return storedCommonObjects;
