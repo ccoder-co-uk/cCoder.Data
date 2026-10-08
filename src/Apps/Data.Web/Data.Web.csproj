@@ -11,12 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.9.30.1047" PrivateAssets="all">
+    <PackageReference Include="cCoder.CodeAnalysis" Version="2026.10.8.1211" PrivateAssets="all">
       <IncludeAssets>build;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="cCoder.CodeAnalysis.Contracts" Version="2026.9.30.1047" />
-    <PackageReference Include="cCoder.Security" Version="2026.9.30.1202" />
-    <PackageReference Include="cCoder.Security.Data" Version="2026.9.30.1202" />
+    <PackageReference Include="cCoder.CodeAnalysis.Contracts" Version="2026.10.8.1211" />
+    <PackageReference Include="cCoder.Security" Version="2026.10.8.1235" />
+    <PackageReference Include="cCoder.Security.Data" Version="2026.10.8.1235" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.9.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.2.3" />
