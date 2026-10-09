@@ -140,8 +140,6 @@ public partial class CoreDataContext : DbContext
         User loadedUser = Users
             .IgnoreQueryFilters()
             .AsNoTracking()
-            .Include(navigationPropertyPath: user => user.Roles)
-                .ThenInclude(navigationPropertyPath: userRole => userRole.Role)
             .FirstOrDefault(predicate: u => u.Id == userName);
 
         if (string.IsNullOrWhiteSpace(value: userName) || userName == "Guest" || loadedUser == null)
@@ -155,6 +153,27 @@ public partial class CoreDataContext : DbContext
                 Email = ""
             };
         }
+
+        Guid[] roleIds = UserRoles
+            .IgnoreQueryFilters()
+            .AsNoTracking()
+            .Where(predicate: userRole => userRole.UserId == loadedUser.Id)
+            .Select(selector: userRole => userRole.RoleId)
+            .Distinct()
+            .ToArray();
+
+        Role[] roles = Roles
+            .IgnoreQueryFilters()
+            .AsNoTracking()
+            .Where(predicate: role => roleIds.Contains(value: role.Id))
+            .ToArray();
+
+        loadedUser.Roles = roles.Select(selector: r => new UserRole
+        {
+            UserId = loadedUser.Id,
+            RoleId = r.Id,
+            Role = r
+        }).ToArray();
 
         return loadedUser;
     }
