@@ -137,10 +137,30 @@ public partial class CoreDataContext : DbContext
 
     private User GetUserInformation(string userName)
     {
-        User loadedUser = Users
-            .IgnoreQueryFilters()
+        var userRoleRows = (
+            from candidateUser in Users
+                .IgnoreQueryFilters()
+            join userRole in UserRoles
+                    .IgnoreQueryFilters()
+                on candidateUser.Id equals userRole.UserId into userRoles
+            from userRole in userRoles.DefaultIfEmpty()
+            join role in Roles
+                    .IgnoreQueryFilters()
+                on userRole.RoleId equals role.Id into roles
+            from role in roles.DefaultIfEmpty()
+            where candidateUser.Id == userName
+            select new
+            {
+                User = candidateUser,
+                UserRole = userRole,
+                Role = role
+            })
             .AsNoTracking()
-            .FirstOrDefault(predicate: u => u.Id == userName);
+            .ToArray();
+
+        User loadedUser = userRoleRows
+            .Select(selector: row => row.User)
+            .FirstOrDefault();
 
         if (string.IsNullOrWhiteSpace(value: userName) || userName == "Guest" || loadedUser == null)
         {
@@ -154,26 +174,15 @@ public partial class CoreDataContext : DbContext
             };
         }
 
-        Guid[] roleIds = UserRoles
-            .IgnoreQueryFilters()
-            .AsNoTracking()
-            .Where(predicate: userRole => userRole.UserId == loadedUser.Id)
-            .Select(selector: userRole => userRole.RoleId)
-            .Distinct()
+        loadedUser.Roles = userRoleRows
+            .Where(predicate: row => row.Role is not null)
+            .Select(selector: row => new UserRole
+            {
+                UserId = loadedUser.Id,
+                RoleId = row.Role.Id,
+                Role = row.Role
+            })
             .ToArray();
-
-        Role[] roles = Roles
-            .IgnoreQueryFilters()
-            .AsNoTracking()
-            .Where(predicate: role => roleIds.Contains(value: role.Id))
-            .ToArray();
-
-        loadedUser.Roles = roles.Select(selector: r => new UserRole
-        {
-            UserId = loadedUser.Id,
-            RoleId = r.Id,
-            Role = r
-        }).ToArray();
 
         return loadedUser;
     }
