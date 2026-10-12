@@ -39,7 +39,7 @@ public class App
             null => "{}",
             JsonElement jsonElement => jsonElement.GetRawText(),
             string json => json,
-            _ => value.ToJson()
+            _ => ObjectExtensions.ToJson(value: (object)value)
         };
     }
 
