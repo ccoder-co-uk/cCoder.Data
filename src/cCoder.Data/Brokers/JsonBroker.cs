@@ -2,87 +2,72 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace cCoder.Data.Brokers;
 
 internal sealed class JsonBroker : IJsonBroker
 {
-    public JsonSerializerSettings GetJsonSerializerSettings() =>
+    public JsonSerializerOptions GetJsonSerializerOptions() =>
         new()
         {
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            TypeNameHandling = TypeNameHandling.Objects,
-            Formatting = Formatting.None,
-            DateFormatHandling = DateFormatHandling.IsoDateFormat,
-            NullValueHandling = NullValueHandling.Ignore,
-            DateTimeZoneHandling = DateTimeZoneHandling.Utc,
-            ContractResolver = new DefaultContractResolver
-            {
-                IgnoreSerializableAttribute = true,
-            },
+            ReferenceHandler = ReferenceHandler.IgnoreCycles,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            PropertyNameCaseInsensitive = true
         };
 
-    public JsonSerializerSettings GetODataJsonSerializerSettings() =>
+    public JsonSerializerOptions GetODataJsonSerializerOptions() =>
         new()
         {
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            TypeNameHandling = TypeNameHandling.None,
-            Formatting = Formatting.None,
-            DateFormatHandling = DateFormatHandling.IsoDateFormat,
-            NullValueHandling = NullValueHandling.Ignore,
-            DateTimeZoneHandling = DateTimeZoneHandling.Utc,
-            ContractResolver = new DefaultContractResolver
-            {
-                IgnoreSerializableAttribute = true,
-            },
-            MaxDepth = 4,
+            ReferenceHandler = ReferenceHandler.IgnoreCycles,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            PropertyNameCaseInsensitive = true,
+            MaxDepth = 4
         };
 
     public T Deserialize<T>(
         string value) =>
         Deserialize<T>(
             value: value,
-            jsonSerializerSettings: GetJsonSerializerSettings());
+            jsonSerializerOptions: GetJsonSerializerOptions());
 
     public T Deserialize<T>(
         string value,
-        JsonSerializerSettings jsonSerializerSettings) =>
-        JsonConvert.DeserializeObject<T>(
-            value: value,
-            settings: jsonSerializerSettings);
+        JsonSerializerOptions jsonSerializerOptions) =>
+        JsonSerializer.Deserialize<T>(
+            json: value,
+            options: jsonSerializerOptions);
 
     public string Serialize(object value) =>
-        JsonConvert.SerializeObject(value: value);
+        JsonSerializer.Serialize(value: value);
 
     public string SerializeUsingJsonSettings(object value) =>
         Serialize(
             value: value,
-            jsonSerializerSettings: GetJsonSerializerSettings());
+            jsonSerializerOptions: GetJsonSerializerOptions());
 
     public string SerializeUsingJsonSettings(object value, int maxDepth)
     {
-        JsonSerializerSettings jsonSerializerSettings =
-            GetJsonSerializerSettings();
+        JsonSerializerOptions jsonSerializerOptions =
+            GetJsonSerializerOptions();
 
-        jsonSerializerSettings.MaxDepth = maxDepth;
+        jsonSerializerOptions.MaxDepth = maxDepth;
 
         return Serialize(
             value: value,
-            jsonSerializerSettings: jsonSerializerSettings);
+            jsonSerializerOptions: jsonSerializerOptions);
     }
 
     public string SerializeForOData(object value) =>
         Serialize(
             value: value,
-            jsonSerializerSettings: GetODataJsonSerializerSettings());
+            jsonSerializerOptions: GetODataJsonSerializerOptions());
 
     public string Serialize(
         object value,
-        JsonSerializerSettings jsonSerializerSettings) =>
-        JsonConvert.SerializeObject(
+        JsonSerializerOptions jsonSerializerOptions) =>
+        JsonSerializer.Serialize(
             value: value,
-            formatting: Formatting.None,
-            settings: jsonSerializerSettings);
+            options: jsonSerializerOptions);
 }

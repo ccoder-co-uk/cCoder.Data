@@ -2,20 +2,20 @@
 // Copyright (c) Paul.Ward@ccoder.co.uk
 // ---------------------------------------------------------------
 
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace cCoder.Data.Brokers;
 
 internal interface IJsonBroker
 {
-    JsonSerializerSettings GetJsonSerializerSettings();
-    JsonSerializerSettings GetODataJsonSerializerSettings();
+    JsonSerializerOptions GetJsonSerializerOptions();
+    JsonSerializerOptions GetODataJsonSerializerOptions();
 
     T Deserialize<T>(string value);
 
     T Deserialize<T>(
         string value,
-        JsonSerializerSettings jsonSerializerSettings);
+        JsonSerializerOptions jsonSerializerOptions);
 
     string Serialize(object value);
 
@@ -27,5 +27,5 @@ internal interface IJsonBroker
 
     string Serialize(
         object value,
-        JsonSerializerSettings jsonSerializerSettings);
+        JsonSerializerOptions jsonSerializerOptions);
 }

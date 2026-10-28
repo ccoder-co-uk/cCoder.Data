@@ -67,7 +67,7 @@ public sealed partial class ObjectExtensionsTests
 
         actualJson
             .Should()
-            .Contain(expected: "\"$type\"");
+            .NotContain(unexpected: "\"$type\"");
     }
 
     [Fact]
