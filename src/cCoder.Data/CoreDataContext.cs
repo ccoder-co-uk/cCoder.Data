@@ -101,6 +101,7 @@ public partial class CoreDataContext : DbContext
         ConfigureMailModel(builder: builder);
         ConfigurePlanningModel(builder: builder);
         ConfigureWorkflowModel(builder: builder);
+        ConfigureEventingModel(builder: builder);
 
         IEnumerable<global::Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey> cascadingRelationships = builder.Model.GetEntityTypes()
             .SelectMany(selector: t => t.GetForeignKeys())
