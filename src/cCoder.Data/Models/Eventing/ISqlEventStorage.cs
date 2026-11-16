@@ -17,6 +17,7 @@ public interface ISqlEventStorage
     Task<bool> FailAsync(EventMessageRecord eventMessageRecord, string reason, CancellationToken cancellationToken);
     Task<Guid?> RetryAsync(EventMessageRecord eventMessageRecord, TimeSpan delay, CancellationToken cancellationToken);
     Task<IReadOnlyList<FailedEventMessageRecord>> GetFailedAsync(int count, CancellationToken cancellationToken);
+    Task<SqlEventQueueReport> GetQueueReportAsync(CancellationToken cancellationToken);
     Task<Guid?> RequeueFailedAsync(Guid failedId, CancellationToken cancellationToken);
     Task<bool> RemoveFailedAsync(Guid failedId, CancellationToken cancellationToken);
 }
