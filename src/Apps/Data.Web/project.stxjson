@@ -337,7 +337,7 @@
         {
           "Id": "Data.Web.Brokers.Loggings.LoggingBroker.LogError(System.Exception,System.String,System.Object[])",
           "Name": "LogError",
-          "LineNumber": 15,
+          "LineNumber": 21,
           "Inputs": [
             {
               "Name": "exception",
@@ -361,6 +361,84 @@
               "TypeName": "Microsoft.Extensions.Logging.LoggerExtensions",
               "MethodName": "LogError",
               "MethodId": "Microsoft.Extensions.Logging.LoggerExtensions.LogError(Microsoft.Extensions.Logging.ILogger,System.Exception?,System.String?,System.Object?[])",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.Loggings.LoggingBroker.LogInformation(System.String,System.Object[])",
+          "Name": "LogInformation",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.Extensions.Logging.LoggerExtensions",
+              "MethodName": "LogInformation",
+              "MethodId": "Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(Microsoft.Extensions.Logging.ILogger,System.String?,System.Object?[])",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
+            }
+          ],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.Loggings.LoggingBroker.LogWarning(System.String,System.Object[])",
+          "Name": "LogWarning",
+          "LineNumber": 18,
+          "Inputs": [
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [
+            "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])"
+          ],
+          "Calls": [
+            {
+              "TypeName": "Microsoft.Extensions.Logging.LoggerExtensions",
+              "MethodName": "LogWarning",
+              "MethodId": "Microsoft.Extensions.Logging.LoggerExtensions.LogWarning(Microsoft.Extensions.Logging.ILogger,System.String?,System.Object?[])",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
             }
@@ -773,7 +851,7 @@
     {
       "Name": "Data.Web.Exposures.Controllers.DataEntitySetsController",
       "StandardElementType": "HttpExposure",
-      "LineNumber": 15,
+      "LineNumber": 17,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -792,7 +870,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataEntitySetsController.GetEntitySetsAsync(System.Threading.CancellationToken)",
           "Name": "GetEntitySetsAsync",
-          "LineNumber": 22,
+          "LineNumber": 24,
           "Inputs": [
             {
               "Name": "cancellationToken",
@@ -806,6 +884,20 @@
               "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
               "MethodName": "LogError",
               "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogInformation",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogWarning",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             },
@@ -836,6 +928,13 @@
               "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Unauthorized",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -846,23 +945,14 @@
             "System.UnauthorizedAccessException"
           ],
           "IncomingExceptionTypes": [
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [],
           "HttpMethods": [
             "GET"
           ],
           "HttpResponses": [
-            {
-              "StatusCode": 200,
-              "ResultMethod": "Ok",
-              "ExceptionType": "",
-              "IsExceptionPath": false,
-              "IsNullPath": false,
-              "HasBody": true,
-              "ExposesExceptionDetails": false,
-              "LogsException": false
-            },
             {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
@@ -874,9 +964,59 @@
               "LogsException": true
             },
             {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "System.ArgumentException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 401,
+              "ResultMethod": "Unauthorized",
+              "ExceptionType": "System.Security.Authentication.AuthenticationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.UnauthorizedAccessException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Security.SecurityException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
               "StatusCode": 500,
               "ResultMethod": "StatusCode",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Exception",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -906,7 +1046,7 @@
     {
       "Name": "Data.Web.Exposures.Controllers.DataRowsController",
       "StandardElementType": "HttpExposure",
-      "LineNumber": 16,
+      "LineNumber": 18,
       "IsPublic": true,
       "Kind": "Class",
       "BaseType": {
@@ -925,7 +1065,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.DeleteRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "DeleteRowAsync",
-          "LineNumber": 144,
+          "LineNumber": 266,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -947,6 +1087,20 @@
               "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
               "MethodName": "LogError",
               "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogInformation",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogWarning",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             },
@@ -977,6 +1131,13 @@
               "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Unauthorized",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -990,23 +1151,14 @@
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [],
           "HttpMethods": [
             "DELETE"
           ],
           "HttpResponses": [
-            {
-              "StatusCode": 204,
-              "ResultMethod": "NoContent",
-              "ExceptionType": "",
-              "IsExceptionPath": false,
-              "IsNullPath": false,
-              "HasBody": false,
-              "ExposesExceptionDetails": false,
-              "LogsException": false
-            },
             {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
@@ -1018,9 +1170,59 @@
               "LogsException": true
             },
             {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "System.ArgumentException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 401,
+              "ResultMethod": "Unauthorized",
+              "ExceptionType": "System.Security.Authentication.AuthenticationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.UnauthorizedAccessException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Security.SecurityException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
               "StatusCode": 500,
               "ResultMethod": "StatusCode",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Exception",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -1048,7 +1250,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.GetRowsAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)",
           "Name": "GetRowsAsync",
-          "LineNumber": 23,
+          "LineNumber": 25,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1074,6 +1276,20 @@
               "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
               "MethodName": "LogError",
               "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogInformation",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogWarning",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             },
@@ -1104,6 +1320,13 @@
               "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Unauthorized",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1116,23 +1339,14 @@
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [],
           "HttpMethods": [
             "GET"
           ],
           "HttpResponses": [
-            {
-              "StatusCode": 200,
-              "ResultMethod": "Ok",
-              "ExceptionType": "",
-              "IsExceptionPath": false,
-              "IsNullPath": false,
-              "HasBody": true,
-              "ExposesExceptionDetails": false,
-              "LogsException": false
-            },
             {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
@@ -1144,9 +1358,59 @@
               "LogsException": true
             },
             {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "System.ArgumentException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 401,
+              "ResultMethod": "Unauthorized",
+              "ExceptionType": "System.Security.Authentication.AuthenticationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.UnauthorizedAccessException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Security.SecurityException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
               "StatusCode": 500,
               "ResultMethod": "StatusCode",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Exception",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -1174,7 +1438,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.PostRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "PostRowAsync",
-          "LineNumber": 64,
+          "LineNumber": 106,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1200,6 +1464,20 @@
               "IsDependencyBoundary": false
             },
             {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogInformation",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogWarning",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
               "TypeName": "Data.Web.Services.Foundations.IDataRowService",
               "MethodName": "AddRowAsync",
               "MethodId": "Data.Web.Services.Foundations.IDataRowService.AddRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
@@ -1219,6 +1497,13 @@
               "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Unauthorized",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1232,23 +1517,14 @@
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [],
           "HttpMethods": [
             "POST"
           ],
           "HttpResponses": [
-            {
-              "StatusCode": 201,
-              "ResultMethod": "StatusCode",
-              "ExceptionType": "",
-              "IsExceptionPath": false,
-              "IsNullPath": false,
-              "HasBody": true,
-              "ExposesExceptionDetails": false,
-              "LogsException": false
-            },
             {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
@@ -1260,9 +1536,59 @@
               "LogsException": true
             },
             {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "System.ArgumentException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 401,
+              "ResultMethod": "Unauthorized",
+              "ExceptionType": "System.Security.Authentication.AuthenticationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.UnauthorizedAccessException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Security.SecurityException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
               "StatusCode": 500,
               "ResultMethod": "StatusCode",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Exception",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -1290,7 +1616,7 @@
         {
           "Id": "Data.Web.Exposures.Controllers.DataRowsController.PutRowAsync(System.String,System.Collections.Generic.Dictionary\u003CSystem.String, System.Object\u003E,System.Threading.CancellationToken)",
           "Name": "PutRowAsync",
-          "LineNumber": 105,
+          "LineNumber": 187,
           "Inputs": [
             {
               "Name": "entitySet",
@@ -1312,6 +1638,20 @@
               "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
               "MethodName": "LogError",
               "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogInformation",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+              "StandardElementType": "Broker",
+              "IsDependencyBoundary": false
+            },
+            {
+              "TypeName": "Data.Web.Brokers.Loggings.ILoggingBroker",
+              "MethodName": "LogWarning",
+              "MethodId": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
               "StandardElementType": "Broker",
               "IsDependencyBoundary": false
             },
@@ -1342,6 +1682,13 @@
               "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.StatusCode(System.Int32,System.Object?)",
               "StandardElementType": "Dependency",
               "IsDependencyBoundary": true
+            },
+            {
+              "TypeName": "Microsoft.AspNetCore.Mvc.ControllerBase",
+              "MethodName": "Unauthorized",
+              "MethodId": "Microsoft.AspNetCore.Mvc.ControllerBase.Unauthorized(System.Object?)",
+              "StandardElementType": "Dependency",
+              "IsDependencyBoundary": true
             }
           ],
           "PossibleExceptionTypes": [
@@ -1355,23 +1702,14 @@
           ],
           "IncomingExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [],
           "HttpMethods": [
             "PUT"
           ],
           "HttpResponses": [
-            {
-              "StatusCode": 200,
-              "ResultMethod": "Ok",
-              "ExceptionType": "",
-              "IsExceptionPath": false,
-              "IsNullPath": false,
-              "HasBody": true,
-              "ExposesExceptionDetails": false,
-              "LogsException": false
-            },
             {
               "StatusCode": 400,
               "ResultMethod": "BadRequest",
@@ -1383,9 +1721,59 @@
               "LogsException": true
             },
             {
+              "StatusCode": 400,
+              "ResultMethod": "BadRequest",
+              "ExceptionType": "System.ArgumentException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 401,
+              "ResultMethod": "Unauthorized",
+              "ExceptionType": "System.Security.Authentication.AuthenticationException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.UnauthorizedAccessException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 403,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Security.SecurityException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
               "StatusCode": 500,
               "ResultMethod": "StatusCode",
               "ExceptionType": "Data.Web.Models.Exceptions.ServiceException",
+              "IsExceptionPath": true,
+              "IsNullPath": false,
+              "HasBody": true,
+              "ExposesExceptionDetails": false,
+              "LogsException": true
+            },
+            {
+              "StatusCode": 500,
+              "ResultMethod": "StatusCode",
+              "ExceptionType": "System.Exception",
               "IsExceptionPath": true,
               "IsNullPath": false,
               "HasBody": true,
@@ -1923,7 +2311,8 @@
             "System.UnauthorizedAccessException"
           ],
           "ThrowsExceptionTypes": [
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "HttpMethods": [],
           "HttpResponses": [],
@@ -2006,7 +2395,8 @@
           ],
           "ThrowsExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "HttpMethods": [],
           "HttpResponses": [],
@@ -2066,7 +2456,8 @@
           ],
           "ThrowsExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "HttpMethods": [],
           "HttpResponses": [],
@@ -2142,7 +2533,8 @@
           ],
           "ThrowsExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "HttpMethods": [],
           "HttpResponses": [],
@@ -2202,7 +2594,8 @@
           ],
           "ThrowsExceptionTypes": [
             "Data.Web.Models.Exceptions.ServiceDependencyException",
-            "Data.Web.Models.Exceptions.ServiceException"
+            "Data.Web.Models.Exceptions.ServiceException",
+            "System.UnauthorizedAccessException"
           ],
           "HttpMethods": [],
           "HttpResponses": [],
@@ -2423,12 +2816,70 @@
         {
           "Id": "Data.Web.Brokers.Loggings.ILoggingBroker.LogError(System.Exception,System.String,System.Object[])",
           "Name": "LogError",
-          "LineNumber": 11,
+          "LineNumber": 15,
           "Inputs": [
             {
               "Name": "exception",
               "Type": "System.Exception"
             },
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.Loggings.ILoggingBroker.LogInformation(System.String,System.Object[])",
+          "Name": "LogInformation",
+          "LineNumber": 11,
+          "Inputs": [
+            {
+              "Name": "message",
+              "Type": "System.String"
+            },
+            {
+              "Name": "args",
+              "Type": "System.Object[]"
+            }
+          ],
+          "ReturnType": "System.Void",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "Data.Web.Brokers.Loggings.ILoggingBroker.LogWarning(System.String,System.Object[])",
+          "Name": "LogWarning",
+          "LineNumber": 13,
+          "Inputs": [
             {
               "Name": "message",
               "Type": "System.String"

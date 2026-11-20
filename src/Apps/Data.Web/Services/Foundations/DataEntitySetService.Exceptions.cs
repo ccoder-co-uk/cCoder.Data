@@ -3,6 +3,8 @@
 // ---------------------------------------------------------------
 
 using System;
+using System.Security;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using Data.Web.Models.Exceptions;
 
@@ -24,6 +26,18 @@ internal sealed partial class DataEntitySetService
         catch (InvalidOperationException innerException)
         {
             throw new ServiceDependencyException(innerException);
+        }
+        catch (AuthenticationException)
+        {
+            throw;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            throw;
+        }
+        catch (SecurityException)
+        {
+            throw;
         }
         catch (Exception innerException)
         {

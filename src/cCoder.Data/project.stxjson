@@ -2229,8 +2229,16 @@
           "Type": "System.Guid"
         },
         {
+          "Name": "EventMessages",
+          "Type": "Microsoft.EntityFrameworkCore.DbSet\u003CcCoder.Data.Models.Eventing.EventMessageRecord\u003E"
+        },
+        {
           "Name": "Events",
           "Type": "Microsoft.EntityFrameworkCore.DbSet\u003CcCoder.Data.Models.Planning.CalendarEvent\u003E"
+        },
+        {
+          "Name": "FailedEventMessages",
+          "Type": "Microsoft.EntityFrameworkCore.DbSet\u003CcCoder.Data.Models.Eventing.FailedEventMessageRecord\u003E"
         },
         {
           "Name": "FileContents",
@@ -2389,7 +2397,7 @@
         {
           "Id": "cCoder.Data.CoreDataContext.Migrate()",
           "Name": "Migrate",
-          "LineNumber": 135,
+          "LineNumber": 136,
           "Inputs": [],
           "ReturnType": "System.Void",
           "Implements": [],
@@ -2417,7 +2425,7 @@
         {
           "Id": "cCoder.Data.CoreDataContext.SetAuth(cCoder.Data.ICoreAuthInfo)",
           "Name": "SetAuth",
-          "LineNumber": 129,
+          "LineNumber": 130,
           "Inputs": [
             {
               "Name": "auth",
@@ -3891,6 +3899,26 @@
       "Methods": []
     },
     {
+      "Name": "cCoder.Data.Migrations.AddSqlEventMessages",
+      "StandardElementType": "Dependency",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": {
+        "Id": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Migration",
+        "FullName": "Microsoft.EntityFrameworkCore.Migrations.Migration",
+        "Name": "Migration",
+        "Namespace": "Microsoft.EntityFrameworkCore.Migrations",
+        "AssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+        "Kind": "Class",
+        "IsInCurrentProject": false,
+        "StandardElementType": "Dependency"
+      },
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": []
+    },
+    {
       "Name": "cCoder.Data.Migrations.RemoveAppApiMetadataPrivilege",
       "StandardElementType": "Dependency",
       "LineNumber": 8,
@@ -5030,6 +5058,134 @@
         {
           "Name": "LogSQL",
           "Type": "System.Boolean"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Eventing.EventMessageRecord",
+      "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "Attempt",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "AvailableOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Data",
+          "Type": "System.String"
+        },
+        {
+          "Name": "EventName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "LeaseUntil",
+          "Type": "System.DateTimeOffset?"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Eventing.FailedEventMessageRecord",
+      "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "Attempt",
+          "Type": "System.Int32"
+        },
+        {
+          "Name": "AvailableOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "CreatedOn",
+          "Type": "System.DateTimeOffset"
+        },
+        {
+          "Name": "Data",
+          "Type": "System.String"
+        },
+        {
+          "Name": "EventName",
+          "Type": "System.String"
+        },
+        {
+          "Name": "FailureReason",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Id",
+          "Type": "System.Guid"
+        },
+        {
+          "Name": "LeaseUntil",
+          "Type": "System.DateTimeOffset?"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Eventing.SqlEventQueueReport",
+      "StandardElementType": "Model",
+      "LineNumber": 9,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "Queues",
+          "Type": "System.Collections.Generic.IReadOnlyCollection\u003CcCoder.Data.Models.Eventing.SqlEventQueueSnapshot\u003E"
+        }
+      ],
+      "Methods": []
+    },
+    {
+      "Name": "cCoder.Data.Models.Eventing.SqlEventQueueSnapshot",
+      "StandardElementType": "Model",
+      "LineNumber": 7,
+      "IsPublic": true,
+      "Kind": "Class",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [
+        {
+          "Name": "Failed",
+          "Type": "System.Int64"
+        },
+        {
+          "Name": "Name",
+          "Type": "System.String"
+        },
+        {
+          "Name": "Processing",
+          "Type": "System.Int64"
+        },
+        {
+          "Name": "Queued",
+          "Type": "System.Int64"
         }
       ],
       "Methods": []
@@ -8225,6 +8381,287 @@
           "LineNumber": 17,
           "Inputs": [],
           "ReturnType": "cCoder.Data.CoreDataContext",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        }
+      ]
+    },
+    {
+      "Name": "cCoder.Data.Models.Eventing.ISqlEventStorage",
+      "StandardElementType": "Model",
+      "LineNumber": 12,
+      "IsPublic": true,
+      "Kind": "Interface",
+      "BaseType": null,
+      "Interfaces": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.ClaimAsync(System.Int32,System.TimeSpan,System.Threading.CancellationToken)",
+          "Name": "ClaimAsync",
+          "LineNumber": 15,
+          "Inputs": [
+            {
+              "Name": "count",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "leaseDuration",
+              "Type": "System.TimeSpan"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.IReadOnlyList\u003CcCoder.Data.Models.Eventing.EventMessageRecord\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.CompleteAsync(cCoder.Data.Models.Eventing.EventMessageRecord,System.Threading.CancellationToken)",
+          "Name": "CompleteAsync",
+          "LineNumber": 16,
+          "Inputs": [
+            {
+              "Name": "eventMessageRecord",
+              "Type": "cCoder.Data.Models.Eventing.EventMessageRecord"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Boolean\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.EnqueueAsync(cCoder.Data.Models.Eventing.EventMessageRecord,System.Threading.CancellationToken)",
+          "Name": "EnqueueAsync",
+          "LineNumber": 14,
+          "Inputs": [
+            {
+              "Name": "eventMessageRecord",
+              "Type": "cCoder.Data.Models.Eventing.EventMessageRecord"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.ValueTask",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.FailAsync(cCoder.Data.Models.Eventing.EventMessageRecord,System.String,System.Threading.CancellationToken)",
+          "Name": "FailAsync",
+          "LineNumber": 17,
+          "Inputs": [
+            {
+              "Name": "eventMessageRecord",
+              "Type": "cCoder.Data.Models.Eventing.EventMessageRecord"
+            },
+            {
+              "Name": "reason",
+              "Type": "System.String"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Boolean\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.GetFailedAsync(System.Int32,System.Threading.CancellationToken)",
+          "Name": "GetFailedAsync",
+          "LineNumber": 19,
+          "Inputs": [
+            {
+              "Name": "count",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Collections.Generic.IReadOnlyList\u003CcCoder.Data.Models.Eventing.FailedEventMessageRecord\u003E\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.GetQueueReportAsync(System.Threading.CancellationToken)",
+          "Name": "GetQueueReportAsync",
+          "LineNumber": 20,
+          "Inputs": [
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CcCoder.Data.Models.Eventing.SqlEventQueueReport\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.RemoveFailedAsync(System.Guid,System.Threading.CancellationToken)",
+          "Name": "RemoveFailedAsync",
+          "LineNumber": 22,
+          "Inputs": [
+            {
+              "Name": "failedId",
+              "Type": "System.Guid"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Boolean\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.RequeueFailedAsync(System.Guid,System.Threading.CancellationToken)",
+          "Name": "RequeueFailedAsync",
+          "LineNumber": 21,
+          "Inputs": [
+            {
+              "Name": "failedId",
+              "Type": "System.Guid"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Guid?\u003E",
+          "Implements": [],
+          "Calls": [],
+          "PossibleExceptionTypes": [],
+          "IncomingExceptionTypes": [],
+          "ThrowsExceptionTypes": [],
+          "HttpMethods": [],
+          "HttpResponses": [],
+          "IsHttpRequestHandler": false,
+          "IsODataControllerAction": false,
+          "HasFromBodyParameter": false,
+          "HasKeyParameter": false,
+          "HandlesNullWithNotFound": false,
+          "HasTryCatch": false
+        },
+        {
+          "Id": "cCoder.Data.Models.Eventing.ISqlEventStorage.RetryAsync(cCoder.Data.Models.Eventing.EventMessageRecord,System.TimeSpan,System.Threading.CancellationToken)",
+          "Name": "RetryAsync",
+          "LineNumber": 18,
+          "Inputs": [
+            {
+              "Name": "eventMessageRecord",
+              "Type": "cCoder.Data.Models.Eventing.EventMessageRecord"
+            },
+            {
+              "Name": "delay",
+              "Type": "System.TimeSpan"
+            },
+            {
+              "Name": "cancellationToken",
+              "Type": "System.Threading.CancellationToken"
+            }
+          ],
+          "ReturnType": "System.Threading.Tasks.Task\u003CSystem.Guid?\u003E",
           "Implements": [],
           "Calls": [],
           "PossibleExceptionTypes": [],

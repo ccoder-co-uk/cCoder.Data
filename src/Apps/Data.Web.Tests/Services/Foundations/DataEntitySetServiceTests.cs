@@ -83,11 +83,8 @@ public sealed partial class DataEntitySetServiceTests
             cancellationToken: CancellationToken.None);
 
         // Then
-        ServiceException exception = (await action.Should()
-            .ThrowAsync<ServiceException>()).Which;
-
-        exception.InnerException.Should()
-            .BeOfType<UnauthorizedAccessException>();
+        await action.Should()
+            .ThrowAsync<UnauthorizedAccessException>();
 
         broker.Verify(
             expression: broker => broker.SelectEntitySetsAsync(

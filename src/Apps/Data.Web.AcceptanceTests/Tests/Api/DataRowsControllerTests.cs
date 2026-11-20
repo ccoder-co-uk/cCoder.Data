@@ -52,9 +52,8 @@ public sealed partial class DataRowsControllerTests
             .Should()
             .BeOfType<BadRequestObjectResult>();
 
-        loggingBroker.Verify(expression: broker => broker.LogError(
-            exception: exception,
-            message: "Controller request failed.",
+        loggingBroker.Verify(expression: broker => broker.LogWarning(
+            message: exception.Message,
             args: It.IsAny<object[]>()), times: Times.Once);
     }
 
