@@ -159,11 +159,8 @@ public sealed partial class DataRowServiceTests
             cancellationToken: CancellationToken.None);
 
         // Then
-        ServiceException exception = (await action.Should()
-            .ThrowAsync<ServiceException>()).Which;
-
-        exception.InnerException.Should()
-            .BeOfType<UnauthorizedAccessException>();
+        await action.Should()
+            .ThrowAsync<UnauthorizedAccessException>();
 
         broker.Verify(
             expression: broker => broker.SelectRowsAsync(
@@ -204,6 +201,36 @@ public sealed partial class DataRowServiceTests
 
         exception.InnerException.Should()
             .BeOfType<InvalidOperationException>();
+    }
+
+    [Fact]
+    public async Task ShouldPreserveAuthorizationFailureWhenDeletingRow()
+    {
+        // Given
+        Dictionary<string, object> values = [];
+        Mock<IDataSetBroker> broker = new();
+
+        broker.Setup(expression: broker => broker.GetCurrentSsoUserId())
+            .Returns(value: "Guest");
+
+        DataRowService service = new(dataSetBroker: broker.Object);
+
+        // When
+        Func<Task> action = async () => await service.DeleteRowAsync(
+            entitySet: "Customers",
+            deletedValues: values,
+            cancellationToken: CancellationToken.None);
+
+        // Then
+        await action.Should()
+            .ThrowAsync<UnauthorizedAccessException>();
+
+        broker.Verify(
+            expression: broker => broker.DeleteRowAsync(
+                entitySet: It.IsAny<string>(),
+                values: It.IsAny<Dictionary<string, object>>(),
+                cancellationToken: It.IsAny<CancellationToken>()),
+            times: Times.Never);
     }
 
     private static Mock<IDataSetBroker> CreateAuthenticatedBroker()
