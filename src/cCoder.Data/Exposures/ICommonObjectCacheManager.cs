@@ -17,6 +17,10 @@ public interface ICommonObjectCacheManager
 
     ValueTask<CommonObject> AddAsync(CommonObject newCommonObject);
 
+    ValueTask<CommonObject[]> AddAllAsync(CommonObject[] newCommonObjects);
+
+    void Apply(CommonObject[] changedCommonObjects);
+
     ValueTask<CommonObject> UpdateAsync(CommonObject updatedCommonObject);
 
     ValueTask<int> DeleteAsync(CommonObject deletedCommonObject);

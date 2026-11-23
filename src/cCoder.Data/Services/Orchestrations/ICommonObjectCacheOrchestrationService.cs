@@ -17,6 +17,10 @@ internal interface ICommonObjectCacheOrchestrationService
 
     ValueTask<CommonObject> AddCommonObjectAsync(CommonObject newCommonObject);
 
+    ValueTask<CommonObject[]> AddAllCommonObjectsAsync(CommonObject[] newCommonObjects);
+
+    void ApplyCommonObjects(CommonObject[] changedCommonObjects);
+
     ValueTask<CommonObject> UpdateCommonObjectAsync(CommonObject updatedCommonObject);
 
     ValueTask<int> DeleteCommonObjectAsync(CommonObject deletedCommonObject);

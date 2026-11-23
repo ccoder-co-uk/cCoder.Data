@@ -54,6 +54,19 @@ internal sealed class CommonObjectStorageBroker(
         return result;
     }
 
+    public async ValueTask<CommonObject[]> AddAllCommonObjectsAsync(
+        CommonObject[] newCommonObjects)
+    {
+        using CoreDataContext coreDataContext =
+            coreContextFactory.CreateCoreContext();
+
+        await coreDataContext.CommonObjects.AddRangeAsync(
+            entities: newCommonObjects);
+
+        await coreDataContext.SaveChangesAsync();
+        return newCommonObjects;
+    }
+
     public async ValueTask<CommonObject> UpdateCommonObjectAsync(
         CommonObject updatedCommonObject)
     {
