@@ -40,6 +40,16 @@ internal sealed partial class CommonObjectStorageService(
                 newCommonObject: newCommonObject);
         }, isValueTask: true);
 
+    public ValueTask<CommonObject[]> AddAllCommonObjectsAsync(
+        CommonObject[] newCommonObjects) =>
+        TryCatch<CommonObject[]>(operation: async () =>
+        {
+            ValidateAllCommonObjectsOnAdd(inputs: [newCommonObjects]);
+
+            return await commonObjectStorageBroker.AddAllCommonObjectsAsync(
+                newCommonObjects: newCommonObjects);
+        }, isValueTask: true);
+
     public ValueTask<CommonObject> UpdateCommonObjectAsync(
         CommonObject updatedCommonObject) =>
         TryCatch<CommonObject>(operation: async () =>

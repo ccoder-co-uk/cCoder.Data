@@ -26,6 +26,15 @@ internal sealed class CommonObjectCacheManager(
         orchestrationService.AddCommonObjectAsync(
             newCommonObject: newCommonObject);
 
+    public ValueTask<CommonObject[]> AddAllAsync(
+        CommonObject[] newCommonObjects) =>
+        orchestrationService.AddAllCommonObjectsAsync(
+            newCommonObjects: newCommonObjects);
+
+    public void Apply(CommonObject[] changedCommonObjects) =>
+        orchestrationService.ApplyCommonObjects(
+            changedCommonObjects: changedCommonObjects);
+
     public ValueTask<CommonObject> UpdateAsync(
         CommonObject updatedCommonObject) =>
         orchestrationService.UpdateCommonObjectAsync(

@@ -8,6 +8,7 @@ using cCoder.Data.Models;
 using cCoder.Data.Services.Orchestrations;
 using cCoder.Data.Services.Foundations;
 using FluentAssertions;
+using Moq;
 using Xunit;
 
 namespace cCoder.Data.Tests.Services.Orchestrations;
@@ -126,7 +127,7 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
     }
 
     [Fact]
-    public async Task AddAsync_WhenStorageSucceeds_RefreshesCacheFromDatabase()
+    public async Task AddAsync_WhenStorageSucceeds_AddsOnlyStoredObjectToCache()
     {
         // Given
 
@@ -137,7 +138,8 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             storedCommonObjects: [storedCommonObject],
             savedCommonObject: storedCommonObject);
 
-        RecordingCommonObjectCacheService cacheService = new();
+        RecordingCommonObjectCacheService cacheService = new(
+            cachedCommonObjects: []);
 
         CommonObjectCacheOrchestrationService service = new(
             commonObjectStorageService: storageService,
@@ -160,6 +162,10 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
 
         storageService.SnapshotCalls
             .Should()
+            .Be(expected: 0);
+
+        cacheService.GetCalls
+            .Should()
             .Be(expected: 1);
 
         cacheService.SetCalls
@@ -169,6 +175,93 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
         cacheService.LastSet
             .Should()
             .Equal(expected: [storedCommonObject]);
+    }
+
+    [Fact]
+    public async Task AddAllAsync_WhenStorageSucceeds_WritesBatchAndAddsBatchToCache()
+    {
+        // Given
+        CommonObject[] newCommonObjects =
+        [
+            CreateCommonObject(id: 0),
+            CreateCommonObject(id: 0)
+        ];
+
+        CommonObject[] storedCommonObjects =
+        [
+            CreateCommonObject(id: 43),
+            CreateCommonObject(id: 47)
+        ];
+
+        Mock<ICommonObjectStorageService> storageServiceMock = new();
+        Mock<ICommonObjectCacheService> cacheServiceMock = new();
+
+        cacheServiceMock.Setup(expression: service =>
+                service.GetCommonObjects())
+            .Returns(value: []);
+
+        storageServiceMock.Setup(expression: service =>
+                service.AddAllCommonObjectsAsync(
+                    newCommonObjects: newCommonObjects))
+            .Returns(value: ValueTask.FromResult(result: storedCommonObjects));
+
+        CommonObjectCacheOrchestrationService service = new(
+            commonObjectStorageService: storageServiceMock.Object,
+            commonObjectCacheService: cacheServiceMock.Object);
+
+        // When
+        CommonObject[] results = await service.AddAllCommonObjectsAsync(
+            newCommonObjects: newCommonObjects);
+
+        // Then
+        results
+            .Should()
+            .BeSameAs(expected: storedCommonObjects);
+
+        storageServiceMock.Verify(expression: storageService =>
+            storageService.AddAllCommonObjectsAsync(
+                newCommonObjects: newCommonObjects),
+            times: Times.Once);
+
+        cacheServiceMock.Verify(expression: cacheService =>
+            cacheService.SetCommonObjects(
+                commonObjects: storedCommonObjects),
+            times: Times.Once);
+    }
+
+    [Fact]
+    public void Apply_WhenCacheExists_MergesOnlyChangedObjectsWithoutStorageRead()
+    {
+        // Given
+        CommonObject unchanged = CreateCommonObject(id: 53);
+        CommonObject previous = CreateCommonObject(id: 59);
+        CommonObject changed = CreateCommonObject(id: 59);
+        changed.Json = "{\"updated\":true}";
+
+        RecordingCommonObjectStorageService storageService = new();
+
+        RecordingCommonObjectCacheService cacheService = new(
+            cachedCommonObjects: [unchanged, previous]);
+
+        CommonObjectCacheOrchestrationService service = new(
+            commonObjectStorageService: storageService,
+            commonObjectCacheService: cacheService);
+
+        // When
+        service.ApplyCommonObjects(changedCommonObjects: [changed]);
+
+        // Then
+        cacheService.LastSet
+            .Should()
+            .BeEquivalentTo(expectation: [unchanged, changed]);
+
+        storageService.GetCalls
+            .Should()
+            .Be(expected: 0);
+
+        storageService.SnapshotCalls
+            .Should()
+            .Be(expected: 0);
     }
 
     private static CommonObject CreateCommonObject(int id) =>
@@ -216,6 +309,10 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
                 result: savedCommonObject ?? newCommonObject);
         }
 
+        public ValueTask<CommonObject[]> AddAllCommonObjectsAsync(
+            CommonObject[] newCommonObjects) =>
+            ValueTask.FromResult(result: newCommonObjects);
+
         public ValueTask<CommonObject> UpdateCommonObjectAsync(CommonObject updatedCommonObject) =>
             ValueTask.FromResult(result: updatedCommonObject);
 
@@ -248,5 +345,6 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
             SetCalls++;
             LastSet = commonObjects;
         }
+
     }
 }

@@ -3,6 +3,7 @@
 // ---------------------------------------------------------------
 
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using cCoder.Data.Models;
 using cCoder.Data.Models.Exceptions;
@@ -40,9 +41,9 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
                     updatedCommonObject: commonObject))
             .Returns(value: ValueTask.FromResult(result: commonObject));
 
-        storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectsSnapshot())
-            .Returns(value: new[] { commonObject });
+        cacheServiceMock.Setup(expression: service =>
+                service.GetCommonObjects())
+            .Returns(value: [commonObject]);
 
         CommonObjectCacheOrchestrationService service = new(
             commonObjectStorageService: storageServiceMock.Object,
@@ -61,7 +62,8 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
 
         cacheServiceMock.Verify(expression: cacheService =>
             cacheService.SetCommonObjects(
-                commonObjects: It.IsAny<CommonObject[]>()),
+                commonObjects: It.Is<CommonObject[]>(match: values =>
+                    values.Length == 1 && values[0] == commonObject)),
             times: Times.Once);
     }
 
@@ -79,9 +81,9 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
                     deletedCommonObject: commonObject))
             .Returns(value: ValueTask.FromResult(result: 1));
 
-        storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectsSnapshot())
-            .Returns(value: []);
+        cacheServiceMock.Setup(expression: service =>
+                service.GetCommonObjects())
+            .Returns(value: [commonObject]);
 
         CommonObjectCacheOrchestrationService service = new(
             commonObjectStorageService: storageServiceMock.Object,
@@ -100,7 +102,8 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
 
         cacheServiceMock.Verify(expression: cacheService =>
             cacheService.SetCommonObjects(
-                commonObjects: It.IsAny<CommonObject[]>()),
+                commonObjects: It.Is<CommonObject[]>(match: values =>
+                    values.Length == 0)),
             times: Times.Once);
     }
 
@@ -123,9 +126,9 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
                     deletedCommonObject: It.IsAny<CommonObject>()))
             .Returns(value: ValueTask.FromResult(result: 1));
 
-        storageServiceMock.Setup(expression: service =>
-                service.GetCommonObjectsSnapshot())
-            .Returns(value: []);
+        cacheServiceMock.Setup(expression: service =>
+                service.GetCommonObjects())
+            .Returns(value: commonObjects);
 
         CommonObjectCacheOrchestrationService service = new(
             commonObjectStorageService: storageServiceMock.Object,
@@ -145,7 +148,8 @@ public sealed partial class CommonObjectCacheOrchestrationServiceTests
 
         cacheServiceMock.Verify(expression: cacheService =>
             cacheService.SetCommonObjects(
-                commonObjects: It.IsAny<CommonObject[]>()),
+                commonObjects: It.Is<CommonObject[]>(match: values =>
+                    values.Length == 0)),
             times: Times.Once);
     }
 

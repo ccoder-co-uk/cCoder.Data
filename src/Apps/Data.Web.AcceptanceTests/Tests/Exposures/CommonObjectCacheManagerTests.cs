@@ -39,9 +39,18 @@ public sealed partial class CommonObjectCacheManagerTests
             .Returns(value: ValueTask.FromResult(result: commonObject));
 
         serviceMock.Setup(expression: service =>
+                service.AddAllCommonObjectsAsync(
+                    newCommonObjects: It.IsAny<CommonObject[]>()))
+            .Returns(value: ValueTask.FromResult(result: new[] { commonObject }));
+
+        serviceMock.Setup(expression: service =>
                 service.UpdateCommonObjectAsync(
                     updatedCommonObject: commonObject))
             .Returns(value: ValueTask.FromResult(result: commonObject));
+
+        serviceMock.Setup(expression: service =>
+                service.ApplyCommonObjects(
+                    changedCommonObjects: It.IsAny<CommonObject[]>()));
 
         serviceMock.Setup(expression: service =>
                 service.DeleteCommonObjectAsync(
@@ -59,6 +68,11 @@ public sealed partial class CommonObjectCacheManagerTests
 
         CommonObject addResult = await manager.AddAsync(
             newCommonObject: commonObject);
+
+        CommonObject[] addAllResult = await manager.AddAllAsync(
+            newCommonObjects: [commonObject]);
+
+        manager.Apply(changedCommonObjects: [commonObject]);
 
         CommonObject updateResult = await manager.UpdateAsync(
             updatedCommonObject: commonObject);
@@ -80,6 +94,10 @@ public sealed partial class CommonObjectCacheManagerTests
         addResult
             .Should()
             .BeSameAs(expected: commonObject);
+
+        addAllResult
+            .Should()
+            .Equal(expected: [commonObject]);
 
         updateResult
             .Should()

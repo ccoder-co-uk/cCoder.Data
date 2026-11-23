@@ -16,6 +16,8 @@ internal interface ICommonObjectStorageService
 
     ValueTask<CommonObject> AddCommonObjectAsync(CommonObject newCommonObject);
 
+    ValueTask<CommonObject[]> AddAllCommonObjectsAsync(CommonObject[] newCommonObjects);
+
     ValueTask<CommonObject> UpdateCommonObjectAsync(CommonObject updatedCommonObject);
 
     ValueTask<int> DeleteCommonObjectAsync(CommonObject deletedCommonObject);
